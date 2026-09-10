@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CorpticDEMO-Regular Font Definition */
+@font-face {
+  font-family: 'CorpticDEMO-Regular';
+  src: url('/fonts/CorpticDEMO-Regular.otf') format('opentype'),
+       url('/fonts/Corptic%20DEMO.otf') format('opentype'),
+       local('CorpticDEMO-Regular'),
+       local('Corptic DEMO'),
+       local('Corptic');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Corptic';
+  src: url('/fonts/Corptic.otf') format('opentype'),
+       url('/fonts/CorpticDEMO-Regular.otf') format('opentype'),
+       local('CorpticDEMO-Regular'),
+       local('Corptic DEMO'),
+       local('Corptic');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  
+  body {
+    background-color: #0B1120;
+    color: #E2E8F0;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+  }
+
+  /* Clean subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0B1120;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1E293B;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+  }
+}
+
+@layer utilities {
+  /* Corptic font utility */
+  .font-corptic {
+    font-family: 'CorpticDEMO-Regular', 'Corptic', 'Orbitron', 'Rajdhani', sans-serif;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* Cyber Glitch Effect with CorpticDEMO-Regular */
+  .glitch-title {
+    font-family: 'CorpticDEMO-Regular', 'Corptic', 'Orbitron', 'Rajdhani', sans-serif;
+    position: relative;
+    display: inline-block;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-shadow: 2px 0 0 rgba(0, 240, 255, 0.7), -2px 0 0 rgba(255, 46, 86, 0.7), 0 0 14px rgba(0, 240, 255, 0.3);
+    animation: cyberGlitch 4.5s infinite ease-in-out;
+  }
+
+  @keyframes cyberGlitch {
+    0%, 89%, 100% {
+      text-shadow: 2px 0 0 rgba(0, 240, 255, 0.7), -2px 0 0 rgba(255, 46, 86, 0.7), 0 0 14px rgba(0, 240, 255, 0.3);
+      transform: translate(0, 0) skew(0deg);
+    }
+    90% {
+      text-shadow: -2.5px 0 0 rgba(0, 240, 255, 0.85), 2.5px 0 0 rgba(255, 46, 86, 0.85), 0 0 18px rgba(255, 46, 86, 0.4);
+      transform: translate(-1.5px, 0.5px) skew(-0.8deg);
+    }
+    91% {
+      text-shadow: 3px 0 0 rgba(0, 240, 255, 0.9), -3px 0 0 rgba(255, 46, 86, 0.9), 0 0 20px rgba(0, 240, 255, 0.5);
+      transform: translate(1.5px, -0.5px) skew(0.8deg);
+    }
+    92% {
+      text-shadow: -1px 0 0 rgba(0, 240, 255, 0.75), 1px 0 0 rgba(255, 46, 86, 0.75);
+      transform: translate(-0.5px, 0.5px);
+    }
+    93% {
+      text-shadow: 2px 0 0 rgba(0, 240, 255, 0.7), -2px 0 0 rgba(255, 46, 86, 0.7), 0 0 14px rgba(0, 240, 255, 0.3);
+      transform: translate(0, 0) skew(0deg);
+    }
+  }
+}
