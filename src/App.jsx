@@ -26,39 +26,12 @@ import {
 const THEMES = [
   {
     id: 'cyber-blue',
-    name: 'Cyber Cyan (Logo)',
+    name: 'Cyber Cyan',
     label: 'Cyber Cyan',
     icon: Sparkles,
     accent: '#00F0FF',
     desc: 'Electric Circuit & Deep Space Void (Logo Signature)',
-    tag: 'Signature'
-  },
-  {
-    id: 'stealth-obsidian',
-    name: 'Stealth Obsidian',
-    label: 'Obsidian',
-    icon: Moon,
-    accent: '#00F0FF',
-    desc: 'Pure Pitch Black & Neon Blue Highlights',
-    tag: 'Stealth'
-  },
-  {
-    id: 'matrix-green',
-    name: 'Matrix Emerald',
-    label: 'Matrix',
-    icon: Terminal,
-    accent: '#10B981',
-    desc: 'Tactical Cyber Terminal & Emerald Glow',
-    tag: 'Tactical'
-  },
-  {
-    id: 'crimson-alert',
-    name: 'Crimson Alert',
-    label: 'Crimson',
-    icon: AlertTriangle,
-    accent: '#F43F5E',
-    desc: 'Red Team Threat Vector & Ruby Flare',
-    tag: 'Alert'
+    tag: 'Dark'
   },
   {
     id: 'quantum-light',
@@ -73,34 +46,17 @@ const THEMES = [
 
 export function App() {
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('cyber-sentinals-theme') || 'cyber-blue';
+    const saved = localStorage.getItem('cyber-sentinals-theme');
+    return saved === 'quantum-light' ? 'quantum-light' : 'cyber-blue';
   });
-  const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
-  const themeMenuRef = useRef(null);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('cyber-sentinals-theme', theme);
   }, [theme]);
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (themeMenuRef.current && !themeMenuRef.current.contains(event.target)) {
-        setIsThemeMenuOpen(false);
-      }
-    }
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  const currentThemeObj = THEMES.find((t) => t.id === theme) || THEMES[0];
-  const CurrentThemeIcon = currentThemeObj.icon;
-
-  const cycleNextTheme = () => {
-    const currentIndex = THEMES.findIndex((t) => t.id === theme);
-    const nextIndex = (currentIndex + 1) % THEMES.length;
-    setTheme(THEMES[nextIndex].id);
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'cyber-blue' ? 'quantum-light' : 'cyber-blue'));
   };
 
   return (
@@ -167,98 +123,47 @@ export function App() {
               </a>
             </nav>
 
-            {/* THEME SELECTOR BUTTON */}
-            <div className="relative" ref={themeMenuRef}>
-              <div className="flex items-center rounded-xl p-0.5 bg-[var(--cyber-bg-card)] border border-[var(--cyber-border)] shadow-sm backdrop-blur-md">
-                {/* Main Menu Button */}
-                <button
-                  type="button"
-                  onClick={() => setIsThemeMenuOpen(!isThemeMenuOpen)}
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold text-[var(--cyber-text-primary)] hover:bg-[var(--cyber-bg-card-hover)] hover:text-[var(--cyber-accent)] transition-all duration-200"
-                  aria-label="Select Color Theme"
-                  aria-expanded={isThemeMenuOpen}
-                >
-                  <span 
-                    className="w-2.5 h-2.5 rounded-full shadow-[0_0_8px_currentColor] animate-pulse"
-                    style={{ backgroundColor: currentThemeObj.accent, color: currentThemeObj.accent }}
-                  />
-                  <CurrentThemeIcon className="w-3.5 h-3.5" />
-                  <span className="hidden sm:inline-block font-mono text-[11px] tracking-wider uppercase">
-                    {currentThemeObj.label}
-                  </span>
-                  <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 text-[var(--cyber-text-muted)] ${isThemeMenuOpen ? 'rotate-180' : ''}`} />
-                </button>
+            {/* DUAL THEME TOGGLE: Cyber Cyan & Quantum Light */}
+            <div className="flex items-center rounded-xl p-1 bg-[var(--cyber-bg-card)] border border-[var(--cyber-border)] shadow-sm backdrop-blur-md">
+              <button
+                type="button"
+                onClick={() => setTheme('cyber-blue')}
+                className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 ${
+                  theme === 'cyber-blue'
+                    ? 'bg-[var(--cyber-border)] text-[var(--cyber-accent)] shadow-sm font-bold'
+                    : 'text-[var(--cyber-text-muted)] hover:text-[var(--cyber-text-primary)]'
+                }`}
+                title="Cyber Cyan Theme (Signature Dark)"
+                aria-pressed={theme === 'cyber-blue'}
+              >
+                <span 
+                  className={`w-2 h-2 rounded-full ${theme === 'cyber-blue' ? 'bg-[#00F0FF] shadow-[0_0_8px_#00F0FF] animate-pulse' : 'bg-slate-500'}`}
+                />
+                <Sparkles className="w-3.5 h-3.5" />
+                <span className="font-mono text-[11px] tracking-wider uppercase">
+                  Cyber Cyan
+                </span>
+              </button>
 
-                {/* Quick Toggle Button */}
-                <button
-                  type="button"
-                  onClick={cycleNextTheme}
-                  title="Quick toggle to next theme"
-                  className="px-2 py-1.5 border-l border-[var(--cyber-border)] text-[var(--cyber-text-muted)] hover:text-[var(--cyber-accent)] hover:bg-[var(--cyber-bg-card-hover)] rounded-r-lg transition-colors"
-                >
-                  <Palette className="w-3.5 h-3.5" />
-                </button>
-              </div>
-
-              {/* Theme Dropdown Popover */}
-              {isThemeMenuOpen && (
-                <div className="absolute right-0 mt-2 w-72 rounded-2xl bg-[var(--cyber-bg-secondary)] border border-[var(--cyber-border)] shadow-2xl p-2 z-50 backdrop-blur-2xl animate-in fade-in slide-in-from-top-2 duration-150">
-                  <div className="px-3 py-2 border-b border-[var(--cyber-border)] flex items-center justify-between">
-                    <span className="text-[11px] font-bold uppercase tracking-widest text-[var(--cyber-text-muted)] font-mono">
-                      Theme Protocol
-                    </span>
-                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-[var(--cyber-border)] text-[var(--cyber-accent)] font-mono font-bold">
-                      {THEMES.length} MODES
-                    </span>
-                  </div>
-
-                  <div className="py-1 space-y-1">
-                    {THEMES.map((item) => {
-                      const ItemIcon = item.icon;
-                      const isActive = item.id === theme;
-                      return (
-                        <button
-                          key={item.id}
-                          type="button"
-                          onClick={() => {
-                            setTheme(item.id);
-                            setIsThemeMenuOpen(false);
-                          }}
-                          className={`w-full text-left px-3 py-2.5 rounded-xl text-xs flex items-center justify-between transition-all duration-150 ${
-                            isActive
-                              ? 'bg-[var(--cyber-border)] text-[var(--cyber-text-primary)] font-semibold shadow-inner'
-                              : 'text-[var(--cyber-text-secondary)] hover:bg-[var(--cyber-bg-card)] hover:text-[var(--cyber-text-primary)]'
-                          }`}
-                        >
-                          <div className="flex items-center gap-3">
-                            <div 
-                              className="w-7 h-7 rounded-lg flex items-center justify-center shadow-sm"
-                              style={{ 
-                                backgroundColor: isActive ? 'var(--cyber-bg)' : `${item.accent}15`, 
-                                border: `1px solid ${item.accent}50`,
-                                color: item.accent
-                              }}
-                            >
-                              <ItemIcon className="w-3.5 h-3.5" />
-                            </div>
-                            <div>
-                              <div className="flex items-center gap-1.5">
-                                <span className="font-bold">{item.name}</span>
-                              </div>
-                              <p className="text-[10px] text-[var(--cyber-text-muted)] leading-tight mt-0.5">
-                                {item.desc}
-                              </p>
-                            </div>
-                          </div>
-                          {isActive && (
-                            <Check className="w-4 h-4 text-[var(--cyber-accent)] shrink-0" />
-                          )}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-              )}
+              <button
+                type="button"
+                onClick={() => setTheme('quantum-light')}
+                className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 ${
+                  theme === 'quantum-light'
+                    ? 'bg-[var(--cyber-border)] text-[var(--cyber-accent)] shadow-sm font-bold'
+                    : 'text-[var(--cyber-text-muted)] hover:text-[var(--cyber-text-primary)]'
+                }`}
+                title="Quantum Light Theme (Light Mode)"
+                aria-pressed={theme === 'quantum-light'}
+              >
+                <span 
+                  className={`w-2 h-2 rounded-full ${theme === 'quantum-light' ? 'bg-[#0284C7] shadow-[0_0_8px_#0284C7] animate-pulse' : 'bg-slate-400'}`}
+                />
+                <Sun className="w-3.5 h-3.5" />
+                <span className="font-mono text-[11px] tracking-wider uppercase">
+                  Quantum Light
+                </span>
+              </button>
             </div>
           </div>
         </div>
