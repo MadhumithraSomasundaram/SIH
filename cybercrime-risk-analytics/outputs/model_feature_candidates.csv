@@ -1,0 +1,72 @@
+feature_name,feature_type,source,safe_for_model,leakage_risk,reason
+case_id,str,Identifier / PII,False,LOW (ID Token),Unique identifier / pseudonymized token (not generalizable)
+complaint_timestamp,str,Base Timestamp,False,LOW (Raw Timestamp),Raw string timestamp; structured temporal features used instead
+crime_type,str,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+fraud_amount,float64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+reported_by_authority,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+victim_state,str,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+victim_district,str,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+victim_area,str,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+victim_area_id,str,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+latitude,float64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+longitude,float64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+victim_account_id_masked,str,Identifier / PII,False,LOW (ID Token),Unique identifier / pseudonymized token (not generalizable)
+is_linked_to_withdrawal,int64,Target Metadata,False,HIGH,Control/metadata column containing outcome information
+event_year,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+event_month,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+event_day,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+event_day_of_month,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+event_day_of_week,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+event_hour,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+event_minute,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+is_weekend,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+is_month_start,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+is_month_end,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+is_quarter_start,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+is_quarter_end,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+hour_group,str,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+time_period,str,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+latitude_rounded,float64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+longitude_rounded,float64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+location_grid,str,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+coordinate_precision,str,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+geographic_region,str,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+crime_category_group,str,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+is_financial_fraud,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+is_online_fraud,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+is_identity_related,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+is_transaction_related,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+amount_log1p,float64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+amount_is_zero,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+amount_is_high,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+amount_category,str,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+previous_event_count,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+time_since_previous_event_hours,float64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+events_in_previous_1_day,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+events_in_previous_3_days,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+events_in_previous_7_days,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+events_in_previous_30_days,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+previous_activity_by_location,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+previous_activity_by_district,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+previous_activity_by_crime_category,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+rolling_event_count_1h,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+rolling_event_count_6h,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+rolling_event_count_24h,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+rolling_event_count_7d,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+rolling_location_event_count_24h,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+rolling_crime_event_count_7d,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+location_total_previous_events,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+location_previous_24h_events,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+location_previous_7d_events,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+district_previous_24h_events,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+district_previous_7d_events,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+location_unique_crime_categories,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+has_location,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+has_timestamp,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+has_amount,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+has_crime_category,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+has_district,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+missing_coordinate_flag,int64,Phase 2/3 Feature Engineering,True,NONE,Valid intake or strictly prior historical/spatio-temporal feature
+future_withdrawal,int64,Target Construction,False,TARGET,Primary prediction target variable
+target_observation_complete,int64,Target Metadata,False,HIGH,Control/metadata column containing outcome information
+target_valid,int64,Target Metadata,False,HIGH,Control/metadata column containing outcome information

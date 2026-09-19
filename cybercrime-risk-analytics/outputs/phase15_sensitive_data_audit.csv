@@ -1,0 +1,16 @@
+field,source,displayed,reason,action
+account_number / bank_account_no,raw_banking_records,NO,Direct PII / Financial credential,Hard exclusion in GIS serializers and SQL schemas
+card_number / pan,raw_payment_records,NO,Payment Card Industry (PCI-DSS) violation,Excluded entirely from data pipeline and endpoints
+cvv / cvv2,transaction_records,NO,Sensitive security parameter,Stripped prior to analytics and never ingested
+pin / atm_pin,atm_records,NO,Authentication credential,Hard exclusion — never stored or emitted
+otp / one_time_password,sms_verification_records,NO,Authentication token,Hard exclusion across entire codebase
+password / credentials,user_management,NO,Security credential,Not present in ML or GIS pipelines
+phone_number / mobile,victim_records,NO,Direct personal identifiable information (PII),"Excluded from map popups, GeoJSON, and API payloads"
+email_address,victim_records,NO,Direct personal identifiable information (PII),"Excluded from map popups, GeoJSON, and API payloads"
+victim_name / suspect_name,incident_reports,NO,Personal identity privacy & profiling prevention,Excluded; only anonymized case_id and aggregate counts used
+exact_victim_home_address,incident_reports,NO,Victim location privacy,Aggregated to district centroid or anonymized coordinates
+case_id,curated_events,YES,Anonymized internal analytical reference key,Retained as opaque identifier (e.g. C-10294)
+risk_score,phase9_risk_scores,YES,Core analytical model output (0-100),Displayed with analytical disclaimer
+risk_category,phase9_risk_scores,YES,"Core analytical classification (LOW, MODERATE, HIGH, CRITICAL)",Displayed with analytical disclaimer
+cluster_id / hotspot_id,phase14_dbscan,YES,DBSCAN spatial density cluster designation,Displayed as analytical cluster reference (e.g. HS-01)
+crime_type,curated_events,YES,High-level categorized offense taxonomy,Displayed as general analytical category

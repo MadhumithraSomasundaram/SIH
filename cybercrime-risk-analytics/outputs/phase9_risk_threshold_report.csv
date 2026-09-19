@@ -1,0 +1,8 @@
+threshold,records_ge_threshold,percentage_ge_threshold,true_positives,true_negatives,false_positives,false_negatives,precision,recall,f1,note
+20,1425,95.0,143,63,1282,12,0.1004,0.9226,0.181,Post-hoc diagnostic threshold analysis — NOT used for model selection
+30,1003,66.87,104,446,899,51,0.1037,0.671,0.1796,Post-hoc diagnostic threshold analysis — NOT used for model selection
+40,380,25.33,36,1001,344,119,0.0947,0.2323,0.1346,Post-hoc diagnostic threshold analysis — NOT used for model selection
+50,56,3.73,5,1294,51,150,0.0893,0.0323,0.0474,Post-hoc diagnostic threshold analysis — NOT used for model selection
+60,5,0.33,1,1341,4,154,0.2,0.0065,0.0125,Post-hoc diagnostic threshold analysis — NOT used for model selection
+70,0,0.0,0,1345,0,155,0.0,0.0,0.0,Post-hoc diagnostic threshold analysis — NOT used for model selection
+80,0,0.0,0,1345,0,155,0.0,0.0,0.0,Post-hoc diagnostic threshold analysis — NOT used for model selection

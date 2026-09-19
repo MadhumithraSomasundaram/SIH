@@ -1,0 +1,5 @@
+risk_category,total_records,actual_positives,observed_positive_rate,average_risk_score
+LOW,1120,119,10.62,29.75
+MODERATE,375,35,9.33,44.6
+HIGH,5,1,20.0,61.0
+CRITICAL,0,0,0.0,0.0

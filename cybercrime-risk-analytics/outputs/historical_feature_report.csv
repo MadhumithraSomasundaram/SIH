@@ -1,0 +1,10 @@
+feature,window,current_row_excluded,mean,max
+previous_event_count,All past time,True,4999.5,9999.0
+time_since_previous_event_hours,Previous 1 incident,True,0.5830942800000001,5.3814
+events_in_previous_1_day,Previous 24 hours,True,41.0607,66.0
+events_in_previous_3_days,Previous 72 hours,True,122.5059,158.0
+events_in_previous_7_days,Previous 7 days,True,283.42,322.0
+events_in_previous_30_days,Previous 30 days,True,1155.9816,1306.0
+previous_activity_by_location,All past in area,True,25.23,71.0
+previous_activity_by_district,All past in district,True,125.2894,309.0
+previous_activity_by_crime_category,All past in crime type,True,833.0765,1686.0

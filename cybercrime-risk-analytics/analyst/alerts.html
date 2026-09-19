@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alert Management — Cybercrime Analyst Interface (ID 26184)</title>
+  <meta name="description" content="Analytical alert management for authorized analysts. Review, filter, and manage alert workflow." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/analyst/css/analyst.css" />
+</head>
+<body>
+
+<div class="app-shell" id="app-shell">
+  <!-- Header -->
+  <header class="header">
+    <div class="header-logo">
+      <a href="/analyst/index.html" style="text-decoration:none">
+        <span class="logo-icon">⬡</span>
+      </a>
+      <div>
+        <div class="header-title">Cybercrime Analytics · Alert Management</div>
+        <div class="header-subtitle">Problem Statement ID 26184 — Authorized Analytical Decision Support</div>
+      </div>
+    </div>
+    <div class="header-center">
+      <span class="badge badge-prototype">Prototype · Synthetic Data</span>
+    </div>
+    <div class="header-right">
+      <span id="hdr-time" style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-muted)"></span>
+      <div class="header-user">
+        <span id="hdr-user" style="font-size:0.82rem;color:var(--text-muted)">—</span>
+        <span class="user-badge ANALYST" id="hdr-role">ANALYST</span>
+      </div>
+      <button class="btn btn-sm btn-secondary" id="btn-logout">Sign Out</button>
+    </div>
+  </header>
+
+  <div class="main-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">Navigation</div>
+        <div id="sidebar-nav"></div>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">External</div>
+        <div id="sidebar-external"></div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="page-header">
+        <h1>Alert Management</h1>
+        <p>Analytical alert review — <span id="alerts-count">—</span></p>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="disclaimer-banner">
+        <strong>Authorized Analytical Decision Support</strong> —
+        All HIGH and CRITICAL alerts require authorized human review before any operational action.
+        Alerts are analytical signals only and do not establish criminal activity.
+      </div>
+
+      <!-- Filters Bar -->
+      <div class="filters-bar">
+        <span class="filter-label">Filters:</span>
+        <select class="form-control" id="filter-severity" style="max-width:150px">
+          <option value="">All Severities</option>
+          <option value="CRITICAL">Critical</option>
+          <option value="HIGH">High</option>
+          <option value="MODERATE">Moderate</option>
+          <option value="LOW">Low</option>
+        </select>
+        <select class="form-control" id="filter-status" style="max-width:160px">
+          <option value="">All Statuses</option>
+          <option value="NEW">New</option>
+          <option value="ACKNOWLEDGED">Acknowledged</option>
+          <option value="IN_REVIEW">In Review</option>
+          <option value="RESOLVED">Resolved</option>
+          <option value="DISMISSED">Dismissed</option>
+        </select>
+        <select class="form-control" id="filter-type" style="max-width:220px">
+          <option value="">All Types</option>
+          <option value="CRITICAL_RISK_LOCATION">Critical Risk Location</option>
+          <option value="HIGH_RISK_LOCATION">High Risk Location</option>
+          <option value="HOTSPOT_CRITICAL_RISK">Hotspot Critical Risk</option>
+          <option value="HOTSPOT_ELEVATED_RISK">Hotspot Elevated Risk</option>
+        </select>
+        <input class="form-control" type="text" id="filter-hotspot" placeholder="Hotspot ID (e.g. HS-01)" style="max-width:180px" />
+        <button class="btn btn-primary btn-sm" onclick="applyFilters()">Apply</button>
+        <button class="btn btn-secondary btn-sm" onclick="clearFilters()">Clear</button>
+      </div>
+
+      <!-- Split Layout: Table + Detail -->
+      <div class="split-layout">
+        <!-- Alert Table -->
+        <div>
+          <div class="card" style="padding:0;overflow:hidden">
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Alert ID</th>
+                    <th>Type</th>
+                    <th>Severity</th>
+                    <th>Risk Score</th>
+                    <th>Hotspot</th>
+                    <th>Created At</th>
+                    <th>Status</th>
+                    <th title="Human Review Required">HR?</th>
+                  </tr>
+                </thead>
+                <tbody id="alerts-tbody">
+                  <tr><td colspan="8"><div class="loading-overlay"><div class="spinner"></div><span>Loading alerts…</span></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- Pagination -->
+            <div class="pagination" style="padding:12px 16px">
+              <span id="page-info" style="font-size:0.78rem;color:var(--text-muted)">—</span>
+              <div class="pagination-controls">
+                <button class="btn btn-secondary btn-sm" id="btn-prev" onclick="prevPage()" disabled>← Prev</button>
+                <button class="btn btn-secondary btn-sm" id="btn-next" onclick="nextPage()">Next →</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Alert Detail Panel -->
+        <div class="detail-panel" id="alert-detail-panel" style="display:none">
+          <div class="detail-panel-header">
+            <span class="detail-panel-title">Alert Detail</span>
+            <button class="btn btn-sm btn-secondary btn-icon" onclick="document.getElementById('alert-detail-panel').style.display='none'">✕</button>
+          </div>
+          <div class="detail-panel-body" id="alert-detail-body">
+            <div class="empty-state"><div class="empty-icon">⚠</div>Select an alert to view details.</div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- Create Investigation Modal -->
+<div class="modal-overlay" id="create-inv-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title">Create Investigation</span>
+      <span class="modal-close" onclick="document.getElementById('create-inv-modal').classList.remove('visible')">✕</span>
+    </div>
+    <div class="modal-body">
+      <div class="disclaimer-banner" style="margin-bottom:16px">
+        <strong>Note:</strong> An investigation records analytical review of an alert.
+        It does not initiate automatic enforcement action.
+      </div>
+      <input type="hidden" id="inv-alert-id" />
+      <div class="form-group">
+        <label class="form-label" for="inv-priority">Investigation Priority</label>
+        <select class="form-control" id="inv-priority">
+          <option value="LOW">Low</option>
+          <option value="MODERATE" selected>Moderate</option>
+          <option value="HIGH">High</option>
+          <option value="CRITICAL">Critical</option>
+        </select>
+        <div class="form-hint">Priority may inherit alert severity. Clearly distinguish model risk from investigation priority.</div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="inv-initial-note">Initial Analyst Note (Optional)</label>
+        <textarea class="form-control" id="inv-initial-note" rows="3"
+                  placeholder="Record only information necessary for the authorized investigation. Do not include account numbers, PINs, OTPs, CVVs, or unnecessary PII."></textarea>
+        <div class="form-hint">⚠ Record only information necessary for the authorized investigation.</div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="document.getElementById('create-inv-modal').classList.remove('visible')">Cancel</button>
+      <button class="btn btn-primary" id="btn-create-inv" onclick="submitCreateInvestigation()">Create Investigation</button>
+    </div>
+  </div>
+</div>
+
+<script src="/analyst/js/analyst.js"></script>
+<script src="/analyst/js/alerts.js"></script>
+<script>
+requireAuth('alerts', () => {
+  loadAlerts();
+});
+</script>
+</body>
+</html>

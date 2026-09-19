@@ -1,0 +1,22 @@
+feature_1,feature_2,correlation,note
+latitude,latitude_rounded,1.0,High linear collinearity — consider feature selection / PCA in Phase 4
+longitude,longitude_rounded,1.0,High linear collinearity — consider feature selection / PCA in Phase 4
+event_month,previous_event_count,0.9921,High linear collinearity — consider feature selection / PCA in Phase 4
+event_month,previous_activity_by_location,0.9241,High linear collinearity — consider feature selection / PCA in Phase 4
+event_month,previous_activity_by_district,0.9736,High linear collinearity — consider feature selection / PCA in Phase 4
+event_month,previous_activity_by_crime_category,0.991,High linear collinearity — consider feature selection / PCA in Phase 4
+event_month,location_total_previous_events,0.9241,High linear collinearity — consider feature selection / PCA in Phase 4
+event_day,event_day_of_month,1.0,High linear collinearity — consider feature selection / PCA in Phase 4
+previous_event_count,previous_activity_by_location,0.9317,High linear collinearity — consider feature selection / PCA in Phase 4
+previous_event_count,previous_activity_by_district,0.9814,High linear collinearity — consider feature selection / PCA in Phase 4
+previous_event_count,previous_activity_by_crime_category,0.9989,High linear collinearity — consider feature selection / PCA in Phase 4
+previous_event_count,location_total_previous_events,0.9317,High linear collinearity — consider feature selection / PCA in Phase 4
+events_in_previous_1_day,rolling_event_count_24h,1.0,High linear collinearity — consider feature selection / PCA in Phase 4
+events_in_previous_7_days,rolling_event_count_7d,1.0,High linear collinearity — consider feature selection / PCA in Phase 4
+previous_activity_by_location,previous_activity_by_district,0.9493,High linear collinearity — consider feature selection / PCA in Phase 4
+previous_activity_by_location,previous_activity_by_crime_category,0.9306,High linear collinearity — consider feature selection / PCA in Phase 4
+previous_activity_by_location,location_total_previous_events,1.0,High linear collinearity — consider feature selection / PCA in Phase 4
+previous_activity_by_district,previous_activity_by_crime_category,0.9803,High linear collinearity — consider feature selection / PCA in Phase 4
+previous_activity_by_district,location_total_previous_events,0.9493,High linear collinearity — consider feature selection / PCA in Phase 4
+previous_activity_by_crime_category,location_total_previous_events,0.9306,High linear collinearity — consider feature selection / PCA in Phase 4
+rolling_location_event_count_24h,location_previous_24h_events,1.0,High linear collinearity — consider feature selection / PCA in Phase 4

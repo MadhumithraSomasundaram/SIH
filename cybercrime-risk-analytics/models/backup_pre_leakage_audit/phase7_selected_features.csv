@@ -1,0 +1,67 @@
+feature,dtype,feature_type,selected,reason
+case_id,str,Excluded,False,Quarantined: target / outcome metadata / ID / PII
+crime_type,str,Crime Typology,True,Certified safe crime typology feature
+fraud_amount,float64,Financial,True,Certified safe financial risk predictor
+reported_by_authority,int64,Temporal,True,Certified safe calendar/temporal feature
+victim_state,str,General,True,Certified general safe predictor
+victim_district,str,Geographic,True,Certified safe geographic predictor
+victim_area,str,Geographic,True,Certified safe geographic predictor
+victim_area_id,str,Geographic,True,Certified safe geographic predictor
+latitude,float64,Geographic,True,Certified safe geographic predictor
+longitude,float64,Geographic,True,Certified safe geographic predictor
+event_year,int64,Temporal,True,Certified safe calendar/temporal feature
+event_month,int64,Temporal,True,Certified safe calendar/temporal feature
+event_day,int64,Temporal,True,Certified safe calendar/temporal feature
+event_day_of_month,int64,Temporal,True,Certified safe calendar/temporal feature
+event_day_of_week,int64,Temporal,True,Certified safe calendar/temporal feature
+event_hour,int64,Temporal,True,Certified safe calendar/temporal feature
+event_minute,int64,Temporal,True,Certified safe calendar/temporal feature
+is_weekend,int64,Temporal,True,Certified safe calendar/temporal feature
+is_month_start,int64,Temporal,True,Certified safe calendar/temporal feature
+is_month_end,int64,Temporal,True,Certified safe calendar/temporal feature
+is_quarter_start,int64,Temporal,True,Certified safe calendar/temporal feature
+is_quarter_end,int64,Temporal,True,Certified safe calendar/temporal feature
+hour_group,str,Temporal,True,Certified safe calendar/temporal feature
+time_period,str,Temporal,True,Certified safe calendar/temporal feature
+latitude_rounded,float64,Geographic,True,Certified safe geographic predictor
+longitude_rounded,float64,Geographic,True,Certified safe geographic predictor
+location_grid,str,Geographic,True,Certified safe geographic predictor
+coordinate_precision,str,General,True,Certified general safe predictor
+geographic_region,str,Geographic,True,Certified safe geographic predictor
+crime_category_group,str,Crime Typology,True,Certified safe crime typology feature
+is_financial_fraud,int64,Crime Typology,True,Certified safe crime typology feature
+is_online_fraud,int64,Crime Typology,True,Certified safe crime typology feature
+is_identity_related,int64,Geographic,True,Certified safe geographic predictor
+is_transaction_related,int64,Geographic,True,Certified safe geographic predictor
+amount_log1p,float64,Financial,True,Certified safe financial risk predictor
+amount_is_zero,int64,Financial,True,Certified safe financial risk predictor
+amount_is_high,int64,Financial,True,Certified safe financial risk predictor
+amount_category,str,Financial,True,Certified safe financial risk predictor
+previous_event_count,int64,Temporal,True,Certified safe calendar/temporal feature
+time_since_previous_event_hours,float64,Temporal,True,Certified safe calendar/temporal feature
+events_in_previous_1_day,int64,Historical,True,Certified safe historical/rolling/completeness feature
+events_in_previous_3_days,int64,Historical,True,Certified safe historical/rolling/completeness feature
+events_in_previous_7_days,int64,Historical,True,Certified safe historical/rolling/completeness feature
+events_in_previous_30_days,int64,Historical,True,Certified safe historical/rolling/completeness feature
+previous_activity_by_location,int64,Historical,True,Certified safe historical/rolling/completeness feature
+previous_activity_by_district,int64,Geographic,True,Certified safe geographic predictor
+previous_activity_by_crime_category,int64,Crime Typology,True,Certified safe crime typology feature
+rolling_event_count_1h,int64,Temporal,True,Certified safe calendar/temporal feature
+rolling_event_count_6h,int64,Temporal,True,Certified safe calendar/temporal feature
+rolling_event_count_24h,int64,Temporal,True,Certified safe calendar/temporal feature
+rolling_event_count_7d,int64,Temporal,True,Certified safe calendar/temporal feature
+rolling_location_event_count_24h,int64,Temporal,True,Certified safe calendar/temporal feature
+rolling_crime_event_count_7d,int64,Crime Typology,True,Certified safe crime typology feature
+location_total_previous_events,int64,Historical,True,Certified safe historical/rolling/completeness feature
+location_previous_24h_events,int64,Historical,True,Certified safe historical/rolling/completeness feature
+location_previous_7d_events,int64,Historical,True,Certified safe historical/rolling/completeness feature
+district_previous_24h_events,int64,Geographic,True,Certified safe geographic predictor
+district_previous_7d_events,int64,Geographic,True,Certified safe geographic predictor
+location_unique_crime_categories,int64,Crime Typology,True,Certified safe crime typology feature
+has_location,int64,Historical,True,Certified safe historical/rolling/completeness feature
+has_timestamp,int64,Historical,True,Certified safe historical/rolling/completeness feature
+has_amount,int64,Financial,True,Certified safe financial risk predictor
+has_crime_category,int64,Crime Typology,True,Certified safe crime typology feature
+has_district,int64,Geographic,True,Certified safe geographic predictor
+missing_coordinate_flag,int64,Historical,True,Certified safe historical/rolling/completeness feature
+future_withdrawal,int64,Excluded,False,Quarantined: target / outcome metadata / ID / PII

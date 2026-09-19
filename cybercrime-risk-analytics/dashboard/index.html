@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cybercrime Risk Analytics Dashboard — Problem Statement ID 26184</title>
+  <meta name="description" content="Cybercrime Risk Analytics GIS Intelligence Dashboard. Predictive Analytics Framework for Cash Withdrawal Risk Intelligence." />
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <!-- MarkerCluster CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" crossorigin="" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" crossorigin="" />
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Dashboard CSS -->
+  <link rel="stylesheet" href="/dashboard/css/dashboard.css" />
+</head>
+<body>
+
+<!-- ─── 1. Header & Top Navigation (Single Compact Row) ────────────────── -->
+<header class="header">
+  <div class="header-left">
+    <div class="header-logo">
+      <span class="logo-icon">⬡</span>
+      <div class="header-brand-text">
+        <div class="header-title">Cybercrime Risk Analytics</div>
+        <div class="header-subtitle">Problem Statement ID 26184 | Predictive Analytics Framework</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Center Navigation Tabs -->
+  <nav class="header-nav" id="top-nav" aria-label="Main Navigation">
+    <button class="nav-tab active" data-nav="overview" id="nav-overview">Overview</button>
+    <button class="nav-tab" data-nav="map" id="nav-map">Risk Map</button>
+    <button class="nav-tab" data-nav="alerts" id="nav-alerts">Alerts</button>
+    <button class="nav-tab" data-nav="hotspots" id="nav-hotspots">Hotspots</button>
+    <button class="nav-tab" data-nav="mule-patterns" id="nav-mule-patterns">Mule Indicators</button>
+    <a class="nav-tab nav-link" href="/analyst/investigation.html" target="_blank" title="Authorized Analyst Investigation Workspace">Investigations <span class="ext-icon">↗</span></a>
+    <button class="nav-tab" data-nav="model-intel" id="nav-model-intel">Model Intelligence</button>
+    <a class="nav-tab nav-link" href="/analyst/audit.html" target="_blank" title="Non-Repudiable Investigation Audit Ledger">Audit Log <span class="ext-icon">↗</span></a>
+  </nav>
+
+  <!-- Right: Status pills, clock, user menu -->
+  <div class="header-right">
+    <div class="header-status-badge" id="hdr-system-badge" title="Live subsystem connectivity telemetry">
+      <span class="status-pulse-dot online" id="hdr-pulse-dot"></span>
+      <span id="hdr-status-text">SYSTEM ONLINE</span>
+    </div>
+    <span class="badge badge-prototype" title="Synthetic and historical decision-support data">PROTOTYPE – ANONYMIZED DATA</span>
+    <span id="hdr-time" class="header-time"></span>
+    <div class="user-menu-wrapper" id="user-menu-wrapper">
+      <button class="header-user-badge" id="btn-user-profile" title="View Analyst Profile & Session">
+        <span class="user-avatar">AD</span>
+        <span class="user-role">Analyst ▾</span>
+      </button>
+      <div class="user-dropdown-menu" id="user-dropdown-menu" style="display:none;">
+        <div class="user-dropdown-header">
+          <div class="user-dp-name">Authorized Risk Analyst</div>
+          <div class="user-dp-role">Role: Lead Investigator (SOC Tier 2)</div>
+          <div class="user-dp-session font-mono">Session: PS26184-AUTH-ACTIVE</div>
+        </div>
+        <div class="user-dropdown-divider"></div>
+        <a class="user-dp-link" href="/analyst/investigation.html" target="_blank">Investigation Workspace ↗</a>
+        <a class="user-dp-link" href="/analyst/audit.html" target="_blank">Immutable Audit Ledger ↗</a>
+        <a class="user-dp-link" href="/analyst/alerts.html" target="_blank">Alert Queue Triage ↗</a>
+        <div class="user-dropdown-divider"></div>
+        <button class="user-dp-btn-logout" id="btn-user-logout">Switch Analyst / Logout</button>
+      </div>
+    </div>
+    <button class="btn btn-sm btn-outline btn-refresh-hdr" id="btn-refresh" title="Refresh dashboard data">⟳</button>
+    <button class="btn-mobile-nav" id="btn-mobile-nav" title="Toggle Navigation Menu" aria-label="Toggle navigation">☰</button>
+  </div>
+</header>
+
+<!-- ─── 2. Main Dashboard Content (Compact, No Scrolling Before Map) ──── -->
+<main class="dashboard-container">
+
+  <!-- Compact Page Title Strip -->
+  <div class="page-intro-strip">
+    <div class="intro-left">
+      <h1 class="page-title">Executive Predictive Intelligence &amp; Spatial Risk Overview</h1>
+      <p class="page-desc">Authorized Analytical Decision-Support Framework for Forecasting Cash Withdrawal Locations · South India Jurisdiction</p>
+    </div>
+    <div class="intro-actions">
+      <button class="btn btn-xs btn-secondary" id="btn-open-sys-health" title="Inspect subsystem connectivity">Subsystem Health</button>
+      <button class="btn btn-xs btn-secondary" id="btn-open-complaint-modal" title="Submit dynamic complaint intake & run live prediction">➕ Dynamic Complaint Intake</button>
+      <button class="btn btn-xs btn-primary" id="btn-open-model-modal-top" title="Inspect model architecture &amp; SHAP">Model Intelligence</button>
+    </div>
+  </div>
+
+  <!-- ─── 2. KPI Summary Row (6 Equal-Width Cards) ─────────────────────── -->
+  <section class="section-kpis" id="section-overview">
+    <div class="kpi-grid-6">
+      <div class="kpi-card" id="kpi-total" title="Total historical complaints scored by XGBoost">
+        <div class="kpi-top">
+          <span class="kpi-icon" aria-hidden="true">📁</span>
+          <div class="kpi-label">ANALYTICAL RECORDS</div>
+        </div>
+        <div class="kpi-value" id="kpi-total-val">—</div>
+        <div class="kpi-sub">Evaluated historical complaints</div>
+      </div>
+      <div class="kpi-card kpi-high" id="kpi-high" title="Individual records with model risk score 60–79">
+        <div class="kpi-top">
+          <span class="kpi-icon" aria-hidden="true">⚠️</span>
+          <div class="kpi-label">HIGH-RISK RECORDS</div>
+        </div>
+        <div class="kpi-value" id="kpi-high-val">—</div>
+        <div class="kpi-sub">Model risk score: 60–79</div>
+      </div>
+      <div class="kpi-card kpi-critical" id="kpi-critical" title="Individual records with model risk score 80–100">
+        <div class="kpi-top">
+          <span class="kpi-icon" aria-hidden="true">🚨</span>
+          <div class="kpi-label">CRITICAL-RISK RECORDS</div>
+        </div>
+        <div class="kpi-value" id="kpi-critical-val">—</div>
+        <div class="kpi-sub">Model risk score: 80–100</div>
+      </div>
+      <div class="kpi-card kpi-hotspot" id="kpi-hotspot" title="Total DBSCAN spatial clusters identified">
+        <div class="kpi-top">
+          <span class="kpi-icon" aria-hidden="true">◉</span>
+          <div class="kpi-label">ANALYTICAL HOTSPOTS</div>
+        </div>
+        <div class="kpi-value" id="kpi-hotspot-val">—</div>
+        <div class="kpi-sub">DBSCAN clusters (eps=500m)</div>
+      </div>
+      <div class="kpi-card" id="kpi-avg-risk" title="Average XGBoost predicted risk score (0–100)">
+        <div class="kpi-top">
+          <span class="kpi-icon" aria-hidden="true">📊</span>
+          <div class="kpi-label">AVERAGE MODEL RISK</div>
+        </div>
+        <div class="kpi-value" id="kpi-avg-risk-val">—</div>
+        <div class="kpi-sub">Average model score (0–100)</div>
+      </div>
+      <div class="kpi-card" id="kpi-area" title="Jurisdiction with highest average predicted risk">
+        <div class="kpi-top">
+          <span class="kpi-icon" aria-hidden="true">📍</span>
+          <div class="kpi-label">AREA WITH HIGHEST AVERAGE MODEL RISK</div>
+        </div>
+        <div class="kpi-value kpi-small" id="kpi-area-val">—</div>
+        <div class="kpi-sub">Peak average risk jurisdiction</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 3. Alert Summary Card (Visually Distinct from Records) ────────── -->
+  <section class="section-alert-summary" id="section-alert-summary">
+    <div class="alert-summary-card">
+      <div class="alert-summary-left">
+        <div class="alert-summary-head">
+          <span class="card-icon">🔔</span>
+          <span class="alert-summary-title">Analytical Alerts (Operational Queue)</span>
+          <span class="alert-total-pill"><strong id="alert-total-cnt">0</strong> Total Alerts</span>
+        </div>
+        <div class="alert-kpi-chips">
+          <div class="alert-kpi-chip kpi-crit" title="Critical priority alerts">
+            <span class="kpi-num" id="alert-crit-cnt">0</span> Critical
+          </div>
+          <div class="alert-kpi-chip kpi-hi" title="High priority alerts">
+            <span class="kpi-num" id="alert-high-cnt">0</span> High
+          </div>
+          <div class="alert-kpi-chip kpi-mod" title="Moderate priority alerts">
+            <span class="kpi-num" id="alert-mod-cnt">0</span> Moderate
+          </div>
+          <div class="alert-kpi-chip kpi-new" title="New unacknowledged alerts">
+            <span class="kpi-num" id="alert-new-cnt">0</span> New
+          </div>
+          <div class="alert-kpi-chip kpi-rev" title="Alerts currently under analyst review">
+            <span class="kpi-num" id="alert-rev-cnt">0</span> In Review
+          </div>
+        </div>
+      </div>
+      <div class="alert-summary-note">
+        <em>Distinction: Risk Records are scored data; Generated Alerts are operational triage tasks requiring human review.</em>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 4. Filter Bar (Single Horizontal Row) ────────────────────────── -->
+  <section class="section-filter-bar" id="section-filter-bar">
+    <div class="filter-toolbar-single" id="filter-toolbar">
+      <div class="filter-left-group">
+        <!-- Date Range -->
+        <div class="filter-field filter-date-field">
+          <span class="filter-field-label">Date Range:</span>
+          <div class="date-preset-wrap">
+            <button class="btn-tb-preset" data-preset="7d">7d</button>
+            <button class="btn-tb-preset" data-preset="30d">30d</button>
+            <button class="btn-tb-preset" data-preset="90d">90d</button>
+            <button class="btn-tb-preset active" data-preset="all">All</button>
+          </div>
+          <div class="date-inputs-wrap">
+            <input type="date" class="tb-input-date" id="tb-filter-start" title="Start Date" />
+            <span class="tb-sep">→</span>
+            <input type="date" class="tb-input-date" id="tb-filter-end" title="End Date" />
+          </div>
+        </div>
+
+        <!-- Crime Category Dropdown -->
+        <div class="filter-field">
+          <span class="filter-field-label">Crime:</span>
+          <select class="tb-select" id="tb-filter-crime-category" title="Crime Category">
+            <option value="">All Crime Categories</option>
+          </select>
+        </div>
+
+        <!-- Risk Category Dropdown -->
+        <div class="filter-field">
+          <span class="filter-field-label">Risk:</span>
+          <select class="tb-select" id="tb-filter-risk-category" title="Risk Category">
+            <option value="">All Risk Tiers</option>
+            <option value="CRITICAL">CRITICAL (80–100)</option>
+            <option value="HIGH">HIGH (60–79)</option>
+            <option value="MODERATE">MODERATE (40–59)</option>
+            <option value="LOW">LOW (0–39)</option>
+          </select>
+        </div>
+
+        <!-- Hotspot Dropdown -->
+        <div class="filter-field">
+          <span class="filter-field-label">Hotspot:</span>
+          <select class="tb-select" id="tb-filter-hotspot-id" title="Analytical Hotspot">
+            <option value="">All Hotspots</option>
+          </select>
+        </div>
+
+        <!-- Hotspots Only Toggle -->
+        <div class="filter-field filter-toggle-field">
+          <label class="tb-checkbox-label" title="Show only incidents falling within DBSCAN analytical clusters">
+            <input type="checkbox" id="tb-filter-hotspot-only" />
+            <span>Hotspots Only</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="filter-right-actions">
+        <button class="btn btn-sm btn-primary" id="btn-tb-apply">Apply Filters</button>
+        <button class="btn btn-sm btn-ghost" id="btn-tb-reset">Reset</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 5. Main Map Section (Large Map Left ~68%, 2 Stacked Cards Right ~32%) -->
+  <section class="section-map" id="section-map">
+    <div class="map-layout-grid">
+      <!-- Left: Large GIS Map Container (~68% width) -->
+      <div class="map-container-card">
+        <div class="map-card-header">
+          <div class="map-header-title-group">
+            <span class="card-icon">🗺</span>
+            <div>
+              <h2 class="map-heading">Geospatial Risk Intelligence</h2>
+              <p class="map-subheading">Model-derived predictive risk and historical analytical hotspot distribution</p>
+            </div>
+          </div>
+          <div class="map-header-actions">
+            <div class="map-info-bar-inline">
+              <span id="map-event-count">— events</span>
+              <span class="sep">·</span>
+              <span id="map-cluster-count">40 hotspots</span>
+              <span class="sep">·</span>
+              <span class="data-label">Historical/Prototype</span>
+            </div>
+            <button class="btn btn-sm btn-outline" id="btn-fullscreen-map" title="Toggle Fullscreen Map View">⛶ Fullscreen</button>
+          </div>
+        </div>
+
+        <div class="map-wrap" id="map-wrap">
+          <div id="map"></div>
+          <!-- Banner if filters return 0 records -->
+          <div id="map-notification-banner" class="map-notification-banner" style="display:none;"></div>
+        </div>
+      </div>
+
+      <!-- Right: Stacked Cards Column (~32% width) -->
+      <div class="map-sidebar-stack">
+        <!-- Card 1: Map Legend Card -->
+        <div class="map-sidebar-card" id="map-legend">
+          <div class="sidebar-card-header">
+            <div class="sidebar-card-title">
+              <span class="card-icon">📊</span>
+              <span>Map Legend</span>
+            </div>
+            <span class="legend-badge-model">XGBoost &amp; DBSCAN</span>
+          </div>
+          <div class="sidebar-card-body">
+            <div class="legend-subhead">RISK LEVEL</div>
+            <div class="legend-scale-grid">
+              <div class="legend-tier-item tier-low">
+                <span class="legend-dot low"></span>
+                <div class="tier-info">
+                  <span class="tier-name">LOW</span>
+                  <span class="legend-range">0–39</span>
+                </div>
+              </div>
+              <div class="legend-tier-item tier-mod">
+                <span class="legend-dot moderate"></span>
+                <div class="tier-info">
+                  <span class="tier-name">MODERATE</span>
+                  <span class="legend-range">40–59</span>
+                </div>
+              </div>
+              <div class="legend-tier-item tier-high">
+                <span class="legend-dot high"></span>
+                <div class="tier-info">
+                  <span class="tier-name">HIGH</span>
+                  <span class="legend-range">60–79</span>
+                </div>
+              </div>
+              <div class="legend-tier-item tier-crit">
+                <span class="legend-dot critical"></span>
+                <div class="tier-info">
+                  <span class="tier-name">CRITICAL</span>
+                  <span class="legend-range">80–100</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="legend-subhead" style="margin-top:10px;">HEATMAP DENSITY &amp; RISK SCALE</div>
+            <div class="legend-heat-bar-wrap">
+              <div class="legend-heat-bar"></div>
+              <div class="legend-heat-labels">
+                <span>Low Risk</span>
+                <span>Moderate</span>
+                <span>High</span>
+                <span>Critical</span>
+              </div>
+            </div>
+            <div class="legend-active-metric-note">
+              Active Heatmap: <strong id="legend-active-metric">Predictive Risk Density (XGBoost)</strong>
+            </div>
+
+            <div class="legend-subhead" style="margin-top:10px;">SPATIAL MODEL LAYERS</div>
+            <div class="model-layer-toggles">
+              <label class="model-layer-item" for="toggle-xgb-layer">
+                <div class="model-layer-info">
+                  <span class="badge-dot-xgb">⬡</span>
+                  <div>
+                    <div class="model-layer-name">XGBoost Predictive Risk</div>
+                    <div class="model-layer-desc">Forecasts 24h cash withdrawal likelihood</div>
+                  </div>
+                </div>
+                <input type="checkbox" id="toggle-xgb-layer" checked class="modern-toggle" />
+              </label>
+              <label class="model-layer-item" for="toggle-dbs-layer">
+                <div class="model-layer-info">
+                  <span class="badge-dot-dbs">◉</span>
+                  <div>
+                    <div class="model-layer-name">DBSCAN Analytical Hotspot</div>
+                    <div class="model-layer-desc">Spatial density cluster (eps=500m, MinPts=3)</div>
+                  </div>
+                </div>
+                <input type="checkbox" id="toggle-dbs-layer" checked class="modern-toggle" />
+              </label>
+              <label class="model-layer-item" for="toggle-predicted-layer">
+                <div class="model-layer-info">
+                  <span class="badge-dot-predicted">🟣</span>
+                  <div>
+                    <div class="model-layer-name">Predicted Cashout Corridors</div>
+                    <div class="model-layer-desc">Estimated cashout areas &amp; physical ATMs (5 km)</div>
+                  </div>
+                </div>
+                <input type="checkbox" id="toggle-predicted-layer" class="modern-toggle" />
+              </label>
+            </div>
+            
+            <div class="legend-subhead" style="margin-top:10px;">MAP SYMBOLS</div>
+            <div class="legend-symbols-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:0.75rem;padding:4px 0;">
+              <div style="display:flex;align-items:center;gap:6px;"><span style="color:#a855f7;">🟣</span><span>Predicted Corridor</span></div>
+              <div style="display:flex;align-items:center;gap:6px;"><span style="color:#38bdf8;">🏧</span><span>Nearby ATM</span></div>
+              <div style="display:flex;align-items:center;gap:6px;"><span style="color:#06b6d4;">⭕</span><span>5 km Catchment</span></div>
+              <div style="display:flex;align-items:center;gap:6px;"><span style="color:#ef4444;">⚠️</span><span>Active Alert</span></div>
+            </div>
+
+            <div class="legend-notice">
+              <em>Notice: DBSCAN identifies spatial concentrations only; predicted corridors are estimated risk areas based on historical patterns and model results. Not confirmed criminal or withdrawal locations.</em>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Layer Controls Card -->
+        <div class="map-sidebar-card" id="map-layer-controls">
+          <div class="sidebar-card-header">
+            <div class="sidebar-card-title">
+              <span class="card-icon">⚡</span>
+              <span>Layer Controls</span>
+            </div>
+            <button class="btn btn-xs btn-outline" id="btn-reset-map-view" title="Reset map to default viewport">Reset View</button>
+          </div>
+          <div class="sidebar-card-body">
+            <div class="layer-checkbox-list">
+              <label class="layer-control-check" for="layer-heatmap">
+                <input type="checkbox" id="layer-heatmap" checked />
+                <span class="layer-color-indicator heat-ind"></span>
+                <span class="layer-check-label">Predictive Risk Heatmap</span>
+              </label>
+              <label class="layer-control-check" for="layer-hotspots">
+                <input type="checkbox" id="layer-hotspots" checked />
+                <span class="layer-color-indicator hotspot-ind"></span>
+                <span class="layer-check-label">Analytical Hotspots (DBSCAN)</span>
+              </label>
+              <label class="layer-control-check" for="layer-predicted-locations">
+                <input type="checkbox" id="layer-predicted-locations" />
+                <span class="layer-color-indicator predicted-ind"></span>
+                <span class="layer-check-label">Predicted Cashout Corridors</span>
+              </label>
+              <label class="layer-control-check" for="layer-events">
+                <input type="checkbox" id="layer-events" />
+                <span class="layer-color-indicator events-ind"></span>
+                <span class="layer-check-label">Risk Markers (All Events)</span>
+              </label>
+              <label class="layer-control-check" for="layer-alerts">
+                <input type="checkbox" id="layer-alerts" checked />
+                <span class="layer-color-indicator alert-ind"></span>
+                <span class="layer-check-label">Active Analytical Alerts</span>
+              </label>
+              <label class="layer-control-check" for="layer-high-risk">
+                <input type="checkbox" id="layer-high-risk" />
+                <span class="layer-color-indicator high-ind"></span>
+                <span class="layer-check-label">High / Critical Tiers Only</span>
+              </label>
+            </div>
+
+            <div class="layer-control-metric">
+              <label for="heatmap-metric-select" class="metric-label">Heatmap Metric:</label>
+              <select id="heatmap-metric-select" class="tb-select-sm" title="Choose analytical intensity for spatial heatmap">
+                <option value="risk" selected>Predictive Risk (XGBoost)</option>
+                <option value="density">Incident Density (Volume)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Predicted Cashout Corridors Options & Filters -->
+        <div class="map-sidebar-card" id="card-predicted-options">
+          <div class="sidebar-card-header">
+            <div class="sidebar-card-title">
+              <span class="card-icon">📍</span>
+              <span>Corridor Options &amp; Filters</span>
+            </div>
+            <span class="badge badge-subtle" id="corridor-status-badge">Off</span>
+          </div>
+          <div class="sidebar-card-body">
+            <div class="corridor-filter-row" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+              <label for="filter-corridor-risk" class="control-label-sm" style="font-size:0.75rem;color:var(--text-dim);">Min Priority / Risk:</label>
+              <select id="filter-corridor-risk" class="tb-select-sm" style="font-size:0.75rem;padding:2px 6px;">
+                <option value="ALL" selected>All Priorities</option>
+                <option value="CRITICAL">Critical Only (Score ≥ 75)</option>
+                <option value="HIGH">High &amp; Critical (Score ≥ 50)</option>
+                <option value="MODERATE">Moderate &amp; Above (Score ≥ 30)</option>
+              </select>
+            </div>
+            <div class="corridor-filter-row" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+              <label for="filter-corridor-limit" class="control-label-sm" style="font-size:0.75rem;color:var(--text-dim);">Max Corridors (Top-K):</label>
+              <select id="filter-corridor-limit" class="tb-select-sm" style="font-size:0.75rem;padding:2px 6px;">
+                <option value="5">Top 5 Corridors</option>
+                <option value="10">Top 10 Corridors</option>
+                <option value="25">Top 25 Corridors</option>
+                <option value="50" selected>All 40 Corridors</option>
+              </select>
+            </div>
+            <div class="corridor-subtoggles" style="display:flex;gap:14px;font-size:0.75rem;padding-top:4px;border-top:1px solid var(--border-dim);margin-top:8px;">
+              <label style="display:flex;align-items:center;gap:5px;cursor:pointer;">
+                <input type="checkbox" id="toggle-catchment-circles" checked />
+                <span>5 km Catchments</span>
+              </label>
+              <label style="display:flex;align-items:center;gap:5px;cursor:pointer;">
+                <input type="checkbox" id="toggle-atm-markers" checked />
+                <span>Nearby ATMs</span>
+              </label>
+            </div>
+            <div id="corridor-loading" class="corridor-status-msg" style="display:none;margin-top:10px;font-size:0.75rem;color:var(--accent-blue);">
+              <span>⏳ Loading predicted cashout corridors...</span>
+            </div>
+            <div id="corridor-empty" class="corridor-status-msg" style="display:none;margin-top:10px;font-size:0.75rem;color:var(--text-muted);">
+              <span>ℹ️ No predicted cashout corridors are currently available.</span>
+            </div>
+            <div id="corridor-error" class="corridor-status-msg" style="display:none;margin-top:10px;font-size:0.75rem;color:var(--accent-red);">
+              <span>⚠️ Unable to load predicted cashout locations.</span> <button id="btn-retry-corridors" class="btn btn-xs btn-outline" style="margin-left:6px;padding:1px 6px;">Retry</button>
+            </div>
+            <div class="corridor-notice-box" style="margin-top:10px;font-size:0.68rem;color:var(--text-muted);border-left:2px solid var(--accent-amber);padding-left:8px;line-height:1.4;">
+              <em>Notice: Estimated risk areas based on historical spatial patterns and model results. Not confirmed criminal or withdrawal locations.</em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 6. Supporting Chart Grid (4 Equal-Width Cards in a Row) ───────── -->
+  <section class="section-charts" id="section-charts">
+    <div class="charts-grid-4">
+      <div class="chart-card">
+        <div class="chart-header">
+          <span class="chart-icon">🍩</span>
+          <span class="chart-title">Risk Category Distribution</span>
+        </div>
+        <div class="chart-canvas-wrap">
+          <canvas id="chart-risk-dist"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header">
+          <span class="chart-icon">📊</span>
+          <span class="chart-title">Crime Category Breakdown</span>
+        </div>
+        <div class="chart-canvas-wrap">
+          <canvas id="chart-crime-cat"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header">
+          <span class="chart-icon">⏱</span>
+          <span class="chart-title">Hourly Activity in Hotspots</span>
+        </div>
+        <div class="chart-canvas-wrap">
+          <canvas id="chart-hourly"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header">
+          <span class="chart-icon">📍</span>
+          <span class="chart-title">Top Districts by Events</span>
+        </div>
+        <div class="chart-canvas-wrap">
+          <canvas id="chart-districts"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 7. Recent Alerts Section (Operational Table with View All Link) ─ -->
+  <section class="section-alerts" id="alerts-section">
+    <div class="card-table-wrap">
+      <div class="card-table-header">
+        <div class="card-table-title-group">
+          <span class="card-icon">🚨</span>
+          <div>
+            <h3 class="card-table-title">Recent Operational Alerts</h3>
+            <p class="card-table-sub">Prioritized complaint signals awaiting triage or authorized investigation</p>
+          </div>
+        </div>
+        <div class="card-table-actions">
+          <button class="btn btn-sm btn-outline" id="btn-generate-alerts">⟳ Generate Alerts</button>
+          <a class="btn btn-sm btn-secondary" href="/analyst/alerts.html" target="_blank" id="link-view-all-alerts">View All ↗</a>
+        </div>
+      </div>
+      <div class="alerts-feed" id="alerts-feed">
+        <div class="loading-text">Loading alerts…</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 8. Priority Analytical Areas (DBSCAN Hotspots Grid) ───────────── -->
+  <section class="section-hotspots" id="section-hotspots">
+    <div class="card-table-wrap">
+      <div class="card-table-header">
+        <div class="card-table-title-group">
+          <span class="card-icon">🎯</span>
+          <div>
+            <h3 class="card-table-title">Priority Analytical Areas (DBSCAN Hotspots)</h3>
+            <p class="card-table-sub">Unsupervised spatial clusters ranked by historical concentration and average model risk</p>
+          </div>
+        </div>
+        <div class="card-table-actions">
+          <span class="badge badge-prototype">40 Clusters Identified</span>
+        </div>
+      </div>
+      <div id="priority-list" class="priority-list-grid">
+        <div class="loading-text">Loading hotspots…</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 8b. Mule-Pattern Indicators Section (Heuristic Fan-In Analysis) ─ -->
+  <section class="section-mule-patterns" id="section-mule-patterns">
+    <div class="card-table-wrap">
+      <div class="card-table-header">
+        <div class="card-table-title-group">
+          <span class="card-icon">🔄</span>
+          <div>
+            <h3 class="card-table-title">Accounts with Elevated Mule-Pattern Indicators</h3>
+            <p class="card-table-sub">Heuristic fan-in pattern analysis (rapid multi-source deposits within 72h window) · Rule-based signal only, not a confirmed finding</p>
+          </div>
+        </div>
+        <div class="card-table-actions">
+          <span class="badge badge-prototype" id="mule-count-badge">Loading...</span>
+        </div>
+      </div>
+      <div class="table-responsive" id="mule-patterns-table-wrap">
+        <table class="alerts-table">
+          <thead>
+            <tr>
+              <th>Account ID (Masked)</th>
+              <th>72h Distinct Senders</th>
+              <th>Total Distinct Senders</th>
+              <th>Avg Deposit Gap</th>
+              <th>Heuristic Pattern Score</th>
+              <th>Signal Status</th>
+            </tr>
+          </thead>
+          <tbody id="mule-patterns-tbody">
+            <tr>
+              <td colspan="6" class="loading-text" style="text-align:center;padding:24px;">Loading heuristic mule-pattern accounts…</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="padding: 10px 16px; background: rgba(255,255,255,0.02); border-top: 1px solid var(--border-subtle); font-size: 11px; color: var(--text-muted); display: flex; align-items: flex-start; gap: 8px;">
+        <span style="color: var(--risk-moderate); font-size: 14px; line-height: 1;">⚠️</span>
+        <div>
+          <strong style="color: var(--text-secondary);">Method:</strong> <span class="font-mono">rule_based_heuristic_fan_in_pattern</span> &nbsp;|&nbsp;
+          <strong style="color: var(--text-secondary);">Compliance Notice:</strong> Simplified heuristic indicator only — not a validated mule detection system. Does not establish account involvement in fraud. Multi-hop graph-based tracing is a planned future capability, not implemented here.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 9. Investigation Lifecycle Stepper ────────────────────────────── -->
+  <section class="section-workflow" id="section-workflow">
+    <div class="workflow-card">
+      <div class="workflow-header">
+        <span class="section-badge">DECISION-SUPPORT GOVERNANCE</span>
+        <span class="workflow-title">Investigation Lifecycle Workflow</span>
+      </div>
+      <div class="workflow-stepper">
+        <div class="wf-step active" id="wf-step-new" title="New analytical signal generated">
+          <span class="wf-num">1</span>
+          <span class="wf-text">NEW ALERT</span>
+        </div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-step" id="wf-step-ack" title="Acknowledged by authorized analyst">
+          <span class="wf-num">2</span>
+          <span class="wf-text">ACKNOWLEDGED</span>
+        </div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-step" id="wf-step-rev" title="Under active analytical investigation">
+          <span class="wf-num">3</span>
+          <span class="wf-text">IN REVIEW</span>
+        </div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-step" id="wf-step-val" title="Pending operational validation">
+          <span class="wf-num">4</span>
+          <span class="wf-text">VALIDATION</span>
+        </div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-step" id="wf-step-res" title="Closed with action taken or dismissed">
+          <span class="wf-num">5</span>
+          <span class="wf-text">RESOLVED</span>
+        </div>
+      </div>
+      <div class="wf-subtext">
+        Authorized analyst decision-support lifecycle. All transitions audited.
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ─── 10. Slide-Over Detail Drawers ───────────────────────────────────── -->
+<!-- Hotspot Detail Drawer -->
+<div class="detail-panel" id="detail-panel">
+  <div class="detail-header">
+    <span class="detail-title" id="detail-title">Hotspot Detail</span>
+    <button class="btn-close" id="detail-close" title="Close">✕</button>
+  </div>
+  <div class="detail-body" id="detail-body"></div>
+</div>
+
+<!-- Analytical Alert Detail Drawer -->
+<div class="detail-panel alert-detail-panel" id="alert-detail-panel">
+  <div class="detail-header">
+    <span class="detail-title" id="alert-detail-title">Analytical Alert Detail</span>
+    <button class="btn-close" id="alert-detail-close" title="Close">✕</button>
+  </div>
+  <div class="detail-body" id="alert-detail-body"></div>
+</div>
+
+<!-- ─── 11. Subsystem Health Modal ──────────────────────────────────────── -->
+<div class="modal-overlay" id="system-status-modal" style="display:none;">
+  <div class="modal-card" style="max-width:580px;">
+    <div class="modal-header">
+      <div>
+        <span class="modal-chip">CONNECTIVITY TELEMETRY</span>
+        <h2>Subsystem Health Verification</h2>
+        <p>Live status checks across backend microservices and storage adapters</p>
+      </div>
+      <button class="modal-close-btn" id="btn-close-sys-modal" title="Close">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="system-status-card" id="system-status-card">
+        <div class="status-row">
+          <span class="status-label">ML Model (XGBoost)</span>
+          <span class="status-badge" id="status-ml-model">CHECKING…</span>
+        </div>
+        <div class="status-row">
+          <span class="status-label">Prediction API</span>
+          <span class="status-badge" id="status-pred-api">CHECKING…</span>
+        </div>
+        <div class="status-row">
+          <span class="status-label">PostgreSQL Database</span>
+          <span class="status-badge" id="status-postgres">CHECKING…</span>
+        </div>
+        <div class="status-row">
+          <span class="status-label">PostGIS Spatial Engine</span>
+          <span class="status-badge" id="status-postgis">CHECKING…</span>
+        </div>
+        <div class="status-row">
+          <span class="status-label">Hotspot Engine (DBSCAN)</span>
+          <span class="status-badge" id="status-hotspots">CHECKING…</span>
+        </div>
+        <div class="status-row">
+          <span class="status-label">Alert &amp; Notification Engine</span>
+          <span class="status-badge" id="status-alerts">CHECKING…</span>
+        </div>
+        <div class="status-row">
+          <span class="status-label">Dashboard API</span>
+          <span class="status-badge" id="status-dashboard">CHECKING…</span>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:flex-end;margin-top:8px;">
+        <button class="btn btn-sm btn-primary" id="btn-recheck-status">Recheck Telemetry</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── 12. Dedicated Model Intelligence Modal ──────────────────────────── -->
+<div class="modal-overlay" id="model-intelligence-modal" style="display:none;">
+  <div class="modal-card">
+    <div class="modal-header">
+      <div class="modal-header-text">
+        <span class="modal-chip">MODEL INTELLIGENCE</span>
+        <h2>Predictive Cybercrime Model &amp; Explainability</h2>
+        <p>XGBoost Classifier · 24-Hour Forward-Looking Cashout Likelihood · SHAP TreeExplainer Attributions</p>
+      </div>
+      <button class="modal-close-btn" id="btn-close-model-modal" title="Close">✕</button>
+    </div>
+
+    <div class="modal-body">
+      <!-- Specifications Grid -->
+      <div class="modal-grid">
+        <div class="modal-box">
+          <div class="modal-box-title">Model Architecture</div>
+          <div class="modal-stat-row"><span class="k">Algorithm:</span><span class="v">XGBoost (Gradient Boosted Trees)</span></div>
+          <div class="modal-stat-row"><span class="k">Prediction Target:</span><span class="v font-mono">future_withdrawal (0 or 1)</span></div>
+          <div class="modal-stat-row"><span class="k">Prediction Horizon:</span><span class="v font-mono">24 Hours</span></div>
+          <div class="modal-stat-row"><span class="k">Input Features:</span><span class="v font-mono">64 Predictors</span></div>
+          <div class="modal-stat-row"><span class="k">Decision Threshold:</span><span class="v font-mono">0.50</span></div>
+          <div class="modal-stat-row"><span class="k">Class Weighting:</span><span class="v font-mono">scale_pos_weight = 8.6154</span></div>
+          <div class="modal-stat-row"><span class="k">Artifact Fingerprint:</span><span class="v font-mono">v1.0.0-xgb-668c1916</span></div>
+        </div>
+
+        <div class="modal-box">
+          <div class="modal-box-title">Risk Scoring Framework</div>
+          <div class="modal-stat-row"><span class="k">Calibration:</span><span class="v">Platt Scaling (Sigmoid probability)</span></div>
+          <div class="modal-stat-row"><span class="k">Formula:</span><span class="v font-mono">risk_score = round(P * 100)</span></div>
+          <div class="modal-stat-row"><span class="k">LOW Tier:</span><span class="v" style="color:var(--risk-low)">0–39 (Routine monitoring)</span></div>
+          <div class="modal-stat-row"><span class="k">MODERATE Tier:</span><span class="v" style="color:var(--risk-moderate)">40–59 (Enhanced monitoring)</span></div>
+          <div class="modal-stat-row"><span class="k">HIGH Tier:</span><span class="v" style="color:var(--risk-high)">60–79 (Priority human review)</span></div>
+          <div class="modal-stat-row"><span class="k">CRITICAL Tier:</span><span class="v" style="color:var(--risk-critical)">80–100 (Expedited triage)</span></div>
+          <div class="modal-stat-row"><span class="k">Monotonicity:</span><span class="v">Strictly Verified (Mean P increases)</span></div>
+        </div>
+      </div>
+
+      <!-- SHAP Explainability Section -->
+      <div class="modal-shap-section">
+        <div class="section-label-row">
+          <div class="modal-box-title" style="margin-bottom:0;">Global Feature Attributions (Phase 10 SHAP Analysis)</div>
+          <span class="badge badge-prototype">TreeExplainer Exact Additive Math</span>
+        </div>
+
+        <div class="shap-disclaimer-callout">
+          <strong>Non-Causal Compliance Notice:</strong> The features listed below <em>contributed toward the model prediction</em> within the statistical decision manifold. Feature attributions reflect mathematical impact on model log-odds; they <strong>never caused the crime</strong>, do not establish legal culpability, and require independent operational verification.
+        </div>
+
+        <div class="shap-table-wrap">
+          <table class="shap-table">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Feature Name</th>
+                <th>Mean |SHAP Value|</th>
+                <th>Directional Impact</th>
+                <th>Domain Operational Interpretation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#1</td>
+                <td class="font-mono">previous_activity_by_crime_category</td>
+                <td class="font-mono">0.1743</td>
+                <td><span class="shap-impact-bar"><span class="fill-neg" style="width:75%"></span></span></td>
+                <td>Historical baseline frequency of cyber incidents in matching category or jurisdiction</td>
+              </tr>
+              <tr>
+                <td>#2</td>
+                <td class="font-mono">previous_activity_by_location</td>
+                <td class="font-mono">0.0963</td>
+                <td><span class="shap-impact-bar"><span class="fill-neg" style="width:45%"></span></span></td>
+                <td>Historical baseline frequency of cyber incidents in matching local grid area</td>
+              </tr>
+              <tr>
+                <td>#3</td>
+                <td class="font-mono">previous_activity_by_district</td>
+                <td class="font-mono">0.0857</td>
+                <td><span class="shap-impact-bar"><span class="fill-neg" style="width:40%"></span></span></td>
+                <td>District-level concentration of historical complaints</td>
+              </tr>
+              <tr>
+                <td>#4</td>
+                <td class="font-mono">events_in_previous_7_days</td>
+                <td class="font-mono">0.0830</td>
+                <td><span class="shap-impact-bar"><span class="fill-neg" style="width:38%"></span></span></td>
+                <td>Medium-term incident velocity logged in short rolling temporal windows</td>
+              </tr>
+              <tr>
+                <td>#5</td>
+                <td class="font-mono">rolling_crime_event_count_7d</td>
+                <td class="font-mono">0.0557</td>
+                <td><span class="shap-impact-bar"><span class="fill-pos" style="width:28%"></span></span></td>
+                <td>Category-specific weekly burst intensity</td>
+              </tr>
+              <tr>
+                <td>#6</td>
+                <td class="font-mono">events_in_previous_1_day</td>
+                <td class="font-mono">0.0539</td>
+                <td><span class="shap-impact-bar"><span class="fill-neg" style="width:26%"></span></span></td>
+                <td>Immediate short-term 24-hour activity burst</td>
+              </tr>
+              <tr>
+                <td>#7</td>
+                <td class="font-mono">events_in_previous_30_days</td>
+                <td class="font-mono">0.0470</td>
+                <td><span class="shap-impact-bar"><span class="fill-neg" style="width:22%"></span></span></td>
+                <td>Monthly background activity baseline volume</td>
+              </tr>
+              <tr>
+                <td>#8</td>
+                <td class="font-mono">event_day</td>
+                <td class="font-mono">0.0460</td>
+                <td><span class="shap-impact-bar"><span class="fill-neg" style="width:21%"></span></span></td>
+                <td>Temporal dispatch context and diurnal cybercrime activity timing</td>
+              </tr>
+              <tr>
+                <td>#9</td>
+                <td class="font-mono">fraud_amount</td>
+                <td class="font-mono">0.0404</td>
+                <td><span class="shap-impact-bar"><span class="fill-neg" style="width:19%"></span></span></td>
+                <td>Financial scale and reported loss magnitude of complaint</td>
+              </tr>
+              <tr>
+                <td>#10</td>
+                <td class="font-mono">rolling_event_count_1h</td>
+                <td class="font-mono">0.0385</td>
+                <td><span class="shap-impact-bar"><span class="fill-neg" style="width:18%"></span></span></td>
+                <td>Immediate hourly activity surge indicating syndication spikes</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Interactive Local Explanation Probe -->
+        <div class="interactive-shap-box">
+          <div class="interactive-shap-header">
+            <div>
+              <strong>Interactive Local Explanation Probe</strong>
+              <div style="font-size:11px;color:var(--text-secondary);">Query frozen model TreeExplainer for live local feature contributions.</div>
+            </div>
+            <button class="btn btn-sm btn-primary" id="btn-trigger-sample-explain">View Sample SHAP Explanation</button>
+          </div>
+          <div id="sample-explain-result" class="sample-explain-output">
+            <span class="loading-text">Click "View Sample SHAP Explanation" to run inference through /explain endpoint.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── 12b. Dynamic Complaint Intake & Live Scoring Modal ─────────────────── -->
+<div class="modal-overlay" id="complaint-intake-modal" style="display:none;">
+  <div class="modal-card" style="max-width:920px;">
+    <div class="modal-header">
+      <div class="modal-header-text">
+        <span class="modal-chip">DYNAMIC COMPLAINT INTAKE · END-TO-END PIPELINE</span>
+        <h2>Cybercrime Incident Intake &amp; Predictive Cashout Scoring</h2>
+        <p>Accepts raw complaint fields · Dynamically derives 64 model features · Runs frozen calibrated XGBoost · Generates SHAP explanations · Identifies estimated cashout corridors</p>
+      </div>
+      <button class="modal-close-btn" id="btn-close-complaint-modal" title="Close">✕</button>
+    </div>
+    <div class="modal-body">
+      <!-- Preset Demonstrators Strip -->
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-md);padding:10px 14px;margin-bottom:16px;">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.06em;color:var(--text-secondary);text-transform:uppercase;margin-bottom:8px;">
+          ⚡ Load Synthetic Demonstration Presets (ID 26184)
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <button type="button" class="btn btn-xs btn-secondary" id="btn-preset-upi-high">⚡ Preset: High-Risk UPI Fraud (Chennai · ₹75,000)</button>
+          <button type="button" class="btn btn-xs btn-secondary" id="btn-preset-inv-crit">⚡ Preset: Critical Investment Scam (Bengaluru · ₹2,50,000)</button>
+          <button type="button" class="btn btn-xs btn-secondary" id="btn-preset-dispute-low">⚡ Preset: Low-Risk Dispute (Tirupati · ₹3,500)</button>
+        </div>
+      </div>
+
+      <!-- Complaint Intake Form -->
+      <form id="form-complaint-intake" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <!-- Left Column: Financial & Classification -->
+        <div>
+          <div style="font-size:12px;font-weight:600;color:var(--accent-blue);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.05em;">
+            1. Incident &amp; Transaction Details
+          </div>
+          <div class="form-group" style="margin-bottom:10px;">
+            <label class="form-label" for="cmp-id" style="font-size:11px;">Complaint Reference (Optional)</label>
+            <input class="form-control" type="text" id="cmp-id" placeholder="Leave blank to auto-generate CMP-YYYYMMDD-XXXXXX" style="font-size:12px;padding:6px 10px;" />
+          </div>
+          <div class="form-group" style="margin-bottom:10px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <label class="form-label" for="cmp-timestamp" style="font-size:11px;">Incident Timestamp (ISO 8601)*</label>
+              <button type="button" class="btn btn-xs btn-text" id="btn-set-current-time" style="font-size:10px;padding:0;color:var(--accent-blue);">Set Current UTC</button>
+            </div>
+            <input class="form-control" type="text" id="cmp-timestamp" required placeholder="2026-09-19T14:30:00Z" style="font-size:12px;padding:6px 10px;" />
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+            <div class="form-group">
+              <label class="form-label" for="cmp-amount" style="font-size:11px;">Fraud Loss Amount (INR)*</label>
+              <input class="form-control" type="number" id="cmp-amount" required min="1" step="any" placeholder="75000" style="font-size:12px;padding:6px 10px;" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cmp-channel" style="font-size:11px;">Payment Channel</label>
+              <select class="form-control" id="cmp-channel" style="font-size:12px;padding:6px 10px;">
+                <option value="UPI" selected>UPI</option>
+                <option value="IMPS">IMPS</option>
+                <option value="NEFT">NEFT</option>
+                <option value="RTGS">RTGS</option>
+                <option value="ATM">ATM / Cashout</option>
+                <option value="CARD">Debit / Credit Card</option>
+                <option value="NET_BANKING">Net Banking</option>
+                <option value="WALLET">Prepaid Wallet</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group" style="margin-bottom:10px;">
+            <label class="form-label" for="cmp-category" style="font-size:11px;">Cybercrime Category*</label>
+            <select class="form-control" id="cmp-category" required style="font-size:12px;padding:6px 10px;">
+              <option value="Online Financial Fraud" selected>Online Financial Fraud</option>
+              <option value="UPI_FRAUD">UPI Payment Fraud</option>
+              <option value="INVESTMENT_SCAM">Investment / Trading Scam</option>
+              <option value="PHISHING">Phishing / Social Engineering</option>
+              <option value="IDENTITY_THEFT">Account Takeover / Identity Theft</option>
+              <option value="CYBER_EXTORTION">Cyber Extortion</option>
+              <option value="DATA_THEFT">Data Theft / Ransomware</option>
+            </select>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div class="form-group">
+              <label class="form-label" for="cmp-sender-acc" style="font-size:11px;">Sender Account Ref</label>
+              <input class="form-control" type="text" id="cmp-sender-acc" placeholder="ACC000001" style="font-size:12px;padding:6px 10px;" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cmp-receiver-acc" style="font-size:11px;">Receiver / Mule Ref</label>
+              <input class="form-control" type="text" id="cmp-receiver-acc" placeholder="ACC000999" style="font-size:12px;padding:6px 10px;" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Location & Narrative -->
+        <div>
+          <div style="font-size:12px;font-weight:600;color:var(--accent-blue);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.05em;">
+            2. Incident Location &amp; Coordinates
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+            <div class="form-group">
+              <label class="form-label" for="cmp-state" style="font-size:11px;">State*</label>
+              <select class="form-control" id="cmp-state" required style="font-size:12px;padding:6px 10px;">
+                <option value="Tamil Nadu" selected>Tamil Nadu</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Maharashtra">Maharashtra</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cmp-district" style="font-size:11px;">District*</label>
+              <input class="form-control" type="text" id="cmp-district" required placeholder="Chennai" style="font-size:12px;padding:6px 10px;" />
+            </div>
+          </div>
+          <div class="form-group" style="margin-bottom:10px;">
+            <label class="form-label" for="cmp-city" style="font-size:11px;">City / Area Locality</label>
+            <input class="form-control" type="text" id="cmp-city" placeholder="T Nagar" style="font-size:12px;padding:6px 10px;" />
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+            <div class="form-group">
+              <label class="form-label" for="cmp-lat" style="font-size:11px;">Latitude (WGS 84)</label>
+              <input class="form-control" type="number" id="cmp-lat" step="any" min="-90" max="90" placeholder="13.04" style="font-size:12px;padding:6px 10px;" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cmp-lon" style="font-size:11px;">Longitude (WGS 84)</label>
+              <input class="form-control" type="number" id="cmp-lon" step="any" min="-180" max="180" placeholder="80.23" style="font-size:12px;padding:6px 10px;" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="cmp-desc" style="font-size:11px;">Sanitized Narrative / Synopsis</label>
+            <textarea class="form-control" id="cmp-desc" rows="3" placeholder="Victim reported unauthorized transfer after clicking a fraudulent link. (Do not enter cleartext credentials or PANs)." style="font-size:11px;padding:6px 10px;"></textarea>
+          </div>
+        </div>
+
+        <!-- Form Submission Button -->
+        <div style="grid-column:1 / -1;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);padding-top:12px;margin-top:4px;">
+          <div id="cmp-submit-status" style="font-size:12px;color:var(--text-secondary);">
+            Ready to process complaint via POST /complaints.
+          </div>
+          <div style="display:flex;gap:10px;">
+            <button type="reset" class="btn btn-sm btn-secondary" id="btn-reset-complaint">Reset Form</button>
+            <button type="submit" class="btn btn-sm btn-primary" id="btn-submit-complaint">
+              ▶ Run End-to-End Prediction
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Live Pipeline Results Card (Hidden Until Executed) -->
+      <div id="cmp-results-card" style="display:none;margin-top:20px;border-top:2px solid var(--accent-blue);padding-top:16px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+          <div>
+            <span class="modal-chip">PIPELINE EXECUTION COMPLETE</span>
+            <h3 style="font-size:15px;font-weight:700;margin-top:2px;">Dynamic Predictive Analysis Results</h3>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center;">
+            <span class="badge" id="cmp-res-id" style="font-family:var(--font-mono);font-size:11px;">—</span>
+            <span class="badge" id="cmp-res-storage" style="font-size:10px;">—</span>
+          </div>
+        </div>
+
+        <!-- 3-Column Key Metrics -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:16px;">
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-md);padding:12px;text-align:center;">
+            <div style="font-size:10px;color:var(--text-secondary);text-transform:uppercase;font-weight:600;">Calibrated Risk Score</div>
+            <div id="cmp-res-score" style="font-size:26px;font-weight:800;margin:4px 0;">—</div>
+            <div id="cmp-res-tier-badge" style="font-size:10.5px;display:inline-block;padding:2px 8px;border-radius:4px;font-weight:700;">—</div>
+          </div>
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-md);padding:12px;text-align:center;">
+            <div style="font-size:10px;color:var(--text-secondary);text-transform:uppercase;font-weight:600;">Cashout Probability</div>
+            <div id="cmp-res-prob" style="font-size:26px;font-weight:800;margin:4px 0;color:var(--accent-blue);">—</div>
+            <div style="font-size:10px;color:var(--text-secondary);">Model probability estimate</div>
+          </div>
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-md);padding:12px;text-align:center;">
+            <div style="font-size:10px;color:var(--text-secondary);text-transform:uppercase;font-weight:600;">Analytical Alert Status</div>
+            <div id="cmp-res-alert-status" style="font-size:14px;font-weight:700;margin:8px 0;">—</div>
+            <div id="cmp-res-alert-msg" style="font-size:10px;color:var(--text-secondary);">—</div>
+          </div>
+        </div>
+
+        <!-- SHAP Drivers & Predicted Locations Grid -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;">
+          <!-- SHAP Drivers -->
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-md);padding:12px;">
+            <div style="font-size:11px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;margin-bottom:8px;">
+              📊 Top SHAP Feature Contributors
+            </div>
+            <div id="cmp-res-shap-list" style="font-size:11px;display:flex;flex-direction:column;gap:6px;">
+              <span style="color:var(--text-secondary);">No SHAP explanation generated.</span>
+            </div>
+          </div>
+
+          <!-- Estimated Corridors & Nearby ATMs -->
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-md);padding:12px;">
+            <div style="font-size:11px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;margin-bottom:8px;">
+              📍 Estimated Cashout Corridors &amp; ATMs
+            </div>
+            <div id="cmp-res-corridors-list" style="font-size:11px;display:flex;flex-direction:column;gap:6px;">
+              <span style="color:var(--text-secondary);">No correlated cashout corridors identified.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Non-Causal Legal Disclaimer -->
+        <div class="disclaimer-banner" style="margin:0;font-size:10.5px;">
+          <strong>Model Limitation &amp; Decision-Support Notice:</strong>
+          Predictions and estimated cashout corridors are model-derived analytical signals for authorized human review only. They do not establish criminal activity, identify criminal identity, or guarantee a future withdrawal.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── 13. Single Compact Line Footer / Disclaimer ──────────────────────── -->
+<footer class="disclaimer-banner">
+  <span class="disc-icon" aria-hidden="true">⚠</span>
+  <div class="disclaimer-content">
+    <span class="disc-text">Risk scores and analytical hotspots are model-derived signals based on the available dataset. They do not establish that criminal activity occurred, identify a criminal, or guarantee a future withdrawal. Decisions require authorized human review and appropriate validation.</span>
+    <span class="disclaimer-badges">
+      <span class="disc-badge">Prototype — Historical/Anonymized Data</span>
+      <span class="disc-badge">Not connected to live NCRP or banking systems</span>
+    </span>
+  </div>
+</footer>
+
+<!-- ─── 14. Scripts ─────────────────────────────────────────────────────── -->
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<!-- Leaflet heat -->
+<script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+<!-- MarkerCluster -->
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" crossorigin=""></script>
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<script src="/dashboard/js/auth.js?v=mule1.0"></script>
+<script src="/dashboard/js/charts.js?v=mule1.0"></script>
+<script src="/dashboard/js/map.js?v=mule1.0"></script>
+<script src="/dashboard/js/filters.js?v=mule1.0"></script>
+<script src="/dashboard/js/alerts.js?v=mule1.0"></script>
+<script src="/dashboard/js/dashboard.js?v=mule1.0"></script>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+Component,Test Scenario,Verification Status,Test Framework
+Dashboard API,/gis/summary endpoint structural validation,PASS,pytest (test_gis_dashboard.py)
+Dashboard API,/gis/events pagination and coordinate validation,PASS,pytest (test_gis_dashboard.py)
+Dashboard API,/gis/heatmap bounds and format validation,PASS,pytest (test_gis_dashboard.py)
+Dashboard API,/gis/hotspots clustering and status filtering,PASS,pytest (test_gis_dashboard.py)
+Analyst API,Authentication enforcement on private routes,PASS,pytest (test_analyst_api.py)
+Analyst API,Alert state transitions and severity filters,PASS,pytest (test_analyst_api.py)
+Analyst API,Investigation stepper and lifecycle validation,PASS,pytest (test_analyst_api.py)
+End-to-End,XGBoost Predictor loads and bounds output [0,1],PASS,pytest (test_end_to_end.py)
+End-to-End,SHAP Explainer Pipeline loads without error,PASS,pytest (test_end_to_end.py)
+UI Design,Spacious 1560px grid and container alignment,PASS,CDP Visual Testing
+UI Design,Subsystem Health Modal rendering and interactions,PASS,CDP Visual Testing
+UI Design,Model Intelligence Modal & SHAP Probe execution,PASS,CDP Visual Testing
+UI Design,Drawer panels overlay and text alignment,PASS,CDP Visual Testing
+UI Design,Mobile and tablet responsive media queries,PASS,CDP Visual Testing
+UI Design,Map Collapsible Legend functionality,PASS,CDP Visual Testing

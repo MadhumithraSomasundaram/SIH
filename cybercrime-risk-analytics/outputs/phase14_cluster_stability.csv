@@ -1,0 +1,4 @@
+subset,cluster_count,noise_percentage,major_cluster_overlap,status,notes
+full_dataset,40,0.0,reference,STABLE,"n=10000 records, eps=0.5km, min_samples=3"
+first_half,40,0.0,delta_clusters=0,STABLE,"n=5000 records, eps=0.5km, min_samples=3"
+second_half,40,0.0,delta_clusters=0,STABLE,"n=5000 records, eps=0.5km, min_samples=3"

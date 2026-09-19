@@ -1,0 +1,6 @@
+prediction_reference,predicted_probability,risk_score,risk_category,operational_interpretation,victim_district,location_grid,crime_category_group
+SYNTH_CASE_001,0.106474,11,LOW,Low predicted likelihood of a qualifying future withdrawal. Continue routine monitoring.,Mangaluru,12.91_74.86,INVESTMENT_SCAM
+SYNTH_CASE_002,0.246472,25,LOW,Low predicted likelihood of a qualifying future withdrawal. Continue routine monitoring.,Vellore,12.92_79.13,INVESTMENT_SCAM
+SYNTH_CASE_003,0.094887,9,LOW,Low predicted likelihood of a qualifying future withdrawal. Continue routine monitoring.,Mangaluru,12.91_74.86,INVESTMENT_SCAM
+SYNTH_CASE_004,0.335671,34,LOW,Low predicted likelihood of a qualifying future withdrawal. Continue routine monitoring.,Kalaburagi,17.33_76.83,SOCIAL_ENGINEERING
+SYNTH_CASE_005,0.233893,23,LOW,Low predicted likelihood of a qualifying future withdrawal. Continue routine monitoring.,Madurai,9.93_78.12,PAYMENT_FRAUD

@@ -1,0 +1,17 @@
+field_or_check,category,status,finding,notes
+account_number,PII / Credential,PASS,Strictly absent from demo dataset,Safe for live presentation
+card_number,PII / Credential,PASS,Strictly absent from demo dataset,Safe for live presentation
+cvv,PII / Credential,PASS,Strictly absent from demo dataset,Safe for live presentation
+pin,PII / Credential,PASS,Strictly absent from demo dataset,Safe for live presentation
+otp,PII / Credential,PASS,Strictly absent from demo dataset,Safe for live presentation
+password,PII / Credential,PASS,Strictly absent from demo dataset,Safe for live presentation
+aadhaar,PII / Credential,PASS,Strictly absent from demo dataset,Safe for live presentation
+pan_card,PII / Credential,PASS,Strictly absent from demo dataset,Safe for live presentation
+phone_number,PII / Credential,PASS,Strictly absent from demo dataset,Safe for live presentation
+email,PII / Credential,PASS,Strictly absent from demo dataset,Safe for live presentation
+name,PII / Credential,PASS,Strictly absent from demo dataset,Safe for live presentation
+address,PII / Credential,PASS,Strictly absent from demo dataset,Safe for live presentation
+synthetic_record_count,Data Profile,PASS,4 demonstration records,Adequate for live walkthrough
+case_id_anonymization,Identifiers,PASS,Prefixed with DEMO_CASE_*,Clearly demarcated as synthetic
+geographic_anonymization,Spatial Coordinates,PASS,Grid-rounded centroids & cluster IDs,No residential street addresses
+financial_loss_values,Financial Profile,PASS,"Synthetic amounts (INR 5,000 to INR 95,000)",Simulated fraud losses

@@ -1,0 +1,6 @@
+check,status,details
+Required features present,PASS,All 64 features present
+Absence of target outcome leakage,PASS,Zero target leakage columns detected
+Absence of raw sensitive credentials,PASS,Zero sensitive PII/credentials present
+Geographic coordinate sanity,PASS,Coordinates within valid geographic bounds
+Unexpected columns audit,PASS,No extra columns

@@ -1,0 +1,4 @@
+channel,configuration_key,default_state,safe_dry_run_tested,sensitive_data_scrubbed,test_result
+LOG,notifications.log,ENABLED,True,True,PASS (Outputs structured analytical summary to application log)
+EMAIL,ENABLE_EMAIL_ALERTS,DISABLED (DRY RUN),True,True,PASS (Simulates transmission in dry-run mode; requires explicit SMTP configuration)
+DASHBOARD,notifications.dashboard,ENABLED,True,True,"PASS (Feed, KPI chips, and interactive detail drawer rendered)"

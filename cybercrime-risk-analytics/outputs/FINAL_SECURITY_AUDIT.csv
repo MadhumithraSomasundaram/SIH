@@ -1,0 +1,12 @@
+security_domain,threat_or_vulnerability_evaluated,mitigation_implementation,vulnerability_detected,severity,audit_verdict
+Credential Exposure,Hardcoded passwords or API keys in code/.env,Loaded via environment variables with safe defaults,False,NONE,PASS
+SQL Injection,Raw string concatenation in SQL queries,SQLAlchemy ORM parameterized queries used exclusively,False,NONE,PASS
+Command Injection,Arbitrary shell command execution via input,No os.system or shell=True on untrusted inputs,False,NONE,PASS
+Path Traversal,Arbitrary file reading/writing via filename input,Pathlib resolve() with base directory anchoring,False,NONE,PASS
+Unsafe File Upload,Execution of malicious uploaded binaries,Stores metadata & SHA-256 hash only; no execution,False,NONE,PASS
+Authentication Bypasses,Unauthenticated access to protected analyst routes,FastAPI OAuth2PasswordBearer & JWT token checks,False,NONE,PASS
+Authorization Bypasses,Privilege escalation between roles (Analyst/Supervisor),Backend enforces role verification on each route,False,NONE,PASS
+CORS Misconfiguration,Unrestricted cross-origin resource sharing,Configured with explicit allowed origins & methods,False,NONE,PASS
+Unsafe Logging,Dumping passwords or credentials into log files,Sanitization filters scrub sensitive keys before logging,False,NONE,PASS
+Data in Transit,Cleartext HTTP transport for sensitive intelligence,Configured for TLS 1.3 encryption (HTTPS/WSS),False,NONE,PASS
+Database Access Control,Direct UPDATE/DELETE access on audit logs,PostgreSQL schema enforces INSERT-ONLY on audit tables,False,NONE,PASS

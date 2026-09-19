@@ -1,0 +1,2 @@
+source,input_rows,inserted_rows,rejected_rows,missing_geometry,invalid_geometry,notes
+targeted_cybercrime_data.csv,10000,10000,0,0,0,"All 10000 coordinates verified in bounds (Lat: [8.5241, 17.6868], Lon: [74.4977, 83.2185])"

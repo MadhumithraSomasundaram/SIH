@@ -1,0 +1,15 @@
+Validation Scenario,Component,Test Method,Expected Result,Actual Result,Status
+Default 40-district heatmap contract,Backend /gis/risk-heatmap,pytest test_default_heatmap_contract,total_districts==40 and metric=='risk',Total 40 districts; metric='risk',PASS
+density metric parameter handling,Backend /gis/risk-heatmap?metric=density,pytest test_density_metric_option,Returns FeatureCollection with metric='density',Returned valid density-weighted features,PASS
+risk category filter (HIGH),Backend /gis/risk-heatmap?risk_category=HIGH,pytest test_risk_category_filtering,Returns non-empty FeatureCollection,Returned HIGH-only district features,PASS
+crime category filter (PAYMENT_FRAUD),Backend /gis/risk-heatmap?crime_category=PAYMENT_FRAUD,pytest test_crime_category_filtering,Returns non-empty FeatureCollection,Returned PAYMENT_FRAUD district features,PASS
+date range filter (Jan 2026),Backend /gis/risk-heatmap?start_time&end_time,pytest test_date_range_filtering,Returns non-empty FeatureCollection,Returned temporally filtered features,PASS
+empty filter result handling,Backend /gis/risk-heatmap?crime_category=NONEXISTENT,pytest test_empty_filter_results_handled_gracefully,Empty FC with helpful message,Returned empty FC with message,PASS
+coordinate bounds validation,All heatmap features,pytest test_coordinate_validity,All coords in [-90..90]×[-180..180] and non-zero,All 40 centroids passed,PASS
+privacy: no PII or sensitive fields,All feature properties,pytest test_no_pii_or_sensitive_leakage,No account/card/cvv/pin/otp fields,Zero forbidden fields found,PASS
+disclaimer present in properties,All heatmap feature properties,pytest test_disclaimer_present,disclaimer key with methodological notice,Present in all 40 features,PASS
+response performance under 200ms,Backend endpoint,pytest test_performance_under_200ms,Latency < 200ms,< 50ms consistently,PASS
+map label readability at national zoom,Leaflet map Zoom 7,CDP visual inspection,City names and basemap visible through heatmap,Confirmed: minOpacity=0.05 transparent base,PASS
+zoom-aware radius and blur tuning,GISMap._updateHeatmapForZoom,Code inspection,Radius/blur adjusted on zoomend,Implemented for Zoom ≤6/8/10/11+,PASS
+filter integration (heatmap + events),dashboard.js onFiltersApply,Code inspection,Both loadHeatmap and loadEvents called,Both called concurrently via Promise.all,PASS
+heatmap metric toggle (risk vs density),heatmap-metric-select,Code inspection + visual check,Metric change reloads heatmap,Reloads with new metric; legend updates,PASS

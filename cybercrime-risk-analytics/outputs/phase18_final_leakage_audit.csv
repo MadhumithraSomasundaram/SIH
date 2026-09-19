@@ -1,0 +1,11 @@
+check,status,details,severity
+future_withdrawal_timestamp_in_features,PASS,No future timestamp columns in feature matrix,LOW
+future_withdrawal_amount_in_features,PASS,Withdrawal amounts post-event excluded from features,LOW
+future_withdrawal_location_in_features,PASS,Withdrawal ATM/branch coordinates excluded from features,LOW
+future_transaction_status_in_features,PASS,Subsequent transaction outcomes excluded from features,LOW
+future_event_counts_in_features,PASS,All rolling and lag counts computed strictly backward in time,LOW
+target_variable_in_features,PASS,future_withdrawal target strictly separated into y vector,LOW
+post_event_investigation_fields,PASS,Investigation notes and audit timestamps excluded from inference inputs,LOW
+direct_entity_identifiers,PASS,"Account IDs, complainant IDs, card tokens not used as prediction features",LOW
+pii_in_model_training,PASS,"No names, phone numbers, or credentials fed into XGBoost",LOW
+train_test_temporal_leakage,PASS,Strict chronological split ensures no future information flows backward,LOW

@@ -1,0 +1,6 @@
+feature,type,description
+latitude_rounded,float,Latitude rounded to 2 decimal places (~1.1km resolution)
+longitude_rounded,float,Longitude rounded to 2 decimal places (~1.1km resolution)
+location_grid,string (categorical),Simple grid cell ID string combining rounded coordinates
+coordinate_precision,string,Documentation flag confirming centroid precision level
+geographic_region,string,Macro-geographic operational region

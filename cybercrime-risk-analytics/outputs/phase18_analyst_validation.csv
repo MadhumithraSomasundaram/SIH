@@ -1,0 +1,11 @@
+check_name,workflow_step,expected_result,actual_result,status,notes
+analyst_overview_view,Overview Dashboard,Render KPI summary cards,KPI metrics rendered,PASS,"Active cases, pending reviews displayed"
+alerts_list_view,Alert Inbox,Display prioritized alert list,Alert list rendered with filters,PASS,Sorting by risk score and time
+alert_details_inspection,Alert Modal/Page,Show risk breakdown and SHAP,Shapley values and risk factors displayed,PASS,Explains driving signals
+investigation_creation,Case Management,Create investigation from alert,Investigation record created,PASS,Linked to source alert and area
+analyst_notes_addition,Case Notes,Append timestamped analyst note,Note appended with author ID,PASS,Immutable author audit metadata
+evidence_reference_attachment,Evidence Tracker,Attach document/case ref URL,Reference string recorded,PASS,No raw file storage; safe ref links
+status_transition_valid_flow,NEW -> ACK -> IN_REVIEW -> RESOLVED,Allow sequential state advances,All transitions succeed,PASS,Standard case resolution pipeline
+status_transition_dismissal,NEW -> DISMISSED,Allow immediate false positive close,Transition allowed with reason,PASS,False positive triage pathway
+status_transition_invalid_rejection,RESOLVED -> NEW,Reject invalid backward jump,HTTP 400 Bad Request,PASS,State machine constraints strictly enforced
+audit_trail_entry_generation,Audit Logger,Log all state changes & views,Audit log entries created,PASS,Phase 17 audit log verified

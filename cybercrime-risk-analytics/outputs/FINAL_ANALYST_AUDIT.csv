@@ -1,0 +1,11 @@
+module_or_view,functional_capability,role_permissions_enforced,backend_rbac_verification,audit_logging_integration,audit_verdict
+Overview Dashboard,High-level summary of open alerts & cases,ANALYST SUPERVISOR ADMIN,Enforced via JWT Bearer Token,Logs view events,PASS
+Alerts Queue,Filter and triage incoming analytical alerts,ANALYST SUPERVISOR ADMIN,Enforced via FastAPI dependency,Audit entry on triage,PASS
+Risk Map View,Tactical spatial overlays with patrol zones,ANALYST SUPERVISOR ADMIN,Enforced via API auth,Read-only GIS inspection,PASS
+Hotspots Table,Tabular listing of 40 DBSCAN clusters,ANALYST SUPERVISOR ADMIN,Enforced via API auth,Read-only spatial audit,PASS
+Create Investigation,Convert analytical alert into investigation,ANALYST SUPERVISOR,Atomic transition NEW -> UNDER_INVESTIGATION,Audit record logged,PASS
+Add Notes,Append timestamped field observations,ANALYST SUPERVISOR,Requires case assignment,Audit record logged,PASS
+Evidence References,Attach SHA-256 evidence document hashes,ANALYST SUPERVISOR,Prevents unsafe binary execution,Cryptographic hash logged,PASS
+Status Transition,Advance case state machine,SUPERVISOR (Close/Dismiss) ANALYST (Progress),Backend rejects unauthorized state jumps (403/422),Audit record logged,PASS
+Audit Log Viewer,View chronological immutable system events,SUPERVISOR ADMIN (Analyst read-only),Backend permission checks enforced,Self-auditing query,PASS
+Backend RBAC vs Frontend,Permission checks in Python dependencies,All protected endpoints require get_current_user(),Tested in test_authorization.py (all passed),Full non-repudiation,PASS

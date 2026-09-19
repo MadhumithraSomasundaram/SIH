@@ -1,0 +1,8 @@
+filter_name,filter_type,possible_values_count,validation_rule,test_status
+start_time / end_time,ISO 8601 Timestamp String,Continuous range (dataset min-max: 2024-01-01 to 2024-12-31),Must be valid ISO timestamp; invalid timestamps return 400 Bad Request,VERIFIED (test_events_invalid_start_time passes)
+crime_category,Categorical string dropdown,5,Populated dynamically from dataset unique crime categories,VERIFIED (test_filters_has_crime_categories passes)
+risk_category,"Enum dropdown (LOW, MODERATE, HIGH, CRITICAL)",4,"Must be one of LOW, MODERATE, HIGH, CRITICAL; invalid returns 400 Bad Request",VERIFIED (test_events_invalid_risk_category passes)
+min_risk_score / max_risk_score,"Float range [0.0, 100.0]",Continuous range 0-100,0 <= min <= max <= 100,VERIFIED (test_events_risk_score_filter passes)
+hotspot_id,"String identifier (e.g. HS-01 to HS-40, or ALL)",41,Populated dynamically from Phase 14 hotspot IDs; non-existent ID returns 404,VERIFIED (test_hotspot_detail_invalid_id passes)
+limit,"Integer [1, 5000]",5000,1 <= limit <= 5000; > 5000 returns 422 Unprocessable Entity,VERIFIED (test_events_limit_too_large passes)
+hotspot status,"Enum dropdown (HOTSPOT, WATCH, INACTIVE, ALL)",4,"Must be one of HOTSPOT, WATCH, INACTIVE, ALL; invalid returns 400 Bad Request",VERIFIED (test_hotspots_invalid_status_filter passes)

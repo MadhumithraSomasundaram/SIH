@@ -1,0 +1,3 @@
+boundary,earlier_end,later_start,is_strict_monotonic,temporal_gap_seconds,status
+Train -> Validation,2026-06-21 23:24:13,2026-06-21 23:25:40,True,87.0,PASSED - Zero Temporal Overlap
+Validation -> Test,2026-07-27 11:19:04,2026-07-27 11:26:18,True,434.0,PASSED - Zero Temporal Overlap

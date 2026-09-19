@@ -1,0 +1,38 @@
+component,expected_file,exists,status,notes
+Phase 1 Raw Complaints,data/raw/Fraud_Cases.csv,YES,AVAILABLE,"Synthetic complaint records (10,000 rows)"
+Phase 1 Raw Withdrawals,data/raw/Withdrawals.csv,YES,AVAILABLE,"Synthetic withdrawal events (80,000 rows)"
+Phase 1 Raw Transactions,data/raw/Transactions.csv,YES,AVAILABLE,"Synthetic transaction hops (300,000 rows)"
+Phase 1 Raw ATMs,data/raw/ATMs_Locations.csv,YES,AVAILABLE,"Synthetic ATM coordinates (3,000 rows)"
+Phase 1 Raw Areas,data/raw/Areas_Master.csv,YES,AVAILABLE,Area master centroids (200 areas)
+Phase 1 Raw Accounts,data/raw/Accounts.csv,YES,AVAILABLE,"Account profile data (30,000 rows)"
+Phase 2 Cleaned Data,data/processed/cleaned_cybercrime_data.csv,YES,AVAILABLE,Standardized & cleaned complaints
+Phase 3 Feature Matrix,data/processed/feature_engineered_cybercrime_data.csv,YES,AVAILABLE,64 engineered features
+Phase 4 Target Data,data/processed/targeted_cybercrime_data.csv,YES,AVAILABLE,Binary future_withdrawal target
+Phase 5 Train Split,data/processed/train.csv,YES,AVAILABLE,"7,000 chronological train records"
+Phase 5 Validation Split,data/processed/validation.csv,YES,AVAILABLE,"1,500 chronological validation records"
+Phase 5 Test Split,data/processed/test.csv,YES,AVAILABLE,"1,500 chronological held-out test records"
+Phase 6 Baseline Models,models/baseline_random_forest.pkl,YES,AVAILABLE,Random Forest baseline artifact
+Phase 7 XGBoost Model,models/xgboost_cybercrime_model.pkl,YES,AVAILABLE,Frozen tuned XGBoost classifier
+Phase 7 Model Metadata,models/phase7_xgboost_metadata.json,YES,AVAILABLE,"Features list, parameters, hyperparameters"
+Phase 8 Final Metrics,outputs/phase8_final_test_metrics.csv,YES,AVAILABLE,Locked test evaluation metrics
+Phase 9 Risk Scores,outputs/phase9_risk_scores_test.csv,NO,MISSING,Deterministic 0-100 risk scores
+Phase 10 SHAP Explainer,outputs/phase10_shap_summary_test.csv,NO,MISSING,SHAP TreeExplainer attributions
+Phase 11 Predict Pipeline,src/predict.py,YES,AVAILABLE,Production inference CLI & API pipeline
+Phase 12 FastAPI Serving,api/main.py,YES,AVAILABLE,REST API server & Pydantic schemas
+Phase 13 PostGIS Models,database/models.py,YES,AVAILABLE,SQLAlchemy GeoAlchemy2 ORM definitions
+Phase 14 DBSCAN Hotspots,outputs/phase14_hotspots_geojson.geojson,YES,AVAILABLE,40 spatial cluster polygons
+Phase 14 Hotspot Summary,outputs/phase14_hotspot_summary.csv,YES,AVAILABLE,Cluster statistics and centroids
+Phase 15 GIS Dashboard,dashboard/index.html,YES,AVAILABLE,Leaflet interactive risk map UI
+Phase 16 Alert Engine,src/alert_engine.py,YES,AVAILABLE,Priority alerting and deduplication engine
+Phase 16 Alert Routes,api/alert_routes.py,YES,AVAILABLE,REST endpoints for alerts
+Phase 17 Analyst Models,database/investigation_models.py,YES,AVAILABLE,6 case management & audit tables
+Phase 17 Analyst Workspace,analyst/index.html,YES,AVAILABLE,Role-based analyst portal
+Phase 17 Authorization Tests,tests/test_authorization.py,YES,AVAILABLE,37 RBAC & security tests
+Phase 18 End-to-End Tests,tests/test_end_to_end.py,YES,AVAILABLE,22 end-to-end integration checkpoints
+Phase 18 Smoke Test,src/system_smoke_test.py,YES,AVAILABLE,10-step lightweight verification script
+Phase 18 Architecture,outputs/phase18_architecture.md,YES,AVAILABLE,Comprehensive pipeline architecture
+Phase 18 Health Report,outputs/phase18_system_health_report.md,YES,AVAILABLE,All-component health report
+Phase 18 Final Status,outputs/FINAL_PROJECT_STATUS.md,YES,AVAILABLE,Master project status & findings
+Phase 18 Demo Input,data/demo/demo_prediction_input.csv,YES,AVAILABLE,Curated synthetic demonstration records
+Phase 18 Demo Results,outputs/demo/demo_prediction_results.csv,YES,AVAILABLE,Batch prediction outputs on demo records
+Phase 18 Demo Timeline,outputs/demo/demo_scenario_timeline.md,YES,AVAILABLE,16-step chronological operational timeline

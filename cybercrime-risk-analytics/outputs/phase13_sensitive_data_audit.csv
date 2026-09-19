@@ -1,0 +1,22 @@
+column,status,reason
+victim_account_id_masked,EXCLUDED,Masked bank account ID excluded to enforce zero PII storage in spatial DB
+card_number,EXCLUDED,PCI-DSS prohibited credential; never stored
+pin,EXCLUDED,Authentication credential; strictly prohibited
+otp,EXCLUDED,One-time passcode; strictly prohibited
+cvv,EXCLUDED,Card security code; strictly prohibited
+password,EXCLUDED,Authentication secret; strictly prohibited
+victim_phone,EXCLUDED,Direct personal identifiable contact info; excluded
+case_id,APPROVED,Sanitized alphanumeric event reference identifier
+complaint_timestamp,APPROVED,Incident timestamp required for temporal query indexing
+crime_type,APPROVED,Standardized taxonomy category required for crime trend queries
+fraud_amount,APPROVED,Financial loss amount in INR required for impact queries
+reported_by_authority,APPROVED,Reporting authority indicator
+victim_state,APPROVED,State-level administrative boundary identifier
+victim_district,APPROVED,District-level spatial aggregation identifier
+victim_area,APPROVED,Local administrative area name
+victim_area_id,APPROVED,Area master key reference code
+latitude,APPROVED,"WGS 84 latitude validated in range [-90, 90]"
+longitude,APPROVED,"WGS 84 longitude validated in range [-180, 180]"
+location,APPROVED,PostGIS POINT(longitude latitude) SRID 4326 geometry
+is_linked_to_withdrawal,APPROVED,Historical cashout linkage indicator
+future_withdrawal,APPROVED,Ground-truth target indicator for historical training events

@@ -1,0 +1,196 @@
+{
+  "timestamp": "2026-09-19T16:03:52.577519+00:00",
+  "python_version": "3.11.6 (tags/v3.11.6:8b6ee5b, Oct  2 2023, 14:57:12) [MSC v.1935 64 bit (AMD64)]",
+  "platform": "win32",
+  "results": {},
+  "database_health": {
+    "status": "disconnected",
+    "database": "disconnected",
+    "storage_mode": "CSV_FALLBACK_DEV",
+    "database_host": "localhost:5432",
+    "database_name": "cybercrime_prediction",
+    "postgis": false,
+    "postgis_version": null,
+    "error": "Database connection unavailable. System operating in CSV_FALLBACK_DEV mode.",
+    "setup_instructions": "To enable primary PostgreSQL+PostGIS storage, start PostgreSQL service and refer to DATABASE_SETUP.md."
+  },
+  "auth_tokens": {
+    "ANALYST": true,
+    "SUPERVISOR": true,
+    "ADMIN": true,
+    "BANK_ANALYST": true
+  },
+  "endpoint_tests": [
+    {
+      "route": "/",
+      "method": "GET",
+      "status": 200,
+      "latency_ms": 2.51,
+      "pass": true
+    },
+    {
+      "route": "/health",
+      "method": "GET",
+      "status": 200,
+      "latency_ms": 2.48,
+      "pass": true
+    },
+    {
+      "route": "/model/info",
+      "method": "GET",
+      "status": 200,
+      "latency_ms": 3.06,
+      "pass": true
+    },
+    {
+      "route": "/database/health",
+      "method": "GET",
+      "status": 503,
+      "latency_ms": 4059.07,
+      "pass": false
+    },
+    {
+      "route": "/database/stats",
+      "method": "GET",
+      "status": 503,
+      "latency_ms": 4058.05,
+      "pass": false
+    },
+    {
+      "route": "/dashboard/",
+      "method": "GET",
+      "status": 200,
+      "latency_ms": 57.91,
+      "pass": true
+    },
+    {
+      "route": "/analyst/",
+      "method": "GET",
+      "status": 200,
+      "latency_ms": 6.35,
+      "pass": true
+    },
+    {
+      "route": "/bank/",
+      "method": "GET",
+      "status": 200,
+      "latency_ms": 6.36,
+      "pass": true
+    },
+    {
+      "route": "/gis/summary",
+      "method": "GET",
+      "status": 200,
+      "latency_ms": 56.67,
+      "pass": true
+    },
+    {
+      "route": "/gis/statistics",
+      "method": "GET",
+      "status": 200,
+      "latency_ms": 20.64,
+      "pass": true
+    },
+    {
+      "route": "/gis/hotspots",
+      "method": "GET",
+      "status": 200,
+      "latency_ms": 16.8,
+      "pass": true
+    },
+    {
+      "route": "/gis/predicted-locations?radius_km=5.0&limit=10",
+      "method": "GET",
+      "status": 200,
+      "latency_ms": 59.71,
+      "pass": true
+    },
+    {
+      "route": "/complaints",
+      "method": "POST",
+      "status": 201,
+      "latency_ms": 320.49,
+      "pass": true
+    },
+    {
+      "route": "/complaints (invalid)",
+      "method": "POST",
+      "status": 422,
+      "expected": 422,
+      "pass": true
+    },
+    {
+      "route": "/complaints (no auth)",
+      "method": "POST",
+      "status": 401,
+      "expected": 401,
+      "pass": true
+    },
+    {
+      "route": "/complaints (bank role)",
+      "method": "POST",
+      "status": 403,
+      "expected": 403,
+      "pass": true
+    },
+    {
+      "route": "/analyst/alerts",
+      "method": "GET",
+      "status": 200,
+      "latency_ms": 13.12,
+      "pass": true
+    },
+    {
+      "route": "/analyst/investigations",
+      "method": "POST",
+      "status": 422,
+      "pass": false
+    },
+    {
+      "route": "/analyst/investigations/{id}/notes",
+      "method": "POST",
+      "status": 422,
+      "pass": false
+    },
+    {
+      "route": "/analyst/investigations/{id}/evidence",
+      "method": "POST",
+      "status": 422,
+      "pass": false
+    },
+    {
+      "route": "/bank/freeze-requests",
+      "method": "POST",
+      "status": 405,
+      "pass": false
+    },
+    {
+      "route": "/analyst/investigations/{id}/outcomes",
+      "method": "POST",
+      "status": 201,
+      "pass": true
+    },
+    {
+      "route": "/analyst/audit",
+      "method": "GET",
+      "status": 200,
+      "pass": true
+    }
+  ],
+  "ml_audit": {
+    "model_type": "Pipeline",
+    "pipeline_steps": [
+      "preprocessor",
+      "classifier"
+    ],
+    "feature_count": 64,
+    "numerical_features": 52,
+    "categorical_features": 12,
+    "classes": [
+      0,
+      1
+    ],
+    "sample_prediction": 31,
+    "probability": null
+  }
+}

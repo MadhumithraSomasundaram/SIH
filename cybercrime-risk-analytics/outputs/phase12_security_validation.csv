@@ -1,0 +1,12 @@
+check,status,details
+sensitive_input_protection,PASS,"card_number, pin, otp, cvv, password rejected with HTTP 422"
+target_field_protection,PASS,future_withdrawal rejected at model_validator hook
+future_field_protection,PASS,"withdrawal_timestamp, withdrawal_amount, withdrawal_status rejected"
+credential_protection,PASS,No credentials accepted or returned by any endpoint
+response_sensitive_data_check,PASS,Responses contain only safe prediction fields
+log_sensitive_data_check,PASS,api_prediction_log.csv stores only safe fields
+stack_trace_protection,PASS,All exceptions catch; no Traceback exposed to clients
+filesystem_path_protection,PASS,No absolute paths or model internals in responses
+cors_configuration,PASS,CORS restricted to localhost origins only
+batch_size_limit,PASS,Max 100 enforced at Pydantic schema level
+extra_field_handling,PASS,Unknown fields silently dropped (extra=ignore)

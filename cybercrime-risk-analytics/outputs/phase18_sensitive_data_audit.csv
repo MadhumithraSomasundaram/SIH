@@ -1,0 +1,14 @@
+column_name,classification,handling,reason
+account_number,PII / Financial Credential,EXCLUDED / STRIPPED,Never ingested into ML feature sets; replaced by synthetic anonymized hashes in raw data
+bank_account,PII / Financial Credential,EXCLUDED / STRIPPED,Direct account identifiers omitted from predictive modeling and public endpoints
+card_number,PCI-DSS Regulated,EXCLUDED / NOT COLLECTED,Card PAN numbers strictly prohibited and not present in features or endpoints
+cvv,PCI-DSS Sensitive Authentication,EXCLUDED / NOT COLLECTED,CVV/CVC security codes strictly absent across entire codebase and datasets
+pin,Authentication Credential,EXCLUDED / NOT COLLECTED,ATM/card PINs strictly absent from all synthetic datasets and models
+otp,Authentication Credential,EXCLUDED / NOT COLLECTED,One-time passwords not captured or processed in any pipeline stage
+password,Authentication Credential,HASHED (bcrypt),Analyst account passwords hashed using bcrypt (12 rounds) in database/investigation_crud.py
+phone,PII (Contact),MASKED / EXCLUDED,Complainant contact numbers excluded from training features and API response payloads
+email,PII (Contact),MASKED / RESTRICTED,Analyst email used only for authorized session identity; excluded from prediction schemas
+aadhaar,National ID (PII),EXCLUDED / NOT COLLECTED,Aadhaar / national identity numbers strictly excluded from project data
+pan,Tax Identifier (PII),EXCLUDED / NOT COLLECTED,Income Tax PAN numbers strictly excluded from dataset and model features
+full_name,PII (Identity),EXCLUDED / ANONYMIZED,Victim or suspect names excluded from features; analyst names role-gated in audit log
+address,PII (Geographic),GENERALIZED / GRIDDED,Precise street addresses abstracted to spatial cluster IDs and rounded coordinate centroids

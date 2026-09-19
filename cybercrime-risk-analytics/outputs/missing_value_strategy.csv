@@ -1,0 +1,7 @@
+dataset,column,missing_count,classification,handling_strategy
+Fraud_Cases,case_id,0,Critical missing information,Zero tolerance. Must be present as unique primary key.
+Fraud_Cases,complaint_timestamp,0,Critical missing information,Zero tolerance. Temporal anchor for predictive horizon.
+Fraud_Cases,crime_type,0,Requires domain decision,"Currently 0 nulls. If missing in future production feeds, assign 'UNKNOWN_CRIME_TYPE'."
+Fraud_Cases,fraud_amount,0,Safe to impute later,"Currently 0 nulls. If missing, impute using category-median in Phase 3."
+Fraud_Cases,latitude / longitude,0,Critical missing information,Mapped from Areas_Master centroid. 0 nulls achieved.
+Withdrawals,case_id,51386,Should remain missing,Represents legitimate background (non-fraud) banking withdrawals. Must remain NaN.

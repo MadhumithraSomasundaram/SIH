@@ -1,0 +1,9 @@
+table,index,index_type,status,details
+cybercrime_events,idx_cybercrime_events_location,GIST,CONFIGURED,"Spatial index on location geometry(Point, 4326)"
+cybercrime_events,idx_cybercrime_events_timestamp,BTREE,CONFIGURED,B-Tree index on complaint_timestamp for temporal filtering
+cybercrime_events,idx_cybercrime_events_crime_type,BTREE,CONFIGURED,B-Tree index on crime_type for categorical queries
+cybercrime_events,idx_cybercrime_events_district,BTREE,CONFIGURED,B-Tree index on victim_district for spatial boundary queries
+cybercrime_events,ix_events_district_timestamp,BTREE,CONFIGURED,"Composite index on (victim_district, complaint_timestamp)"
+prediction_results,idx_prediction_results_location,GIST,CONFIGURED,"Spatial index on prediction location geometry(Point, 4326)"
+prediction_results,idx_prediction_results_timestamp,BTREE,CONFIGURED,B-Tree index on prediction_timestamp
+prediction_results,idx_prediction_results_category,BTREE,CONFIGURED,B-Tree index on risk_category

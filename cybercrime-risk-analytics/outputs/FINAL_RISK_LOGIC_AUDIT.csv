@@ -1,0 +1,9 @@
+component_file,risk_score_formula,low_tier_range,moderate_tier_range,high_tier_range,critical_tier_range,monotonicity_verified,human_in_loop_interpretation,audit_verdict
+src/generate_risk_score.py,round(probability * 100),0 - 39,40 - 59,60 - 79,80 - 100,True (strictly non-decreasing),Present (Explicit HITL guidance),PASS
+src/predict.py,round(probability * 100),0 - 39,40 - 59,60 - 79,80 - 100,True (strictly non-decreasing),Present (Explicit HITL guidance),PASS
+api/schemas.py,round(probability * 100),0 - 39,40 - 59,60 - 79,80 - 100,True (strictly non-decreasing),Present (Standardized interpretations),PASS
+src/alert_engine.py,round(probability * 100),0 - 39,40 - 59,60 - 79,80 - 100,True (strictly non-decreasing),Present (human_review_required=True),PASS
+dashboard/js/dashboard.js,round(probability * 100),0 - 39,40 - 59,60 - 79,80 - 100,True (strictly non-decreasing),Present (Visual tactical tags),PASS
+analyst/js/analyst.js,round(probability * 100),0 - 39,40 - 59,60 - 79,80 - 100,True (strictly non-decreasing),Present (Triage priority queues),PASS
+outputs/phase9_risk_scoring_report.md,round(probability * 100),0 - 39,40 - 59,60 - 79,80 - 100,True (strictly non-decreasing),Documented as core Phase 9 logic,PASS
+outputs/phase18_risk_logic_validation.csv,round(probability * 100),0 - 39,40 - 59,60 - 79,80 - 100,True (19 boundary cases passed),Validated in Phase 18 health check,PASS

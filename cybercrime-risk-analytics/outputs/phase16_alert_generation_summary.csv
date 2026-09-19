@@ -1,0 +1,2 @@
+run_id,timestamp,total_candidates_evaluated,generated_alerts_count,critical_count,high_count,moderate_count,low_count,duplicates_skipped,cooldown_skipped,dry_run_mode
+GEN-RUN-001,2026-09-15T16:43:31.786397+00:00,51,51,2,49,0,0,0,0,True

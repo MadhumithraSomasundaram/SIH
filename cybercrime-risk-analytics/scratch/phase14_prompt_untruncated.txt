@@ -1,0 +1,693 @@
+<USER_REQUEST>
+You are a senior hackathon mentor, technical documentation specialist,
+software auditor, and SIH evaluation preparation expert.
+
+PROJECT:
+Cybercrime Predictive Analytics Framework
+
+PROBLEM STATEMENT ID:
+26184
+
+OBJECTIVE:
+Complete Phase 14 — Final SIH Presentation, Technical Documentation,
+Project Demonstration, Evaluation Preparation, and Evidence Collection.
+
+IMPORTANT:
+This is an existing project. Inspect the current implementation and
+previous audit reports before making changes.
+
+Do not fabricate:
+- Accuracy
+- Performance metrics
+- Test results
+- Screenshots
+- Successful API responses
+- Deployment status
+- Implemented features
+- Real-world crime prevention results
+
+Use only actual implementation evidence and synthetic/anonymized data.
+
+==================================================
+PHASE 1 — REVIEW ALL PREVIOUS AUDIT REPORTS
+==================================================
+
+Inspect all available project reports, including:
+
+- Phase 12 Security, RBAC & Audit Report
+- Phase 13 System Integration & Deployment Audit
+- Previous implementation reports
+- Model evaluation reports
+- Test results
+- README documentation
+
+Identify:
+
+1. Completed features
+2. Partially completed features
+3. Failed features
+4. Unverified features
+5. Remaining deployment blockers
+6. Known ML limitations
+7. Known GIS limitations
+8. Database limitations
+9. Security limitations
+10. Frontend integration gaps
+
+Do not mark any previously partial feature as complete without
+actual verification.
+
+Create:
+
+PHASE_14_PREVIOUS_AUDIT_REVIEW.md
+
+Include a requirement-by-requirement status table:
+
+Requirement | Current Status | Evidence | Remaining Work
+
+==================================================
+PHASE 2 — FINAL PROJECT ARCHITECTURE DOCUMENTATION
+==================================================
+
+Inspect the actual source code and create an accurate architecture
+document.
+
+Document the implemented flow:
+
+Cybercrime Complaint
+        |
+        v
+Data Validation
+        |
+        v
+Feature Engineering
+        |
+        v
+Preprocessing Pipeline
+        |
+        v
+XGBoost Prediction
+        |
+        v
+Cashout Probability
+        |
+        v
+Risk Score and Risk Tier
+        |
+        v
+SHAP Explainability
+        |
+        v
+Historical/Estimated Cashout Locations
+        |
+        v
+ATM Proximity Analysis
+        |
+        v
+Alerts and Investigation Workflow
+        |
+        v
+Analyst Dashboard and Audit Trail
+
+Only include modules that actually exist.
+
+Clearly distinguish:
+
+- ML-predicted cashout likelihood
+- Historical DBSCAN clusters
+- Estimated cashout locations
+- Nearby ATM information
+- Confirmed investigation outcomes
+
+Do not describe the system as identifying the criminal directly.
+
+Create:
+
+FINAL_SYSTEM_ARCHITECTURE.md
+
+Include:
+
+1. Problem statement
+2. System objective
+3. Architecture diagram using Mermaid or another
+   supported documentation format
+4. Backend components
+5. Frontend components
+6. Database components
+7. ML pipeline
+8. GIS pipeline
+9. Security architecture
+10. Limitations
+
+==================================================
+PHASE 3 — FINAL PROBLEM STATEMENT EXPLANATION
+==================================================
+
+Write a clear explanation suitable for SIH judges.
+
+Cover:
+
+1. Existing problem
+2. Why cybercrime complaint volume is challenging
+3. Why early cashout-location estimation matters
+4. Role of predictive analytics
+5. Role of spatial analysis
+6. Role of explainable AI
+7. Role of authorized analysts
+8. How the proposed system supports investigations
+9. What the system does not guarantee
+
+Do not claim:
+
+- Guaranteed criminal identification
+- Guaranteed money recovery
+- Guaranteed ATM prediction
+- Real-time law enforcement integration
+- Production-scale performance
+- Real-world deployment approval
+
+Create:
+
+FINAL_PROBLEM_AND_SOLUTION_EXPLANATION.md
+
+Use simple, technically accurate language.
+
+==================================================
+PHASE 4 — TECHNOLOGY STACK DOCUMENTATION
+==================================================
+
+Inspect the actual project and document the technology stack.
+
+Possible categories:
+
+Frontend:
+- HTML
+- CSS
+- JavaScript
+- Leaflet or other mapping library
+
+Backend:
+- Python
+- FastAPI or existing backend framework
+
+Machine Learning:
+- XGBoost
+- Scikit-learn
+- SHAP
+- Existing preprocessing pipeline
+
+Database:
+- PostgreSQL
+- PostGIS
+- CSV fallback
+
+Analytics:
+- DBSCAN
+- Haversine distance
+- Spatial filtering
+
+Security:
+- JWT
+- RBAC
+- Audit logging
+
+Only list technologies that are actually used.
+
+For each technology, explain:
+
+- Why it is used
+- Which module uses it
+- Whether it is fully integrated
+- Any known limitation
+
+Create:
+
+FINAL_TECHNOLOGY_STACK.md
+
+==================================================
+PHASE 5 — FINAL ML MODEL DOCUMENTATION
+==================================================
+
+Inspect the actual model and training pipeline.
+
+Document:
+
+1. Dataset source and synthetic-data status
+2. Target variable
+3. Feature count
+4. Feature engineering
+5. Preprocessing
+6. Train/validation/test split
+7. Temporal split strategy
+8. Model type
+9. Probability output
+10. Risk score calculation
+11. Risk tier thresholds
+12. Explainability method
+13. Data leakage checks
+14. Class imbalance
+15. Distribution shift
+16. Model limitations
+
+Use the actual verified metrics from the project.
+
+If the previous audit reports weak metrics, display them honestly.
+Do not hide or replace them.
+
+Clearly explain that:
+
+- The model predicts the implemented target.
+- The binary cashout propensity model is not a direct coordinate
+  prediction model unless the code proves otherwise.
+- Location estimates are produced through the implemented GIS method.
+- Accuracy alone is insufficient for evaluating this use case.
+- Spatial localization metrics should not be invented if ground truth
+  is unavailable.
+
+Create:
+
+FINAL_ML_MODEL_DOCUMENTATION.md
+
+==================================================
+PHASE 6 — FINAL GIS AND MAP DOCUMENTATION
+==================================================
+
+Inspect the GIS implementation.
+
+Document:
+
+1. Geographic data sources
+2. Coordinate validation
+3. DBSCAN clustering
+4. Cluster interpretation
+5. ATM dataset usage
+6. Haversine distance calculation
+7. Nearby ATM retrieval
+8. Predicted-location endpoint
+9. Frontend map integration
+10. Historical versus estimated location labels
+11. CSV and PostGIS behavior
+12. GIS limitations
+
+Verify whether the frontend actually calls:
+
+GET /gis/predicted-locations
+
+If it does not, report it as a remaining integration gap.
+
+Do not describe historical clusters as confirmed future withdrawal
+locations.
+
+Create:
+
+FINAL_GIS_MODULE_DOCUMENTATION.md
+
+==================================================
+PHASE 7 — FINAL SECURITY AND PRIVACY DOCUMENTATION
+==================================================
+
+Inspect the implemented security controls.
+
+Document:
+
+- Authentication
+- JWT handling
+- Role-based access control
+- Resource-level authorization
+- Analyst permissions
+- Supervisor permissions
+- Admin permissions
+- Bank analyst restrictions
+- Audit logs
+- Evidence access
+- Input validation
+- Error handling
+- Secret management
+- Synthetic data usage
+- Sensitive information protection
+
+Create a table:
+
+Security Control | Implementation | Verification | Limitation
+
+Check that documentation does not expose:
+
+- Passwords
+- JWT tokens
+- API keys
+- Database credentials
+- Personal information
+- Private configuration values
+
+Create:
+
+FINAL_SECURITY_AND_PRIVACY_DOCUMENTATION.md
+
+==================================================
+PHASE 8 — SIH PRESENTATION CONTENT
+==================================================
+
+Create a presentation content outline for approximately 10–12 slides.
+
+Recommended slide structure:
+
+SLIDE 1:
+Title and Team Information
+
+SLIDE 2:
+Problem Statement and Background
+
+SLIDE 3:
+Existing Challenges
+
+SLIDE 4:
+Proposed Solution
+
+SLIDE 5:
+System Architecture
+
+SLIDE 6:
+Data Processing and Feature Engineering
+
+SLIDE 7:
+ML Prediction and Explainable AI
+
+SLIDE 8:
+GIS, DBSCAN and ATM Proximity Analysis
+
+SLIDE 9:
+Dashboard, Alerts and Investigation Workflow
+
+SLIDE 10:
+Security, RBAC and Audit Trail
+
+SLIDE 11:
+Testing, Results and Limitations
+
+SLIDE 12:
+Future Scope and Conclusion
+
+For every slide, provide:
+
+- Slide title
+- Main bullet points
+- Suggested diagram or screenshot
+- Speaker notes
+- Evidence required
+- Claims that must be avoided
+
+Do not include unsupported performance or deployment claims.
+
+Create:
+
+SIH_PRESENTATION_CONTENT.md
+
+==================================================
+PHASE 9 — LIVE DEMONSTRATION SCRIPT
+==================================================
+
+Create a demonstration script lasting approximately 5–7 minutes.
+
+The demo must use synthetic data.
+
+Include the following sequence:
+
+1. Introduce the problem.
+2. Login using an authorized demo account.
+3. Show the dashboard.
+4. Display a synthetic complaint.
+5. Run or demonstrate the prediction workflow.
+6. Display probability and risk score.
+7. Explain the risk tier.
+8. Display SHAP contributors.
+9. Display GIS information.
+10. Show predicted or estimated locations, if implemented.
+11. Show nearby ATM information.
+12. Open the alert panel.
+13. Open an investigation.
+14. Add a note.
+15. Show audit logging.
+16. Explain limitations and future improvements.
+
+For each step, document:
+
+- Action
+- Screen/API
+- Expected actual behavior
+- Backup action if it fails
+- Explanation for the judge
+
+Do not use fake API responses during the live demonstration.
+
+Create:
+
+SIH_LIVE_DEMONSTRATION_SCRIPT.md
+
+==================================================
+PHASE 10 — JUDGE QUESTION PREPARATION
+==================================================
+
+Prepare technically accurate answers to possible SIH judge questions.
+
+Include answers for:
+
+1. Why did you select XGBoost?
+2. What is the target variable?
+3. How do you prevent data leakage?
+4. How is the risk score calculated?
+5. Why is SHAP used?
+6. Does the system identify the criminal?
+7. How are cashout locations estimated?
+8. Are predicted locations guaranteed?
+9. How is DBSCAN used?
+10. Why is PostGIS required?
+11. What happens if PostgreSQL is unavailable?
+12. How do you protect sensitive data?
+13. How does RBAC work?
+14. How are false positives handled?
+15. How are false negatives handled?
+16. How do you evaluate the model?
+17. Why is spatial evaluation important?
+18. What are the current limitations?
+19. How would you scale the system?
+20. How could banks and law enforcement integrate with it?
+21. What is the future scope?
+22. What would be required for production deployment?
+
+Answers must be honest and based on the implementation.
+
+Create:
+
+SIH_JUDGE_QUESTIONS_AND_ANSWERS.md
+
+==================================================
+PHASE 11 — FINAL EVIDENCE COLLECTION
+==================================================
+
+Create an evidence checklist for screenshots and demonstration.
+
+Required evidence may include:
+
+1. Project homepage
+2. Login screen
+3. Main dashboard
+4. Risk score display
+5. SHAP explanation
+6. GIS map
+7. Predicted-location layer, if integrated
+8. Alert panel
+9. Investigation page
+10. Evidence section
+11. Audit trail
+12. Database health result
+13. Test execution result
+14. RBAC restriction result
+15. CSV fallback result
+
+Do not create fake screenshots.
+
+For each evidence item, record:
+
+Evidence ID | Description | File/Location | Status | Notes
+
+Use actual screenshots only if they are available or manually
+captured from the running application.
+
+Create:
+
+SIH_EVIDENCE_COLLECTION_CHECKLIST.md
+
+==================================================
+PHASE 12 — FINAL README UPDATE
+==================================================
+
+Review and update README.md.
+
+The README must include:
+
+1. Project title
+2. Problem statement ID
+3. Project overview
+4. Features
+5. Architecture
+6. Technology stack
+7. Installation instructions
+8. Environment configuration
+9. Backend startup
+10. Frontend startup
+11. Database setup
+12. CSV fallback setup
+13. Testing instructions
+14. Demo instructions
+15. Security notes
+16. Synthetic data disclaimer
+17. Known limitations
+18. Future scope
+19. Team information placeholders
+
+Do not include secret values.
+
+Ensure that all commands are verified or clearly marked as
+not verified.
+
+==================================================
+PHASE 13 — FINAL PROJECT STATUS MATRIX
+==================================================
+
+Create a complete status matrix.
+
+Categories:
+
+- Complaint intake
+- Feature engineering
+- ML prediction
+- Risk scoring
+- SHAP explanation
+- GIS clustering
+- Predicted locations
+- ATM proximity
+- Alerts
+- Investigation workflow
+- Evidence management
+- Outcome recording
+- Audit logging
+- Authentication
+- RBAC
+- CSV fallback
+- PostgreSQL/PostGIS
+- Frontend integration
+- Automated tests
+- Deployment readiness
+- SIH demonstration readiness
+
+For each item:
+
+Feature | Status | Evidence | Limitation | Next Action
+
+Allowed statuses:
+
+- PASS
+- PARTIAL
+- FAIL
+- NOT VERIFIED
+- NOT IMPLEMENTED
+
+Do not calculate a score unless the calculation is meaningful and
+supported by documented evidence.
+
+Create:
+
+FINAL_PROJECT_STATUS_MATRIX.md
+
+==================================================
+PHASE 14 — FINAL SIH TECHNICAL REPORT
+==================================================
+
+Create:
+
+FINAL_SIH_TECHNICAL_REPORT.md
+
+Use the following structure:
+
+1. Title
+2. Problem Statement ID
+3. Abstract
+4. Introduction
+5. Problem Definition
+6. Objectives
+7. Proposed Solution
+8. System Architecture
+9. Data Pipeline
+10. Feature Engineering
+11. ML Methodology
+12. Risk Scoring
+13. Explainable AI
+14. GIS and Spatial Analysis
+15. Alerts and Investigations
+16. Security and RBAC
+17. Testing and Validation
+18. Results
+19. Limitations
+20. Future Scope
+21. Conclusion
+22. References to Internal Documentation
+
+The report must distinguish between:
+
+- Implemented features
+- Partially implemented features
+- Planned features
+- Unverified features
+
+Do not use exaggerated claims.
+
+==================================================
+PHASE 15 — FINAL QUALITY CHECK
+==================================================
+
+Before completing the task, verify:
+
+[ ] All claims match the source code.
+[ ] All metrics match actual evaluation reports.
+[ ] No fake results were added.
+[ ] No credentials are exposed.
+[ ] No real personal data is used.
+[ ] Historical locations are not labelled as confirmed predictions.
+[ ] Model limitations are documented.
+[ ] Database limitations are documented.
+[ ] Frontend integration gaps are documented.
+[ ] All test results are traceable.
+[ ] All screenshots are real.
+[ ] README instructions are accurate.
+[ ] SIH presentation claims are supported.
+[ ] The final report is internally consistent.
+
+==================================================
+FINAL RESPONSE REQUIRED
+==================================================
+
+After completing the work, report:
+
+1. Files created
+2. Files modified
+3. Actual tests executed
+4. Actual test results
+5. Remaining gaps
+6. Presentation readiness
+7. Demonstration readiness
+8. Evidence still required
+9. Recommended final improvements
+
+Do not claim that the project is fully complete unless the evidence
+supports that conclusion.
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-09-19T19:16:23+05:30.
+
+The user's current state is as follows:
+Active Document: d:\SIH\SIH_2026\cybercrime_prediction\README.md (LANGUAGE_MARKDOWN)
+Cursor is on line: 4
+Other open documents:
+- d:\SIH\SIH_2026\cybercrime_prediction\README.md (LANGUAGE_MARKDOWN)
+- d:\SIH\SIH_2026\cybercrime_prediction\PHASE_10_MODEL_EVALUATION_REPORT.md (LANGUAGE_MARKDOWN)
+</ADDITIONAL_METADATA>

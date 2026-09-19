@@ -1,0 +1,13 @@
+feature_or_endpoint,test_or_inspection_type,specification_evaluated,actual_behavior,security_privacy_check,audit_verdict
+/gis/summary,FastAPI TestClient,Key aggregates & statistics,Returns total events & active hotspots,PASS (Zero PII or leakage),PASS
+/gis/events,FastAPI TestClient,GeoJSON point feed with risk tiers,Returns valid Point features with scores,PASS (Zero PII or leakage),PASS
+/gis/heatmap,FastAPI TestClient,Weighted intensity spatial layer,Returns GeoJSON with intensity weights,PASS (Zero PII),PASS
+/gis/hotspots,FastAPI TestClient,40 DBSCAN cluster polygons,Returns 40 valid polygon features,PASS (Zero PII or leakage),PASS
+/gis/hotspots/{id},FastAPI TestClient,Hotspot drill-down & nearby ATMs,Returns cluster summary & ATM pins,PASS (Zero PII),PASS
+/gis/filters,FastAPI TestClient,Filter options metadata,Returns categories time ranges districts,PASS (Zero PII),PASS
+Layer Separation,Visual & Code Inspection,Predictive risk vs spatial clusters,Managed in distinct Leaflet layer groups,CONFIRMED,PASS
+Time Filtering,Frontend & API Parameter,Filter by start_time & end_time,ISO 8601 timestamps filtered properly,CONFIRMED,PASS
+Category Filtering,Frontend & API Parameter,Filter by crime_type / category,Validated against crime taxonomy,CONFIRMED,PASS
+Risk Tier Filtering,Frontend & API Parameter,Filter by LOW/MODERATE/HIGH/CRITICAL,Pydantic schema validates risk tiers,CONFIRMED,PASS
+Performance & Latency,API Benchmark,Response time on 1000 GeoJSON points,<50ms response on localhost,CONFIRMED,PASS
+Sensitive Data Exposure,Automated Test Suite,Assert no card/PIN/PII in responses,30 / 30 GIS tests passed with 0 leaks,CONFIRMED,PASS

@@ -1,0 +1,6 @@
+check,status,details
+Target 'future_withdrawal' absent in incoming input,PASS,Verified absent
+Future transaction/withdrawal fields absent,PASS,Zero future outcome fields
+Post-event information absent,PASS,Only incident-time attributes accepted
+Model weights completely frozen,PASS,Zero retraining performed
+Preprocessor completely frozen,PASS,Fitted exclusively on training dataset

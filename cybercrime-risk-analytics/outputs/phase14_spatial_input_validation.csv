@@ -1,0 +1,2 @@
+total_records,records_with_coordinates,missing_coordinates,invalid_coordinates,usable_points
+10000,10000,0,0,10000

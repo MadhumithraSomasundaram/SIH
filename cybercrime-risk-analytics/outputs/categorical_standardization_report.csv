@@ -1,0 +1,6 @@
+column,unique_before,unique_after,sample_before,sample_after,standardization_action
+crime_type,6,6,"['UPI_FRAUD', 'INVESTMENT_FRAUD', 'OTHER_FINANCIAL_FRAUD']","['UPI_FRAUD', 'INVESTMENT_FRAUD', 'OTHER_FINANCIAL_FRAUD']","Trimmed whitespace, normalized casing/spacing"
+victim_state,4,4,"['Kerala', 'Tamil Nadu', 'Andhra Pradesh']","['Kerala', 'Tamil Nadu', 'Andhra Pradesh']","Trimmed whitespace, normalized casing/spacing"
+victim_district,40,40,"['Kollam', 'Erode', 'Thrissur']","['Kollam', 'Erode', 'Thrissur']","Trimmed whitespace, normalized casing/spacing"
+victim_area,193,193,"['Chinnakada', 'Perundurai Road', 'Punkunnam']","['Chinnakada', 'Perundurai Road', 'Punkunnam']","Trimmed whitespace, normalized casing/spacing"
+victim_area_id,200,200,"['AREA0123', 'AREA0031', 'AREA0116']","['AREA0123', 'AREA0031', 'AREA0116']","Trimmed whitespace, normalized casing/spacing"

@@ -1,0 +1,8 @@
+feature,feature_type,training_range,incoming_range,drift_detected,observation
+fraud_amount,numerical,"[500.00, 406598.27]","[3806.88, 92277.58]",NO,Incoming values fall within historical training span
+rolling_event_count_24h,numerical,"[0.00, 66.00]","[36.00, 39.00]",NO,Incoming values fall within historical training span
+time_since_previous_event_hours,numerical,"[0.00, 4.71]","[0.01, 0.39]",NO,Incoming values fall within historical training span
+previous_event_count,numerical,"[0.00, 6999.00]","[8500.00, 8504.00]",YES (Extends Bounds),Values extend beyond observed training distribution
+crime_category_group,categorical,4 categories,3 categories,NO,All incoming categories present in training set
+time_period,categorical,5 categories,2 categories,NO,All incoming categories present in training set
+victim_district,categorical,40 categories,4 categories,NO,All incoming categories present in training set

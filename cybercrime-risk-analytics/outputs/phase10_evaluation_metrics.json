@@ -1,0 +1,741 @@
+{
+  "phase": 10,
+  "framework": "Cybercrime Predictive Analytics Framework (Problem Statement ID 26184)",
+  "timestamp_evaluated_utc": "2026-09-19T13:08:54Z",
+  "leakage_audit_summary": {
+    "total_features": 64,
+    "safe_count": 55,
+    "potential_leakage_count": 3,
+    "confirmed_leakage_count": 6
+  },
+  "temporal_splitting": {
+    "is_chronological": true,
+    "train_range": [
+      "2026-01-01 00:59:16",
+      "2026-06-21 23:24:13"
+    ],
+    "val_range": [
+      "2026-06-21 23:25:40",
+      "2026-07-27 11:19:04"
+    ],
+    "test_range": [
+      "2026-07-27 11:26:18",
+      "2026-08-31 23:55:41"
+    ],
+    "train_rows": 7000,
+    "val_rows": 1500,
+    "test_rows": 1500,
+    "overlap_counts": {
+      "train_val": 0,
+      "val_test": 0,
+      "train_test": 0
+    },
+    "positive_rates": {
+      "train": 0.104,
+      "val": 0.096,
+      "test": 0.1033
+    },
+    "median_fraud_amount": {
+      "train": 8008.695,
+      "val": 7937.715,
+      "test": 7566.844999999999
+    }
+  },
+  "legacy_xgboost_evaluation": {
+    "confusion_matrix": {
+      "tn": 1301,
+      "fp": 44,
+      "fn": 152,
+      "tp": 3
+    },
+    "metrics": {
+      "accuracy": 0.8693,
+      "precision": 0.0638,
+      "recall": 0.0194,
+      "f1_score": 0.0297,
+      "roc_auc": 0.476,
+      "pr_auc": 0.1029,
+      "specificity": 0.9673,
+      "balanced_accuracy": 0.4933,
+      "brier_score": 0.156,
+      "ece": 0.2335
+    },
+    "support": {
+      "positive_count": 155,
+      "negative_count": 1345,
+      "predicted_positive_count": 47,
+      "predicted_negative_count": 1453,
+      "total_test_samples": 1500
+    },
+    "threshold_analysis": [
+      {
+        "threshold": 0.1,
+        "precision": 0.1027,
+        "recall": 0.9935,
+        "f1_score": 0.1862,
+        "true_positives": 154,
+        "false_positives": 1345,
+        "false_negatives": 1,
+        "true_negatives": 0,
+        "alert_count": 1499
+      },
+      {
+        "threshold": 0.2,
+        "precision": 0.1008,
+        "recall": 0.9226,
+        "f1_score": 0.1817,
+        "true_positives": 143,
+        "false_positives": 1276,
+        "false_negatives": 12,
+        "true_negatives": 69,
+        "alert_count": 1419
+      },
+      {
+        "threshold": 0.3,
+        "precision": 0.1017,
+        "recall": 0.6387,
+        "f1_score": 0.1755,
+        "true_positives": 99,
+        "false_positives": 874,
+        "false_negatives": 56,
+        "true_negatives": 471,
+        "alert_count": 973
+      },
+      {
+        "threshold": 0.4,
+        "precision": 0.0952,
+        "recall": 0.2194,
+        "f1_score": 0.1328,
+        "true_positives": 34,
+        "false_positives": 323,
+        "false_negatives": 121,
+        "true_negatives": 1022,
+        "alert_count": 357
+      },
+      {
+        "threshold": 0.5,
+        "precision": 0.0638,
+        "recall": 0.0194,
+        "f1_score": 0.0297,
+        "true_positives": 3,
+        "false_positives": 44,
+        "false_negatives": 152,
+        "true_negatives": 1301,
+        "alert_count": 47
+      },
+      {
+        "threshold": 0.6,
+        "precision": 0.3333,
+        "recall": 0.0065,
+        "f1_score": 0.0127,
+        "true_positives": 1,
+        "false_positives": 2,
+        "false_negatives": 154,
+        "true_negatives": 1343,
+        "alert_count": 3
+      },
+      {
+        "threshold": 0.7,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 155,
+        "true_negatives": 1345,
+        "alert_count": 0
+      },
+      {
+        "threshold": 0.8,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 155,
+        "true_negatives": 1345,
+        "alert_count": 0
+      },
+      {
+        "threshold": 0.9,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 155,
+        "true_negatives": 1345,
+        "alert_count": 0
+      }
+    ],
+    "calibration_bins": [
+      {
+        "bin_range": "0.0-0.1",
+        "sample_count": 1,
+        "mean_predicted_prob": 0.0949,
+        "actual_positive_rate": 1.0
+      },
+      {
+        "bin_range": "0.1-0.2",
+        "sample_count": 80,
+        "mean_predicted_prob": 0.1657,
+        "actual_positive_rate": 0.1375
+      },
+      {
+        "bin_range": "0.2-0.3",
+        "sample_count": 446,
+        "mean_predicted_prob": 0.2571,
+        "actual_positive_rate": 0.0987
+      },
+      {
+        "bin_range": "0.3-0.4",
+        "sample_count": 616,
+        "mean_predicted_prob": 0.3479,
+        "actual_positive_rate": 0.1055
+      },
+      {
+        "bin_range": "0.4-0.5",
+        "sample_count": 310,
+        "mean_predicted_prob": 0.4385,
+        "actual_positive_rate": 0.1
+      },
+      {
+        "bin_range": "0.5-0.6",
+        "sample_count": 44,
+        "mean_predicted_prob": 0.5314,
+        "actual_positive_rate": 0.0455
+      },
+      {
+        "bin_range": "0.6-0.7",
+        "sample_count": 3,
+        "mean_predicted_prob": 0.6185,
+        "actual_positive_rate": 0.3333
+      },
+      {
+        "bin_range": "0.7-0.8",
+        "sample_count": 0,
+        "mean_predicted_prob": 0.75,
+        "actual_positive_rate": 0.0
+      },
+      {
+        "bin_range": "0.8-0.9",
+        "sample_count": 0,
+        "mean_predicted_prob": 0.85,
+        "actual_positive_rate": 0.0
+      },
+      {
+        "bin_range": "0.9-1.0",
+        "sample_count": 0,
+        "mean_predicted_prob": 0.95,
+        "actual_positive_rate": 0.0
+      }
+    ]
+  },
+  "spatial_evaluation_test_ground_truth": {
+    "status": "SUCCESS",
+    "metrics_available": true,
+    "evaluated_test_ground_truth_count": 155,
+    "top_1_hit_rate": 0.7161,
+    "top_3_hit_rate": 0.729,
+    "top_5_hit_rate": 0.7548,
+    "accuracy_within_2_5km": 0.6323,
+    "accuracy_within_5_0km": 0.7161,
+    "mean_distance_error_km": 134.813,
+    "median_distance_error_km": 1.87,
+    "min_distance_error_km": 0.107,
+    "max_distance_error_km": 1009.361,
+    "spatial_terminology": "Predicted Cashout Corridors (Non-Causal Analytical Signal)"
+  },
+  "cross_model_comparison": {
+    "dummy": {
+      "accuracy": 0.8967,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "roc_auc": 0.5,
+      "pr_auc": 0.1033
+    },
+    "logistic_regression": {
+      "accuracy": 0.5373,
+      "precision": 0.096,
+      "recall": 0.4129,
+      "f1_score": 0.1557,
+      "roc_auc": 0.4612,
+      "pr_auc": 0.1023
+    },
+    "random_forest": {
+      "accuracy": 0.8967,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "roc_auc": 0.5336,
+      "pr_auc": 0.1227
+    },
+    "legacy_xgboost": {
+      "accuracy": 0.8693,
+      "precision": 0.0638,
+      "recall": 0.0194,
+      "f1_score": 0.0297,
+      "roc_auc": 0.476,
+      "pr_auc": 0.1029
+    },
+    "leakage_free_baseline": {
+      "accuracy": 0.7073,
+      "precision": 0.1034,
+      "recall": 0.2387,
+      "f1_score": 0.1442,
+      "roc_auc": 0.4837,
+      "pr_auc": 0.1036
+    }
+  },
+  "leakage_feature_details": [
+    {
+      "feature": "crime_type",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "fraud_amount",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "reported_by_authority",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "victim_state",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "victim_district",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "victim_area",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "victim_area_id",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "latitude",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "longitude",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "event_year",
+      "status": "POTENTIAL LEAKAGE",
+      "category": "Monotonic Calendar Drift",
+      "logic": "Monotonically increasing calendar values that enable trees to memorize seasonal or chronological partitions.",
+      "recommendation": "Replace with cyclic temporal transformations (sin/cos day/month)."
+    },
+    {
+      "feature": "event_month",
+      "status": "POTENTIAL LEAKAGE",
+      "category": "Monotonic Calendar Drift",
+      "logic": "Monotonically increasing calendar values that enable trees to memorize seasonal or chronological partitions.",
+      "recommendation": "Replace with cyclic temporal transformations (sin/cos day/month)."
+    },
+    {
+      "feature": "event_day",
+      "status": "POTENTIAL LEAKAGE",
+      "category": "Monotonic Calendar Drift",
+      "logic": "Monotonically increasing calendar values that enable trees to memorize seasonal or chronological partitions.",
+      "recommendation": "Replace with cyclic temporal transformations (sin/cos day/month)."
+    },
+    {
+      "feature": "event_day_of_month",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "event_day_of_week",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "event_hour",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "event_minute",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "is_weekend",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "is_month_start",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "is_month_end",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "is_quarter_start",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "is_quarter_end",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "hour_group",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "time_period",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "latitude_rounded",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "longitude_rounded",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "location_grid",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "coordinate_precision",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "geographic_region",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "crime_category_group",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "is_financial_fraud",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "is_online_fraud",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "is_identity_related",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "is_transaction_related",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "amount_log1p",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "amount_is_zero",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "amount_is_high",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "amount_category",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "previous_event_count",
+      "status": "CONFIRMED LEAKAGE",
+      "category": "Non-Stationary Cumulative Feature",
+      "logic": "Cumulative event count calculated from dataset origin (Jan 1); unnormalized and non-stationary over time.",
+      "recommendation": "Exclude from feature matrix; replace with bounded rolling-window ratios."
+    },
+    {
+      "feature": "time_since_previous_event_hours",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "events_in_previous_1_day",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "events_in_previous_3_days",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "events_in_previous_7_days",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "events_in_previous_30_days",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "previous_activity_by_location",
+      "status": "CONFIRMED LEAKAGE",
+      "category": "Non-Stationary Cumulative Feature",
+      "logic": "Cumulative event count calculated from dataset origin (Jan 1); unnormalized and non-stationary over time.",
+      "recommendation": "Exclude from feature matrix; replace with bounded rolling-window ratios."
+    },
+    {
+      "feature": "previous_activity_by_district",
+      "status": "CONFIRMED LEAKAGE",
+      "category": "Non-Stationary Cumulative Feature",
+      "logic": "Cumulative event count calculated from dataset origin (Jan 1); unnormalized and non-stationary over time.",
+      "recommendation": "Exclude from feature matrix; replace with bounded rolling-window ratios."
+    },
+    {
+      "feature": "previous_activity_by_crime_category",
+      "status": "CONFIRMED LEAKAGE",
+      "category": "Non-Stationary Cumulative Feature",
+      "logic": "Cumulative event count calculated from dataset origin (Jan 1); unnormalized and non-stationary over time.",
+      "recommendation": "Exclude from feature matrix; replace with bounded rolling-window ratios."
+    },
+    {
+      "feature": "rolling_event_count_1h",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "rolling_event_count_6h",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "rolling_event_count_24h",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "rolling_event_count_7d",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "rolling_location_event_count_24h",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "rolling_crime_event_count_7d",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "location_total_previous_events",
+      "status": "CONFIRMED LEAKAGE",
+      "category": "Non-Stationary Cumulative Feature",
+      "logic": "Cumulative event count calculated from dataset origin (Jan 1); unnormalized and non-stationary over time.",
+      "recommendation": "Exclude from feature matrix; replace with bounded rolling-window ratios."
+    },
+    {
+      "feature": "location_previous_24h_events",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "location_previous_7d_events",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "district_previous_24h_events",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "district_previous_7d_events",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "location_unique_crime_categories",
+      "status": "CONFIRMED LEAKAGE",
+      "category": "Non-Stationary Cumulative Feature",
+      "logic": "Cumulative event count calculated from dataset origin (Jan 1); unnormalized and non-stationary over time.",
+      "recommendation": "Exclude from feature matrix; replace with bounded rolling-window ratios."
+    },
+    {
+      "feature": "has_location",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "has_timestamp",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "has_amount",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "has_crime_category",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "has_district",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    },
+    {
+      "feature": "missing_coordinate_flag",
+      "status": "SAFE",
+      "category": "Valid Pre-Complaint Feature",
+      "logic": "Derived strictly at observation time T0 (complaint timestamp) or from historical window bounded by T0.",
+      "recommendation": "Retain in model feature matrix."
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analyst Interface — Cybercrime Analytics Dashboard (ID 26184)</title>
+  <meta name="description" content="Authorized Analyst Decision-Support Interface for Predictive Cybercrime Analytics Framework. Prototype — not connected to live systems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/analyst/css/analyst.css" />
+</head>
+<body>
+
+<!-- ── Login Screen ─────────────────────────────────────────────────────── -->
+<div class="login-screen" id="login-screen">
+  <div class="login-card">
+    <div class="login-logo">
+      <span class="logo-hex">⬡</span>
+      <h1>Cybercrime Analytics — Analyst Interface</h1>
+      <p>Problem Statement ID 26184 · Authorized Decision-Support Prototype</p>
+    </div>
+    <div class="login-prototype-badge">
+      ⚠ PROTOTYPE AUTHENTICATION — NOT PRODUCTION GOVERNMENT AUTH
+    </div>
+    <div class="login-error" id="login-error"></div>
+    <form id="login-form">
+      <div class="form-group">
+        <label class="form-label" for="username">Demo Username</label>
+        <input class="form-control" type="text" id="username" name="username"
+               placeholder="demo_analyst" autocomplete="username" required />
+        <span style="font-size:0.7rem;color:var(--text-dim);margin-top:4px;display:block;">
+          Enter demo username (not email address)
+        </span>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="password">Password</label>
+        <input class="form-control" type="password" id="password" name="password"
+               placeholder="••••••••••••••••" autocomplete="current-password" required />
+      </div>
+      <button class="btn btn-primary" type="submit" id="btn-login-submit" style="width:100%;margin-top:8px;">
+        Log In
+      </button>
+    </form>
+    <div class="demo-access-panel" style="margin-top:20px;border-top:1px solid var(--border-dim);padding-top:16px;">
+      <div style="font-size:0.74rem;font-weight:600;letter-spacing:0.08em;color:var(--text-muted);text-transform:uppercase;margin-bottom:10px;text-align:center;">
+        DEMO ACCESS
+      </div>
+      <div style="display:flex;gap:8px;justify-content:center;">
+        <button type="button" class="btn btn-sm btn-secondary" id="btn-demo-analyst" style="flex:1;">Analyst Demo</button>
+        <button type="button" class="btn btn-sm btn-secondary" id="btn-demo-supervisor" style="flex:1;">Supervisor Demo</button>
+        <button type="button" class="btn btn-sm btn-secondary" id="btn-demo-admin" style="flex:1;">Admin Demo</button>
+      </div>
+      <div style="margin-top:10px;font-size:0.68rem;color:var(--text-dim);text-align:center;">
+        Synthetic demonstration credentials only · Click a demo role to auto-fill
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── App Shell ────────────────────────────────────────────────────────── -->
+<div class="app-shell" id="app-shell">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-logo">
+      <span class="logo-icon">⬡</span>
+      <div>
+        <div class="header-title">Cybercrime Analytics · Analyst Interface</div>
+        <div class="header-subtitle">Problem Statement ID 26184 — Authorized Analytical Decision Support</div>
+      </div>
+    </div>
+    <div class="header-center">
+      <span class="badge badge-prototype">Prototype · Synthetic Data</span>
+      <span class="badge badge-synthetic">NOT Connected to Live Systems</span>
+    </div>
+    <div class="header-right">
+      <span id="hdr-time" style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-muted)"></span>
+      <div class="header-user">
+        <span style="font-size:0.78rem;color:var(--text-muted)">Logged in as</span>
+        <span id="hdr-user" style="font-size:0.82rem;color:var(--text-secondary)">—</span>
+        <span class="user-badge ANALYST" id="hdr-role">ANALYST</span>
+      </div>
+      <button class="btn btn-sm btn-secondary" id="btn-logout">Sign Out</button>
+    </div>
+  </header>
+
+  <!-- Main Layout -->
+  <div class="main-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">Navigation</div>
+        <div id="sidebar-nav"></div>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">External</div>
+        <div id="sidebar-external"></div>
+      </div>
+      <div class="sidebar-footer">
+        <div style="font-size:0.65rem;color:var(--text-dim);line-height:1.5;">
+          Authorized Analytical Decision Support Only.<br>
+          Not connected to live NCRP, banking, or ATM systems.
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-content">
+      <!-- Overview page content -->
+      <div class="page-header">
+        <h1>Overview</h1>
+        <p>Authorized Analytical Decision Support — Cybercrime Predictive Risk Intelligence</p>
+      </div>
+
+      <!-- Disclaimer Banner -->
+      <div class="disclaimer-banner" id="main-disclaimer">
+        <strong>Authorized Analytical Decision Support</strong> —
+        This prototype is an analytical decision-support system. Predictive risk scores and spatial hotspots are not proof of criminal activity
+        and do not identify criminal responsibility. Operational decisions require authorized human review, supporting evidence,
+        applicable procedures, and appropriate governance.<br>
+        <em>This prototype is not connected to live NCRP, banking, ATM, or financial institution systems.</em>
+      </div>
+
+      <!-- KPI Grid -->
+      <div id="kpi-loading" class="loading-overlay">
+        <div class="spinner"></div>
+        <span>Loading analytical intelligence…</span>
+      </div>
+      <div id="kpi-grid" class="kpi-grid" style="display:none">
+        <div class="kpi-card">
+          <div class="kpi-label">Total Alerts</div>
+          <div class="kpi-value" id="kpi-total-alerts">—</div>
+          <div class="kpi-sub">Analytical signals</div>
+          <div class="kpi-icon">⚠</div>
+        </div>
+        <div class="kpi-card kpi-critical">
+          <div class="kpi-label">Critical Alerts</div>
+          <div class="kpi-value" id="kpi-critical">—</div>
+          <div class="kpi-sub">Requires immediate review</div>
+          <div class="kpi-icon">🚨</div>
+        </div>
+        <div class="kpi-card kpi-high">
+          <div class="kpi-label">High Alerts</div>
+          <div class="kpi-value" id="kpi-high">—</div>
+          <div class="kpi-sub">Priority review needed</div>
+          <div class="kpi-icon">⬡</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">New Alerts</div>
+          <div class="kpi-value" id="kpi-new">—</div>
+          <div class="kpi-sub">Awaiting review</div>
+          <div class="kpi-icon">🔔</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">In Review</div>
+          <div class="kpi-value" id="kpi-in-review">—</div>
+          <div class="kpi-sub">Currently under review</div>
+          <div class="kpi-icon">🔍</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Hotspots</div>
+          <div class="kpi-value" id="kpi-hotspots">—</div>
+          <div class="kpi-sub">Analytical clusters</div>
+          <div class="kpi-icon">📍</div>
+        </div>
+        <div class="kpi-card kpi-high">
+          <div class="kpi-label">High-Risk Areas</div>
+          <div class="kpi-value" id="kpi-high-areas">—</div>
+          <div class="kpi-sub">Elevated activity zones</div>
+          <div class="kpi-icon">🗺</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Avg Risk Score</div>
+          <div class="kpi-value" id="kpi-avg-risk">—</div>
+          <div class="kpi-sub">Model-derived score</div>
+          <div class="kpi-icon">📊</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Investigations</div>
+          <div class="kpi-value" id="kpi-investigations">—</div>
+          <div class="kpi-sub">Total records</div>
+          <div class="kpi-icon">📂</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Open Investigations</div>
+          <div class="kpi-value" id="kpi-open-inv">—</div>
+          <div class="kpi-sub">Pending review</div>
+          <div class="kpi-icon">📌</div>
+        </div>
+      </div>
+
+      <!-- Quick Action Cards -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin-top:8px;">
+        <div class="card" style="cursor:pointer" onclick="window.location='/analyst/alerts.html'">
+          <div class="card-title"><span class="dot"></span> Alert Review</div>
+          <p style="font-size:0.82rem;color:var(--text-muted)">Review analytical alerts, apply filters, manage status workflow, and create investigations from active alerts.</p>
+          <div style="margin-top:14px;"><a class="btn btn-primary btn-sm" href="/analyst/alerts.html">Open Alerts →</a></div>
+        </div>
+        <div class="card" style="cursor:pointer" onclick="window.location='/analyst/investigation.html'">
+          <div class="card-title"><span class="dot"></span> Investigation Workspace</div>
+          <p style="font-size:0.82rem;color:var(--text-muted)">Create and manage investigations, record analyst notes, add evidence references, view SHAP explanations, and track timeline.</p>
+          <div style="margin-top:14px;"><a class="btn btn-primary btn-sm" href="/analyst/investigation.html">Open Investigations →</a></div>
+        </div>
+        <div class="card" style="cursor:pointer" onclick="window.location='/dashboard'">
+          <div class="card-title"><span class="dot"></span> GIS Risk Map</div>
+          <p style="font-size:0.82rem;color:var(--text-muted)">Spatial hotspot map, risk heatmap, and cluster visualization. Phase 15 analytical GIS dashboard.</p>
+          <div style="margin-top:14px;"><a class="btn btn-secondary btn-sm" href="/dashboard" target="_blank">Open GIS Map ↗</a></div>
+        </div>
+        <div class="card" id="audit-card" style="cursor:pointer;display:none" onclick="window.location='/analyst/audit.html'">
+          <div class="card-title"><span class="dot"></span> Audit Log</div>
+          <p style="font-size:0.82rem;color:var(--text-muted)">System-wide analyst action audit trail. All significant actions are logged. Requires SUPERVISOR or ADMIN role.</p>
+          <div style="margin-top:14px;"><a class="btn btn-secondary btn-sm" href="/analyst/audit.html">Open Audit Log →</a></div>
+        </div>
+      </div>
+
+      <!-- Model Info -->
+      <div class="card" style="margin-top:16px;">
+        <div class="card-title"><span class="dot"></span> Model Intelligence</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;">
+          <div>
+            <div class="detail-field-label">Model Type</div>
+            <div class="detail-field-value" style="font-size:0.82rem;">XGBoost Classifier (sklearn Pipeline)</div>
+          </div>
+          <div>
+            <div class="detail-field-label">Prediction Target</div>
+            <div class="detail-field-value" style="font-size:0.82rem;">Future Cash Withdrawal Risk</div>
+          </div>
+          <div>
+            <div class="detail-field-label">Prediction Horizon</div>
+            <div class="detail-field-value" style="font-size:0.82rem;">24 Hours</div>
+          </div>
+          <div>
+            <div class="detail-field-label">Risk Score Range</div>
+            <div class="detail-field-value" style="font-size:0.82rem;">0 – 100</div>
+          </div>
+          <div>
+            <div class="detail-field-label">Phase Reference</div>
+            <div class="detail-field-value" style="font-size:0.82rem;">Phase 8 XGBoost + Phase 9 Risk Scoring</div>
+          </div>
+          <div>
+            <div class="detail-field-label">Explainability</div>
+            <div class="detail-field-value" style="font-size:0.82rem;">Phase 10 SHAP Analysis</div>
+          </div>
+        </div>
+        <div class="disclaimer-banner" style="margin-top:16px;margin-bottom:0;">
+          <strong>Model Disclaimer:</strong>
+          Model explanations describe factors contributing to the model's prediction.
+          They do not establish causality or criminal responsibility.
+          All predictions are analytical signals only — they require authorized human review.
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<script src="/analyst/js/analyst.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const startDashboard = () => {
+    initPageShell('overview');
+    const ac = document.getElementById('audit-card');
+    if (ac) {
+      ac.style.display = Auth.hasRole('SUPERVISOR', 'ADMIN') ? '' : 'none';
+    }
+    loadOverview();
+  };
+
+  await Login.init(startDashboard);
+
+  if (Auth.isLoggedIn()) {
+    startDashboard();
+  }
+});
+
+async function loadOverview() {
+  const loadEl = document.getElementById('kpi-loading');
+  const gridEl = document.getElementById('kpi-grid');
+
+  try {
+    const data = await Http.get('/overview');
+    if (loadEl) loadEl.style.display = 'none';
+    if (gridEl) gridEl.style.display = '';
+
+    const set = (id, val) => {
+      const el = document.getElementById(id);
+      if (el) { el.textContent = val ?? '—'; el.classList.add('fade-in'); }
+    };
+    set('kpi-total-alerts',   data.total_alerts);
+    set('kpi-critical',       data.critical_alerts);
+    set('kpi-high',           data.high_alerts);
+    set('kpi-new',            data.new_alerts);
+    set('kpi-in-review',      data.in_review_alerts);
+    set('kpi-hotspots',       data.analytical_hotspots);
+    set('kpi-high-areas',     data.high_risk_areas);
+    set('kpi-avg-risk',       data.average_risk_score !== null ? data.average_risk_score + '/100' : '—');
+    set('kpi-investigations', data.total_investigations);
+    set('kpi-open-inv',       data.open_investigations);
+  } catch (err) {
+    if (loadEl) loadEl.innerHTML = `<div style="color:var(--text-muted);font-size:0.82rem;">⚠ Could not load overview: ${err.message}</div>`;
+  }
+}
+</script>
+</body>
+</html>

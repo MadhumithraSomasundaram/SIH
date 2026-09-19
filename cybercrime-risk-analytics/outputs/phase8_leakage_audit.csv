@@ -1,0 +1,7 @@
+check,status,details
+Target 'future_withdrawal' excluded from X_test,PASS,Target strictly excluded from predictors
+Identifier 'case_id' excluded from X_test,PASS,case_id correctly isolated
+No future target construction or outcome leakage fields,PASS,Zero target-derived leakage features in X_test
+No raw financial PII or sensitive credentials,PASS,Zero raw PII credentials present
+No index or sequence-leakage column in predictors,PASS,No artificial index column in predictors
+Test data untouched by fitting routines,PASS,Preprocessors fitted strictly on training data; transform applied without fit

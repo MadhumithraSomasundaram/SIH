@@ -1,0 +1,557 @@
+feature,importance
+num__time_since_previous_event_hours,0.02993
+num__amount_log1p,0.028804
+num__fraud_amount,0.028426
+num__event_minute,0.027467
+num__previous_activity_by_crime_category,0.026937
+num__previous_event_count,0.026015
+num__previous_activity_by_district,0.025726
+num__events_in_previous_30_days,0.025591
+num__rolling_crime_event_count_7d,0.025246
+num__events_in_previous_3_days,0.025107
+num__events_in_previous_7_days,0.024914
+num__rolling_event_count_7d,0.024551
+num__events_in_previous_1_day,0.022902
+num__location_total_previous_events,0.02179
+num__rolling_event_count_24h,0.021781
+num__previous_activity_by_location,0.021676
+num__event_day_of_month,0.020555
+num__event_day,0.020512
+num__event_hour,0.02021
+num__district_previous_7d_events,0.020114
+num__rolling_event_count_6h,0.020083
+num__longitude_rounded,0.017674
+num__latitude_rounded,0.017392
+num__latitude,0.01733
+num__longitude,0.017319
+num__event_day_of_week,0.014575
+num__rolling_event_count_1h,0.013203
+num__location_previous_7d_events,0.012436
+num__district_previous_24h_events,0.011409
+num__event_month,0.008761
+num__location_unique_crime_categories,0.008488
+cat__amount_category_MEDIUM,0.004857
+num__is_identity_related,0.004783
+num__rolling_location_event_count_24h,0.004705
+num__is_online_fraud,0.004683
+num__reported_by_authority,0.00466
+num__location_previous_24h_events,0.004475
+cat__time_period_morning,0.004238
+cat__crime_category_group_CREDENTIAL_THEFT,0.004189
+cat__crime_category_group_PAYMENT_FRAUD,0.004187
+num__is_financial_fraud,0.004142
+num__is_weekend,0.004038
+cat__crime_type_PHISHING,0.004012
+num__is_transaction_related,0.003889
+cat__time_period_afternoon,0.00387
+cat__time_period_early_morning,0.003857
+cat__amount_category_LOW,0.003855
+cat__hour_group_16-19,0.003721
+cat__hour_group_00-03,0.003699
+cat__hour_group_12-15,0.003603
+cat__hour_group_08-11,0.003594
+cat__crime_type_ACCOUNT_TAKEOVER,0.003575
+cat__hour_group_04-07,0.003567
+cat__crime_type_IMPERSONATION,0.003566
+cat__amount_category_HIGH,0.003557
+cat__time_period_evening,0.003555
+cat__crime_type_UPI_FRAUD,0.003445
+cat__crime_type_OTHER_FINANCIAL_FRAUD,0.003437
+cat__crime_category_group_SOCIAL_ENGINEERING,0.003282
+cat__crime_type_INVESTMENT_FRAUD,0.00323
+cat__victim_state_Tamil Nadu,0.003176
+cat__hour_group_20-23,0.003075
+cat__crime_category_group_INVESTMENT_SCAM,0.003018
+cat__victim_state_Karnataka,0.002891
+cat__victim_state_Andhra Pradesh,0.002837
+cat__time_period_night,0.00272
+cat__victim_state_Kerala,0.002648
+num__amount_is_high,0.002182
+cat__amount_category_CRITICAL,0.001534
+cat__victim_district_Guntur,0.001324
+cat__victim_area_id_AREA0018,0.001309
+cat__location_grid_16.51_80.65,0.001273
+cat__victim_district_Alappuzha,0.001262
+cat__location_grid_15.83_78.04,0.001258
+cat__victim_district_Shivamogga,0.001246
+cat__victim_district_Kottayam,0.001215
+cat__location_grid_9.93_78.12,0.001205
+cat__victim_district_Mangaluru,0.001203
+cat__location_grid_17.33_76.83,0.001182
+cat__location_grid_15.14_76.92,0.001165
+cat__victim_district_Kurnool,0.001161
+cat__victim_district_Ballari,0.001155
+cat__victim_district_Ernakulam,0.001153
+cat__victim_district_Nellore,0.001151
+cat__victim_district_Salem,0.001146
+cat__location_grid_14.44_79.99,0.001145
+cat__location_grid_9.98_76.3,0.001144
+cat__location_grid_11.26_75.78,0.001142
+cat__location_grid_9.59_76.52,0.001141
+cat__victim_area_Woraiyur,0.001135
+cat__location_grid_11.02_76.96,0.001135
+cat__victim_district_Thanjavur,0.001134
+cat__location_grid_14.47_78.82,0.001134
+cat__location_grid_12.97_77.59,0.001127
+num__is_month_start,0.001122
+cat__victim_district_Erode,0.00112
+cat__victim_district_Palakkad,0.00112
+cat__victim_district_Mysuru,0.001116
+cat__victim_district_Vijayawada,0.001114
+cat__location_grid_13.34_77.1,0.001105
+cat__location_grid_13.63_79.42,0.001105
+cat__location_grid_10.79_76.65,0.001103
+cat__location_grid_12.91_74.86,0.0011
+cat__victim_district_Coimbatore,0.001096
+cat__victim_district_Kalaburagi,0.001077
+cat__victim_district_Thrissur,0.001065
+cat__victim_district_Chennai,0.001062
+cat__location_grid_11.87_75.37,0.001061
+cat__location_grid_16.31_80.44,0.00105
+cat__victim_district_Madurai,0.00105
+cat__location_grid_13.08_80.27,0.001049
+cat__victim_district_Bengaluru Urban,0.001044
+cat__location_grid_11.05_76.07,0.001038
+cat__victim_district_Kozhikode,0.001036
+cat__victim_district_Tumakuru,0.001024
+cat__location_grid_13.93_75.57,0.001021
+cat__location_grid_10.79_79.14,0.001019
+cat__victim_area_RTC Colony,0.001017
+cat__location_grid_9.5_76.34,0.001015
+cat__location_grid_10.37_77.98,0.001014
+cat__victim_district_Kannur,0.001012
+cat__victim_district_Kakinada,0.001007
+cat__location_grid_10.79_78.7,0.001007
+num__is_month_end,0.001003
+cat__victim_district_Tirupati,0.001002
+cat__victim_district_Kadapa,0.001001
+cat__location_grid_11.34_77.72,0.000997
+cat__victim_district_Rajamahendravaram,0.000979
+cat__location_grid_10.53_76.21,0.000972
+cat__location_grid_14.68_77.6,0.000971
+cat__location_grid_8.52_76.94,0.00097
+cat__location_grid_12.3_76.64,0.000956
+cat__location_grid_11.66_78.15,0.000951
+cat__victim_district_Tiruchirappalli,0.000948
+cat__victim_district_Vellore,0.000947
+cat__victim_district_Dindigul,0.000945
+cat__victim_district_Malappuram,0.000906
+cat__location_grid_16.99_82.25,0.0009
+cat__victim_district_Anantapur,0.000893
+cat__location_grid_8.71_77.76,0.000883
+cat__victim_district_Hubballi,0.000882
+cat__location_grid_15.36_75.12,0.000881
+cat__victim_area_id_AREA0087,0.000876
+cat__location_grid_13.34_74.74,0.000871
+cat__location_grid_16.99_81.78,0.000869
+cat__victim_area_Gorantla,0.000868
+cat__victim_district_Kollam,0.000862
+cat__location_grid_12.92_79.13,0.00086
+cat__location_grid_8.89_76.61,0.000857
+cat__victim_area_Super Market,0.000854
+cat__victim_district_Udupi,0.000843
+cat__victim_area_KK Nagar,0.000787
+cat__victim_district_Thiruvananthapuram,0.000777
+cat__victim_area_Gandhi Nagar,0.000747
+cat__location_grid_17.69_83.22,0.000747
+cat__victim_area_Vedayapalem,0.000733
+cat__victim_area_Lakshmipuram,0.000733
+cat__victim_district_Tirunelveli,0.000731
+cat__victim_district_Visakhapatnam,0.000705
+cat__victim_area_id_AREA0163,0.000698
+cat__victim_area_id_AREA0031,0.00069
+cat__victim_area_id_AREA0117,0.000678
+cat__victim_area_Ashok Nagar,0.000678
+cat__victim_area_Tirur,0.000664
+cat__victim_area_Perundurai Road,0.000664
+cat__victim_area_id_AREA0165,0.000661
+cat__location_grid_15.85_74.5,0.000651
+cat__victim_area_Ramanayyapeta,0.000651
+cat__victim_area_Kumaranalloor,0.000649
+cat__victim_area_Anna Nagar,0.000643
+cat__victim_district_Belagavi,0.000639
+cat__victim_area_Burnassery,0.000637
+cat__victim_area_id_AREA0149,0.000617
+cat__victim_area_id_AREA0183,0.000616
+cat__victim_area_Cantonment,0.000581
+cat__victim_area_Ayyanthole,0.000571
+cat__victim_area_id_AREA0174,0.000566
+cat__victim_area_id_AREA0188,0.000562
+cat__victim_area_Nagarajupet,0.000552
+cat__victim_area_id_AREA0076,0.000545
+cat__victim_area_id_AREA0194,0.000541
+cat__victim_area_Vidya Nagar,0.000537
+cat__victim_area_id_AREA0186,0.000537
+cat__victim_area_Tiruchanur,0.000529
+cat__victim_area_id_AREA0142,0.000524
+cat__victim_area_id_AREA0135,0.00052
+cat__victim_area_id_AREA0193,0.000506
+cat__victim_area_Batawadi,0.0005
+cat__victim_area_id_AREA0034,0.000496
+cat__victim_area_Aryapuram,0.000495
+cat__victim_area_id_AREA0008,0.000489
+cat__victim_area_Kottarakkara,0.000489
+cat__victim_area_Vyttila,0.000485
+cat__victim_area_id_AREA0168,0.000484
+cat__victim_area_id_AREA0109,0.000481
+cat__victim_area_Sarpavaram,0.000477
+cat__victim_area_id_AREA0121,0.000472
+cat__victim_area_id_AREA0068,0.000461
+cat__victim_area_Yerramukkapalli,0.000459
+cat__victim_area_id_AREA0141,0.000456
+cat__victim_area_id_AREA0042,0.000456
+cat__victim_area_id_AREA0004,0.000452
+cat__victim_area_id_AREA0023,0.000451
+cat__victim_area_Mattuthavani,0.00045
+cat__victim_area_id_AREA0177,0.000449
+cat__victim_area_id_AREA0106,0.000448
+cat__victim_area_Kanjikuzhi,0.000446
+cat__victim_area_id_AREA0094,0.000445
+cat__victim_area_id_AREA0192,0.000444
+cat__victim_area_Peelamedu,0.000444
+cat__victim_area_Keshwapur,0.000444
+cat__victim_area_New Bus Stand,0.000441
+cat__victim_area_Guindy,0.000438
+cat__victim_area_MR Palli,0.000433
+cat__victim_area_id_AREA0046,0.00043
+cat__victim_area_Alipiri,0.000428
+cat__victim_area_id_AREA0022,0.000426
+cat__victim_area_id_AREA0020,0.000425
+cat__victim_area_Ammapet,0.000424
+cat__victim_area_id_AREA0013,0.000423
+cat__victim_area_Changanassery,0.000423
+cat__victim_area_id_AREA0169,0.000423
+cat__victim_area_Kakkanad,0.000421
+cat__victim_area_Korlagunta,0.00042
+cat__victim_area_id_AREA0057,0.000418
+cat__victim_area_Ajjarkad,0.000417
+cat__victim_area_Nallapadu,0.000415
+cat__victim_area_Nandyal Road,0.000414
+cat__victim_area_id_AREA0144,0.000412
+cat__victim_area_id_AREA0070,0.000411
+cat__victim_area_Hasthampatti,0.000406
+cat__victim_area_id_AREA0071,0.000406
+cat__victim_area_Pallikkunnu,0.000405
+cat__victim_area_id_AREA0199,0.000404
+cat__victim_area_id_AREA0085,0.000403
+num__is_quarter_start,0.000403
+cat__victim_area_Begampur,0.000403
+cat__victim_area_id_AREA0015,0.000401
+cat__victim_area_id_AREA0178,0.000398
+cat__victim_area_Gandhinagar,0.000398
+cat__victim_area_Nagal Nagar,0.000396
+cat__victim_area_id_AREA0050,0.000391
+cat__victim_area_id_AREA0167,0.000389
+cat__victim_area_Perumalpuram,0.000386
+cat__victim_area_id_AREA0140,0.000385
+cat__victim_area_id_AREA0011,0.000384
+cat__victim_area_Savalanga Road,0.000383
+cat__victim_area_Sadashiv Nagar,0.000382
+cat__victim_area_id_AREA0172,0.000381
+cat__victim_area_id_AREA0044,0.000379
+cat__victim_area_Hebbal,0.000376
+cat__victim_area_id_AREA0170,0.000373
+cat__victim_area_Alappuzha Beach,0.000373
+cat__victim_area_id_AREA0179,0.000373
+cat__victim_area_Chandranagar,0.00037
+cat__victim_area_id_AREA0189,0.00037
+cat__victim_area_Whitefield,0.000369
+cat__victim_area_id_AREA0033,0.000364
+cat__victim_area_Teachers Colony,0.000363
+cat__victim_area_id_AREA0053,0.000361
+cat__victim_area_id_AREA0082,0.00036
+cat__victim_area_Tallakulam,0.00036
+cat__victim_area_Vijayanagar,0.00036
+cat__victim_area_id_AREA0079,0.000358
+cat__victim_area_id_AREA0052,0.000358
+cat__victim_area_Cowl Bazaar,0.000358
+cat__victim_area_Veerappanchatram,0.000357
+cat__victim_area_Shoranur Road,0.000357
+cat__victim_area_Natham Road,0.000357
+cat__victim_area_id_AREA0198,0.000357
+cat__victim_area_Vazhuthacaud,0.000355
+cat__victim_area_Kuvempunagar,0.000355
+cat__victim_area_Manjeri,0.000354
+cat__victim_area_id_AREA0195,0.000354
+cat__victim_area_id_AREA0103,0.000354
+cat__victim_area_id_AREA0078,0.000353
+cat__victim_area_Palliagraharam,0.000351
+cat__victim_area_BH Road,0.000351
+cat__victim_area_Station Road,0.000351
+cat__victim_area_Thirunagar,0.000351
+cat__victim_area_Bellary Road,0.000348
+cat__victim_area_id_AREA0156,0.000347
+cat__victim_area_id_AREA0139,0.000347
+cat__victim_area_id_AREA0164,0.000347
+cat__victim_area_id_AREA0086,0.000346
+cat__victim_area_Tilakwadi,0.000345
+cat__victim_area_Bhanugudi,0.000345
+cat__victim_area_id_AREA0099,0.000344
+cat__victim_area_Vinoba Nagar,0.000343
+cat__victim_area_id_AREA0162,0.000342
+cat__victim_area_Sapthagiri Circle,0.000341
+cat__victim_area_West Fort,0.000339
+cat__victim_area_Suryaraopeta,0.000338
+cat__victim_area_id_AREA0127,0.000338
+cat__victim_area_Ambalappuzha,0.000337
+cat__victim_area_Sedam Road,0.000336
+cat__victim_area_id_AREA0185,0.000335
+cat__victim_area_id_AREA0147,0.000335
+cat__victim_area_Ollur,0.000334
+cat__victim_area_id_AREA0051,0.000333
+cat__victim_area_Gokul,0.000333
+cat__victim_area_id_AREA0146,0.000332
+cat__victim_area_id_AREA0097,0.00033
+cat__victim_area_Kesavadasapuram,0.00033
+cat__victim_area_id_AREA0077,0.000328
+cat__victim_area_Asramam,0.000326
+cat__victim_area_Lalacheruvu,0.000325
+cat__victim_area_Kottakkal,0.000323
+cat__victim_area_id_AREA0001,0.000323
+cat__victim_area_id_AREA0058,0.000321
+cat__victim_area_id_AREA0105,0.000321
+cat__victim_area_Danavaipeta,0.000321
+cat__victim_area_Yelahanka,0.00032
+cat__victim_area_id_AREA0014,0.00032
+cat__victim_area_id_AREA0148,0.000319
+cat__victim_area_id_AREA0096,0.000319
+cat__victim_area_Indiranagar,0.000318
+cat__victim_area_Fairlands,0.000318
+cat__victim_area_Santhekatte,0.000316
+cat__victim_area_Saraswathipuram,0.000316
+cat__victim_area_Gajuwaka,0.000315
+cat__victim_area_Gulbarga University Area,0.000314
+cat__victim_area_Aravind Nagar,0.000314
+cat__victim_area_id_AREA0171,0.000313
+cat__victim_area_id_AREA0047,0.000313
+cat__victim_area_Medical College Road,0.000312
+cat__victim_area_id_AREA0115,0.000312
+cat__victim_area_id_AREA0131,0.000311
+cat__victim_area_Olavakkode,0.00031
+cat__victim_area_id_AREA0181,0.00031
+cat__victim_area_id_AREA0118,0.000308
+cat__victim_area_id_AREA0043,0.000308
+cat__victim_area_Kalmandapam,0.000307
+cat__victim_area_Koramangala,0.000306
+cat__victim_area_Seven Roads,0.000306
+cat__victim_area_Thalassery,0.000306
+cat__victim_area_Kallai,0.000305
+cat__victim_area_id_AREA0028,0.000304
+cat__victim_area_id_AREA0025,0.000304
+cat__victim_area_id_AREA0132,0.000304
+cat__victim_area_id_AREA0084,0.000303
+cat__victim_area_id_AREA0029,0.000303
+cat__victim_area_id_AREA0089,0.000302
+cat__victim_area_id_AREA0120,0.000301
+cat__victim_area_id_AREA0037,0.000301
+cat__victim_area_id_AREA0116,0.000301
+cat__victim_area_Perinthalmanna,0.000301
+cat__victim_area_Sira Road,0.0003
+cat__victim_area_id_AREA0006,0.0003
+cat__victim_area_Old Town,0.000299
+cat__victim_area_id_AREA0136,0.000299
+cat__victim_area_id_AREA0152,0.000299
+cat__victim_area_id_AREA0125,0.000298
+cat__victim_area_id_AREA0030,0.000298
+cat__victim_area_Morampudi,0.000298
+cat__victim_area_Magunta Layout,0.000298
+cat__victim_area_id_AREA0088,0.000297
+cat__victim_area_id_AREA0187,0.000296
+cat__victim_area_Kadappakada,0.000296
+cat__victim_area_Karanthai,0.000296
+cat__victim_area_Kodimatha,0.000295
+cat__victim_area_id_AREA0041,0.000293
+cat__victim_area_id_AREA0073,0.000291
+cat__victim_area_id_AREA0069,0.000291
+cat__victim_area_id_AREA0182,0.00029
+cat__victim_area_id_AREA0036,0.00029
+cat__victim_area_id_AREA0190,0.00029
+cat__victim_area_Jagannaickpur,0.000289
+cat__victim_area_id_AREA0010,0.000289
+cat__victim_area_id_AREA0100,0.000288
+cat__victim_area_RM Colony,0.000287
+cat__victim_area_id_AREA0067,0.000287
+cat__victim_area_id_AREA0130,0.000287
+cat__victim_area_id_AREA0124,0.000286
+cat__victim_area_Alagapuram,0.000286
+cat__victim_area_Sathuvachari,0.000284
+cat__victim_area_id_AREA0119,0.000282
+cat__victim_area_id_AREA0032,0.000281
+cat__victim_area_Singanallur,0.000279
+cat__victim_area_Karungalpalayam,0.000277
+cat__victim_area_Vellore Fort,0.000277
+cat__victim_area_Navanagar,0.000277
+cat__victim_area_Gokul Road,0.000275
+cat__victim_area_id_AREA0095,0.000275
+cat__victim_area_id_AREA0026,0.000275
+cat__victim_area_RS Puram,0.000274
+cat__victim_area_Benz Circle,0.000274
+cat__victim_area_Edappally,0.000273
+cat__victim_area_Melapalayam,0.000273
+cat__victim_area_id_AREA0154,0.000273
+cat__victim_area_id_AREA0104,0.000273
+num__is_quarter_end,0.000273
+cat__victim_area_Tumkur University Area,0.000272
+cat__victim_area_Gandhipuram,0.000271
+cat__victim_area_id_AREA0143,0.000271
+cat__victim_area_id_AREA0093,0.000271
+cat__victim_area_Kowdiar,0.000269
+cat__victim_area_id_AREA0009,0.000268
+cat__victim_area_Electronic City,0.000267
+cat__victim_area_id_AREA0083,0.000267
+cat__victim_area_Surampatti,0.000266
+cat__victim_area_id_AREA0126,0.000266
+cat__victim_area_id_AREA0153,0.000266
+cat__victim_area_id_AREA0064,0.000266
+cat__victim_area_Thillai Nagar,0.000266
+cat__victim_area_Arundelpet,0.000263
+cat__victim_area_Koorkenchery,0.000261
+cat__victim_area_Maharaja Nagar,0.000261
+cat__victim_area_Saibaba Colony,0.000261
+cat__victim_area_id_AREA0113,0.00026
+cat__victim_area_id_AREA0155,0.00026
+cat__victim_area_Balaji Nagar,0.00026
+cat__victim_area_id_AREA0007,0.00026
+cat__victim_area_Poranki,0.000259
+cat__victim_area_id_AREA0101,0.000259
+cat__victim_area_id_AREA0035,0.000258
+cat__victim_area_id_AREA0166,0.000257
+cat__victim_area_id_AREA0081,0.000256
+cat__victim_area_T Nagar,0.000255
+cat__victim_area_Old Hubballi,0.000255
+cat__victim_area_id_AREA0157,0.000255
+cat__victim_area_id_AREA0048,0.000254
+cat__victim_area_id_AREA0019,0.000253
+cat__victim_area_Nadakkavu,0.000253
+cat__victim_area_id_AREA0054,0.000252
+cat__victim_area_Kinnimulki,0.00025
+cat__victim_area_id_AREA0056,0.00025
+cat__victim_area_id_AREA0114,0.000249
+cat__victim_area_id_AREA0012,0.000248
+cat__victim_area_id_AREA0107,0.000246
+cat__victim_area_id_AREA0196,0.000246
+cat__victim_area_Velachery,0.000245
+cat__victim_area_West Hill,0.000244
+cat__victim_area_id_AREA0098,0.000243
+cat__victim_area_id_AREA0134,0.000242
+cat__victim_area_id_AREA0173,0.000242
+cat__victim_area_id_AREA0021,0.000241
+cat__victim_area_Palayamkottai,0.00024
+cat__victim_area_id_AREA0066,0.00024
+cat__victim_area_Mullakkal,0.000239
+cat__victim_area_Renigunta Road,0.000239
+cat__victim_area_id_AREA0059,0.000238
+cat__victim_area_Chinnakada,0.000238
+cat__victim_area_id_AREA0002,0.000237
+cat__victim_area_id_AREA0122,0.000237
+cat__victim_area_Valapattanam,0.000236
+cat__victim_area_Hampankatta,0.000236
+cat__victim_area_Dwaraka Nagar,0.000233
+cat__victim_area_id_AREA0039,0.000232
+cat__victim_area_id_AREA0150,0.000232
+cat__victim_area_id_AREA0017,0.000232
+cat__victim_area_id_AREA0123,0.00023
+cat__victim_area_id_AREA0137,0.00023
+cat__victim_area_Infantry Road,0.000228
+cat__victim_area_Moghalrajpuram,0.000227
+cat__victim_area_id_AREA0040,0.000226
+cat__victim_area_Ramachandra Nagar,0.000225
+cat__victim_area_id_AREA0158,0.000224
+cat__victim_area_id_AREA0049,0.000224
+cat__victim_area_Pattom,0.000224
+cat__victim_area_Kottooli,0.000224
+cat__victim_area_id_AREA0197,0.000223
+cat__victim_area_id_AREA0184,0.000223
+cat__victim_area_id_AREA0176,0.000222
+cat__victim_area_Kottara,0.000221
+cat__victim_area_id_AREA0092,0.00022
+cat__victim_area_id_AREA0005,0.000219
+cat__victim_area_id_AREA0191,0.000217
+cat__victim_area_Adyar,0.000217
+cat__victim_area_id_AREA0180,0.000217
+cat__victim_area_id_AREA0110,0.000216
+cat__victim_area_Mavoor Road,0.000216
+cat__victim_area_Punnamada,0.000215
+cat__victim_area_Punkunnam,0.000214
+cat__victim_area_id_AREA0112,0.000214
+cat__victim_area_Brahmagiri,0.000212
+cat__victim_area_Bejai,0.000212
+cat__victim_area_id_AREA0145,0.000211
+cat__victim_area_Budhwarpet,0.000211
+cat__victim_area_id_AREA0055,0.000209
+cat__victim_area_id_AREA0160,0.000209
+cat__victim_area_id_AREA0003,0.000209
+cat__victim_area_Aluva,0.000208
+cat__victim_area_id_AREA0090,0.000208
+cat__victim_area_Shah Bazar,0.000207
+cat__victim_area_MVP Colony,0.000207
+cat__victim_area_id_AREA0175,0.000206
+cat__victim_area_Kalavoor,0.000206
+cat__victim_area_id_AREA0061,0.000206
+cat__victim_area_Down Hill,0.000204
+cat__victim_area_id_AREA0074,0.000204
+cat__victim_area_Stonehousepet,0.000204
+cat__victim_area_Joharapuram,0.000203
+cat__victim_area_Kazhakootam,0.000202
+cat__victim_area_Dowleswaram,0.000202
+cat__victim_area_Proddatur Road,0.000201
+cat__victim_area_Kaloor,0.0002
+cat__victim_area_Dargamitta,0.000198
+cat__victim_area_Parvathi Nagar,0.000198
+cat__victim_area_id_AREA0102,0.000198
+cat__victim_area_id_AREA0045,0.000198
+cat__victim_area_Governorpet,0.000198
+cat__victim_area_Vannarpettai,0.000196
+cat__victim_area_Brodipet,0.000196
+cat__victim_area_id_AREA0129,0.000195
+cat__victim_area_Palani Road,0.000194
+cat__victim_area_Srirangam,0.000194
+cat__victim_area_Angol,0.000191
+cat__victim_area_id_AREA0151,0.000191
+cat__victim_area_id_AREA0138,0.000189
+cat__victim_area_id_AREA0108,0.000188
+cat__victim_area_Patamata,0.000187
+cat__victim_area_Suramangalam,0.000187
+cat__victim_area_id_AREA0016,0.000184
+cat__victim_area_id_AREA0075,0.000184
+cat__victim_area_id_AREA0128,0.000183
+cat__victim_area_id_AREA0065,0.000182
+cat__victim_area_Shahapur,0.000182
+cat__victim_area_Surathkal,0.00018
+cat__victim_area_Puthur,0.00018
+cat__victim_area_id_AREA0133,0.00018
+cat__victim_area_id_AREA0063,0.00018
+cat__victim_area_id_AREA0200,0.000179
+cat__victim_area_Ettumanoor,0.000178
+cat__victim_area_id_AREA0072,0.000176
+cat__victim_area_Karunagappally,0.000175
+cat__victim_area_Bagayam,0.000174
+cat__victim_area_Kadri,0.000174
+cat__victim_area_Madhurawada,0.000172
+cat__victim_area_id_AREA0111,0.00017
+cat__victim_area_id_AREA0038,0.000169
+cat__victim_area_id_AREA0024,0.000167
+cat__victim_area_Manipal,0.000165
+cat__victim_area_id_AREA0091,0.000165
+cat__victim_area_Udyambag,0.000165
+cat__victim_area_Seethammadhara,0.000162
+cat__victim_area_id_AREA0027,0.000161
+cat__victim_area_id_AREA0080,0.000159
+cat__victim_area_Rudrampeta,0.000157
+cat__victim_area_id_AREA0062,0.000156
+cat__victim_area_id_AREA0159,0.000154
+cat__victim_area_Chovva,0.000152
+cat__victim_area_id_AREA0161,0.00014
+cat__victim_area_id_AREA0060,0.000125
+cat__victim_area_Nazarbad,0.000122
+cat__victim_area_Katpadi,0.000117
+cat__coordinate_precision_district_area_centroid,0.0
+cat__geographic_region_South_India,0.0
+num__amount_is_zero,0.0
+num__has_location,0.0
+num__has_timestamp,0.0
+num__has_amount,0.0
+num__has_crime_category,0.0
+num__has_district,0.0
+num__missing_coordinate_flag,0.0
+num__event_year,0.0

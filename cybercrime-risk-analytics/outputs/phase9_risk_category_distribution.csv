@@ -1,0 +1,5 @@
+risk_category,record_count,percentage,minimum_score,maximum_score,average_score,average_probability
+LOW,1120,74.67,9,39,29.75,0.2975
+MODERATE,375,25.0,40,58,44.6,0.446
+HIGH,5,0.33,60,63,61.0,0.6104
+CRITICAL,0,0.0,0,0,0.0,0.0

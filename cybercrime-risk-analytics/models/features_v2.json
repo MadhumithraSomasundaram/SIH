@@ -1,0 +1,698 @@
+{
+  "schema_version": "2.0.0",
+  "description": "Leakage-free feature schema for Cybercrime Predictive Analytics Framework (PS ID 26184)",
+  "prediction_timestamp_anchor": "T0 = complaint_timestamp",
+  "total_features": 86,
+  "numerical_feature_count": 73,
+  "categorical_feature_count": 13,
+  "features": {
+    "crime_type": {
+      "data_type": "categorical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "most_frequent"
+    },
+    "fraud_amount": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "reported_by_authority": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "victim_state": {
+      "data_type": "categorical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "most_frequent"
+    },
+    "victim_district": {
+      "data_type": "categorical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "most_frequent"
+    },
+    "victim_area": {
+      "data_type": "categorical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "most_frequent"
+    },
+    "victim_area_id": {
+      "data_type": "categorical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "most_frequent"
+    },
+    "latitude": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "longitude": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "event_year": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "event_day_of_month": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "event_day_of_week": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "event_hour": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "event_minute": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "is_weekend": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "is_month_start": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "is_month_end": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "is_quarter_start": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "is_quarter_end": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "hour_group": {
+      "data_type": "categorical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "most_frequent"
+    },
+    "time_period": {
+      "data_type": "categorical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "most_frequent"
+    },
+    "latitude_rounded": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "longitude_rounded": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "location_grid": {
+      "data_type": "categorical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "most_frequent"
+    },
+    "coordinate_precision": {
+      "data_type": "categorical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "most_frequent"
+    },
+    "geographic_region": {
+      "data_type": "categorical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "most_frequent"
+    },
+    "crime_category_group": {
+      "data_type": "categorical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "most_frequent"
+    },
+    "is_financial_fraud": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "is_online_fraud": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "is_identity_related": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "is_transaction_related": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "amount_log1p": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "amount_is_zero": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "amount_is_high": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "amount_category": {
+      "data_type": "categorical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "most_frequent"
+    },
+    "time_since_previous_event_hours": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "events_in_previous_1_day": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "events_in_previous_3_days": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "events_in_previous_7_days": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "events_in_previous_30_days": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "rolling_event_count_1h": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "rolling_event_count_6h": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "rolling_event_count_24h": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "rolling_event_count_7d": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "rolling_location_event_count_24h": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "rolling_crime_event_count_7d": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "location_previous_24h_events": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "location_previous_7d_events": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "district_previous_24h_events": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "district_previous_7d_events": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "has_location": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "has_timestamp": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "has_amount": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "has_crime_category": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "has_district": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "missing_coordinate_flag": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv (Processed)",
+      "calculation_method": "Base geographical, temporal (calendar cycle), or intake attribute",
+      "time_window": "At complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Excludes non-stationary cumulative counters)",
+      "missing_value_policy": "median"
+    },
+    "victim_account_type": {
+      "data_type": "categorical",
+      "source_dataset": "Accounts.csv",
+      "calculation_method": "Lookup via victim_account_id from static customer profile",
+      "time_window": "At prediction time T0",
+      "leakage_status": "PASS (Leakage-Free: Pre-existing account demographic/baseline)",
+      "missing_value_policy": "most_frequent"
+    },
+    "victim_account_age_days": {
+      "data_type": "numerical",
+      "source_dataset": "Accounts.csv",
+      "calculation_method": "Lookup via victim_account_id from static customer profile",
+      "time_window": "At prediction time T0",
+      "leakage_status": "PASS (Leakage-Free: Pre-existing account demographic/baseline)",
+      "missing_value_policy": "median"
+    },
+    "victim_baseline_daily_txns": {
+      "data_type": "numerical",
+      "source_dataset": "Accounts.csv",
+      "calculation_method": "Lookup via victim_account_id from static customer profile",
+      "time_window": "At prediction time T0",
+      "leakage_status": "PASS (Leakage-Free: Pre-existing account demographic/baseline)",
+      "missing_value_policy": "median"
+    },
+    "victim_baseline_daily_amount": {
+      "data_type": "numerical",
+      "source_dataset": "Accounts.csv",
+      "calculation_method": "Lookup via victim_account_id from static customer profile",
+      "time_window": "At prediction time T0",
+      "leakage_status": "PASS (Leakage-Free: Pre-existing account demographic/baseline)",
+      "missing_value_policy": "median"
+    },
+    "victim_baseline_daily_withdrawals": {
+      "data_type": "numerical",
+      "source_dataset": "Accounts.csv",
+      "calculation_method": "Lookup via victim_account_id from static customer profile",
+      "time_window": "At prediction time T0",
+      "leakage_status": "PASS (Leakage-Free: Pre-existing account demographic/baseline)",
+      "missing_value_policy": "median"
+    },
+    "fraud_to_daily_amount_ratio": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv + Accounts.csv",
+      "calculation_method": "Mathematical ratio/excess of complaint fraud_amount vs baseline_daily_amount",
+      "time_window": "Available at complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Evaluated at T0)",
+      "missing_value_policy": "median"
+    },
+    "fraud_amount_excess_over_baseline": {
+      "data_type": "numerical",
+      "source_dataset": "Fraud_Cases.csv + Accounts.csv",
+      "calculation_method": "Mathematical ratio/excess of complaint fraud_amount vs baseline_daily_amount",
+      "time_window": "Available at complaint intake T0",
+      "leakage_status": "PASS (Leakage-Free: Evaluated at T0)",
+      "missing_value_policy": "median"
+    },
+    "case_prior_txn_count": {
+      "data_type": "numerical",
+      "source_dataset": "Transactions.csv",
+      "calculation_method": "Aggregation of transactions tagged with case_id where timestamp <= T0",
+      "time_window": "(-inf, T0]",
+      "leakage_status": "PASS (Leakage-Free: Post-complaint transactions strictly excluded)",
+      "missing_value_policy": "0 for counts/sums, 9999.0 sentinel for elapsed hours"
+    },
+    "case_prior_amount_sum": {
+      "data_type": "numerical",
+      "source_dataset": "Transactions.csv",
+      "calculation_method": "Aggregation of transactions tagged with case_id where timestamp <= T0",
+      "time_window": "(-inf, T0]",
+      "leakage_status": "PASS (Leakage-Free: Post-complaint transactions strictly excluded)",
+      "missing_value_policy": "0 for counts/sums, 9999.0 sentinel for elapsed hours"
+    },
+    "case_prior_amount_max": {
+      "data_type": "numerical",
+      "source_dataset": "Transactions.csv",
+      "calculation_method": "Aggregation of transactions tagged with case_id where timestamp <= T0",
+      "time_window": "(-inf, T0]",
+      "leakage_status": "PASS (Leakage-Free: Post-complaint transactions strictly excluded)",
+      "missing_value_policy": "0 for counts/sums, 9999.0 sentinel for elapsed hours"
+    },
+    "case_prior_unique_channels": {
+      "data_type": "numerical",
+      "source_dataset": "Transactions.csv",
+      "calculation_method": "Aggregation of transactions tagged with case_id where timestamp <= T0",
+      "time_window": "(-inf, T0]",
+      "leakage_status": "PASS (Leakage-Free: Post-complaint transactions strictly excluded)",
+      "missing_value_policy": "0 for counts/sums, 9999.0 sentinel for elapsed hours"
+    },
+    "case_hours_since_first_txn": {
+      "data_type": "numerical",
+      "source_dataset": "Transactions.csv",
+      "calculation_method": "Aggregation of transactions tagged with case_id where timestamp <= T0",
+      "time_window": "(-inf, T0]",
+      "leakage_status": "PASS (Leakage-Free: Post-complaint transactions strictly excluded)",
+      "missing_value_policy": "0 for counts/sums, 9999.0 sentinel for elapsed hours"
+    },
+    "victim_outgoing_txns_all": {
+      "data_type": "numerical",
+      "source_dataset": "Transactions.csv",
+      "calculation_method": "Aggregation of transactions where from_account == victim_account_id and timestamp <= T0",
+      "time_window": "24h prior, 7d prior, or all-time prior (-inf, T0]",
+      "leakage_status": "PASS (Leakage-Free: Post-complaint activity strictly excluded)",
+      "missing_value_policy": "0 for counts/sums, median for rates"
+    },
+    "victim_outgoing_amount_all": {
+      "data_type": "numerical",
+      "source_dataset": "Transactions.csv",
+      "calculation_method": "Aggregation of transactions where from_account == victim_account_id and timestamp <= T0",
+      "time_window": "24h prior, 7d prior, or all-time prior (-inf, T0]",
+      "leakage_status": "PASS (Leakage-Free: Post-complaint activity strictly excluded)",
+      "missing_value_policy": "0 for counts/sums, median for rates"
+    },
+    "victim_outgoing_amount_avg": {
+      "data_type": "numerical",
+      "source_dataset": "Transactions.csv",
+      "calculation_method": "Aggregation of transactions where from_account == victim_account_id and timestamp <= T0",
+      "time_window": "24h prior, 7d prior, or all-time prior (-inf, T0]",
+      "leakage_status": "PASS (Leakage-Free: Post-complaint activity strictly excluded)",
+      "missing_value_policy": "0 for counts/sums, median for rates"
+    },
+    "victim_outgoing_amount_max": {
+      "data_type": "numerical",
+      "source_dataset": "Transactions.csv",
+      "calculation_method": "Aggregation of transactions where from_account == victim_account_id and timestamp <= T0",
+      "time_window": "24h prior, 7d prior, or all-time prior (-inf, T0]",
+      "leakage_status": "PASS (Leakage-Free: Post-complaint activity strictly excluded)",
+      "missing_value_policy": "0 for counts/sums, median for rates"
+    },
+    "victim_hours_since_last_outgoing": {
+      "data_type": "numerical",
+      "source_dataset": "Transactions.csv",
+      "calculation_method": "Aggregation of transactions where from_account == victim_account_id and timestamp <= T0",
+      "time_window": "24h prior, 7d prior, or all-time prior (-inf, T0]",
+      "leakage_status": "PASS (Leakage-Free: Post-complaint activity strictly excluded)",
+      "missing_value_policy": "0 for counts/sums, median for rates"
+    },
+    "victim_outgoing_txns_24h": {
+      "data_type": "numerical",
+      "source_dataset": "Transactions.csv",
+      "calculation_method": "Aggregation of transactions where from_account == victim_account_id and timestamp <= T0",
+      "time_window": "24h prior, 7d prior, or all-time prior (-inf, T0]",
+      "leakage_status": "PASS (Leakage-Free: Post-complaint activity strictly excluded)",
+      "missing_value_policy": "0 for counts/sums, median for rates"
+    },
+    "victim_outgoing_amount_24h": {
+      "data_type": "numerical",
+      "source_dataset": "Transactions.csv",
+      "calculation_method": "Aggregation of transactions where from_account == victim_account_id and timestamp <= T0",
+      "time_window": "24h prior, 7d prior, or all-time prior (-inf, T0]",
+      "leakage_status": "PASS (Leakage-Free: Post-complaint activity strictly excluded)",
+      "missing_value_policy": "0 for counts/sums, median for rates"
+    },
+    "victim_outgoing_txns_7d": {
+      "data_type": "numerical",
+      "source_dataset": "Transactions.csv",
+      "calculation_method": "Aggregation of transactions where from_account == victim_account_id and timestamp <= T0",
+      "time_window": "24h prior, 7d prior, or all-time prior (-inf, T0]",
+      "leakage_status": "PASS (Leakage-Free: Post-complaint activity strictly excluded)",
+      "missing_value_policy": "0 for counts/sums, median for rates"
+    },
+    "victim_outgoing_amount_7d": {
+      "data_type": "numerical",
+      "source_dataset": "Transactions.csv",
+      "calculation_method": "Aggregation of transactions where from_account == victim_account_id and timestamp <= T0",
+      "time_window": "24h prior, 7d prior, or all-time prior (-inf, T0]",
+      "leakage_status": "PASS (Leakage-Free: Post-complaint activity strictly excluded)",
+      "missing_value_policy": "0 for counts/sums, median for rates"
+    },
+    "victim_incoming_txns_all": {
+      "data_type": "numerical",
+      "source_dataset": "Transactions.csv",
+      "calculation_method": "Aggregation of transactions where to_account == victim_account_id and timestamp <= T0",
+      "time_window": "24h prior or all-time prior (-inf, T0]",
+      "leakage_status": "PASS (Leakage-Free: Post-complaint activity strictly excluded)",
+      "missing_value_policy": "0 for counts/sums"
+    },
+    "victim_incoming_amount_all": {
+      "data_type": "numerical",
+      "source_dataset": "Transactions.csv",
+      "calculation_method": "Aggregation of transactions where to_account == victim_account_id and timestamp <= T0",
+      "time_window": "24h prior or all-time prior (-inf, T0]",
+      "leakage_status": "PASS (Leakage-Free: Post-complaint activity strictly excluded)",
+      "missing_value_policy": "0 for counts/sums"
+    },
+    "victim_incoming_txns_24h": {
+      "data_type": "numerical",
+      "source_dataset": "Transactions.csv",
+      "calculation_method": "Aggregation of transactions where to_account == victim_account_id and timestamp <= T0",
+      "time_window": "24h prior or all-time prior (-inf, T0]",
+      "leakage_status": "PASS (Leakage-Free: Post-complaint activity strictly excluded)",
+      "missing_value_policy": "0 for counts/sums"
+    },
+    "victim_incoming_amount_24h": {
+      "data_type": "numerical",
+      "source_dataset": "Transactions.csv",
+      "calculation_method": "Aggregation of transactions where to_account == victim_account_id and timestamp <= T0",
+      "time_window": "24h prior or all-time prior (-inf, T0]",
+      "leakage_status": "PASS (Leakage-Free: Post-complaint activity strictly excluded)",
+      "missing_value_policy": "0 for counts/sums"
+    },
+    "victim_hours_since_last_incoming": {
+      "data_type": "numerical",
+      "source_dataset": "Transactions.csv",
+      "calculation_method": "Aggregation of transactions where to_account == victim_account_id and timestamp <= T0",
+      "time_window": "24h prior or all-time prior (-inf, T0]",
+      "leakage_status": "PASS (Leakage-Free: Post-complaint activity strictly excluded)",
+      "missing_value_policy": "0 for counts/sums"
+    },
+    "victim_total_prior_volume": {
+      "data_type": "numerical",
+      "source_dataset": "Transactions.csv + Accounts.csv",
+      "calculation_method": "Composite interaction of leakage-free historical inflows, outflows, and baselines",
+      "time_window": "(-inf, T0]",
+      "leakage_status": "PASS (Leakage-Free: Functions purely of historical quantities)",
+      "missing_value_policy": "0 or median"
+    },
+    "victim_net_prior_flow": {
+      "data_type": "numerical",
+      "source_dataset": "Transactions.csv + Accounts.csv",
+      "calculation_method": "Composite interaction of leakage-free historical inflows, outflows, and baselines",
+      "time_window": "(-inf, T0]",
+      "leakage_status": "PASS (Leakage-Free: Functions purely of historical quantities)",
+      "missing_value_policy": "0 or median"
+    },
+    "victim_total_linked_accounts": {
+      "data_type": "numerical",
+      "source_dataset": "Transactions.csv + Accounts.csv",
+      "calculation_method": "Composite interaction of leakage-free historical inflows, outflows, and baselines",
+      "time_window": "(-inf, T0]",
+      "leakage_status": "PASS (Leakage-Free: Functions purely of historical quantities)",
+      "missing_value_policy": "0 or median"
+    },
+    "victim_velocity_surge_ratio": {
+      "data_type": "numerical",
+      "source_dataset": "Transactions.csv + Accounts.csv",
+      "calculation_method": "Composite interaction of leakage-free historical inflows, outflows, and baselines",
+      "time_window": "(-inf, T0]",
+      "leakage_status": "PASS (Leakage-Free: Functions purely of historical quantities)",
+      "missing_value_policy": "0 or median"
+    }
+  }
+}

@@ -1,0 +1,2 @@
+model,validation_PR_AUC,test_PR_AUC,test_ROC_AUC,test_precision,test_recall,test_F1,threshold,model_version
+XGBoost,0.1072,0.1029,0.4760,0.0638,0.0194,0.0297,0.5,Phase7_XGBoost_v1.0

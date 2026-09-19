@@ -1,0 +1,201 @@
+area_id,state,district,area,center_lat,center_lon
+AREA0001,Tamil Nadu,Chennai,Anna Nagar,13.0827,80.2707
+AREA0002,Tamil Nadu,Chennai,T Nagar,13.0827,80.2707
+AREA0003,Tamil Nadu,Chennai,Velachery,13.0827,80.2707
+AREA0004,Tamil Nadu,Chennai,Guindy,13.0827,80.2707
+AREA0005,Tamil Nadu,Chennai,Adyar,13.0827,80.2707
+AREA0006,Tamil Nadu,Coimbatore,Gandhipuram,11.0168,76.9558
+AREA0007,Tamil Nadu,Coimbatore,RS Puram,11.0168,76.9558
+AREA0008,Tamil Nadu,Coimbatore,Peelamedu,11.0168,76.9558
+AREA0009,Tamil Nadu,Coimbatore,Saibaba Colony,11.0168,76.9558
+AREA0010,Tamil Nadu,Coimbatore,Singanallur,11.0168,76.9558
+AREA0011,Tamil Nadu,Madurai,KK Nagar,9.9252,78.1198
+AREA0012,Tamil Nadu,Madurai,Anna Nagar,9.9252,78.1198
+AREA0013,Tamil Nadu,Madurai,Mattuthavani,9.9252,78.1198
+AREA0014,Tamil Nadu,Madurai,Thirunagar,9.9252,78.1198
+AREA0015,Tamil Nadu,Madurai,Tallakulam,9.9252,78.1198
+AREA0016,Tamil Nadu,Tiruchirappalli,Srirangam,10.7905,78.7047
+AREA0017,Tamil Nadu,Tiruchirappalli,Thillai Nagar,10.7905,78.7047
+AREA0018,Tamil Nadu,Tiruchirappalli,Woraiyur,10.7905,78.7047
+AREA0019,Tamil Nadu,Tiruchirappalli,Cantonment,10.7905,78.7047
+AREA0020,Tamil Nadu,Tiruchirappalli,KK Nagar,10.7905,78.7047
+AREA0021,Tamil Nadu,Salem,Fairlands,11.6643,78.146
+AREA0022,Tamil Nadu,Salem,Hasthampatti,11.6643,78.146
+AREA0023,Tamil Nadu,Salem,Ammapet,11.6643,78.146
+AREA0024,Tamil Nadu,Salem,Suramangalam,11.6643,78.146
+AREA0025,Tamil Nadu,Salem,Alagapuram,11.6643,78.146
+AREA0026,Tamil Nadu,Tirunelveli,Palayamkottai,8.7139,77.7567
+AREA0027,Tamil Nadu,Tirunelveli,Vannarpettai,8.7139,77.7567
+AREA0028,Tamil Nadu,Tirunelveli,Perumalpuram,8.7139,77.7567
+AREA0029,Tamil Nadu,Tirunelveli,Melapalayam,8.7139,77.7567
+AREA0030,Tamil Nadu,Tirunelveli,Maharaja Nagar,8.7139,77.7567
+AREA0031,Tamil Nadu,Erode,Perundurai Road,11.341,77.7172
+AREA0032,Tamil Nadu,Erode,Surampatti,11.341,77.7172
+AREA0033,Tamil Nadu,Erode,Veerappanchatram,11.341,77.7172
+AREA0034,Tamil Nadu,Erode,Teachers Colony,11.341,77.7172
+AREA0035,Tamil Nadu,Erode,Karungalpalayam,11.341,77.7172
+AREA0036,Tamil Nadu,Vellore,Katpadi,12.9165,79.1325
+AREA0037,Tamil Nadu,Vellore,Sathuvachari,12.9165,79.1325
+AREA0038,Tamil Nadu,Vellore,Gandhi Nagar,12.9165,79.1325
+AREA0039,Tamil Nadu,Vellore,Bagayam,12.9165,79.1325
+AREA0040,Tamil Nadu,Vellore,Vellore Fort,12.9165,79.1325
+AREA0041,Tamil Nadu,Thanjavur,Medical College Road,10.787,79.1378
+AREA0042,Tamil Nadu,Thanjavur,New Bus Stand,10.787,79.1378
+AREA0043,Tamil Nadu,Thanjavur,Karanthai,10.787,79.1378
+AREA0044,Tamil Nadu,Thanjavur,Palliagraharam,10.787,79.1378
+AREA0045,Tamil Nadu,Thanjavur,Old Town,10.787,79.1378
+AREA0046,Tamil Nadu,Dindigul,Nagal Nagar,10.3673,77.9803
+AREA0047,Tamil Nadu,Dindigul,Begampur,10.3673,77.9803
+AREA0048,Tamil Nadu,Dindigul,RM Colony,10.3673,77.9803
+AREA0049,Tamil Nadu,Dindigul,Palani Road,10.3673,77.9803
+AREA0050,Tamil Nadu,Dindigul,Natham Road,10.3673,77.9803
+AREA0051,Karnataka,Bengaluru Urban,Whitefield,12.9716,77.5946
+AREA0052,Karnataka,Bengaluru Urban,Indiranagar,12.9716,77.5946
+AREA0053,Karnataka,Bengaluru Urban,Koramangala,12.9716,77.5946
+AREA0054,Karnataka,Bengaluru Urban,Electronic City,12.9716,77.5946
+AREA0055,Karnataka,Bengaluru Urban,Yelahanka,12.9716,77.5946
+AREA0056,Karnataka,Mysuru,Vijayanagar,12.2958,76.6394
+AREA0057,Karnataka,Mysuru,Hebbal,12.2958,76.6394
+AREA0058,Karnataka,Mysuru,Kuvempunagar,12.2958,76.6394
+AREA0059,Karnataka,Mysuru,Saraswathipuram,12.2958,76.6394
+AREA0060,Karnataka,Mysuru,Nazarbad,12.2958,76.6394
+AREA0061,Karnataka,Mangaluru,Hampankatta,12.9141,74.856
+AREA0062,Karnataka,Mangaluru,Kadri,12.9141,74.856
+AREA0063,Karnataka,Mangaluru,Kottara,12.9141,74.856
+AREA0064,Karnataka,Mangaluru,Bejai,12.9141,74.856
+AREA0065,Karnataka,Mangaluru,Surathkal,12.9141,74.856
+AREA0066,Karnataka,Hubballi,Vidya Nagar,15.3647,75.124
+AREA0067,Karnataka,Hubballi,Gokul Road,15.3647,75.124
+AREA0068,Karnataka,Hubballi,Keshwapur,15.3647,75.124
+AREA0069,Karnataka,Hubballi,Old Hubballi,15.3647,75.124
+AREA0070,Karnataka,Hubballi,Navanagar,15.3647,75.124
+AREA0071,Karnataka,Belagavi,Tilakwadi,15.8497,74.4977
+AREA0072,Karnataka,Belagavi,Shahapur,15.8497,74.4977
+AREA0073,Karnataka,Belagavi,Sadashiv Nagar,15.8497,74.4977
+AREA0074,Karnataka,Belagavi,Udyambag,15.8497,74.4977
+AREA0075,Karnataka,Belagavi,Angol,15.8497,74.4977
+AREA0076,Karnataka,Shivamogga,Gandhi Nagar,13.9299,75.5681
+AREA0077,Karnataka,Shivamogga,Vinoba Nagar,13.9299,75.5681
+AREA0078,Karnataka,Shivamogga,Savalanga Road,13.9299,75.5681
+AREA0079,Karnataka,Shivamogga,BH Road,13.9299,75.5681
+AREA0080,Karnataka,Shivamogga,Vidya Nagar,13.9299,75.5681
+AREA0081,Karnataka,Tumakuru,Sira Road,13.3392,77.101
+AREA0082,Karnataka,Tumakuru,Gokul,13.3392,77.101
+AREA0083,Karnataka,Tumakuru,Ashok Nagar,13.3392,77.101
+AREA0084,Karnataka,Tumakuru,Tumkur University Area,13.3392,77.101
+AREA0085,Karnataka,Tumakuru,Batawadi,13.3392,77.101
+AREA0086,Karnataka,Kalaburagi,Sedam Road,17.3297,76.8343
+AREA0087,Karnataka,Kalaburagi,Super Market,17.3297,76.8343
+AREA0088,Karnataka,Kalaburagi,Gulbarga University Area,17.3297,76.8343
+AREA0089,Karnataka,Kalaburagi,Station Road,17.3297,76.8343
+AREA0090,Karnataka,Kalaburagi,Shah Bazar,17.3297,76.8343
+AREA0091,Karnataka,Udupi,Manipal,13.3409,74.7421
+AREA0092,Karnataka,Udupi,Brahmagiri,13.3409,74.7421
+AREA0093,Karnataka,Udupi,Kinnimulki,13.3409,74.7421
+AREA0094,Karnataka,Udupi,Ajjarkad,13.3409,74.7421
+AREA0095,Karnataka,Udupi,Santhekatte,13.3409,74.7421
+AREA0096,Karnataka,Ballari,Gandhinagar,15.1394,76.9214
+AREA0097,Karnataka,Ballari,Cowl Bazaar,15.1394,76.9214
+AREA0098,Karnataka,Ballari,Parvathi Nagar,15.1394,76.9214
+AREA0099,Karnataka,Ballari,Cantonment,15.1394,76.9214
+AREA0100,Karnataka,Ballari,Infantry Road,15.1394,76.9214
+AREA0101,Kerala,Thiruvananthapuram,Pattom,8.5241,76.9366
+AREA0102,Kerala,Thiruvananthapuram,Kazhakootam,8.5241,76.9366
+AREA0103,Kerala,Thiruvananthapuram,Vazhuthacaud,8.5241,76.9366
+AREA0104,Kerala,Thiruvananthapuram,Kowdiar,8.5241,76.9366
+AREA0105,Kerala,Thiruvananthapuram,Kesavadasapuram,8.5241,76.9366
+AREA0106,Kerala,Ernakulam,Kakkanad,9.9816,76.2999
+AREA0107,Kerala,Ernakulam,Edappally,9.9816,76.2999
+AREA0108,Kerala,Ernakulam,Kaloor,9.9816,76.2999
+AREA0109,Kerala,Ernakulam,Vyttila,9.9816,76.2999
+AREA0110,Kerala,Ernakulam,Aluva,9.9816,76.2999
+AREA0111,Kerala,Kozhikode,Nadakkavu,11.2588,75.7804
+AREA0112,Kerala,Kozhikode,Mavoor Road,11.2588,75.7804
+AREA0113,Kerala,Kozhikode,Kallai,11.2588,75.7804
+AREA0114,Kerala,Kozhikode,West Hill,11.2588,75.7804
+AREA0115,Kerala,Kozhikode,Kottooli,11.2588,75.7804
+AREA0116,Kerala,Thrissur,Punkunnam,10.5276,76.2144
+AREA0117,Kerala,Thrissur,Ayyanthole,10.5276,76.2144
+AREA0118,Kerala,Thrissur,Ollur,10.5276,76.2144
+AREA0119,Kerala,Thrissur,Koorkenchery,10.5276,76.2144
+AREA0120,Kerala,Thrissur,West Fort,10.5276,76.2144
+AREA0121,Kerala,Kollam,Kottarakkara,8.8932,76.6141
+AREA0122,Kerala,Kollam,Karunagappally,8.8932,76.6141
+AREA0123,Kerala,Kollam,Chinnakada,8.8932,76.6141
+AREA0124,Kerala,Kollam,Kadappakada,8.8932,76.6141
+AREA0125,Kerala,Kollam,Asramam,8.8932,76.6141
+AREA0126,Kerala,Alappuzha,Mullakkal,9.4981,76.3388
+AREA0127,Kerala,Alappuzha,Alappuzha Beach,9.4981,76.3388
+AREA0128,Kerala,Alappuzha,Kalavoor,9.4981,76.3388
+AREA0129,Kerala,Alappuzha,Punnamada,9.4981,76.3388
+AREA0130,Kerala,Alappuzha,Ambalappuzha,9.4981,76.3388
+AREA0131,Kerala,Kannur,Thalassery,11.8745,75.3704
+AREA0132,Kerala,Kannur,Pallikkunnu,11.8745,75.3704
+AREA0133,Kerala,Kannur,Chovva,11.8745,75.3704
+AREA0134,Kerala,Kannur,Valapattanam,11.8745,75.3704
+AREA0135,Kerala,Kannur,Burnassery,11.8745,75.3704
+AREA0136,Kerala,Palakkad,Olavakkode,10.7867,76.6548
+AREA0137,Kerala,Palakkad,Kalmandapam,10.7867,76.6548
+AREA0138,Kerala,Palakkad,Puthur,10.7867,76.6548
+AREA0139,Kerala,Palakkad,Shoranur Road,10.7867,76.6548
+AREA0140,Kerala,Palakkad,Chandranagar,10.7867,76.6548
+AREA0141,Kerala,Kottayam,Kanjikuzhi,9.5916,76.5222
+AREA0142,Kerala,Kottayam,Kumaranalloor,9.5916,76.5222
+AREA0143,Kerala,Kottayam,Kodimatha,9.5916,76.5222
+AREA0144,Kerala,Kottayam,Changanassery,9.5916,76.5222
+AREA0145,Kerala,Kottayam,Ettumanoor,9.5916,76.5222
+AREA0146,Kerala,Malappuram,Kottakkal,11.051,76.0711
+AREA0147,Kerala,Malappuram,Manjeri,11.051,76.0711
+AREA0148,Kerala,Malappuram,Perinthalmanna,11.051,76.0711
+AREA0149,Kerala,Malappuram,Tirur,11.051,76.0711
+AREA0150,Kerala,Malappuram,Down Hill,11.051,76.0711
+AREA0151,Andhra Pradesh,Visakhapatnam,Madhurawada,17.6868,83.2185
+AREA0152,Andhra Pradesh,Visakhapatnam,Gajuwaka,17.6868,83.2185
+AREA0153,Andhra Pradesh,Visakhapatnam,Dwaraka Nagar,17.6868,83.2185
+AREA0154,Andhra Pradesh,Visakhapatnam,MVP Colony,17.6868,83.2185
+AREA0155,Andhra Pradesh,Visakhapatnam,Seethammadhara,17.6868,83.2185
+AREA0156,Andhra Pradesh,Vijayawada,Benz Circle,16.5062,80.648
+AREA0157,Andhra Pradesh,Vijayawada,Moghalrajpuram,16.5062,80.648
+AREA0158,Andhra Pradesh,Vijayawada,Governorpet,16.5062,80.648
+AREA0159,Andhra Pradesh,Vijayawada,Patamata,16.5062,80.648
+AREA0160,Andhra Pradesh,Vijayawada,Poranki,16.5062,80.648
+AREA0161,Andhra Pradesh,Guntur,Brodipet,16.3067,80.4365
+AREA0162,Andhra Pradesh,Guntur,Arundelpet,16.3067,80.4365
+AREA0163,Andhra Pradesh,Guntur,Lakshmipuram,16.3067,80.4365
+AREA0164,Andhra Pradesh,Guntur,Nallapadu,16.3067,80.4365
+AREA0165,Andhra Pradesh,Guntur,Gorantla,16.3067,80.4365
+AREA0166,Andhra Pradesh,Tirupati,Renigunta Road,13.6288,79.4192
+AREA0167,Andhra Pradesh,Tirupati,Alipiri,13.6288,79.4192
+AREA0168,Andhra Pradesh,Tirupati,Tiruchanur,13.6288,79.4192
+AREA0169,Andhra Pradesh,Tirupati,MR Palli,13.6288,79.4192
+AREA0170,Andhra Pradesh,Tirupati,Korlagunta,13.6288,79.4192
+AREA0171,Andhra Pradesh,Nellore,Magunta Layout,14.4426,79.9865
+AREA0172,Andhra Pradesh,Nellore,Balaji Nagar,14.4426,79.9865
+AREA0173,Andhra Pradesh,Nellore,Dargamitta,14.4426,79.9865
+AREA0174,Andhra Pradesh,Nellore,Vedayapalem,14.4426,79.9865
+AREA0175,Andhra Pradesh,Nellore,Stonehousepet,14.4426,79.9865
+AREA0176,Andhra Pradesh,Kurnool,Budhwarpet,15.8281,78.0373
+AREA0177,Andhra Pradesh,Kurnool,Nandyal Road,15.8281,78.0373
+AREA0178,Andhra Pradesh,Kurnool,Ashok Nagar,15.8281,78.0373
+AREA0179,Andhra Pradesh,Kurnool,Bellary Road,15.8281,78.0373
+AREA0180,Andhra Pradesh,Kurnool,Joharapuram,15.8281,78.0373
+AREA0181,Andhra Pradesh,Rajamahendravaram,Danavaipeta,16.9891,81.784
+AREA0182,Andhra Pradesh,Rajamahendravaram,Morampudi,16.9891,81.784
+AREA0183,Andhra Pradesh,Rajamahendravaram,Aryapuram,16.9891,81.784
+AREA0184,Andhra Pradesh,Rajamahendravaram,Dowleswaram,16.9891,81.784
+AREA0185,Andhra Pradesh,Rajamahendravaram,Lalacheruvu,16.9891,81.784
+AREA0186,Andhra Pradesh,Kakinada,Sarpavaram,16.9891,82.2475
+AREA0187,Andhra Pradesh,Kakinada,Jagannaickpur,16.9891,82.2475
+AREA0188,Andhra Pradesh,Kakinada,Ramanayyapeta,16.9891,82.2475
+AREA0189,Andhra Pradesh,Kakinada,Bhanugudi,16.9891,82.2475
+AREA0190,Andhra Pradesh,Kakinada,Suryaraopeta,16.9891,82.2475
+AREA0191,Andhra Pradesh,Kadapa,Proddatur Road,14.4674,78.8241
+AREA0192,Andhra Pradesh,Kadapa,Nagarajupet,14.4674,78.8241
+AREA0193,Andhra Pradesh,Kadapa,Yerramukkapalli,14.4674,78.8241
+AREA0194,Andhra Pradesh,Kadapa,RTC Colony,14.4674,78.8241
+AREA0195,Andhra Pradesh,Kadapa,Seven Roads,14.4674,78.8241
+AREA0196,Andhra Pradesh,Anantapur,Sapthagiri Circle,14.6819,77.6006
+AREA0197,Andhra Pradesh,Anantapur,Ramachandra Nagar,14.6819,77.6006
+AREA0198,Andhra Pradesh,Anantapur,Aravind Nagar,14.6819,77.6006
+AREA0199,Andhra Pradesh,Anantapur,RTC Colony,14.6819,77.6006
+AREA0200,Andhra Pradesh,Anantapur,Rudrampeta,14.6819,77.6006

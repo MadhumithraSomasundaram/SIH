@@ -1,0 +1,5 @@
+feature,formula,min,max,description
+amount_log1p,log(1 + fraud_amount),6.2166,13.1224,Log1p transformation for heavy-tailed amount distribution
+amount_is_zero,fraud_amount == 0,0,0,Indicator of reported zero-loss incidents
+amount_is_high,fraud_amount > 38206.47,0,1,"Indicator of high-loss events above IQR upper bound (₹38,206.47)"
+amount_category,"Rule-based brackets (<5k, 5k-20k, 20k-50k, >50k)",N/A,N/A,Financial risk tier classification

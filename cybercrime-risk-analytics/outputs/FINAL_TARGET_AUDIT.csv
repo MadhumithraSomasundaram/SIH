@@ -1,0 +1,12 @@
+audit_dimension,required_specification,actual_implementation_evidence,compliance_status,audit_verdict
+Target Variable Name,future_withdrawal,data/processed/train.csv column future_withdrawal,MATCH,PASS
+Time Direction,Strictly future events only (t_withdrawal > t_complaint),Enforced in src/create_target.py (delay_hours > 0.0),CONFIRMED,PASS
+Prediction Horizon,Within 24.0 hours maximum (0 < delay_hours <= 24.0),Enforced in src/create_target.py (delay_hours <= 24.0),CONFIRMED,PASS
+Spatial Location Match,District match or Haversine distance <= 10.0 km,Haversine coordinate proximity verified against ATM table,CONFIRMED,PASS
+Current Event Exclusion,Current debit event excluded from withdrawal target,Same-timestamp events strictly rejected (delay > 0.0),CONFIRMED,PASS
+Incomplete Horizons,Records at end of dataset checked for 24h window,target_observation_complete verified across 10000 records,CONFIRMED,PASS
+Label Fabrication Check,Ground truth derived from actual withdrawal table,Zero synthetic label hallucination detected,CONFIRMED,PASS
+Train Target Distribution,7000 rows: 6272 Negative (89.60%) / 728 Positive (10.40%),data/processed/train.csv value counts verified,CONFIRMED,PASS
+Validation Distribution,1500 rows: 1356 Negative (90.40%) / 144 Positive (9.60%),data/processed/validation.csv value counts verified,CONFIRMED,PASS
+Test Target Distribution,1500 rows: 1345 Negative (89.67%) / 155 Positive (10.33%),data/processed/test.csv value counts verified,CONFIRMED,PASS
+Manual Target Validation,Representative cases manually traced end-to-end,outputs/target_manual_verification.csv passed,CONFIRMED,PASS

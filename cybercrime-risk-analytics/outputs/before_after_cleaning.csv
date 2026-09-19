@@ -1,0 +1,10 @@
+metric,before,after,change
+row_count,10000,10000,0
+column_count,11,13,2
+duplicate_count,0,0,0
+missing_values,0,0,0
+invalid_coordinates,N/A (unlinked),0,Enriched & validated (100% valid)
+invalid_dates,0,0,0
+sensitive_columns_unmasked,1,0,-1
+data_leakage_columns,1,0,-1
+composite_quality_score,91.20%,100.0%,+8.80%

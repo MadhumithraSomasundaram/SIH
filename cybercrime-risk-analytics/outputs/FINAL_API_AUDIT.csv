@@ -1,0 +1,11 @@
+endpoint,http_method,purpose,request_schema,response_schema,error_handling_verified,pii_or_secret_leak_check,test_suite_status,audit_verdict
+/,GET,Root API discovery & operational metadata,None,JSON metadata & route map,Handled (200 OK),PASS (Zero secrets),PASSED in test_api.py,PASS
+/health,GET,Health check & subsystem liveness,None,HealthResponse (status: healthy),Handled (200 OK),PASS (Zero secrets),PASSED in test_api.py,PASS
+/model/info,GET,Model metadata & feature schema,None,ModelInfoResponse (64 features),Handled (200 OK),PASS (Zero secrets),PASSED in test_api.py,PASS
+/predict,POST,Single record risk inference,PredictionInput (Pydantic v2),PredictionResponse (prob risk score tier),Handled (422 Unprocessable),PASS (Zero PII or target),PASSED in test_api.py,PASS
+/predict/batch,POST,Batch risk scoring,BatchPredictionInput (max 100),BatchPredictionResponse,Handled (422 validation),PASS (Zero PII or target),PASSED in test_api.py,PASS
+/explain,POST,SHAP local feature attribution,ExplainInput,ExplainResponse (additive contributions),Handled (422 validation),PASS (Zero PII or target),PASSED in test_api.py,PASS
+/alerts,GET,Alert query and triage queue,Query params (severity status),AlertListResponse,Handled (200 OK),PASS (Zero PII),PASSED in test_alert_api.py,PASS
+/gis/hotspots,GET,DBSCAN spatial clusters,Query params,GeoJSON FeatureCollection,Handled (200 OK),PASS (Zero PII),PASSED in test_gis_dashboard.py,PASS
+/analyst/investigations,POST,Create new investigation case,InvestigationCreateInput,InvestigationCaseResponse,Handled (401/422),PASS (Zero PII),PASSED in test_analyst_api.py,PASS
+/analyst/audit,GET,Retrieve immutable audit logs,Query params,AuditLogListResponse,Handled (401/403 RBAC),PASS (Zero PII),PASSED in test_analyst_api.py,PASS

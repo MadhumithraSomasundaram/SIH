@@ -1,0 +1,16 @@
+model_property,specification_or_parameter,verified_actual_value,matching_status,verification_evidence
+Model Artifact Path,models/xgboost_cybercrime_model.pkl,Exists (1216317 bytes),MATCH,joblib.load() succeeded
+Model Pipeline Class,sklearn.pipeline.Pipeline,Pipeline(ColumnTransformer + XGBClassifier),MATCH,Pipeline step names verified
+Preprocessor,ColumnTransformer,ColumnTransformer(transformers=[('num' MedianImputer) ('cat' OneHotEncoder)]),MATCH,Preprocessor extracted
+Classifier,xgboost.XGBClassifier,XGBClassifier(n_estimators=200 max_depth=3 lr=0.05 subsample=0.8 colsample=0.8),MATCH,clf.get_params() verified
+Class Count,2 classes binary classification,classes_ = [0 1],MATCH,Binary output confirmed
+Class Alignment,Class 1 = future_withdrawal=1,model.classes_[1] == 1,MATCH,Verified in test predictions
+Predict Proba Execution,Returns 2D probability array,Shape: (1500 2) for test set,MATCH,predict_proba() verified
+Feature Schema,64 selected predictor features,models/phase7_xgboost_metadata.json (64 features),MATCH,Input schema matched
+Test Prediction Probabilities,Class 1 probabilities in [0 1],Min: 0.054 Max: 0.632 Mean: 0.158,MATCH,Bounded probabilities verified
+Phase 8 Test Accuracy,86.93% (0.8693),1304 / 1500 correct classifications,MATCH,Outputs/phase8_final_evaluation_report.md
+Phase 8 Test Specificity,96.73% (0.9673),1301 / 1345 true negatives correctly identified,MATCH,Outputs/phase8_final_evaluation_report.md
+Phase 8 Test PR-AUC,0.1029,PR-AUC = 0.1029 on held-out test set,MATCH,Outputs/phase8_final_evaluation_report.md
+Phase 8 Test ROC-AUC,0.4760,ROC-AUC = 0.4760 on held-out test set,MATCH,Outputs/phase8_final_evaluation_report.md
+Decision Threshold,0.50,Threshold = 0.50 (Standard Bayesian cutoff),MATCH,Metadata & evaluation report
+Model Retraining Guard,Frozen production artifact,File last modified timestamp unchanged,MATCH,Zero retraining confirmed

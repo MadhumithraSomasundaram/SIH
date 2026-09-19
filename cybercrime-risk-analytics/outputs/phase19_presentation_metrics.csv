@@ -1,0 +1,10 @@
+metric,validation_value,test_value,source,interpretation
+PR-AUC,0.1072,0.1029,Phase 7 / Phase 8 Metrics,Precision-Recall Area under Curve under ~10% natural class imbalance. Reflects authentic baseline performance.
+ROC-AUC,0.5088,0.4760,Phase 7 / Phase 8 Metrics,Receiver Operating Characteristic AUC on strictly held-out chronological test partition.
+Accuracy,0.8587,0.8693,Phase 7 / Phase 8 Metrics,86.93% overall classification accuracy driven by strong negative class identification.
+Specificity,0.9417,0.9673,Phase 7 / Phase 8 Metrics,"96.73% true negative rate, providing strong protection against false operational alarms."
+Precision,0.1222,0.0638,Phase 7 / Phase 8 Metrics,Positive predictive value at standard 0.5 decision threshold on held-out test data.
+Recall,0.0764,0.0194,Phase 7 / Phase 8 Metrics,Sensitivity at standard 0.5 decision threshold reflecting extreme class imbalance constraint.
+F1-Score,0.0940,0.0297,Phase 7 / Phase 8 Metrics,Harmonic mean of precision and recall at threshold 0.5.
+Decision Threshold,0.5000,0.5000,Phase 7 Validation Analysis,Derived strictly from validation set tuning without evaluating on test data.
+Test Set Protection,HELD OUT,HELD OUT,Phase 5 Protocol,Test set remained cryptographically frozen and isolated until final Phase 8 evaluation.

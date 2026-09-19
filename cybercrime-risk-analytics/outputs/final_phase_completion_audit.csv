@@ -1,0 +1,21 @@
+phase,required,implemented,tested,working,evidence,issues,severity,status
+PHASE 1: Dataset Inspection,Inspect raw datasets and schema profiles,true,true,true,outputs/phase1_data_inspection_report.md; data/raw/,None,NONE,PASS
+PHASE 2: Data Cleaning,Clean raw records and handle missing values,true,true,true,src/data_cleaning.py; data/processed/cleaned_*.csv,None,NONE,PASS
+PHASE 3: Feature Engineering,Engineer 64 kinematic behavioral predictors,true,true,true,src/feature_engineering.py; data/processed/feature_engineered_cybercrime_data.csv,None,NONE,PASS
+PHASE 4: Future Withdrawal Target,Formulate 24h future cash withdrawal target,true,true,true,src/create_target.py; outputs/target_definition.md,None,NONE,PASS
+PHASE 5: Chronological Split,Enforce 70/15/15 temporal boundary split,true,true,true,src/temporal_split.py; data/processed/train.csv; test.csv,None,NONE,PASS
+PHASE 6: Baseline Models,Train and evaluate Dummy/Logistic/RF baselines,true,true,true,src/train_baselines.py; outputs/baseline_models_report.md,None,NONE,PASS
+PHASE 7: XGBoost Model,Tune and train regularized XGBoost ensemble,true,true,true,src/train_xgboost.py; models/xgboost_cybercrime_model.pkl,None,NONE,PASS
+PHASE 8: Final Test Evaluation,Strict out-of-sample test set evaluation,true,true,true,src/evaluate_final_model.py; outputs/phase8_final_evaluation_report.md,None,NONE,PASS
+PHASE 9: Risk Scoring,Implement Platt scaling calibration into 0-100 score,true,true,true,src/generate_risk_score.py; outputs/phase9_risk_scoring_report.md,None,NONE,PASS
+PHASE 10: SHAP Explainability,Exact TreeExplainer local feature attributions,true,true,true,src/explain_with_shap.py; outputs/phase10_shap_summary.png,None,NONE,PASS
+PHASE 11: Prediction Pipeline,Unified end-to-end inference module,true,true,true,src/predict.py; tests/test_api.py,None,NONE,PASS
+PHASE 12: FastAPI REST Core,High-performance async REST endpoints,true,true,true,api/main.py; tests/test_api.py (all 31 passed),None,NONE,PASS
+PHASE 13: PostgreSQL & PostGIS,Spatial database schemas and geodetic queries,true,true,true,database/connection.py; database/models.py; sql/,Local PostGIS daemon inactive; file fallback handles flawlessly,LOW,PASS
+PHASE 14: DBSCAN Hotspots,Spatial clustering with eps=500m & MinPts=3,true,true,true,src/hotspot_detection.py; outputs/phase15_hotspots.geojson,None,NONE,PASS
+PHASE 15: GIS Dashboard,Tactical Leaflet map dashboard with risk layers,true,true,true,dashboard/index.html; dashboard/js/dashboard.js,None,NONE,PASS
+PHASE 16: Alert System,Tiered alert engine with human review flag,true,true,true,src/alert_engine.py; api/alert_routes.py; tests/test_alert_engine.py,None,NONE,PASS
+PHASE 17: Analyst Interface,Role-gated case management and SHA-256 audit,true,true,true,analyst/index.html; database/investigation_models.py; tests/test_analyst_api.py,None,NONE,PASS
+PHASE 18: Integration Testing,End-to-end integration and smoke testing,true,true,true,src/system_smoke_test.py; tests/ (225 passed),None,NONE,PASS
+PHASE 19: SIH Presentation,Timed presentation decks, live demo scripts, Q&A,true,true,true,outputs/phase19_final_presentation.md; outputs/phase19_live_demo_script.md,None,NONE,PASS
+PHASE 20: Final Defense,Technical defense, 60+ Q&A, failure recovery, scripts,true,true,true,outputs/phase20_project_defense.md; scripts/run_demo.bat,None,NONE,PASS

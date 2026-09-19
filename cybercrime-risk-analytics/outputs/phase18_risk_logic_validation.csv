@@ -1,0 +1,20 @@
+test_id,predicted_probability,expected_risk_score,computed_risk_score,expected_category,computed_category,status,notes
+1,0.000,0,0,LOW,LOW,PASS,Standard Phase 9 formula verified
+2,0.150,15,15,LOW,LOW,PASS,Standard Phase 9 formula verified
+3,0.250,25,25,LOW,LOW,PASS,Standard Phase 9 formula verified
+4,0.390,39,39,LOW,LOW,PASS,Standard Phase 9 formula verified
+5,0.394,39,39,LOW,LOW,PASS,Standard Phase 9 formula verified
+6,0.396,40,40,MODERATE,MODERATE,PASS,Standard Phase 9 formula verified
+7,0.400,40,40,MODERATE,MODERATE,PASS,Standard Phase 9 formula verified
+8,0.500,50,50,MODERATE,MODERATE,PASS,Standard Phase 9 formula verified
+9,0.590,59,59,MODERATE,MODERATE,PASS,Standard Phase 9 formula verified
+10,0.594,59,59,MODERATE,MODERATE,PASS,Standard Phase 9 formula verified
+11,0.596,60,60,HIGH,HIGH,PASS,Standard Phase 9 formula verified
+12,0.600,60,60,HIGH,HIGH,PASS,Standard Phase 9 formula verified
+13,0.750,75,75,HIGH,HIGH,PASS,Standard Phase 9 formula verified
+14,0.790,79,79,HIGH,HIGH,PASS,Standard Phase 9 formula verified
+15,0.794,79,79,HIGH,HIGH,PASS,Standard Phase 9 formula verified
+16,0.796,80,80,CRITICAL,CRITICAL,PASS,Standard Phase 9 formula verified
+17,0.800,80,80,CRITICAL,CRITICAL,PASS,Standard Phase 9 formula verified
+18,0.950,95,95,CRITICAL,CRITICAL,PASS,Standard Phase 9 formula verified
+19,1.000,100,100,CRITICAL,CRITICAL,PASS,Standard Phase 9 formula verified

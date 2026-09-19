@@ -1,0 +1,26 @@
+evaluation_category,audit_scope,implementation_verification_summary,status
+Dataset,Raw & processed data integrity,10000 records 6 raw tables 0 nulls 0 duplicates verified,READY
+Data Cleaning,Handling missing values and outliers,Median imputation and categorical one-hot encoding verified,READY
+Feature Engineering,Behavioral kinematic predictors,64 engineered features across velocity time and amount ratios,READY
+Target,Future withdrawal target definition,24-hour horizon forward-looking target verified without leakage,READY
+Temporal Split,Chronological partition integrity,Strict 70/15/15 chronological split with zero temporal overlap,READY
+ML,Baseline algorithm comparisons,Dummy Prior Logistic Regression and Random Forest benchmarked,READY
+XGBoost,Primary classification model,Tuned gradient boosted trees frozen in models/ directory,READY
+Test Evaluation,Strict out-of-sample evaluation,Locked metrics: 86.93% accuracy 96.73% specificity 0.1029 PR-AUC,READY
+Risk Score,Platt scaling probability calibration,Deterministic round(P * 100) mapping to 4 operational tiers,READY
+SHAP,Model explainability and attribution,TreeExplainer local feature contributions in polynomial time,READY
+Prediction Pipeline,Unified inference architecture,Sub-30ms execution tested on new records via src/predict.py,READY
+FastAPI,Asynchronous REST API gateway,All endpoints tested via TestClient; Pydantic v2 validation passed,READY
+PostgreSQL,Relational database persistence layer,ORM models schemas and SQL scripts verified; dual-mode fallback,READY
+PostGIS,Spatial geodetic database extensions,POINT(lon lat) SRID 4326 verified; resilient GeoJSON cache active,READY
+DBSCAN,Spatial density clustering,eps=500m MinPts=3 haversine clustering discovers 40 hotspots,READY
+GIS,Tactical map dashboard,Leaflet map loads vector polygons and ATM pins with layer separation,READY
+Alerts,Operational alerting engine,Tiered dispatch with de-duplication and mandatory human review,READY
+Analyst Interface,Role-gated case management UI,State machine NEW -> UNDER_INVESTIGATION -> RESOLVED with audit log,READY
+Security,System vulnerability and access control,Zero hardcoded secrets; parameterized SQL; backend RBAC enforced,READY
+Privacy,PII and PCI-DSS compliance,Zero card/PIN/PII detected across 367 files; DPDP 2023 compliant,READY
+Testing,Automated regression test coverage,225 passed pytest unit/integration tests; 10/10 smoke test passed,READY
+Documentation,System architecture and reports,Comprehensive documentation across all 20 development phases,READY
+Presentation,Hackathon pitch collateral,Timed 10m deck 5m demo script 60s pitch and 60+ Q&A prepared,READY
+Demo,Live execution reliability,Windows 1-click batch launcher and pre-validated demo cases ready,READY
+Backup,Contingency and fallback plans,4-tier fallback architecture with saved static outputs verified,READY

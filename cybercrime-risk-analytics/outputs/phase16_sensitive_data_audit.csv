@@ -1,0 +1,15 @@
+field_name,presence_in_database,presence_in_api,presence_in_email,presence_in_logs,status,protection_mechanism
+account_number,False,False,False,False,PASS,Stripped and forbidden by schema validation
+card_number,False,False,False,False,PASS,Strictly excluded from data pipelines and alerts
+cvv,False,False,False,False,PASS,Prohibited field; zero presence throughout framework
+pin,False,False,False,False,PASS,Prohibited field; zero presence throughout framework
+otp,False,False,False,False,PASS,Prohibited field; zero presence throughout framework
+password,False,False,False,False,PASS,Prohibited field; zero presence throughout framework
+phone_number,False,False,False,False,PASS,Excluded from alerts and notifications
+victim_email,False,False,False,False,PASS,Excluded from alerts and notifications
+aadhar_number,False,False,False,False,PASS,Government ID never ingested or stored
+pan_number,False,False,False,False,PASS,Tax ID never ingested or stored
+victim_name,False,False,False,False,PASS,Only non-PII complaint reference / case_id maintained
+alert_id,True,True,True,True,PASS,Non-sensitive sequential synthetic ID
+risk_score,True,True,True,True,PASS,Statistical model output [0-100]
+operational_message,True,True,True,True,PASS,Standard analyst guidance string without PII

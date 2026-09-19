@@ -1,0 +1,3 @@
+file,rows,columns,relevant_columns,missing_values,data_types,probability_column,target_column,timestamp_column,location_columns
+outputs/predictions/xgboost_test_predictions.csv,1500,4,"row_index, actual_future_withdrawal, predicted_future_withdrawal, probability_future_withdrawal",0,"int64, int64, int64, float64",probability_future_withdrawal,actual_future_withdrawal,None (mapped via case_id),None (mapped via test.csv)
+data/processed/test.csv,1500,67,"case_id, victim_district, location_grid, geographic_region, future_withdrawal",0,mixed (64 features + case_id + target),None (model features only),future_withdrawal,complaint_timestamp (joined),"victim_state, victim_district, victim_area, location_grid, geographic_region"

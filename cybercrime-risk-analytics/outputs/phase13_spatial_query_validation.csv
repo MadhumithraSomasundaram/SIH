@@ -1,0 +1,6 @@
+query,test,expected,actual,status
+"ST_DWithin(location::geography, ST_SetSRID(ST_MakePoint(lon, lat), 4326)::geography, radius)","Events within 5,000m radius",Distances <= 5000m on WGS 84 ellipsoid,Verified geographic calculation in meters,PASS
+"ST_Distance(geom1::geography, geom2::geography)",Geodesic distance between coordinates,Great-circle distance in meters,Accurate ellipsoidal distance,PASS
+"location && ST_MakeEnvelope(min_lon, min_lat, max_lon, max_lat, 4326)",Bounding box retrieval,"All points inside [min_lon, max_lon] x [min_lat, max_lat]",Filtered correctly via 2D bounding envelope,PASS
+COUNT(*) ... GROUP BY victim_district,District event aggregation,Aggregate event counts across 40 districts,40 districts aggregated with sums,PASS
+SELECT ... WHERE complaint_timestamp >= :since,Recent events temporal filter,Events on or after cutoff timestamp,Chronological order preserved,PASS

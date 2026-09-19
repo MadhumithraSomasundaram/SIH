@@ -1,0 +1,50 @@
+{
+  "risk_thresholds": {
+    "low": 0,
+    "moderate": 40,
+    "high": 60,
+    "critical": 80
+  },
+  "hotspot_thresholds": {
+    "critical_risk_score": 80,
+    "elevated_risk_score": 60,
+    "min_event_count_for_alert": 10,
+    "withdrawal_event_threshold": 15
+  },
+  "surge_detection": {
+    "enabled": false,
+    "surge_factor_threshold": 2.0,
+    "min_historical_days": 30,
+    "recent_window_days": 7,
+    "unavailability_reason": "Activity surge alert unavailable because the current dataset does not provide sufficient temporal history."
+  },
+  "cooldown_minutes": {
+    "critical": 30,
+    "high": 60,
+    "moderate": 120,
+    "low": 240
+  },
+  "deduplication": {
+    "enabled": true,
+    "key_fields": ["alert_type", "hotspot_id", "risk_category", "time_bucket"]
+  },
+  "rate_limiting": {
+    "max_alerts_per_generation": 100
+  },
+  "notifications": {
+    "log": true,
+    "email": false,
+    "dashboard": true
+  },
+  "enabled_alert_types": [
+    "CRITICAL_RISK_LOCATION",
+    "HIGH_RISK_LOCATION",
+    "HOTSPOT_CRITICAL_RISK",
+    "HOTSPOT_ELEVATED_RISK",
+    "WITHDRAWAL_HOTSPOT"
+  ],
+  "human_review_required_severities": [
+    "HIGH",
+    "CRITICAL"
+  ]
+}

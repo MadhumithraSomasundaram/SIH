@@ -1,0 +1,75 @@
+test_id,test_class,test_name,role_tested,expected_http_status,description,authorization_check,sensitive_data_check,status
+TEST-01,TestAuthentication,test_login_analyst_success,ANALYST,200,Correct analyst credentials return valid JWT token with ANALYST role,YES,NO,PASS
+TEST-02,TestAuthentication,test_login_supervisor_success,SUPERVISOR,200,Correct supervisor credentials return valid JWT token with SUPERVISOR role,YES,NO,PASS
+TEST-03,TestAuthentication,test_login_admin_success,ADMIN,200,Correct admin credentials return valid JWT token with ADMIN role,YES,NO,PASS
+TEST-04,TestAuthentication,test_login_wrong_password_fails,ANALYST,401,Wrong password returns 401 and safe error message without leaking details,YES,NO,PASS
+TEST-05,TestAuthentication,test_login_wrong_username_fails,UNKNOWN,401,Nonexistent username returns 401 without revealing whether user exists,YES,NO,PASS
+TEST-06,TestAuthentication,test_login_empty_username_fails,NONE,401,Empty username returns 401 and safe error message,YES,NO,PASS
+TEST-07,TestAuthentication,test_login_empty_password_fails,ANALYST,401,Empty password returns 401 and safe error message,YES,NO,PASS
+TEST-08,TestAuthentication,test_logout_invalidation_flow,ALL,401,Session invalidation on logout blocks unauthenticated access to protected endpoints,YES,NO,PASS
+TEST-09,TestUnauthenticatedAccess,test_direct_access_without_authentication,UNAUTHENTICATED,401,Direct access to protected endpoints without bearer token returns 401,YES,NO,PASS
+TEST-10,TestRolePermissions,test_role_authorization_enforcement,ANALYST|SUPERVISOR|ADMIN,403|200,ANALYST blocked with 403 from audit log while SUPERVISOR and ADMIN get 200,YES,NO,PASS
+TEST-11,TestAuthentication,test_expired_or_invalid_session_rejected,INVALID,401,Malformed or expired JWT token is rejected with 401,YES,NO,PASS
+AUTH-01,TestUnauthenticatedAccess,test_overview_requires_auth,UNAUTHENTICATED,401|403,GET /analyst/overview without token must be rejected,YES,NO,PASS
+AUTH-02,TestUnauthenticatedAccess,test_alerts_requires_auth,UNAUTHENTICATED,401|403,GET /analyst/alerts without token must be rejected,YES,NO,PASS
+AUTH-03,TestUnauthenticatedAccess,test_investigations_requires_auth,UNAUTHENTICATED,401|403,GET /analyst/investigations without token must be rejected,YES,NO,PASS
+AUTH-04,TestUnauthenticatedAccess,test_audit_requires_auth,UNAUTHENTICATED,401|403,GET /analyst/audit without token must be rejected,YES,NO,PASS
+AUTH-05,TestUnauthenticatedAccess,test_create_investigation_requires_auth,UNAUTHENTICATED,401|403,POST /analyst/investigations without token must be rejected,YES,NO,PASS
+AUTH-06,TestAuthentication,test_login_with_valid_demo_credentials,ANALYST,200,Login with valid prototype credentials returns token with disclaimer,YES,NO,PASS
+AUTH-07,TestAuthentication,test_login_with_invalid_credentials_fails,ANALYST,401,Login with wrong credentials returns 401,YES,NO,PASS
+AUTH-08,TestAuthentication,test_me_endpoint_returns_user_info,ANALYST,200,GET /analyst/auth/me returns user role and username,YES,NO,PASS
+AUTH-09,TestAuthentication,test_invalid_token_rejected,ANALYST,401,Tampered token returns 401,YES,NO,PASS
+ROLE-01,TestRolePermissions,test_all_valid_roles_defined,ALL,N/A,ANALYST|SUPERVISOR|ADMIN roles are defined in system,YES,NO,PASS
+ROLE-02,TestRolePermissions,test_valid_investigation_statuses,ALL,N/A,OPEN|UNDER_REVIEW|PENDING_VALIDATION|CLOSED|DISMISSED defined,YES,NO,PASS
+ROLE-03,TestRolePermissions,test_valid_priorities,ALL,N/A,LOW|MODERATE|HIGH|CRITICAL defined,NO,NO,PASS
+ROLE-04,TestRolePermissions,test_valid_evidence_types,ALL,N/A,All 7 evidence types defined,NO,NO,PASS
+TRANS-01,TestInvestigationStatusTransitions,test_open_can_transition_to_under_review,ANALYST,N/A,OPEN→UNDER_REVIEW allowed,YES,NO,PASS
+TRANS-02,TestInvestigationStatusTransitions,test_open_can_transition_to_dismissed,ANALYST,N/A,OPEN→DISMISSED allowed,YES,NO,PASS
+TRANS-03,TestInvestigationStatusTransitions,test_open_cannot_transition_to_closed_directly,ANALYST,N/A,OPEN→CLOSED not allowed (must go through PENDING_VALIDATION),YES,NO,PASS
+TRANS-04,TestInvestigationStatusTransitions,test_closed_has_no_transitions,SUPERVISOR,N/A,CLOSED state has no onward transitions,YES,NO,PASS
+TRANS-05,TestInvestigationStatusTransitions,test_dismissed_has_no_transitions,SUPERVISOR,N/A,DISMISSED state has no onward transitions,YES,NO,PASS
+TRANS-06,TestInvestigationStatusTransitions,test_closed_requires_supervisor_role,SUPERVISOR,N/A,CLOSED transition requires SUPERVISOR or ADMIN,YES,NO,PASS
+TRANS-07,TestInvestigationStatusTransitions,test_dismissed_requires_supervisor_role,SUPERVISOR,N/A,DISMISSED transition requires SUPERVISOR or ADMIN,YES,NO,PASS
+INP-01,TestInputValidation,test_investigation_invalid_priority_rejected,ANALYST,422,EXTREME priority rejected by Pydantic validator,NO,NO,PASS
+INP-02,TestInputValidation,test_investigation_valid_priority_accepted,ANALYST,200,HIGH priority accepted correctly,NO,NO,PASS
+INP-03,TestInputValidation,test_investigation_priority_case_insensitive,ANALYST,200,high normalized to HIGH,NO,NO,PASS
+INP-04,TestInputValidation,test_evidence_invalid_type_rejected,ANALYST,422,INVALID_TYPE rejected by Pydantic validator,NO,NO,PASS
+INP-05,TestInputValidation,test_evidence_valid_type_accepted,ANALYST,200,SYSTEM_LOG accepted correctly,NO,NO,PASS
+INP-06,TestInputValidation,test_note_empty_text_rejected,ANALYST,422,Empty note string rejected,NO,NO,PASS
+INP-07,TestInputValidation,test_investigation_update_invalid_status_rejected,ANALYST,422,FLYING status rejected,NO,NO,PASS
+SENS-01,TestSensitiveDataProtection,test_no_card_number_field_in_investigation,ALL,N/A,Investigation model has no card_number|pin|cvv|otp|password columns,NO,YES,PASS
+SENS-02,TestSensitiveDataProtection,test_no_sensitive_fields_in_evidence,ALL,N/A,Evidence model has no card_number|account_number|pin|cvv columns,NO,YES,PASS
+SENS-03,TestSensitiveDataProtection,test_no_sensitive_fields_in_audit,ALL,N/A,Audit log has no password|token columns,NO,YES,PASS
+SENS-04,TestSensitiveDataProtection,test_user_model_has_hashed_password_not_plaintext,ALL,N/A,User model uses hashed_password not password field,NO,YES,PASS
+CRUD-01,TestCRUDFunctions,test_shap_features_load,ALL,N/A,SHAP features load from Phase 10 outputs or return empty list,NO,NO,PASS
+CRUD-02,TestCRUDFunctions,test_password_hashing,ALL,N/A,bcrypt hash format verified. Wrong password fails.,NO,YES,PASS
+CRUD-03,TestCRUDFunctions,test_id_generation,ALL,N/A,Unique prefixed IDs generated each call,NO,NO,PASS
+CRUD-04,TestCRUDFunctions,test_demo_data_seed,ALL,N/A,Demo seed creates ≥2 investigation records,NO,NO,PASS
+CRUD-05,TestCRUDFunctions,test_demo_investigations_marked_synthetic,ALL,N/A,All demo notes contain [SYNTHETIC DEMO] marker,NO,NO,PASS
+ENF-01,TestNoAutomaticEnforcement,test_no_freeze_account_function,ALL,N/A,No freeze_account|block_atm|arrest_suspect functions in analyst_routes,YES,NO,PASS
+ENF-02,TestNoAutomaticEnforcement,test_no_automatic_banking_access,ALL,N/A,No bank_api|ncrp_api|atm_api patterns in source code,YES,NO,PASS
+ENF-03,TestNoAutomaticEnforcement,test_investigation_recommended_next_step_not_enforcement,ALL,N/A,Demo recommended_next_step contains no enforcement phrases,YES,NO,PASS
+API-01,TestAlerts,test_alert_list_returns_paginated,ANALYST,200,Alert list returns items|total|disclaimer structure,NO,NO,PASS
+API-02,TestAlerts,test_alert_list_no_sensitive_fields,ANALYST,200,Alert list contains no card_number|account_number|pin|cvv|otp|password,NO,YES,PASS
+API-03,TestAlerts,test_alert_filter_by_severity,ANALYST,200,Severity filter returns only matching severity,NO,NO,PASS
+API-04,TestAlerts,test_alert_detail_has_disclaimer,ANALYST,200,Alert detail includes analytical_disclaimer with 'does not establish criminal activity',NO,NO,PASS
+API-05,TestAlerts,test_alert_404_for_nonexistent,ANALYST,404,Non-existent alert ID returns 404,NO,NO,PASS
+API-06,TestInvestigations,test_investigation_list_returns_paginated,ANALYST,200,Investigation list returns items|total structure,NO,NO,PASS
+API-07,TestInvestigations,test_investigation_create_valid,ANALYST,201,Valid investigation creation returns 201 with investigation_id,YES,NO,PASS
+API-08,TestInvestigations,test_investigation_create_invalid_priority_rejected,ANALYST,422,Invalid priority returns 422,NO,NO,PASS
+API-09,TestInvestigations,test_investigation_detail_has_all_sections,ANALYST,200,Detail includes investigation|notes|evidence|timeline|disclaimer,NO,NO,PASS
+API-10,TestInvestigations,test_investigation_not_found_returns_404,ANALYST,404,Non-existent investigation ID returns 404,NO,NO,PASS
+API-11,TestInvestigations,test_investigation_update_invalid_status_rejected,ANALYST,400|422,Invalid status transition returns 400/422,YES,NO,PASS
+API-12,TestInvestigations,test_analyst_cannot_close_investigation,ANALYST,400|403,ANALYST cannot close investigation,YES,NO,PASS
+API-13,TestNotes,test_add_note_to_existing_investigation,ANALYST,201,Note creation returns note_id|created_at|actor_role,NO,NO,PASS
+API-14,TestNotes,test_empty_note_rejected,ANALYST,422,Empty note rejected with 422,NO,NO,PASS
+API-15,TestEvidence,test_add_evidence_reference,ANALYST,201,Evidence creation returns evidence_id and evidence_type,NO,NO,PASS
+API-16,TestEvidence,test_invalid_evidence_type_rejected,ANALYST,422,Invalid evidence type rejected with 422,NO,NO,PASS
+API-17,TestTimeline,test_timeline_returns_ordered_events,ANALYST,200,Timeline events returned in chronological order,NO,NO,PASS
+API-18,TestExplanation,test_explanation_has_disclaimer,ANALYST,200,SHAP explanation includes shap_disclaimer and model_disclaimer,NO,NO,PASS
+API-19,TestExplanation,test_explanation_no_causality_language,ANALYST,200,Feature directions do not contain 'caused'|'proved'|'criminal',NO,NO,PASS
+API-20,TestAuditLog,test_analyst_cannot_access_audit_log,ANALYST,403,ANALYST gets 403 for audit log,YES,NO,PASS
+API-21,TestAuditLog,test_supervisor_can_access_audit_log,SUPERVISOR,200,SUPERVISOR can access audit log,YES,NO,PASS
+API-22,TestAuditLog,test_audit_log_no_sensitive_data,SUPERVISOR,200,Audit log detail contains no password|card_number|pin|cvv|otp,NO,YES,PASS
+API-23,TestHotspots,test_hotspot_list_returns_data,ANALYST,200,Hotspot list returns hotspots array,NO,NO,PASS
+API-24,TestHotspots,test_hotspot_no_sensitive_fields,ANALYST,200,Hotspot data has no account_number|card_number|victim_name,NO,YES,PASS

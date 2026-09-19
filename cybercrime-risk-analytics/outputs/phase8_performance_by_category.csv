@@ -1,0 +1,5 @@
+crime_category_group,sample_size,actual_positives,positive_rate,precision,recall,f1,roc_auc,pr_auc
+INVESTMENT_SCAM,250,27,10.8,0.25,0.0741,0.1143,0.4665,0.1487
+SOCIAL_ENGINEERING,267,36,13.48,0.0,0.0,0.0,0.5066,0.1388
+PAYMENT_FRAUD,494,47,9.51,0.0625,0.0213,0.0317,0.5017,0.1184
+CREDENTIAL_THEFT,489,45,9.2,0.0,0.0,0.0,0.4436,0.0808

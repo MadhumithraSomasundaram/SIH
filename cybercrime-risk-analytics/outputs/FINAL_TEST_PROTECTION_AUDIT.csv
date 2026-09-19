@@ -1,0 +1,10 @@
+prohibited_action,test_set_isolation_rule,actual_implementation_evidence,violation_detected,severity_if_violated,audit_status
+Model Training,Test set must never be used in fit() or fit_transform(),src/train_xgboost.py fits strictly on X_train (7000 rows),False,CRITICAL,PASS
+Hyperparameter Tuning,GridSearch/Optuna must evaluate on validation partition only,src/train_xgboost.py evaluated solely on validation.csv,False,CRITICAL,PASS
+Feature Selection,Feature ranking must be derived from train/validation only,Feature importance computed on training matrix only,False,CRITICAL,PASS
+Threshold Selection,Operational cutoffs must be derived on validation set,Threshold 0.5 derived from validation analysis in Phase 7,False,CRITICAL,PASS
+Model Selection,Architecture selection must compare validation metrics only,outputs/phase7_model_comparison.csv evaluated on val only,False,CRITICAL,PASS
+Synthetic Oversampling,SMOTE/ADASYN must never touch test data,No synthetic oversampling applied to test set,False,CRITICAL,PASS
+Probability Calibration,Platt scaling or isotonic calibration fitted on train/val,Platt scaling fitted without test data exposure,False,CRITICAL,PASS
+Model Retraining,Test data must never be folded into retraining,Models completely frozen in Phase 7; zero retraining in Phase 8-20,False,CRITICAL,PASS
+Overall Test Isolation,Test set must remain strictly held-out out-of-sample,data/processed/test.csv remained isolated until Phase 8 evaluation,False,CRITICAL,PASS

@@ -1,0 +1,7 @@
+crime_type,count,percentage,is_rare
+IMPERSONATION,1687,16.87,No (Balanced)
+UPI_FRAUD,1686,16.86,No (Balanced)
+ACCOUNT_TAKEOVER,1682,16.82,No (Balanced)
+PHISHING,1678,16.78,No (Balanced)
+OTHER_FINANCIAL_FRAUD,1661,16.61,No (Balanced)
+INVESTMENT_FRAUD,1606,16.06,No (Balanced)

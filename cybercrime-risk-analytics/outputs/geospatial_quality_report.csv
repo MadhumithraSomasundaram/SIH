@@ -1,0 +1,5 @@
+dataset,total_records,valid_coordinates,missing_latitude,missing_longitude,invalid_coordinates,min_lat,max_lat,min_lon,max_lon
+Cleaned_Cybercrime_Data (Victim Areas),10000,10000,0,0,0,8.5241,17.6868,74.4977,83.2185
+Withdrawals (ATM Cashouts),80000,80000,0,0,0,8.491708,17.712613,74.470901,83.242801
+ATMs_Locations,3000,3000,0,0,0,8.491708,17.712613,74.470901,83.242801
+Areas_Master,200,200,0,0,0,8.5241,17.6868,74.4977,83.2185

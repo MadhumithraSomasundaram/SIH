@@ -1,0 +1,6 @@
+artifact,exists,loaded,validation,notes
+xgboost_cybercrime_model.pkl,True,True,SHA256 hash derived for version fingerprint,Primary XGBoost sklearn pipeline (preprocessor + classifier)
+phase7_xgboost_metadata.json,True,True,64 selected_features key confirmed,"Feature schema, training metrics, model parameters"
+ColumnTransformer preprocessor,True,True,Extracted via pipeline.named_steps[preprocessor],Frozen TRAIN-fitted imputer + OneHotEncoder
+Feature schema (64 features),True,True,Loaded from metadata selected_features,Exact feature order required by preprocessor
+Model version fingerprint,True,True,SHA256 of generation timestamp + classifier params,Deterministic non-sensitive version identifier

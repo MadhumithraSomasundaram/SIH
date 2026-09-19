@@ -1,0 +1,6 @@
+model_name,model_type,training_data,preprocessing_pipeline,imbalance_handling,hyperparameters,random_state,artifact_location,is_primary_model,audit_verdict
+DummyClassifier,Baseline Prior,train.csv (7000 rows),None (Prior probability only),None,strategy='prior',42,models/baseline_dummy.pkl,False,PASS
+LogisticRegression,Linear Baseline,train.csv (7000 rows),StandardScaler + OneHotEncoder,class_weight='balanced',C=1.0 max_iter=1000,42,models/baseline_logistic.pkl,False,PASS
+RandomForestClassifier,Bagged Ensemble,train.csv (7000 rows),MedianImputer + OneHotEncoder,class_weight='balanced',n_estimators=100 max_depth=6,42,models/baseline_rf.pkl,False,PASS
+XGBClassifier,Gradient Boosted Trees,train.csv (7000 rows),ColumnTransformer (impute + OHE),scale_pos_weight=8.6154,n_estimators=200 max_depth=3 lr=0.05 subsample=0.8 colsample=0.8,42,models/xgboost_cybercrime_model.pkl,True,PASS
+Model Selection,Ensemble Comparison,Validation Set (1500 rows),Uniform Preprocessing across models,Evaluated via PR-AUC & specificity,XGBoost selected based on peak PR-AUC stability,42,outputs/phase7_model_comparison.csv,True,PASS

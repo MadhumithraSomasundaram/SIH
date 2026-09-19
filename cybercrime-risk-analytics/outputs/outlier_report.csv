@@ -1,0 +1,2 @@
+column,count,q25,q75,iqr,lower_bound,upper_bound,outlier_count,outlier_percentage,recommended_action
+fraud_amount,10000,3707.07,17506.83,13799.76,0.0,38206.47,861,8.61,"Retain in dataset. High-value cyber frauds are legitimate criminal events, not measurement noise. Apply RobustScaler or log1p in Phase 3."

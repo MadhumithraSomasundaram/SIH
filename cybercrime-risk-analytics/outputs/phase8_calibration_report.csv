@@ -1,0 +1,5 @@
+bin_index,mean_predicted_probability,fraction_of_positives,brier_score
+1,0.1649,0.1481,0.156
+2,0.3097,0.1026,0.156
+3,0.45,0.0932,0.156
+4,0.6185,0.3333,0.156

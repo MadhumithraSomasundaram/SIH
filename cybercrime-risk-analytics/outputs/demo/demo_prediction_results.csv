@@ -1,0 +1,5 @@
+prediction_reference,predicted_probability,risk_score,risk_category,operational_interpretation,victim_district,location_grid,crime_category_group
+DEMO_CASE_001_LOW,0.106474,11,LOW,Low predicted likelihood of a qualifying future withdrawal. Continue routine monitoring.,Mangaluru,12.91_74.86,INVESTMENT_SCAM
+DEMO_CASE_002_MODERATE,0.487101,49,MODERATE,Moderate predicted likelihood. Consider enhanced monitoring by authorized analysts.,Erode,11.34_77.72,PAYMENT_FRAUD
+DEMO_CASE_003_HIGH,0.631938,63,HIGH,High predicted likelihood. Prioritize review and verification by authorized personnel.,Tiruchirappalli,10.79_78.7,PAYMENT_FRAUD
+DEMO_CASE_004_HIGH_PRIORITY,0.611055,61,HIGH,High predicted likelihood. Prioritize review and verification by authorized personnel.,Tiruchirappalli,10.79_78.7,CREDENTIAL_THEFT

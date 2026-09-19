@@ -1,0 +1,4 @@
+dataset,rows,columns,target,positive_count,negative_count,positive_rate,missing_cells
+train,7000,66,future_withdrawal,728,6272,10.4,0
+validation,1500,66,future_withdrawal,144,1356,9.6,0
+test,1500,66,future_withdrawal,155,1345,10.33,0

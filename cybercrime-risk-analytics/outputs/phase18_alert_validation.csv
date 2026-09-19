@@ -1,0 +1,11 @@
+check_name,rule_or_condition,expected_behavior,actual_behavior,status,notes
+high_risk_alert_trigger,risk_score >= 60,Generate priority alert,Alert generated with HIGH priority,PASS,Rule enforced in alert engine
+critical_risk_alert_trigger,risk_score >= 80,Generate urgent alert,Alert generated with CRITICAL priority,PASS,Handled by priority routing
+hotspot_spatial_alert,coord within hotspot radius,Flag spatial cluster alert,Cluster proximity alert raised,PASS,DBSCAN spatial correlation verified
+alert_deduplication,same area & window,Deduplicate duplicate triggers,Duplicate alerts suppressed,PASS,Deduplication window enforced
+cooldown_period,repeated triggers within 1h,Throttle alert dispatch,Cooldown throttle applied,PASS,Prevents alert storming
+human_review_required_flag,HIGH/CRITICAL alert,human_review_required == True,Flag strictly set to True,PASS,Decision-support safeguard strictly enforced
+no_automatic_account_freezing,Safeguard,No automated banking freeze,Zero automated freeze code paths,PASS,Ethical boundary verified
+no_automatic_transaction_block,Safeguard,No automated transaction block,Zero transaction block hooks,PASS,Ethical boundary verified
+no_criminal_identification,Safeguard,No automated criminal tagging,Uses probabilistic terminology only,PASS,Ethical boundary verified
+alert_audit_logging,Alert lifecycle,Log alert creation and changes,Recorded in audit log table,PASS,Audit trail preserved

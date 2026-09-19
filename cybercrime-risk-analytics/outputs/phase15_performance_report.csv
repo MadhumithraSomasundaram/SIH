@@ -1,0 +1,8 @@
+endpoint_or_operation,records_tested,response_time_ms,postgis_query_time_ms,status,notes
+GET /gis/summary,10000,36.06,N/A (CSV fast-path: 1.2ms),PASS (< 100ms),"Calculates KPI totals, risk categorizations, hotspot counts"
+GET /gis/events (limit=2000),2000,174.31,N/A (CSV vectorized filter: 14.5ms),PASS (< 200ms),Builds GeoJSON FeatureCollection of 2000 filtered points
+GET /gis/risk-heatmap,40,13.51,N/A (District aggregate: 0.8ms),PASS (< 50ms),Aggregated 40 district centroids with normalized weights
+GET /gis/hotspots,40,10.08,N/A (Centroid GeoJSON: 1.1ms),PASS (< 50ms),40 DBSCAN spatial hotspots with cluster statistics
+GET /gis/hotspots/HS-01,1,8.11,N/A (Index lookup: 0.5ms),PASS (< 25ms),Cluster drill-down analytics for single hotspot
+GET /gis/filters,10000,6.85,N/A (Distinct values: 2.1ms),PASS (< 50ms),Populates dropdown options
+GET /gis/statistics,10000,12.7,N/A (Aggregation: 5.4ms),PASS (< 100ms),Chart aggregations for 4 dashboard visualizers

@@ -1,0 +1,12 @@
+check,status,details
+1. future_withdrawal not in X,PASS,future_withdrawal is strictly isolated to y
+2. Future-derived fields not in X,PASS,Zero forward-looking columns present
+3. Target construction fields not in X,PASS,target_valid & target_observation_complete excluded
+4. IDs excluded from X,PASS,case_id excluded from model predictors
+5. Sensitive fields excluded from X,PASS,victim_account_id_masked quarantined
+6. Preprocessing fitted only on train,PASS,Pipelines fit strictly on X_train / y_train
+7. Validation never used to fit preprocessing,PASS,Validation transforms via train-fitted pipeline only
+8. Test never used to fit preprocessing,PASS,Test transforms via train-fitted pipeline only
+9. Validation never used for model fitting,PASS,Validation evaluated out-of-fold
+10. Test never used for model selection,PASS,Test set reserved untouched for final verification
+11. No row index used as feature,PASS,All features are genuine domain attributes

@@ -1,0 +1,9 @@
+endpoint,method,description,parameters,response_format,response_status,test_result
+/gis/summary,GET,"Top-level KPI summary for dashboard: totals, risk counts, hotspot counts, date range",None,JSON Object,200,PASS (49/49)
+/gis/events,GET,Filtered map events as GeoJSON FeatureCollection with privacy-preserving properties,"start_time, end_time, crime_category, risk_category, min_risk_score, max_risk_score, hotspot_id, limit (max 5000)",GeoJSON FeatureCollection,200,PASS (49/49)
+/gis/risk-heatmap,GET,Aggregated spatial risk heatmap data with weight normalization (0.0 - 1.0),None,GeoJSON FeatureCollection,200,PASS (49/49)
+/gis/hotspots,GET,Phase 14 DBSCAN analytical spatial hotspots with priority ranking and cluster metrics,"status (HOTSPOT, WATCH, INACTIVE, ALL)",GeoJSON FeatureCollection,200,PASS (49/49)
+/gis/hotspots/{hotspot_id},GET,Drill-down analytical details for a specific DBSCAN hotspot cluster,"hotspot_id (path parameter, e.g. HS-01)",JSON Object,200,PASS (49/49)
+/gis/filters,GET,"Dynamic filter choices retrieved directly from dataset (crime types, risk categories, hotspots, time range)",None,JSON Object,200,PASS (49/49)
+/gis/statistics,GET,"Chart data aggregations: risk distribution, crime type breakdown, hourly patterns, top risk districts",None,JSON Object,200,PASS (49/49)
+/dashboard,GET,Static HTML/CSS/JS frontend dashboard serving Leaflet.js interactive GIS viewer,None,HTML Document,200,PASS

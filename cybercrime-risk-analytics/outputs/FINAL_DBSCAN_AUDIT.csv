@@ -1,0 +1,11 @@
+audit_item,required_specification,actual_code_implementation,validation_status,audit_verdict
+Algorithm,DBSCAN (Density-Based Spatial Clustering of Applications with Noise),sklearn.cluster.DBSCAN in src/hotspot_detection.py,VERIFIED,PASS
+Distance Metric,Haversine metric for true geodetic distance,metric='haversine' with radian-converted coordinates,VERIFIED,PASS
+Epsilon Parameter,500 meters (0.5 km) converted to radians,eps_rad = 0.5 / 6371.0088 (approx 0.000078 rad),VERIFIED,PASS
+MinPts Parameter,Minimum 3 points to form dense cluster,min_samples=3,VERIFIED,PASS
+Noise Handling,Isolated points classified as -1,Points outside clusters assigned label -1 (noise),VERIFIED,PASS
+Total Hotspots Discovered,40 analytical spatial clusters,outputs/phase15_hotspots.geojson contains 40 features,VERIFIED,PASS
+Role Distinction,DBSCAN is spatial clustering NOT predictive modeling,Documented explicitly: XGBoost risk != DBSCAN cluster,VERIFIED,PASS
+Terminology Enforcement,Must use 'analytical hotspot' NOT 'criminal hotspot',Standardized terminology enforced in docstrings & UI,VERIFIED,PASS
+GeoJSON Compatibility,RFC 7946 compliant FeatureCollection,Validated in test_15_geojson_is_valid (PASSED),VERIFIED,PASS
+Spatial Query Integration,PostGIS ST_ClusterDBSCAN or Python lookup,Dual implementation in SQL and Python,VERIFIED,PASS

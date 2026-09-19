@@ -1,0 +1,4 @@
+endpoint,feature_collection_valid,geometry_types_valid,lat_range_valid,lon_range_valid,nan_infinite_count,sensitive_fields_count,status
+GET /gis/events,True,True,True,True,0,0,PASS
+GET /gis/risk-heatmap,True,True,True,True,0,0,PASS
+GET /gis/hotspots,True,True,True,True,0,0,PASS

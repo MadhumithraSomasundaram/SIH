@@ -1,0 +1,7 @@
+threshold,accuracy,precision,recall,f1,specificity,predicted_positives,true_positives,false_positives,false_negatives,note
+0.2,0.1413,0.1008,0.9226,0.1817,0.0513,1419,143,1276,12,Post-hoc diagnostic threshold analysis — NOT used for model selection
+0.3,0.38,0.1017,0.6387,0.1755,0.3502,973,99,874,56,Post-hoc diagnostic threshold analysis — NOT used for model selection
+0.4,0.704,0.0952,0.2194,0.1328,0.7599,357,34,323,121,Post-hoc diagnostic threshold analysis — NOT used for model selection
+0.5,0.8693,0.0638,0.0194,0.0297,0.9673,47,3,44,152,Post-hoc diagnostic threshold analysis — NOT used for model selection
+0.6,0.896,0.3333,0.0065,0.0127,0.9985,3,1,2,154,Post-hoc diagnostic threshold analysis — NOT used for model selection
+0.7,0.8967,0.0,0.0,0.0,1.0,0,0,0,155,Post-hoc diagnostic threshold analysis — NOT used for model selection

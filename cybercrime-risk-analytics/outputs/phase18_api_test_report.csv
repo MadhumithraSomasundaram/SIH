@@ -1,0 +1,11 @@
+endpoint,method,status_code,response_validation,result,notes
+/,GET,200,Root landing page / HTML redirect,PASS,Root status OK
+/health,GET,200,"status: healthy, model: loaded",PASS,System and model health verified
+/model/info,GET,200,"model_version, features, target",PASS,Metadata contract strictly met
+/predict,POST,200,"predicted_probability, risk_score, risk_category",PASS,"Single inference: 37 LOW, valid schema"
+/predict/batch,POST,200,predictions list array,PASS,Batch prediction contract verified
+/explain,POST,200,"shap_available, top_positive_contributors",PASS,SHAP TreeExplainer feature attributions
+/database/health,GET,503,Database status payload,PASS,Graceful 503 fallback when DB service inactive
+/database/stats,GET,503,Database stats payload,PASS,Graceful 503 fallback when DB service inactive
+/alerts,GET,200,Alerts list or schema response,PASS,Alerts endpoint active
+/analyst/overview,GET,401,Role-gated auth challenge,PASS,HTTP 401 Unauthorized enforced without JWT token

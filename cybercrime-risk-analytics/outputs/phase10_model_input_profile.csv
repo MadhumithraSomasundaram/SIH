@@ -1,0 +1,2 @@
+model_type,model_path,number_of_model_features,number_of_transformed_features,preprocessing_information,feature_ordering,dataset_used_for_explanation
+<class 'xgboost.sklearn.XGBClassifier'>,models/xgboost_cybercrime_model.pkl,64,556,ColumnTransformer (SimpleImputer median/mode + OneHotEncoder handle_unknown=ignore),Preserved strictly from training pipeline,"Chronological validation set (validation.csv, 1500 rows)"

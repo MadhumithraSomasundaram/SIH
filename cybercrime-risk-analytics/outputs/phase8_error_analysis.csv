@@ -1,0 +1,14 @@
+dimension,subgroup,total_complaints,false_positives,false_negatives,correct_predictions,error_rate
+crime_category_group,CREDENTIAL_THEFT,489,18,45,426,0.1288
+crime_category_group,INVESTMENT_SCAM,250,6,25,219,0.124
+crime_category_group,PAYMENT_FRAUD,494,15,46,433,0.1235
+crime_category_group,SOCIAL_ENGINEERING,267,5,36,226,0.1536
+time_period,afternoon,304,5,29,270,0.1118
+time_period,early_morning,379,10,33,336,0.1135
+time_period,evening,278,11,28,239,0.1403
+time_period,morning,340,8,31,301,0.1147
+time_period,night,199,10,31,158,0.206
+amount_category,CRITICAL,101,0,11,90,0.1089
+amount_category,HIGH,230,0,26,204,0.113
+amount_category,LOW,540,34,48,458,0.1519
+amount_category,MEDIUM,629,10,67,552,0.1224

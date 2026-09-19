@@ -1,0 +1,6 @@
+subgroup,sample_size,actual_positives,positive_rate,precision,recall,f1,roc_auc,pr_auc
+morning,340,32,9.41,0.1111,0.0312,0.0488,0.4926,0.1289
+afternoon,304,30,9.87,0.1667,0.0333,0.0556,0.4802,0.133
+evening,278,28,10.07,0.0,0.0,0.0,0.4273,0.0863
+night,199,32,16.08,0.0909,0.0312,0.0465,0.5065,0.1613
+early_morning,379,33,8.71,0.0,0.0,0.0,0.4309,0.0743

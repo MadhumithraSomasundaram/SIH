@@ -1,0 +1,6 @@
+feature_group,count,sample_features,scaling_required_in_phase6,encoding_required_in_phase6,notes
+Numerical Predictors,52,"['fraud_amount', 'reported_by_authority', 'latitude', 'longitude']",True,,
+Categorical Predictors,12,"['crime_type', 'victim_state', 'victim_district', 'victim_area']",,True,
+Geographic / Spatial Features,15,"['victim_district', 'victim_area', 'victim_area_id', 'latitude']",,,Coordinate centroids and area codes
+Temporal / Cyclical Features,22,"['event_year', 'event_month', 'event_day', 'event_day_of_month']",,,Circadian blocks and calendar indicators
+Total Safe Model Features in X,64,All certified safe features,,,Zero target or PII leakage

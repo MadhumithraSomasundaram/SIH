@@ -1,0 +1,7 @@
+operation,records,runtime_seconds,status,notes
+single_prediction,1,0.44182,PASS,Single record XGBoost inference latency 441.82ms
+batch_prediction_100,100,0.01225,PASS,Batch of 100 records took 12.25ms (0.123ms/rec)
+batch_prediction_all,1500,0.02156,PASS,Full test set (1500 records) inference in 0.022s
+hotspot_query_geojson,40,0.00959,PASS,Loaded 40 spatial hotspot features in 9.59ms
+alert_generation_batch,100,0.00053,PASS,Evaluated 100 records for alert criteria in 0.529ms
+dashboard_asset_loading,1,0.00108,PASS,Verified analyst static assets (42.3 KB) in 1.08ms

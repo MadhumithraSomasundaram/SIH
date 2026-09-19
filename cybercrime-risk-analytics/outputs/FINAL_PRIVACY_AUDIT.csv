@@ -1,0 +1,11 @@
+pii_category,search_pattern_or_term,scope_audited,instances_found,containment_method,compliance_status
+Debit/Credit Card Numbers,16-digit primary account numbers,Entire Repository (367 files),0,Never ingested or stored,PASS
+CVV / Security Codes,3-4 digit CVV/CVC security tokens,Entire Repository (367 files),0,Never ingested or stored,PASS
+ATM PINs,4-6 digit personal identification numbers,Entire Repository (367 files),0,Never ingested or stored,PASS
+OTPs / 2FA Codes,One-time authentication passwords,Entire Repository (367 files),0,Never ingested or stored,PASS
+Banking Passwords,User login passwords or hashes,Entire Repository (367 files),0,Never ingested or stored,PASS
+Citizen Phone Numbers,Real personal mobile numbers,Entire Repository (367 files),0,Excluded from feature schema,PASS
+Citizen Email Addresses,Personal email identifiers,Entire Repository (367 files),0,Excluded from feature schema,PASS
+Government IDs (Aadhaar/PAN),12-digit UIDAI / 10-char PAN numbers,Entire Repository (367 files),0,Excluded from feature schema,PASS
+Complainant PII,Names and home addresses,Entire Repository (367 files),0,Anonymized into area codes,PASS
+DPDP Act 2023 Compliance,Data minimization & purpose limitation,Entire Repository (367 files),0,Verified in phase20_ethics_review.md,PASS

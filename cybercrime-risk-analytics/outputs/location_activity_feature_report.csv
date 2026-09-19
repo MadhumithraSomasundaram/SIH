@@ -1,0 +1,7 @@
+feature,aggregation_level,temporal_boundary,mean,max
+location_total_previous_events,victim_area_id,Strictly prior events,25.23,71
+location_previous_24h_events,victim_area_id,Previous 24 hours,0.2112,3
+location_previous_7d_events,victim_area_id,Previous 7 days,1.4324,8
+district_previous_24h_events,victim_district,Previous 24 hours,1.0458,6
+district_previous_7d_events,victim_district,Previous 7 days,7.1519,18
+location_unique_crime_categories,victim_area_id,Cumulative unique crime types seen in area prior,5.2658,6

@@ -1,0 +1,2 @@
+model_version,model_type,training_date,training_rows,selected_features,sha256_fingerprint
+v1.0.0-xgb-668c1916,XGBoost Classifier,2026-09-15T05:21:44.901003Z,7000,64,668c1916

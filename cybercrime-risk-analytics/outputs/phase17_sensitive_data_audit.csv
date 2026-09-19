@@ -1,0 +1,21 @@
+data_category,field_name,table_or_source,is_stored,is_exposed_in_api,is_logged,handling,risk_level,justification
+Card Number,card_number,All investigation tables,NO,NO,NO,Field does not exist in any Phase 17 model,NONE,Not required for analytical decision support
+Account Number,account_number,All investigation tables,NO,NO,NO,Field does not exist in any Phase 17 model,NONE,Not required for analytical decision support
+PIN / Password (financial),pin,All investigation tables,NO,NO,NO,Field does not exist in any Phase 17 model,NONE,Not required for analytical decision support
+CVV / Security Code,cvv,All investigation tables,NO,NO,NO,Field does not exist in any Phase 17 model,NONE,Not required for analytical decision support
+OTP,otp,All investigation tables,NO,NO,NO,Field does not exist in any Phase 17 model,NONE,Not required for analytical decision support
+User Password (system),hashed_password,analyst_users,YES (hashed),NO,NO,bcrypt-hashed on receipt. Never returned in any API response. Never logged.,LOW,Required for prototype authentication. bcrypt mitigates brute force.
+User Identity (username),username,analyst_users,YES,YES (current user only — me endpoint),NO,Returned to authenticated user only via GET /analyst/auth/me. Not in audit logs.,LOW,Required for session display. No sensitive personal details.
+Display Name,display_name,analyst_users,YES,YES (current user only),NO,Returned to authenticated user only.,LOW,Display name only — no Aadhaar|PAN|phone|address stored.
+Analyst Notes,note,investigation_notes,YES,YES (authorized analysts with valid token),NO,Role-gated. Warning displayed in UI: 'Do not include account numbers PINs OTPs CVVs or unnecessary PII.',MEDIUM — analyst-controlled,Analysts instructed and UI-warned not to enter sensitive data. No server-side PII scanning (prototype limitation).
+Evidence Reference,reference,investigation_evidence,YES,YES (authorized analysts with valid token),NO,Role-gated. Description says 'safe reference only'. Warning in API docstring and UI.,MEDIUM — analyst-controlled,Reference is metadata/ID only. System does not validate content. Analyst responsible for compliance.
+Integrity Hash,integrity_hash,investigation_evidence,YES (optional),YES (authorized analysts),NO,Reference only — does not prove authenticity. Clearly labeled.,LOW,No raw cryptographic material stored — reference ID only.
+Risk Score (model),risk_score,investigations|alerts,YES,YES,NO,Model-derived analytical score 0-100. Not a personal identifier.,NONE,Aggregate model output. Not linked to individual person.
+Dominant Category (crime type),dominant_category,investigations|alerts,YES,YES,NO,Analytical label only. Not attributed to a person.,LOW,Alert-level category — not individual attribution.
+Audit Action,action,analyst_audit_log,YES,YES (SUPERVISOR/ADMIN only),N/A (is the log),Logs action codes only (e.g. CREATE_INVESTIGATION). No payload content.,LOW,Action codes and resource IDs only. No sensitive request body content.
+Audit Detail,detail,analyst_audit_log,YES (optional),YES (SUPERVISOR/ADMIN only),N/A,Brief non-sensitive description (e.g. 'Investigation created for alert ALT-001'). Never includes credentials.,LOW,Backend explicitly excludes sensitive data from detail field.
+Phone Number,phone,None,NO,NO,NO,Field does not exist in any Phase 17 model or data source,NONE,Not required for analytical decision support
+Aadhaar / National ID,aadhaar,None,NO,NO,NO,Field does not exist in any Phase 17 model or data source,NONE,Not required for analytical decision support
+PAN / Tax ID,pan,None,NO,NO,NO,Field does not exist in any Phase 17 model or data source,NONE,Not required for analytical decision support
+Location (centroid),latitude_centroid|longitude_centroid,phase14 hotspot summary (read-only),NO (Phase 17 does not store),YES (aggregate cluster centroid),NO,Hotspot centroid is aggregate cluster coordinate — not individual location.,LOW,Phase 14 DBSCAN cluster centroid only. Not individual tracking.
+JWT Token,access_token,sessionStorage (browser),NO (not server-stored),YES (returned at login),NO,Returned once at login. Stored in browser sessionStorage. Expires in 8h. Cleared on logout.,MEDIUM,sessionStorage does not persist across tabs. Must use HTTPS in production to prevent interception.

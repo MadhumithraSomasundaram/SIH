@@ -1,0 +1,3 @@
+identifier_column,purpose,included_in_X,tracking_retention
+case_id,Primary complaint record key,False,Preserved in split CSVs as non-feature tracking column
+victim_area_id,Administrative area spatial code,True,Generalizable spatial category for frequency/target encoding

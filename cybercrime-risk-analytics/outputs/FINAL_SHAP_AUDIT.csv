@@ -1,0 +1,11 @@
+audit_check,required_standard,actual_implementation_evidence,compliance_status,audit_verdict
+Model Artifact Consistency,Must explain the exact trained XGBoost model,models/xgboost_cybercrime_model.pkl loaded by joblib,MATCH,PASS
+Explainer Implementation,shap.TreeExplainer in polynomial time,TreeExplainer(model) used with tree_path_dependent mode,CONFIRMED,PASS
+Mathematical Efficiency,base_value + sum(shap_values) == raw_margin,Verified in test_12 and Phase 10 verification table,CONFIRMED,PASS
+Feature Names Synchronization,Must match the 64 engineered predictors,Transformer output feature names mapped dynamically,CONFIRMED,PASS
+Global Feature Importance,Mean absolute SHAP values across population,outputs/figures/phase10_shap_summary_bar.png generated,CONFIRMED,PASS
+Local Explanations,Instance-level waterfall/force attributions,Local explanations computed in CLI and /explain endpoint,CONFIRMED,PASS
+Directional Contributions,Distinguish positive (+risk) vs negative (-risk),Positive and negative contributions separated clearly,CONFIRMED,PASS
+Attribution Terminology,Must use 'contributed toward prediction' not 'caused crime',Causal terms prohibited; additive phrasing enforced,CONFIRMED,PASS
+Sensitive Information Exposure,Must not expose card/PIN/PII in explanation,Zero PII/credentials present in feature names or values,CONFIRMED,PASS
+Execution Latency,Sub-100ms local explanation budget,~60ms calculation time on CPU without background sampling,CONFIRMED,PASS

@@ -1,0 +1,75 @@
+{
+  "framework": "Cybercrime Predictive Analytics Framework (Problem Statement ID 26184)",
+  "phase": 11,
+  "status": "VALIDATED",
+  "datasets_audited": {
+    "complaints": {
+      "dataset": "targeted_cybercrime_data.csv",
+      "total_rows": 10000,
+      "unique_case_ids": 10000,
+      "duplicate_ids": 0,
+      "valid_coordinates": 10000,
+      "invalid_or_missing_coordinates": 0,
+      "valid_timestamps": 10000,
+      "null_amounts": 0,
+      "positive_ground_truth_cases": 1027,
+      "negative_ground_truth_cases": 8973
+    },
+    "atms": {
+      "dataset": "ATMs_Locations.csv",
+      "total_rows": 3000,
+      "unique_atm_ids": 3000,
+      "duplicate_atms": 0,
+      "valid_coordinates": 3000,
+      "invalid_coordinates": 0,
+      "bank_networks_count": 8
+    },
+    "withdrawals": {
+      "dataset": "Withdrawals.csv",
+      "total_rows": 80000,
+      "unique_withdrawal_ids": 80000,
+      "valid_coordinates": 80000,
+      "valid_timestamps": 80000,
+      "linked_case_ids_in_cases_master": 28614,
+      "orphan_case_id_count": 51386
+    },
+    "transactions": {
+      "dataset": "Transactions.csv",
+      "total_rows": 300000,
+      "unique_transaction_ids": 300000,
+      "valid_timestamps": 300000,
+      "distinct_channels": [
+        "BANK_TRANSFER",
+        "IMPS",
+        "UPI",
+        "NEFT",
+        "CARD"
+      ]
+    },
+    "accounts": {
+      "dataset": "Accounts.csv",
+      "total_rows": 30000,
+      "unique_account_ids": 30000,
+      "account_types": [
+        "CURRENT",
+        "SAVINGS",
+        "DIGITAL_WALLET",
+        "BUSINESS",
+        "SALARY"
+      ],
+      "distinct_banks": 8
+    }
+  },
+  "pii_compliance": {
+    "strict_pii_filtering_enforced": true,
+    "prohibited_columns_detected": {
+      "Cases": [],
+      "Transactions": [],
+      "Accounts": [],
+      "Withdrawals": []
+    },
+    "status": "PASS \u2014 Zero raw cards, PINs, OTPs, or passwords in database staging"
+  },
+  "coordinate_reference_system": "EPSG:4326 (WGS 84)",
+  "geometry_storage_type": "PostGIS GEOMETRY(Point, 4326) / Geography in meters"
+}

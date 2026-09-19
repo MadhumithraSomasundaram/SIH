@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Investigation Workspace — Cybercrime Analyst Interface (ID 26184)</title>
+  <meta name="description" content="Investigation workspace for authorized cybercrime analysts. Manage investigations, record notes, evidence references, and view model explanations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/analyst/css/analyst.css" />
+</head>
+<body>
+<div class="app-shell" id="app-shell">
+  <header class="header">
+    <div class="header-logo">
+      <a href="/analyst/index.html" style="text-decoration:none"><span class="logo-icon">⬡</span></a>
+      <div>
+        <div class="header-title">Cybercrime Analytics · Investigation Workspace</div>
+        <div class="header-subtitle">Problem Statement ID 26184 — Authorized Analytical Decision Support</div>
+      </div>
+    </div>
+    <div class="header-center"><span class="badge badge-prototype">Prototype · Synthetic Data</span></div>
+    <div class="header-right">
+      <span id="hdr-time" style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-muted)"></span>
+      <div class="header-user">
+        <span id="hdr-user" style="font-size:0.82rem;color:var(--text-muted)">—</span>
+        <span class="user-badge ANALYST" id="hdr-role">ANALYST</span>
+      </div>
+      <button class="btn btn-sm btn-secondary" id="btn-logout">Sign Out</button>
+    </div>
+  </header>
+
+  <div class="main-layout">
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">Navigation</div>
+        <div id="sidebar-nav"></div>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">External</div>
+        <div id="sidebar-external"></div>
+      </div>
+    </aside>
+
+    <main class="main-content" id="main-content">
+      <div class="page-header">
+        <h1>Investigation Workspace</h1>
+        <p>Create and manage analytical investigations. Record notes, evidence references, and review model explanations.</p>
+      </div>
+
+      <div class="disclaimer-banner">
+        <strong>Authorized Analytical Decision Support</strong> —
+        Investigations record analytical review only. No automatic enforcement actions are triggered.
+        Record only information necessary for the authorized investigation.
+        Do not record account numbers, PINs, OTPs, CVVs, or unnecessary PII.
+      </div>
+
+      <!-- Investigation List + Workspace Split -->
+      <div class="split-layout" style="grid-template-columns:340px 1fr">
+        <!-- Left: List -->
+        <div>
+          <!-- Filters -->
+          <div class="filters-bar" style="flex-direction:column;gap:8px;padding:12px">
+            <div style="display:flex;gap:8px;width:100%">
+              <select class="form-control" id="inv-filter-status" style="flex:1">
+                <option value="">All Statuses</option>
+                <option value="OPEN">Open</option>
+                <option value="UNDER_REVIEW">Under Review</option>
+                <option value="PENDING_VALIDATION">Pending Validation</option>
+                <option value="CLOSED">Closed</option>
+                <option value="DISMISSED">Dismissed</option>
+              </select>
+              <select class="form-control" id="inv-filter-priority" style="flex:1">
+                <option value="">All Priorities</option>
+                <option value="CRITICAL">Critical</option>
+                <option value="HIGH">High</option>
+                <option value="MODERATE">Moderate</option>
+                <option value="LOW">Low</option>
+              </select>
+            </div>
+            <div style="display:flex;gap:6px">
+              <button class="btn btn-primary btn-sm" onclick="applyInvFilters()">Apply</button>
+              <button class="btn btn-secondary btn-sm" onclick="clearInvFilters()">Clear</button>
+              <a class="btn btn-secondary btn-sm" href="/analyst/alerts.html">+ From Alert</a>
+            </div>
+          </div>
+
+          <div class="card" style="padding:0;overflow:hidden">
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Alert</th>
+                    <th>Status</th>
+                    <th>Priority</th>
+                    <th>Severity</th>
+                    <th>Score</th>
+                    <th>Created</th>
+                  </tr>
+                </thead>
+                <tbody id="inv-tbody">
+                  <tr><td colspan="7"><div class="loading-overlay"><div class="spinner"></div></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="pagination" style="padding:10px 14px">
+              <span id="inv-page-info" style="font-size:0.75rem;color:var(--text-muted)">—</span>
+              <div class="pagination-controls">
+                <button class="btn btn-secondary btn-sm" id="inv-btn-prev" onclick="invPrevPage()" disabled>← Prev</button>
+                <button class="btn btn-secondary btn-sm" id="inv-btn-next" onclick="invNextPage()">Next →</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Workspace -->
+        <div id="workspace" style="display:none">
+          <div id="workspace-loading" class="loading-overlay"><div class="spinner"></div><span>Loading investigation…</span></div>
+          <div id="workspace-content" style="display:none">
+            <!-- Workspace Header -->
+            <div class="card" id="ws-header"></div>
+
+            <!-- Status Workflow -->
+            <div class="card">
+              <div class="card-title"><span class="dot"></span> Status Workflow</div>
+              <div style="margin-bottom:8px;font-size:0.75rem;color:var(--text-muted)">
+                OPEN → UNDER_REVIEW → PENDING_VALIDATION → CLOSED | DISMISSED
+              </div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap" id="ws-status-controls"></div>
+            </div>
+
+            <!-- Risk Summary -->
+            <div class="card">
+              <div class="card-title"><span class="dot"></span> Risk Summary</div>
+              <div id="ws-risk"></div>
+              <div style="margin-top:10px;font-size:0.72rem;color:var(--text-muted);">
+                <strong>Model Risk</strong> ≠ <strong>Investigation Priority</strong>.
+                The model risk score is an analytical signal. Investigation priority is set by the analyst based on authorized review.
+              </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="card" style="padding:0">
+              <!-- Tab Headers -->
+              <div style="display:flex;border-bottom:1px solid var(--border-dim);overflow-x:auto">
+                <button class="tab-btn active" id="tab-btn-notes"     onclick="switchTab('notes')">    📝 Notes</button>
+                <button class="tab-btn"         id="tab-btn-evidence"  onclick="switchTab('evidence')"> 📎 Evidence</button>
+                <button class="tab-btn"         id="tab-btn-timeline"  onclick="switchTab('timeline')"> 🕐 Timeline</button>
+                <button class="tab-btn"         id="tab-btn-explain"   onclick="switchTab('explain')">  🧠 Model Explanation</button>
+                <button class="tab-btn"         id="tab-btn-brief"     onclick="switchTab('brief')">    🛡️ Intelligence Brief</button>
+                <button class="tab-btn"         id="tab-btn-outcomes"  onclick="switchTab('outcomes')"> 🎯 Field Outcomes</button>
+              </div>
+
+
+              <!-- Notes Tab -->
+              <div id="tab-notes" class="tab-content" style="padding:20px">
+                <div class="disclaimer-banner" style="margin-bottom:14px">
+                  ⚠ Record only information necessary for the authorized investigation.
+                  Do not include account numbers, PINs, OTPs, CVVs, or unnecessary PII.
+                </div>
+                <div id="ws-notes" style="margin-bottom:16px"></div>
+                <div class="form-group">
+                  <label class="form-label">Add Note</label>
+                  <textarea class="form-control" id="note-text" rows="3"
+                            placeholder="Enter analyst note here…"></textarea>
+                </div>
+                <button class="btn btn-primary btn-sm" id="btn-add-note" onclick="addNote()">Add Note</button>
+              </div>
+
+              <!-- Evidence Tab -->
+              <div id="tab-evidence" class="tab-content" style="padding:20px;display:none">
+                <div class="disclaimer-banner" style="margin-bottom:14px">
+                  ⚠ Store references/metadata only — NOT raw sensitive evidence data.
+                  Do NOT include account numbers, PINs, CVVs, OTPs, full card numbers, or passwords.
+                </div>
+                <div id="ws-evidence" style="margin-bottom:16px"></div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Evidence Type</label>
+                    <select class="form-control" id="ev-type">
+                      <option value="DATABASE_RECORD">Database Record</option>
+                      <option value="REPORT">Report</option>
+                      <option value="IMAGE_REFERENCE">Image Reference</option>
+                      <option value="DOCUMENT_REFERENCE">Document Reference</option>
+                      <option value="TRANSACTION_REFERENCE">Transaction Reference</option>
+                      <option value="SYSTEM_LOG">System Log</option>
+                      <option value="OTHER">Other</option>
+                    </select>
+                  </div>
+                  <div class="form-group" style="flex:2">
+                    <label class="form-label">Reference</label>
+                    <input class="form-control" type="text" id="ev-reference"
+                           placeholder="Safe reference (e.g. report number, DB record ID)" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Description (Optional)</label>
+                  <input class="form-control" type="text" id="ev-description" placeholder="Brief description — no sensitive data" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">SHA-256 Integrity Hash (Optional)</label>
+                  <input class="form-control" type="text" id="ev-hash" placeholder="Optional integrity verification reference" />
+                  <div class="form-hint">Integrity verification reference only — does not prove authenticity.</div>
+                </div>
+                <button class="btn btn-primary btn-sm" id="btn-add-evidence" onclick="addEvidence()">Add Reference</button>
+              </div>
+
+              <!-- Timeline Tab -->
+              <div id="tab-timeline" class="tab-content" style="padding:20px;display:none">
+                <div id="ws-timeline"></div>
+              </div>
+
+              <!-- Model Explanation Tab -->
+              <div id="tab-explain" class="tab-content" style="padding:20px;display:none">
+                <div class="disclaimer-banner" style="margin-bottom:14px">
+                  <strong>Model Explanation Disclaimer:</strong>
+                  SHAP explanations describe factors contributing to the model's prediction.
+                  They do NOT establish causality or criminal responsibility.
+                  "Contributed toward higher prediction" does NOT mean "caused the crime."
+                </div>
+                <div id="ws-explanation"></div>
+              </div>
+
+              <!-- Intelligence Brief Tab (Phase 6) -->
+              <div id="tab-brief" class="tab-content" style="padding:20px;display:none">
+                <div class="disclaimer-banner" style="margin-bottom:14px">
+                  <strong>Law Enforcement Analytical Intelligence Brief:</strong>
+                  Official dossier cross-referencing complaint parameters, predictive risk models,
+                  spatial hotspot DBSCAN clusters, and physical ATM proximity. Authorized review only.
+                </div>
+                <div style="margin-bottom:14px;display:flex;gap:8px;justify-content:flex-end">
+                  <button class="btn btn-secondary btn-sm" onclick="loadIntelligenceBrief(true)">🔄 Refresh</button>
+                  <button class="btn btn-primary btn-sm" onclick="exportIntelligenceBriefJSON()">⬇ Download Brief JSON</button>
+                </div>
+                <div id="ws-brief-content">
+                  <div style="font-size:0.82rem;color:var(--text-muted)">Select the tab to compile the intelligence brief.</div>
+                </div>
+              </div>
+
+              <!-- Outcomes Tab (Phase 11) -->
+              <div id="tab-outcomes" class="tab-content" style="padding:20px;display:none">
+                <div class="disclaimer-banner" style="margin-bottom:14px">
+                  <strong>Operational Ground-Truth Feedback Loop:</strong>
+                  Record post-patrol or field intervention results (e.g. thwarted withdrawal, confirmed cashout, unproductive patrol check).
+                  Feedback provides empirical precision metrics and historical training logs without leaking unverified labels.
+                </div>
+                
+                <!-- Feedback List -->
+                <div style="font-weight:600;font-size:0.88rem;margin-bottom:10px;">Recorded Field Outcomes</div>
+                <div id="ws-outcomes-list" style="margin-bottom:20px;">
+                  <div style="font-size:0.82rem;color:var(--text-muted);">No outcome feedback recorded yet.</div>
+                </div>
+
+                <!-- Add Outcome Feedback Form -->
+                <div style="border-top:1px solid var(--border-dim);padding-top:16px;">
+                  <div style="font-weight:600;font-size:0.88rem;margin-bottom:12px;">Log Post-Intervention Outcome</div>
+                  <div style="display:flex;gap:12px;margin-bottom:12px;flex-wrap:wrap">
+                    <div class="form-group" style="flex:1;min-width:200px">
+                      <label class="form-label">Outcome Category</label>
+                      <select class="form-control" id="outcome-category">
+                        <option value="CONFIRMED_CASHOUT">CONFIRMED_CASHOUT — Withdrawal occurred at/near cluster</option>
+                        <option value="THWARTED_CASHOUT" selected>THWARTED_CASHOUT — Proactive patrol thwarted attempt</option>
+                        <option value="UNPRODUCTIVE_PATROL">UNPRODUCTIVE_PATROL — Patrol conducted, no activity observed</option>
+                        <option value="FALSE_POSITIVE">FALSE_POSITIVE — Normal activity, no fraud</option>
+                        <option value="WRONG_LOCATION">WRONG_LOCATION — Withdrawal occurred elsewhere</option>
+                        <option value="OTHER">OTHER — Analytical deviation / other</option>
+                      </select>
+                    </div>
+                    <div class="form-group" style="flex:1;min-width:160px">
+                      <label class="form-label">Prevented Loss Amount (₹)</label>
+                      <input class="form-control" type="number" id="outcome-prevented" placeholder="e.g. 100000" min="0" step="1000" />
+                    </div>
+                    <div class="form-group" style="flex:1;min-width:160px">
+                      <label class="form-label">Actual Loss Amount (₹)</label>
+                      <input class="form-control" type="number" id="outcome-lost" placeholder="e.g. 0" min="0" step="1000" />
+                    </div>
+                    <div class="form-group" style="flex:1;min-width:160px">
+                      <label class="form-label">ATM / Terminal Reference</label>
+                      <input class="form-control" type="text" id="outcome-atm" placeholder="e.g. ATM-0492" />
+                    </div>
+                  </div>
+                  <div class="form-group" style="margin-bottom:12px">
+                    <label class="form-label">Field Notes / Dispatch Report</label>
+                    <textarea class="form-control" id="outcome-notes" rows="2" placeholder="Detail patrol timing, observed mule behaviour, branch notification, or reason for closure. Zero PII/passwords."></textarea>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;align-items:center">
+                    <div style="font-size:0.75rem;color:var(--text-muted)">
+                      Logs a permanent audit entry and updates the investigation timeline.
+                    </div>
+                    <button class="btn btn-primary btn-sm" id="btn-add-outcome" onclick="submitOutcomeFeedback()">🎯 Record Operational Outcome</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Summary / Export -->
+            <div class="card" style="text-align:right">
+              <button class="btn btn-primary" onclick="switchTab('brief')">🛡️ View Intelligence Brief</button>
+              <button class="btn btn-secondary" onclick="showSummary()">📄 Quick Summary</button>
+              <button class="btn btn-secondary" onclick="exportSummaryJSON()">⬇ Export Summary JSON</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Empty workspace state -->
+        <div id="workspace-empty" style="">
+          <div class="empty-state" style="margin-top:80px">
+            <div class="empty-icon">🔍</div>
+            Select an investigation from the list to open the workspace,<br>
+            or go to <a href="/analyst/alerts.html">Alerts</a> to create a new one.
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- Summary Modal -->
+<div class="modal-overlay" id="summary-modal">
+  <div class="modal" style="width:640px">
+    <div class="modal-header">
+      <span class="modal-title">Investigation Summary</span>
+      <span class="modal-close" onclick="document.getElementById('summary-modal').classList.remove('visible')">✕</span>
+    </div>
+    <div class="modal-body" id="summary-body"></div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="document.getElementById('summary-modal').classList.remove('visible')">Close</button>
+      <button class="btn btn-primary" onclick="exportSummaryJSON()">Export JSON</button>
+    </div>
+  </div>
+</div>
+
+<style>
+.tab-btn {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 12px 20px;
+  font-size: 0.8rem;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+.tab-btn:hover { color: var(--text-primary); }
+.tab-btn.active { color: var(--accent-blue); border-bottom-color: var(--accent-blue); }
+</style>
+
+<script src="/analyst/js/analyst.js"></script>
+<script src="/analyst/js/investigation.js"></script>
+<script>
+requireAuth('investigations', () => {
+  loadInvestigations();
+  document.getElementById('workspace-empty').style.display = '';
+});
+
+function switchTab(name) {
+  document.querySelectorAll('.tab-content').forEach(t => t.style.display = 'none');
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  const tabEl = document.getElementById(`tab-${name}`);
+  const btnEl = document.getElementById(`tab-btn-${name}`);
+  if (tabEl) tabEl.style.display = '';
+  if (btnEl) btnEl.classList.add('active');
+  if (name === 'brief' && typeof loadIntelligenceBrief === 'function') {
+    loadIntelligenceBrief();
+  }
+  if (name === 'outcomes' && typeof loadOutcomesTab === 'function') {
+    loadOutcomesTab();
+  }
+}
+
+</script>
+</body>
+</html>

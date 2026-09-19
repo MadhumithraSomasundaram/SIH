@@ -1,0 +1,12 @@
+field,source,status,notes
+latitude,complaint_timestamp time,SAFE,Observed incident coordinate; no future information
+longitude,complaint_timestamp time,SAFE,Observed incident coordinate; no future information
+complaint_timestamp,incident record,SAFE,Past event timestamp; no future leakage
+crime_type,incident record,SAFE,Observed at complaint filing time
+victim_district,incident record,SAFE,Administrative boundary; not derived from outcome
+is_linked_to_withdrawal,historical flag,SAFE,Historical association; not future target
+future_withdrawal,Phase 4 ground truth,ANALYTICAL_USE_ONLY,Used only to analyze cluster composition; DBSCAN runs on coordinates ONLY — not on future_withdrawal
+risk_score,Phase 9 XGBoost output,SAFE,Model output on held-out test set; DBSCAN does not use it as input
+risk_category,Phase 9 XGBoost output,SAFE,Analytical cross-tabulation only; not DBSCAN input
+predicted_probability,Phase 9 XGBoost output,SAFE,Cross-tabulation analysis only; not DBSCAN input
+DBSCAN clustering basis,lat/lon radians only,CLEAN,DBSCAN uses ONLY geographic coordinates. No risk labels or targets in distance matrix.

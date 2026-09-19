@@ -1,0 +1,7 @@
+alert_type,description,trigger_condition,severity,data_requirement,human_review_required
+CRITICAL_RISK_LOCATION,Model-derived critical withdrawal probability for specific location grid/complaint,risk_score >= 80,CRITICAL,Single prediction with valid risk_score and coordinates/district,True
+HIGH_RISK_LOCATION,Model-derived elevated withdrawal probability for specific location grid/complaint,risk_score >= 60 and risk_score < 80,HIGH,Single prediction with valid risk_score and coordinates/district,True
+HOTSPOT_CRITICAL_RISK,Analytical spatial cluster exhibiting critical aggregate predictive risk or critical risk events,hotspot average_risk_score >= 80 OR critical_risk_count > 0,CRITICAL,DBSCAN cluster summary with risk score aggregation,True
+HOTSPOT_ELEVATED_RISK,Analytical spatial cluster exhibiting elevated aggregate predictive risk,hotspot average_risk_score >= 60 and average_risk_score < 80,HIGH,DBSCAN cluster summary with risk score aggregation,True
+WITHDRAWAL_HOTSPOT,Analytical spatial cluster with validated high volume of cash withdrawal activity,withdrawal_event_count >= 15 within clustered events,HIGH,DBSCAN cluster with withdrawal_event_count field,True
+ACTIVITY_SURGE,Rapid increase in complaint density above historical baseline,recent_count >= baseline * 2.0 (disabled: dataset lacks sufficient temporal history),MODERATE,Longitudinal temporal complaint baseline (unavailable),False

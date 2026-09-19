@@ -1,0 +1,14 @@
+validation_check,status,details
+Row count preservation,PASSED,"10,000 -> 10,000 (0 lost)"
+Column expansion,PASSED,13 -> 68 (+55 features)
+Duplicate records,PASSED,0 exact duplicates detected
+Missing values,PASSED,0 null cells in dataset
+Infinite numerical values,PASSED,0 infinite values
+Invalid date-derived values,PASSED,"All hours [0-23], days [1-31], months [1-12]"
+Geospatial coordinate bounds,PASSED,"Lat [8.5241, 17.6868], Lon [74.4977, 83.2185]"
+Constant features audit,FLAGGED (Documented),"Constant columns (10): ['event_year', 'coordinate_precision', 'geographic_region', 'amount_is_zero', 'has_location', 'has_timestamp', 'has_amount', 'has_crime_category', 'has_district', 'missing_coordinate_flag']"
+Near-constant features audit,FLAGGED (Documented),Near-constant columns (0): []
+Identifier columns quarantined,PASSED,case_id preserved as ID key; flagged unsafe for direct ML estimation
+Sensitive PII sanitization,PASSED,victim_account_id_masked contains cryptographic pseudonyms; plain PII excluded
+Temporal target leakage check,PASSED,Strictly past records used; current row excluded from rolling counts; zero future events accessed
+Original cleaned dataset preserved,PASSED,Read-only access; original cleaned file unmodified

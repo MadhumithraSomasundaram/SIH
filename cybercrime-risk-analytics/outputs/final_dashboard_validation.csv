@@ -1,0 +1,23 @@
+Test,Expected,Actual,Status,Error,Severity
+Dashboard Route Accessibility,HTTP 200 with HTML title and 7-item navigation,HTTP 200 OK (<title>Cybercrime Risk Analytics),PASS,None,None
+Map Container and Legend,Leaflet map div and tactical legend overlay with 4 risk tiers,Present with 0-39 Low to 80-100 Critical and spatial distinction,PASS,None,None
+Heatmap Layer GeoJSON,GeoJSON FeatureCollection with risk weights from /gis/risk-heatmap,40 district centroid features with valid risk weights returned,PASS,None,None
+DBSCAN Hotspots Endpoint,40 spatial cluster polygons and centroids from /gis/hotspots,40 analytical clusters returned with valid polygon coordinates,PASS,None,None
+Filter Toolbar and Presets,Toolbar with date presets category risk and hotspot dropdown,Fully populated and synchronized with /gis/filters,PASS,None,None
+Hotspot Drill-Down Detail,Detail panel showing real metrics and actions for HS-23,Returns event count 310 average risk and action triggers,PASS,None,None
+Alert Listing and Filtering,Paginated alert list from /alerts with severity filter,52 alerts queryable with severity and status filters,PASS,None,None
+Alert Lifecycle Transitions,Enforced transitions: NEW to ACK to REVIEW to RESOLVED,Backend validates state machine and logs audit events,PASS,None,None
+Model Architecture Specifications,Frozen XGBoost model with 24h horizon and 64 features,Verified: scale_pos_weight=8.6154 threshold=0.50,PASS,None,None
+SHAP Global Attributions,Top 10 features from Phase 10 with non-causal descriptions,Rendered with non-causal association phrasing,PASS,None,None
+SHAP Local Inference Probe,/explain returns positive and negative attributions,Valid attributions computed via TreeExplainer,PASS,None,None
+Investigation Stepper,5-stage stepper reflecting active alert lifecycle,Active step updates dynamically based on alert status,PASS,None,None
+Investigation Case Creation,/analyst/investigations workspace accessible with pre-filled alert,Workspace opens with linked alert and hotspot context,PASS,None,None
+Audit Log Ledger,/analyst/audit records non-repudiable analyst actions,Audit entries queryable with actor type and timestamp,PASS,None,None
+Database Dual-Mode Fallback,Graceful fallback to GeoJSON when PostgreSQL is inactive,Dual-mode fallback verified with zero UI crashes,PASS,None,None
+PostGIS Spatial Schema,PostGIS geometry column registered in SQLAlchemy ORM,Registered in CybercrimeEvent model; fallback active,PASS,None,None
+Risk Score Determinism,Formula: round(P * 100) across prediction API and dashboard,Verified consistent across all 4 risk tiers,PASS,None,None
+KPI Card Clarification,Explicit separation of Analytical Records vs Analytical Alerts,Analytical Records (10k) and Analytical Alerts (52) labeled,PASS,None,None
+Non-Punitive Phrasing,Strictly decision-support: Analytical Hotspots and Area with Highest Risk,Verified: zero criminal labels or certainty claims,PASS,None,None
+Privacy and Sensitive Data,Zero unmasked bank account numbers card PANs CVV OTPs or PII,Verified clean: synthetic/anonymized complaint data only,PASS,None,None
+Responsive Viewport Adaptation,CSS media queries supporting desktop laptop and tablet,Verified: @media queries at 1200px and 900px,PASS,None,None
+API Error Handling,Sanitized JSON envelopes without raw stack trace leakage,Verified: 404 and 422 return structured JSON errors,PASS,None,None

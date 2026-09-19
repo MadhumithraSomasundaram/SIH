@@ -1,0 +1,504 @@
+file_path,file_type,category,file_size,referenced_by,dependency_status,recommended_action,deletion_risk,reason
+.\.env.example,.example,H. UNKNOWN — REQUIRES MANUAL REVIEW,869,None,Independent,Review manually,Medium,Uncategorized file
+.\.gitignore,,H. UNKNOWN — REQUIRES MANUAL REVIEW,225,None,Independent,Review manually,Medium,Uncategorized file
+.\cache_files.txt,.txt,H. UNKNOWN — REQUIRES MANUAL REVIEW,5564,None,Independent,Review manually,Medium,Uncategorized file
+.\file_list.txt,.txt,H. UNKNOWN — REQUIRES MANUAL REVIEW,40198,None,Independent,Review manually,Medium,Uncategorized file
+.\generate_inventory.py,.py,A. REQUIRED AND USED,2453,Various,Required,Keep,High,Core project file
+.\phase1_inspection.py,.py,A. REQUIRED AND USED,50667,Various,Required,Keep,High,Core project file
+.\README.md,.md,A. REQUIRED AND USED,73292,Various,Required,Keep,High,Core project file
+.\requirements.txt,.txt,H. UNKNOWN — REQUIRES MANUAL REVIEW,798,None,Independent,Review manually,Medium,Uncategorized file
+.\.pytest_cache\.gitignore,,E. GENERATED CACHE,37,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\.pytest_cache\CACHEDIR.TAG,.TAG,E. GENERATED CACHE,191,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\.pytest_cache\README.md,.md,E. GENERATED CACHE,302,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\.pytest_cache\v\cache\lastfailed,,E. GENERATED CACHE,2,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\.pytest_cache\v\cache\nodeids,,E. GENERATED CACHE,21637,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\analyst\alerts.html,.html,A. REQUIRED AND USED,8582,Various,Required,Keep,High,Core project file
+.\analyst\audit.html,.html,A. REQUIRED AND USED,5737,Various,Required,Keep,High,Core project file
+.\analyst\index.html,.html,A. REQUIRED AND USED,14900,Various,Required,Keep,High,Core project file
+.\analyst\investigation.html,.html,A. REQUIRED AND USED,14331,Various,Required,Keep,High,Core project file
+.\analyst\css\analyst.css,.css,A. REQUIRED AND USED,34105,Various,Required,Keep,High,Core project file
+.\analyst\js\alerts.js,.js,A. REQUIRED AND USED,12211,Various,Required,Keep,High,Core project file
+.\analyst\js\analyst.js,.js,A. REQUIRED AND USED,14580,Various,Required,Keep,High,Core project file
+.\analyst\js\audit.js,.js,A. REQUIRED AND USED,4184,Various,Required,Keep,High,Core project file
+.\analyst\js\investigation.js,.js,A. REQUIRED AND USED,20643,Various,Required,Keep,High,Core project file
+.\api\alert_routes.py,.py,A. REQUIRED AND USED,11796,Various,Required,Keep,High,Core project file
+.\api\analyst_routes.py,.py,A. REQUIRED AND USED,37005,Various,Required,Keep,High,Core project file
+.\api\dependencies.py,.py,A. REQUIRED AND USED,6727,Various,Required,Keep,High,Core project file
+.\api\error_handlers.py,.py,A. REQUIRED AND USED,3248,Various,Required,Keep,High,Core project file
+.\api\gis_routes.py,.py,A. REQUIRED AND USED,29602,Various,Required,Keep,High,Core project file
+.\api\main.py,.py,A. REQUIRED AND USED,28866,Various,Required,Keep,High,Core project file
+.\api\schemas.py,.py,A. REQUIRED AND USED,20712,Various,Required,Keep,High,Core project file
+.\api\__init__.py,.py,A. REQUIRED AND USED,142,Various,Required,Keep,High,Core project file
+.\api\__pycache__\alert_routes.cpython-311.pyc,.pyc,E. GENERATED CACHE,14266,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\api\__pycache__\analyst_routes.cpython-311.pyc,.pyc,E. GENERATED CACHE,45630,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\api\__pycache__\dependencies.cpython-311.pyc,.pyc,E. GENERATED CACHE,9553,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\api\__pycache__\error_handlers.cpython-311.pyc,.pyc,E. GENERATED CACHE,4951,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\api\__pycache__\gis_routes.cpython-311.pyc,.pyc,E. GENERATED CACHE,41175,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\api\__pycache__\main.cpython-311.pyc,.pyc,E. GENERATED CACHE,29346,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\api\__pycache__\schemas.cpython-311.pyc,.pyc,E. GENERATED CACHE,24084,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\api\__pycache__\__init__.cpython-311.pyc,.pyc,E. GENERATED CACHE,325,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\config\alert_config.json,.json,A. REQUIRED AND USED,1168,Various,Required,Keep,High,Core project file
+.\dashboard\index.html,.html,A. REQUIRED AND USED,32794,Various,Required,Keep,High,Core project file
+.\dashboard\css\dashboard.css,.css,A. REQUIRED AND USED,37602,Various,Required,Keep,High,Core project file
+.\dashboard\js\alerts.js,.js,A. REQUIRED AND USED,13886,Various,Required,Keep,High,Core project file
+.\dashboard\js\charts.js,.js,A. REQUIRED AND USED,6535,Various,Required,Keep,High,Core project file
+.\dashboard\js\dashboard.js,.js,A. REQUIRED AND USED,19861,Various,Required,Keep,High,Core project file
+.\dashboard\js\filters.js,.js,A. REQUIRED AND USED,10813,Various,Required,Keep,High,Core project file
+.\dashboard\js\map.js,.js,A. REQUIRED AND USED,18546,Various,Required,Keep,High,Core project file
+.\data\new_prediction_input.csv,.csv,A. REQUIRED AND USED,2888,Various,Required,Keep,High,Data or output artifact required for demo
+.\data\demo\demo_prediction_input.csv,.csv,A. REQUIRED AND USED,2567,Various,Required,Keep,High,Data or output artifact required for demo
+.\data\processed\cleaned_accounts.csv,.csv,A. REQUIRED AND USED,2802399,Various,Required,Keep,High,Data or output artifact required for demo
+.\data\processed\cleaned_areas_master.csv,.csv,A. REQUIRED AND USED,11576,Various,Required,Keep,High,Data or output artifact required for demo
+.\data\processed\cleaned_atms_locations.csv,.csv,A. REQUIRED AND USED,290127,Various,Required,Keep,High,Data or output artifact required for demo
+.\data\processed\cleaned_cybercrime_data.csv,.csv,A. REQUIRED AND USED,1338573,Various,Required,Keep,High,Data or output artifact required for demo
+.\data\processed\cleaned_cybercrime_data.xlsx,.xlsx,A. REQUIRED AND USED,920445,Various,Required,Keep,High,Data or output artifact required for demo
+.\data\processed\cleaned_transactions.csv,.csv,A. REQUIRED AND USED,30844709,Various,Required,Keep,High,Data or output artifact required for demo
+.\data\processed\cleaned_withdrawals.csv,.csv,A. REQUIRED AND USED,14240723,Various,Required,Keep,High,Data or output artifact required for demo
+.\data\processed\excluded_columns.csv,.csv,A. REQUIRED AND USED,530,Various,Required,Keep,High,Data or output artifact required for demo
+.\data\processed\feature_engineered_cybercrime_data.csv,.csv,A. REQUIRED AND USED,3587142,Various,Required,Keep,High,Data or output artifact required for demo
+.\data\processed\feature_engineered_cybercrime_data.xlsx,.xlsx,A. REQUIRED AND USED,3313471,Various,Required,Keep,High,Data or output artifact required for demo
+.\data\processed\targeted_cybercrime_data.csv,.csv,A. REQUIRED AND USED,3647201,Various,Required,Keep,High,Data or output artifact required for demo
+.\data\processed\targeted_cybercrime_data.xlsx,.xlsx,A. REQUIRED AND USED,3407626,Various,Required,Keep,High,Data or output artifact required for demo
+.\data\processed\test.csv,.csv,A. REQUIRED AND USED,485103,Various,Required,Keep,High,Data or output artifact required for demo
+.\data\processed\train.csv,.csv,A. REQUIRED AND USED,2239469,Various,Required,Keep,High,Data or output artifact required for demo
+.\data\processed\validation.csv,.csv,A. REQUIRED AND USED,485043,Various,Required,Keep,High,Data or output artifact required for demo
+.\data\processed\X_test.csv,.csv,A. REQUIRED AND USED,465577,Various,Required,Keep,High,Data or output artifact required for demo
+.\data\processed\X_train.csv,.csv,A. REQUIRED AND USED,2148443,Various,Required,Keep,High,Data or output artifact required for demo
+.\data\processed\X_validation.csv,.csv,A. REQUIRED AND USED,465517,Various,Required,Keep,High,Data or output artifact required for demo
+.\data\processed\y_test.csv,.csv,A. REQUIRED AND USED,4519,Various,Required,Keep,High,Data or output artifact required for demo
+.\data\processed\y_train.csv,.csv,A. REQUIRED AND USED,21019,Various,Required,Keep,High,Data or output artifact required for demo
+.\data\processed\y_validation.csv,.csv,A. REQUIRED AND USED,4519,Various,Required,Keep,High,Data or output artifact required for demo
+.\data\raw\Accounts.csv,.csv,A. REQUIRED AND USED,2562392,Various,Required,Keep,High,Data or output artifact required for demo
+.\data\raw\Areas_Master.csv,.csv,A. REQUIRED AND USED,11576,Various,Required,Keep,High,Data or output artifact required for demo
+.\data\raw\ATMs_Locations.csv,.csv,A. REQUIRED AND USED,290127,Various,Required,Keep,High,Data or output artifact required for demo
+.\data\raw\Fraud_Cases.csv,.csv,A. REQUIRED AND USED,1175189,Various,Required,Keep,High,Data or output artifact required for demo
+.\data\raw\Transactions.csv,.csv,A. REQUIRED AND USED,26044695,Various,Required,Keep,High,Data or output artifact required for demo
+.\data\raw\Withdrawals.csv,.csv,A. REQUIRED AND USED,13600716,Various,Required,Keep,High,Data or output artifact required for demo
+.\database\connection.py,.py,A. REQUIRED AND USED,4572,Various,Required,Keep,High,Core project file
+.\database\crud.py,.py,A. REQUIRED AND USED,26175,Various,Required,Keep,High,Core project file
+.\database\init_db.py,.py,A. REQUIRED AND USED,3886,Various,Required,Keep,High,Core project file
+.\database\investigation_crud.py,.py,A. REQUIRED AND USED,37033,Various,Required,Keep,High,Core project file
+.\database\investigation_models.py,.py,A. REQUIRED AND USED,16391,Various,Required,Keep,High,Core project file
+.\database\investigation_schemas.py,.py,A. REQUIRED AND USED,13634,Various,Required,Keep,High,Core project file
+.\database\models.py,.py,A. REQUIRED AND USED,9458,Various,Required,Keep,High,Core project file
+.\database\schemas.py,.py,A. REQUIRED AND USED,8529,Various,Required,Keep,High,Core project file
+.\database\spatial_queries.py,.py,A. REQUIRED AND USED,14466,Various,Required,Keep,High,Core project file
+.\database\__init__.py,.py,A. REQUIRED AND USED,312,Various,Required,Keep,High,Core project file
+.\database\__pycache__\connection.cpython-311.pyc,.pyc,E. GENERATED CACHE,6328,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\database\__pycache__\crud.cpython-311.pyc,.pyc,E. GENERATED CACHE,37678,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\database\__pycache__\investigation_crud.cpython-311.pyc,.pyc,E. GENERATED CACHE,44041,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\database\__pycache__\investigation_models.cpython-311.pyc,.pyc,E. GENERATED CACHE,17213,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\database\__pycache__\investigation_schemas.cpython-311.pyc,.pyc,E. GENERATED CACHE,14807,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\database\__pycache__\models.cpython-311.pyc,.pyc,E. GENERATED CACHE,13210,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\database\__pycache__\schemas.cpython-311.pyc,.pyc,E. GENERATED CACHE,14468,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\database\__pycache__\__init__.cpython-311.pyc,.pyc,E. GENERATED CACHE,533,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\models\baseline_dummy.pkl,.pkl,A. REQUIRED AND USED,2183,Various,Required,Keep,High,Data or output artifact required for demo
+.\models\baseline_feature_columns.pkl,.pkl,A. REQUIRED AND USED,1379,Various,Required,Keep,High,Data or output artifact required for demo
+.\models\baseline_logistic_regression.pkl,.pkl,A. REQUIRED AND USED,22682,Various,Required,Keep,High,Data or output artifact required for demo
+.\models\baseline_random_forest.pkl,.pkl,A. REQUIRED AND USED,52428811,Various,Required,Keep,High,Data or output artifact required for demo
+.\models\phase6_model_metadata.json,.json,A. REQUIRED AND USED,609,Various,Required,Keep,High,Core project file
+.\models\phase7_best_parameters.json,.json,A. REQUIRED AND USED,121,Various,Required,Keep,High,Core project file
+.\models\phase7_xgboost_metadata.json,.json,A. REQUIRED AND USED,4950,Various,Required,Keep,High,Core project file
+.\models\xgboost_best_model.pkl,.pkl,A. REQUIRED AND USED,215120,Various,Required,Keep,High,Data or output artifact required for demo
+.\models\xgboost_cybercrime_model.pkl,.pkl,A. REQUIRED AND USED,231049,Various,Required,Keep,High,Data or output artifact required for demo
+.\notebooks\01_dataset_inspection.ipynb,.ipynb,H. UNKNOWN — REQUIRES MANUAL REVIEW,4160,None,Independent,Review manually,Medium,Uncategorized file
+.\notebooks\02_data_cleaning.ipynb,.ipynb,H. UNKNOWN — REQUIRES MANUAL REVIEW,12251,None,Independent,Review manually,Medium,Uncategorized file
+.\notebooks\03_feature_engineering.ipynb,.ipynb,H. UNKNOWN — REQUIRES MANUAL REVIEW,11403,None,Independent,Review manually,Medium,Uncategorized file
+.\notebooks\04_target_creation.ipynb,.ipynb,H. UNKNOWN — REQUIRES MANUAL REVIEW,10087,None,Independent,Review manually,Medium,Uncategorized file
+.\notebooks\05_temporal_split.ipynb,.ipynb,H. UNKNOWN — REQUIRES MANUAL REVIEW,9760,None,Independent,Review manually,Medium,Uncategorized file
+.\notebooks\06_baseline_models.ipynb,.ipynb,H. UNKNOWN — REQUIRES MANUAL REVIEW,12323,None,Independent,Review manually,Medium,Uncategorized file
+.\notebooks\07_xgboost_model.ipynb,.ipynb,H. UNKNOWN — REQUIRES MANUAL REVIEW,14835,None,Independent,Review manually,Medium,Uncategorized file
+.\notebooks\08_final_model_evaluation.ipynb,.ipynb,H. UNKNOWN — REQUIRES MANUAL REVIEW,11842,None,Independent,Review manually,Medium,Uncategorized file
+.\notebooks\09_risk_score_generation.ipynb,.ipynb,H. UNKNOWN — REQUIRES MANUAL REVIEW,8285,None,Independent,Review manually,Medium,Uncategorized file
+.\notebooks\10_shap_explainability.ipynb,.ipynb,H. UNKNOWN — REQUIRES MANUAL REVIEW,10447,None,Independent,Review manually,Medium,Uncategorized file
+.\notebooks\11_prediction_pipeline.ipynb,.ipynb,H. UNKNOWN — REQUIRES MANUAL REVIEW,9486,None,Independent,Review manually,Medium,Uncategorized file
+.\notifications\base.py,.py,A. REQUIRED AND USED,2065,Various,Required,Keep,High,Core project file
+.\notifications\dispatcher.py,.py,A. REQUIRED AND USED,1538,Various,Required,Keep,High,Core project file
+.\notifications\email.py,.py,A. REQUIRED AND USED,4929,Various,Required,Keep,High,Core project file
+.\notifications\logger.py,.py,A. REQUIRED AND USED,1452,Various,Required,Keep,High,Core project file
+.\notifications\__init__.py,.py,A. REQUIRED AND USED,410,Various,Required,Keep,High,Core project file
+.\notifications\__pycache__\base.cpython-311.pyc,.pyc,E. GENERATED CACHE,2940,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\notifications\__pycache__\dispatcher.cpython-311.pyc,.pyc,E. GENERATED CACHE,2740,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\notifications\__pycache__\email.cpython-311.pyc,.pyc,E. GENERATED CACHE,7441,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\notifications\__pycache__\logger.cpython-311.pyc,.pyc,E. GENERATED CACHE,2631,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\notifications\__pycache__\__init__.cpython-311.pyc,.pyc,E. GENERATED CACHE,657,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\outputs\before_after_cleaning.csv,.csv,A. REQUIRED AND USED,323,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\categorical_standardization_report.csv,.csv,A. REQUIRED AND USED,883,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\chronological_order_validation.csv,.csv,A. REQUIRED AND USED,220,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\column_name_mapping.csv,.csv,A. REQUIRED AND USED,2975,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\crime_feature_report.csv,.csv,A. REQUIRED AND USED,282,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\dataset_profile.csv,.csv,A. REQUIRED AND USED,5337,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\data_leakage_candidates.csv,.csv,A. REQUIRED AND USED,1486,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\data_quality_score.csv,.csv,A. REQUIRED AND USED,598,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\feature_correlation_matrix.csv,.csv,A. REQUIRED AND USED,16573,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\feature_redundancy_pairs.csv,.csv,A. REQUIRED AND USED,2760,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\FINAL_2_MINUTE_TECHNICAL_EXPLANATION.md,.md,A. REQUIRED AND USED,7147,Various,Required,Keep,High,Core project file
+.\outputs\FINAL_60_SECOND_EXPLANATION.md,.md,A. REQUIRED AND USED,3432,Various,Required,Keep,High,Core project file
+.\outputs\FINAL_ACTION_PLAN.md,.md,A. REQUIRED AND USED,2862,Various,Required,Keep,High,Core project file
+.\outputs\FINAL_ALERT_AUDIT.csv,.csv,A. REQUIRED AND USED,1218,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\FINAL_ANALYST_AUDIT.csv,.csv,A. REQUIRED AND USED,1599,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\FINAL_API_AUDIT.csv,.csv,A. REQUIRED AND USED,1769,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\FINAL_ARCHITECTURE_DIAGRAM.md,.md,A. REQUIRED AND USED,7325,Various,Required,Keep,High,Core project file
+.\outputs\final_audit_project_inventory.csv,.csv,A. REQUIRED AND USED,5641,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\FINAL_AUTHENTICATION_REPORT.md,.md,A. REQUIRED AND USED,15585,Various,Required,Keep,High,Core project file
+.\outputs\FINAL_BACKUP_DEMO_AUDIT.csv,.csv,A. REQUIRED AND USED,1726,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\FINAL_CLAIM_AUDIT.csv,.csv,A. REQUIRED AND USED,4180,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\FINAL_CODE_QUALITY_AUDIT.csv,.csv,A. REQUIRED AND USED,1156,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\FINAL_CRITICAL_ISSUES.md,.md,A. REQUIRED AND USED,4979,Various,Required,Keep,High,Core project file
+.\outputs\FINAL_DASHBOARD_ENHANCEMENT_REPORT.md,.md,A. REQUIRED AND USED,10592,Various,Required,Keep,High,Core project file
+.\outputs\FINAL_DASHBOARD_POLISH_REPORT.md,.md,A. REQUIRED AND USED,11214,Various,Required,Keep,High,Core project file
+.\outputs\final_dashboard_validation.csv,.csv,A. REQUIRED AND USED,3380,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\FINAL_DATABASE_AUDIT.csv,.csv,A. REQUIRED AND USED,1427,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\final_dataset_audit.csv,.csv,A. REQUIRED AND USED,1518,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\FINAL_DBSCAN_AUDIT.csv,.csv,A. REQUIRED AND USED,1328,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\FINAL_DEMO_BACKUP.md,.md,A. REQUIRED AND USED,6330,Various,Required,Keep,High,Core project file
+.\outputs\FINAL_DEMO_CHECKLIST.md,.md,A. REQUIRED AND USED,3935,Various,Required,Keep,High,Core project file
+.\outputs\FINAL_DEMO_COMMANDS.md,.md,A. REQUIRED AND USED,2878,Various,Required,Keep,High,Core project file
+.\outputs\FINAL_DEMO_DAY_RUNBOOK.md,.md,A. REQUIRED AND USED,17019,Various,Required,Keep,High,Core project file
+.\outputs\FINAL_DEMO_DAY_SCRIPT.md,.md,A. REQUIRED AND USED,10110,Various,Required,Keep,High,Core project file
+.\outputs\FINAL_DEMO_FAILURE_RECOVERY.md,.md,A. REQUIRED AND USED,9331,Various,Required,Keep,High,Core project file
+.\outputs\FINAL_DEPENDENCY_AUDIT.csv,.csv,A. REQUIRED AND USED,1663,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\FINAL_DOCUMENT_CONSISTENCY_REPORT.md,.md,A. REQUIRED AND USED,7277,Various,Required,Keep,High,Core project file
+.\outputs\FINAL_END_TO_END_DEMO_RESULT.md,.md,A. REQUIRED AND USED,4832,Various,Required,Keep,High,Core project file
+.\outputs\FINAL_END_TO_END_TEST.csv,.csv,A. REQUIRED AND USED,1951,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\FINAL_GIS_AUDIT.csv,.csv,A. REQUIRED AND USED,1654,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\FINAL_INFERENCE_AUDIT.csv,.csv,A. REQUIRED AND USED,1661,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\FINAL_JUDGE_QA.md,.md,A. REQUIRED AND USED,25333,Various,Required,Keep,High,Core project file
+.\outputs\FINAL_LEAKAGE_AUDIT.csv,.csv,A. REQUIRED AND USED,1996,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\FINAL_MASTER_AUDIT_REPORT.md,.md,A. REQUIRED AND USED,14078,Various,Required,Keep,High,Core project file
+.\outputs\FINAL_ML_IMPLEMENTATION_AUDIT.csv,.csv,A. REQUIRED AND USED,1118,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\FINAL_MODEL_PERFORMANCE_AUDIT.csv,.csv,A. REQUIRED AND USED,1660,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\FINAL_MODEL_VERIFICATION.csv,.csv,A. REQUIRED AND USED,1892,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\FINAL_OFFLINE_DEMO_PLAN.md,.md,A. REQUIRED AND USED,7928,Various,Required,Keep,High,Core project file
+.\outputs\FINAL_PERFORMANCE_AUDIT.csv,.csv,A. REQUIRED AND USED,1522,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\final_phase_completion_audit.csv,.csv,A. REQUIRED AND USED,3337,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\FINAL_PRESENTATION_CONSISTENCY_AUDIT.csv,.csv,A. REQUIRED AND USED,2459,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\FINAL_PRIVACY_AUDIT.csv,.csv,A. REQUIRED AND USED,1287,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\FINAL_PROJECT_STATUS.md,.md,A. REQUIRED AND USED,9499,Various,Required,Keep,High,Core project file
+.\outputs\FINAL_READINESS_SCORECARD.csv,.csv,A. REQUIRED AND USED,2856,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\FINAL_REMAINING_ISSUES.md,.md,A. REQUIRED AND USED,7369,Various,Required,Keep,High,Core project file
+.\outputs\FINAL_RISK_LOGIC_AUDIT.csv,.csv,A. REQUIRED AND USED,1394,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\FINAL_SECURITY_AUDIT.csv,.csv,A. REQUIRED AND USED,1577,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\FINAL_SHAP_AUDIT.csv,.csv,A. REQUIRED AND USED,1477,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\FINAL_TARGET_AUDIT.csv,.csv,A. REQUIRED AND USED,1619,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\FINAL_TEMPORAL_SPLIT_AUDIT.csv,.csv,A. REQUIRED AND USED,755,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\FINAL_TEST_PROTECTION_AUDIT.csv,.csv,A. REQUIRED AND USED,1482,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\FINAL_TEST_RESULTS.csv,.csv,A. REQUIRED AND USED,4087,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\final_ui_redesign_report.md,.md,A. REQUIRED AND USED,2358,Various,Required,Keep,High,Core project file
+.\outputs\final_ui_validation_report.csv,.csv,A. REQUIRED AND USED,1363,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\financial_feature_report.csv,.csv,A. REQUIRED AND USED,450,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\future_withdrawal_class_distribution.csv,.csv,A. REQUIRED AND USED,189,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\geographic_feature_report.csv,.csv,A. REQUIRED AND USED,429,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\geospatial_quality_report.csv,.csv,A. REQUIRED AND USED,432,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\historical_feature_report.csv,.csv,A. REQUIRED AND USED,657,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\location_activity_feature_report.csv,.csv,A. REQUIRED AND USED,524,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\logistic_regression_coefficients.csv,.csv,A. REQUIRED AND USED,26712,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\missingness_feature_report.csv,.csv,A. REQUIRED AND USED,391,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\missing_value_strategy.csv,.csv,A. REQUIRED AND USED,803,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\model_feature_candidates.csv,.csv,A. REQUIRED AND USED,9320,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\numerical_quality_report.csv,.csv,A. REQUIRED AND USED,437,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\outlier_report.csv,.csv,A. REQUIRED AND USED,310,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\PENDING_WORK_INITIAL_AUDIT.md,.md,A. REQUIRED AND USED,5381,Various,Required,Keep,High,Core project file
+.\outputs\phase10_explanation_validation.csv,.csv,A. REQUIRED AND USED,502,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase10_feature_importance_comparison.csv,.csv,A. REQUIRED AND USED,2894,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase10_feature_name_mapping.csv,.csv,A. REQUIRED AND USED,59821,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase10_global_shap_importance.csv,.csv,A. REQUIRED AND USED,22693,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase10_human_readable_explanations.md,.md,A. REQUIRED AND USED,9422,Various,Required,Keep,High,Core project file
+.\outputs\phase10_leakage_audit.csv,.csv,A. REQUIRED AND USED,348,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase10_local_explanations.csv,.csv,A. REQUIRED AND USED,10775,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase10_model_input_profile.csv,.csv,A. REQUIRED AND USED,420,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase10_sensitive_data_audit.csv,.csv,A. REQUIRED AND USED,364,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase10_shap_consistency_report.csv,.csv,A. REQUIRED AND USED,3993,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase10_shap_explainability_report.md,.md,A. REQUIRED AND USED,7406,Various,Required,Keep,High,Core project file
+.\outputs\phase10_shap_sampling_report.csv,.csv,A. REQUIRED AND USED,350,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase10_top_features.csv,.csv,A. REQUIRED AND USED,2343,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase11_feature_compatibility_report.csv,.csv,A. REQUIRED AND USED,188,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase11_input_drift_report.csv,.csv,A. REQUIRED AND USED,920,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase11_input_validation_report.csv,.csv,A. REQUIRED AND USED,363,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase11_leakage_audit.csv,.csv,A. REQUIRED AND USED,388,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase11_model_artifact_profile.csv,.csv,A. REQUIRED AND USED,224,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase11_model_version_report.csv,.csv,A. REQUIRED AND USED,176,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase11_prediction_pipeline_report.md,.md,A. REQUIRED AND USED,3757,Various,Required,Keep,High,Core project file
+.\outputs\phase11_prediction_validation.csv,.csv,A. REQUIRED AND USED,367,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase11_sensitive_data_audit.csv,.csv,A. REQUIRED AND USED,248,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase12_api_validation_report.csv,.csv,A. REQUIRED AND USED,1153,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase12_endpoint_test_results.csv,.csv,A. REQUIRED AND USED,1968,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase12_fastapi_report.md,.md,A. REQUIRED AND USED,10338,Various,Required,Keep,High,Core project file
+.\outputs\phase12_model_loading_report.csv,.csv,A. REQUIRED AND USED,708,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase12_security_validation.csv,.csv,A. REQUIRED AND USED,910,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase13_database_profile.csv,.csv,A. REQUIRED AND USED,214,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase13_import_report.csv,.csv,A. REQUIRED AND USED,228,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase13_index_validation.csv,.csv,A. REQUIRED AND USED,990,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase13_postgis_report.md,.md,A. REQUIRED AND USED,13149,Various,Required,Keep,High,Core project file
+.\outputs\phase13_sensitive_data_audit.csv,.csv,A. REQUIRED AND USED,1502,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase13_spatial_query_validation.csv,.csv,A. REQUIRED AND USED,905,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase13_spatial_validation.csv,.csv,A. REQUIRED AND USED,129,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase14_clustered_events.csv,.csv,A. REQUIRED AND USED,1029597,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase14_cluster_stability.csv,.csv,A. REQUIRED AND USED,329,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase14_cluster_statistics.csv,.csv,A. REQUIRED AND USED,5735,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase14_cluster_validation.csv,.csv,A. REQUIRED AND USED,226,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase14_dbscan_parameter_results.csv,.csv,A. REQUIRED AND USED,696,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase14_dbscan_report.md,.md,A. REQUIRED AND USED,4650,Various,Required,Keep,High,Core project file
+.\outputs\phase14_hotspots_geojson.geojson,.geojson,A. REQUIRED AND USED,32258,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase14_hotspot_risk_summary.csv,.csv,A. REQUIRED AND USED,1899,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase14_hotspot_summary.csv,.csv,A. REQUIRED AND USED,4700,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase14_hotspot_temporal_summary.csv,.csv,A. REQUIRED AND USED,5953,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase14_input_profile.csv,.csv,A. REQUIRED AND USED,320,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase14_leakage_audit.csv,.csv,A. REQUIRED AND USED,1140,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase14_sensitive_data_audit.csv,.csv,A. REQUIRED AND USED,899,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase14_spatial_input_validation.csv,.csv,A. REQUIRED AND USED,117,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase14_withdrawal_hotspots.csv,.csv,A. REQUIRED AND USED,3022,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase15_api_endpoint_report.csv,.csv,A. REQUIRED AND USED,1434,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase15_dashboard_validation.csv,.csv,A. REQUIRED AND USED,1319,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase15_filter_report.csv,.csv,A. REQUIRED AND USED,1342,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase15_geojson_validation.csv,.csv,A. REQUIRED AND USED,283,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase15_gis_dashboard_report.md,.md,A. REQUIRED AND USED,9524,Various,Required,Keep,High,Core project file
+.\outputs\phase15_input_profile.csv,.csv,A. REQUIRED AND USED,1578,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase15_leakage_audit.csv,.csv,A. REQUIRED AND USED,961,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase15_map_data_report.csv,.csv,A. REQUIRED AND USED,1124,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase15_performance_report.csv,.csv,A. REQUIRED AND USED,970,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase15_sensitive_data_audit.csv,.csv,A. REQUIRED AND USED,1917,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase16_alert_generation_summary.csv,.csv,A. REQUIRED AND USED,238,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase16_alert_rule_report.csv,.csv,A. REQUIRED AND USED,723,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase16_alert_statistics.csv,.csv,A. REQUIRED AND USED,914,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase16_alert_system_report.md,.md,A. REQUIRED AND USED,17983,Various,Required,Keep,High,Core project file
+.\outputs\phase16_alert_type_definitions.csv,.csv,A. REQUIRED AND USED,1411,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase16_alert_validation.csv,.csv,A. REQUIRED AND USED,2274,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase16_demo_alerts.csv,.csv,A. REQUIRED AND USED,23681,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase16_input_profile.csv,.csv,A. REQUIRED AND USED,2240,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase16_leakage_audit.csv,.csv,A. REQUIRED AND USED,998,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase16_notification_validation.csv,.csv,A. REQUIRED AND USED,460,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase16_sensitive_data_audit.csv,.csv,A. REQUIRED AND USED,1295,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase17_analyst_interface_report.md,.md,A. REQUIRED AND USED,10361,Various,Required,Keep,High,Core project file
+.\outputs\phase17_authorization_test_report.csv,.csv,A. REQUIRED AND USED,10411,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase17_input_profile.csv,.csv,A. REQUIRED AND USED,2599,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase17_leakage_audit.csv,.csv,A. REQUIRED AND USED,4663,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase17_performance_report.csv,.csv,A. REQUIRED AND USED,3190,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase17_security_audit.csv,.csv,A. REQUIRED AND USED,5071,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase17_sensitive_data_audit.csv,.csv,A. REQUIRED AND USED,4288,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase18_alert_validation.csv,.csv,A. REQUIRED AND USED,1439,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase18_analyst_validation.csv,.csv,A. REQUIRED AND USED,1487,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase18_api_test_report.csv,.csv,A. REQUIRED AND USED,1003,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase18_architecture.md,.md,A. REQUIRED AND USED,13449,Various,Required,Keep,High,Core project file
+.\outputs\phase18_dashboard_validation.csv,.csv,A. REQUIRED AND USED,1207,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase18_database_validation.csv,.csv,A. REQUIRED AND USED,1339,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase18_dependency_report.csv,.csv,A. REQUIRED AND USED,1071,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase18_final_leakage_audit.csv,.csv,A. REQUIRED AND USED,1063,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase18_geojson_validation.csv,.csv,A. REQUIRED AND USED,814,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase18_model_protection_audit.csv,.csv,A. REQUIRED AND USED,1109,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase18_model_summary.csv,.csv,A. REQUIRED AND USED,184,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase18_performance_report.csv,.csv,A. REQUIRED AND USED,575,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase18_project_inventory.csv,.csv,A. REQUIRED AND USED,6038,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase18_risk_logic_validation.csv,.csv,A. REQUIRED AND USED,1408,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase18_security_test_report.csv,.csv,A. REQUIRED AND USED,2365,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase18_sensitive_data_audit.csv,.csv,A. REQUIRED AND USED,1780,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase18_sih_demo_checklist.md,.md,A. REQUIRED AND USED,5451,Various,Required,Keep,High,Core project file
+.\outputs\phase18_sih_presentation_content.md,.md,A. REQUIRED AND USED,9549,Various,Required,Keep,High,Core project file
+.\outputs\phase18_system_health_report.md,.md,A. REQUIRED AND USED,4714,Various,Required,Keep,High,Core project file
+.\outputs\phase19_30_second_pitch.md,.md,A. REQUIRED AND USED,749,Various,Required,Keep,High,Core project file
+.\outputs\phase19_60_second_pitch.md,.md,A. REQUIRED AND USED,1917,Various,Required,Keep,High,Core project file
+.\outputs\phase19_architecture_explanation.md,.md,A. REQUIRED AND USED,6992,Various,Required,Keep,High,Core project file
+.\outputs\PHASE19_COMPLETE.md,.md,A. REQUIRED AND USED,3738,Various,Required,Keep,High,Core project file
+.\outputs\phase19_demo_data_audit.csv,.csv,A. REQUIRED AND USED,1580,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase19_final_presentation.md,.md,A. REQUIRED AND USED,19322,Various,Required,Keep,High,Core project file
+.\outputs\phase19_final_project_inventory.csv,.csv,A. REQUIRED AND USED,3876,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase19_judge_cheat_sheet.md,.md,A. REQUIRED AND USED,5305,Various,Required,Keep,High,Core project file
+.\outputs\phase19_judge_questions_and_answers.md,.md,A. REQUIRED AND USED,19423,Various,Required,Keep,High,Core project file
+.\outputs\phase19_live_demo_script.md,.md,A. REQUIRED AND USED,6666,Various,Required,Keep,High,Core project file
+.\outputs\phase19_one_page_summary.md,.md,A. REQUIRED AND USED,5656,Various,Required,Keep,High,Core project file
+.\outputs\phase19_presentation_metrics.csv,.csv,A. REQUIRED AND USED,1302,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase19_screenshot_checklist.md,.md,A. REQUIRED AND USED,5075,Various,Required,Keep,High,Core project file
+.\outputs\phase19_technology_justification.md,.md,A. REQUIRED AND USED,3954,Various,Required,Keep,High,Core project file
+.\outputs\phase1_dataset_report.md,.md,A. REQUIRED AND USED,6126,Various,Required,Keep,High,Core project file
+.\outputs\phase20_architecture_2_minutes.md,.md,A. REQUIRED AND USED,7480,Various,Required,Keep,High,Core project file
+.\outputs\phase20_backup_demo_plan.md,.md,A. REQUIRED AND USED,7539,Various,Required,Keep,High,Core project file
+.\outputs\phase20_demo_failure_recovery.md,.md,A. REQUIRED AND USED,9237,Various,Required,Keep,High,Core project file
+.\outputs\phase20_documentation_consistency.csv,.csv,A. REQUIRED AND USED,5877,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase20_ethics_review.md,.md,A. REQUIRED AND USED,7349,Various,Required,Keep,High,Core project file
+.\outputs\phase20_final_pre_demo_checklist.md,.md,A. REQUIRED AND USED,3803,Various,Required,Keep,High,Core project file
+.\outputs\PHASE20_FINAL_STATUS.md,.md,A. REQUIRED AND USED,5497,Various,Required,Keep,High,Core project file
+.\outputs\phase20_final_structure.md,.md,A. REQUIRED AND USED,10130,Various,Required,Keep,High,Core project file
+.\outputs\phase20_hard_questions.md,.md,A. REQUIRED AND USED,17404,Various,Required,Keep,High,Core project file
+.\outputs\phase20_judge_simulation.md,.md,A. REQUIRED AND USED,15723,Various,Required,Keep,High,Core project file
+.\outputs\phase20_model_explanation.md,.md,A. REQUIRED AND USED,9214,Various,Required,Keep,High,Core project file
+.\outputs\phase20_operational_questions.md,.md,A. REQUIRED AND USED,22886,Various,Required,Keep,High,Core project file
+.\outputs\phase20_project_defense.md,.md,A. REQUIRED AND USED,13662,Various,Required,Keep,High,Core project file
+.\outputs\phase20_project_scorecard.md,.md,A. REQUIRED AND USED,5844,Various,Required,Keep,High,Core project file
+.\outputs\phase20_technical_60_seconds.md,.md,A. REQUIRED AND USED,4483,Various,Required,Keep,High,Core project file
+.\outputs\phase20_what_if_questions.md,.md,A. REQUIRED AND USED,14805,Various,Required,Keep,High,Core project file
+.\outputs\phase20_why_not_defense.md,.md,A. REQUIRED AND USED,11193,Various,Required,Keep,High,Core project file
+.\outputs\phase2_cleaning_report.md,.md,A. REQUIRED AND USED,5008,Various,Required,Keep,High,Core project file
+.\outputs\phase3_column_role_mapping.csv,.csv,A. REQUIRED AND USED,828,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase3_feature_dictionary.csv,.csv,A. REQUIRED AND USED,14520,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase3_feature_engineering_report.md,.md,A. REQUIRED AND USED,6062,Various,Required,Keep,High,Core project file
+.\outputs\phase3_feature_validation.csv,.csv,A. REQUIRED AND USED,1256,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase3_input_columns.csv,.csv,A. REQUIRED AND USED,907,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase4_feature_leakage_audit.csv,.csv,A. REQUIRED AND USED,9377,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase4_input_profile.csv,.csv,A. REQUIRED AND USED,3857,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase4_target_creation_report.md,.md,A. REQUIRED AND USED,3264,Various,Required,Keep,High,Core project file
+.\outputs\phase4_timestamp_definition.csv,.csv,A. REQUIRED AND USED,434,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase5_excluded_records.csv,.csv,A. REQUIRED AND USED,210,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase5_feature_type_summary.csv,.csv,A. REQUIRED AND USED,674,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase5_identifier_audit.csv,.csv,A. REQUIRED AND USED,274,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase5_input_profile.csv,.csv,A. REQUIRED AND USED,3658,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase5_leakage_test_report.md,.md,A. REQUIRED AND USED,1470,Various,Required,Keep,High,Core project file
+.\outputs\phase5_model_feature_selection.csv,.csv,A. REQUIRED AND USED,6707,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase5_sensitive_data_audit.csv,.csv,A. REQUIRED AND USED,184,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase5_target_validation.csv,.csv,A. REQUIRED AND USED,232,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase5_temporal_split_report.md,.md,A. REQUIRED AND USED,3478,Various,Required,Keep,High,Core project file
+.\outputs\phase5_timestamp_validation.csv,.csv,A. REQUIRED AND USED,255,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase6_baseline_report.md,.md,A. REQUIRED AND USED,5370,Various,Required,Keep,High,Core project file
+.\outputs\phase6_feature_type_report.csv,.csv,A. REQUIRED AND USED,6038,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase6_input_profile.csv,.csv,A. REQUIRED AND USED,238,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase6_leakage_audit.csv,.csv,A. REQUIRED AND USED,970,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase6_model_comparison.csv,.csv,A. REQUIRED AND USED,348,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase6_selected_features.csv,.csv,A. REQUIRED AND USED,5505,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase6_target_distribution.csv,.csv,A. REQUIRED AND USED,146,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase6_test_readiness.csv,.csv,A. REQUIRED AND USED,723,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase6_threshold_analysis.csv,.csv,A. REQUIRED AND USED,486,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase6_validation_metrics.csv,.csv,A. REQUIRED AND USED,348,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase7_hyperparameter_results.csv,.csv,A. REQUIRED AND USED,621,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase7_leakage_audit.csv,.csv,A. REQUIRED AND USED,1357,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase7_model_comparison.csv,.csv,A. REQUIRED AND USED,290,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase7_selected_features.csv,.csv,A. REQUIRED AND USED,5542,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase7_target_distribution.csv,.csv,A. REQUIRED AND USED,148,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase7_test_protection_report.csv,.csv,A. REQUIRED AND USED,387,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase7_xgboost_report.md,.md,A. REQUIRED AND USED,6308,Various,Required,Keep,High,Core project file
+.\outputs\phase7_xgboost_threshold_analysis.csv,.csv,A. REQUIRED AND USED,239,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase7_xgboost_validation_metrics.csv,.csv,A. REQUIRED AND USED,212,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase8_calibration_report.csv,.csv,A. REQUIRED AND USED,162,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase8_distribution_shift_report.csv,.csv,A. REQUIRED AND USED,1029,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase8_error_analysis.csv,.csv,A. REQUIRED AND USED,721,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase8_feature_compatibility.csv,.csv,A. REQUIRED AND USED,3064,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase8_final_evaluation_report.md,.md,A. REQUIRED AND USED,8882,Various,Required,Keep,High,Core project file
+.\outputs\phase8_final_test_metrics.csv,.csv,A. REQUIRED AND USED,219,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase8_leakage_audit.csv,.csv,A. REQUIRED AND USED,607,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase8_overall_model_comparison.csv,.csv,A. REQUIRED AND USED,383,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase8_performance_by_category.csv,.csv,A. REQUIRED AND USED,338,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase8_performance_by_location.csv,.csv,A. REQUIRED AND USED,2462,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase8_performance_by_time.csv,.csv,A. REQUIRED AND USED,357,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase8_temporal_verification.csv,.csv,A. REQUIRED AND USED,207,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase8_test_profile.csv,.csv,A. REQUIRED AND USED,100,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase8_test_threshold_diagnostic.csv,.csv,A. REQUIRED AND USED,858,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase8_validation_vs_test.csv,.csv,A. REQUIRED AND USED,247,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase9_high_risk_summary.csv,.csv,A. REQUIRED AND USED,215,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase9_input_profile.csv,.csv,A. REQUIRED AND USED,732,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase9_location_risk_summary.csv,.csv,A. REQUIRED AND USED,1858,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase9_monotonicity_report.csv,.csv,A. REQUIRED AND USED,155,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase9_probability_validation.csv,.csv,A. REQUIRED AND USED,180,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase9_risk_category_distribution.csv,.csv,A. REQUIRED AND USED,230,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase9_risk_category_outcome_validation.csv,.csv,A. REQUIRED AND USED,183,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase9_risk_scores.csv,.csv,A. REQUIRED AND USED,262172,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase9_risk_score_report.md,.md,A. REQUIRED AND USED,6190,Various,Required,Keep,High,Core project file
+.\outputs\phase9_risk_score_statistics.csv,.csv,A. REQUIRED AND USED,245,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase9_risk_threshold_report.csv,.csv,A. REQUIRED AND USED,956,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\phase9_risk_validation_report.csv,.csv,A. REQUIRED AND USED,384,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\project_cleanup_inventory.csv,.csv,A. REQUIRED AND USED,40488,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\random_forest_feature_importance.csv,.csv,A. REQUIRED AND USED,21464,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\rolling_feature_report.csv,.csv,A. REQUIRED AND USED,402,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\split_class_distribution.csv,.csv,A. REQUIRED AND USED,339,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\target_definition.md,.md,A. REQUIRED AND USED,2989,Various,Required,Keep,High,Core project file
+.\outputs\target_leakage_columns.csv,.csv,A. REQUIRED AND USED,806,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\target_manual_verification.csv,.csv,A. REQUIRED AND USED,5215,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\target_validation_report.csv,.csv,A. REQUIRED AND USED,669,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\temporal_boundary_validation.csv,.csv,A. REQUIRED AND USED,286,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\temporal_split_summary.csv,.csv,A. REQUIRED AND USED,321,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\time_feature_report.csv,.csv,A. REQUIRED AND USED,755,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\train_validation_test_distribution_report.csv,.csv,A. REQUIRED AND USED,549,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\withdrawal_event_definition.md,.md,A. REQUIRED AND USED,2043,Various,Required,Keep,High,Core project file
+.\outputs\xgboost_feature_importance.csv,.csv,A. REQUIRED AND USED,9354,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\xgboost_training_history.csv,.csv,A. REQUIRED AND USED,8495,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\demo\demo_prediction_results.csv,.csv,A. REQUIRED AND USED,812,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\demo\demo_scenario_timeline.md,.md,A. REQUIRED AND USED,6015,Various,Required,Keep,High,Core project file
+.\outputs\figures\amount_distributions.png,.png,A. REQUIRED AND USED,58902,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\confusion_matrix_dummy_prior.png,.png,A. REQUIRED AND USED,43760,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\confusion_matrix_logistic_regression.png,.png,A. REQUIRED AND USED,47567,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\confusion_matrix_random_forest.png,.png,A. REQUIRED AND USED,45285,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\confusion_matrix_xgboost.png,.png,A. REQUIRED AND USED,33252,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\crime_category_distribution.png,.png,A. REQUIRED AND USED,66250,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\feature_correlation_heatmap.png,.png,A. REQUIRED AND USED,526987,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\final_test_confusion_matrix.png,.png,A. REQUIRED AND USED,126115,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\final_test_precision_recall_curve.png,.png,A. REQUIRED AND USED,132745,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\final_test_roc_curve.png,.png,A. REQUIRED AND USED,157461,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\future_withdrawal_distribution.png,.png,A. REQUIRED AND USED,59227,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\location_distribution.png,.png,A. REQUIRED AND USED,46892,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\phase10_shap_beeswarm.png,.png,A. REQUIRED AND USED,529863,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\phase10_shap_summary_bar.png,.png,A. REQUIRED AND USED,326764,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\phase14_cluster_size_distribution.png,.png,A. REQUIRED AND USED,32047,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\phase14_dbscan_clusters.png,.png,A. REQUIRED AND USED,68002,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\phase14_hotspot_risk_distribution.png,.png,A. REQUIRED AND USED,39827,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\phase14_hotspot_temporal_activity.png,.png,A. REQUIRED AND USED,54190,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\phase9_risk_category_chart.png,.png,A. REQUIRED AND USED,98154,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\phase9_risk_score_distribution.png,.png,A. REQUIRED AND USED,158392,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\shap_local_high_risk.png,.png,A. REQUIRED AND USED,240381,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\shap_local_low_risk.png,.png,A. REQUIRED AND USED,237566,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\shap_local_moderate_risk.png,.png,A. REQUIRED AND USED,253073,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\shap_local_test.png,.png,A. REQUIRED AND USED,214699,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\target_distribution_by_split.png,.png,A. REQUIRED AND USED,65645,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\temporal_train_validation_test_split.png,.png,A. REQUIRED AND USED,90415,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\test_probability_calibration.png,.png,A. REQUIRED AND USED,140152,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\time_analysis_fraud_cases.png,.png,A. REQUIRED AND USED,141350,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\time_analysis_withdrawals.png,.png,A. REQUIRED AND USED,137515,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\validation_pr_comparison.png,.png,A. REQUIRED AND USED,129853,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\validation_roc_comparison.png,.png,A. REQUIRED AND USED,143021,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\xgboost_feature_importance.png,.png,A. REQUIRED AND USED,96612,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\xgboost_training_history.png,.png,A. REQUIRED AND USED,83049,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\xgboost_vs_baselines_pr.png,.png,A. REQUIRED AND USED,90753,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\figures\xgboost_vs_baselines_roc.png,.png,A. REQUIRED AND USED,103109,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\predictions\api_prediction_log.csv,.csv,A. REQUIRED AND USED,30938,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\predictions\dummy_prior_validation_predictions.csv,.csv,A. REQUIRED AND USED,22984,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\predictions\logistic_regression_validation_predictions.csv,.csv,A. REQUIRED AND USED,27301,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\predictions\new_record_predictions.csv,.csv,A. REQUIRED AND USED,938,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\predictions\prediction_log.csv,.csv,A. REQUIRED AND USED,1056,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\predictions\random_forest_validation_predictions.csv,.csv,A. REQUIRED AND USED,25378,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\predictions\sample_prediction_results.csv,.csv,A. REQUIRED AND USED,938,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\predictions\xgboost_initial_validation_predictions.csv,.csv,A. REQUIRED AND USED,30391,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\predictions\xgboost_test_predictions.csv,.csv,A. REQUIRED AND USED,27323,Various,Required,Keep,High,Data or output artifact required for demo
+.\outputs\predictions\xgboost_validation_predictions.csv,.csv,A. REQUIRED AND USED,29978,Various,Required,Keep,High,Data or output artifact required for demo
+.\scripts\generate_phase15_reports.py,.py,A. REQUIRED AND USED,39098,Various,Required,Keep,High,Core project file
+.\scripts\generate_phase16_reports.py,.py,A. REQUIRED AND USED,15811,Various,Required,Keep,High,Core project file
+.\scripts\load_database.py,.py,A. REQUIRED AND USED,12737,Various,Required,Keep,High,Core project file
+.\scripts\run_demo.bat,.bat,H. UNKNOWN — REQUIRES MANUAL REVIEW,1970,None,Independent,Review manually,Medium,Uncategorized file
+.\scripts\run_tests.bat,.bat,H. UNKNOWN — REQUIRES MANUAL REVIEW,1688,None,Independent,Review manually,Medium,Uncategorized file
+.\sql\01_extensions.sql,.sql,H. UNKNOWN — REQUIRES MANUAL REVIEW,476,None,Independent,Review manually,Medium,Uncategorized file
+.\sql\02_schema.sql,.sql,H. UNKNOWN — REQUIRES MANUAL REVIEW,1701,None,Independent,Review manually,Medium,Uncategorized file
+.\sql\03_indexes.sql,.sql,H. UNKNOWN — REQUIRES MANUAL REVIEW,1600,None,Independent,Review manually,Medium,Uncategorized file
+.\src\alert_engine.py,.py,A. REQUIRED AND USED,25534,Various,Required,Keep,High,Core project file
+.\src\create_target.py,.py,A. REQUIRED AND USED,32985,Various,Required,Keep,High,Core project file
+.\src\data_cleaning.py,.py,A. REQUIRED AND USED,30796,Various,Required,Keep,High,Core project file
+.\src\evaluate_final_model.py,.py,A. REQUIRED AND USED,54778,Various,Required,Keep,High,Core project file
+.\src\explain_with_shap.py,.py,A. REQUIRED AND USED,36148,Various,Required,Keep,High,Core project file
+.\src\feature_engineering.py,.py,A. REQUIRED AND USED,47451,Various,Required,Keep,High,Core project file
+.\src\generate_risk_score.py,.py,A. REQUIRED AND USED,37778,Various,Required,Keep,High,Core project file
+.\src\hotspot_detection.py,.py,A. REQUIRED AND USED,59724,Various,Required,Keep,High,Core project file
+.\src\predict.py,.py,A. REQUIRED AND USED,31962,Various,Required,Keep,High,Core project file
+.\src\system_smoke_test.py,.py,A. REQUIRED AND USED,9848,Various,Required,Keep,High,Core project file
+.\src\temporal_split.py,.py,A. REQUIRED AND USED,35768,Various,Required,Keep,High,Core project file
+.\src\train_baselines.py,.py,A. REQUIRED AND USED,36481,Various,Required,Keep,High,Core project file
+.\src\train_xgboost.py,.py,A. REQUIRED AND USED,56228,Various,Required,Keep,High,Core project file
+.\src\__pycache__\alert_engine.cpython-311.pyc,.pyc,E. GENERATED CACHE,31562,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\src\__pycache__\predict.cpython-311.pyc,.pyc,E. GENERATED CACHE,41659,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\src\__pycache__\system_smoke_test.cpython-311-pytest-9.1.1.pyc,.pyc,E. GENERATED CACHE,14353,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\tests\test_alert_api.py,.py,A. REQUIRED AND USED,5342,Various,Required,Keep,High,Core project file
+.\tests\test_alert_engine.py,.py,A. REQUIRED AND USED,6301,Various,Required,Keep,High,Core project file
+.\tests\test_analyst_api.py,.py,A. REQUIRED AND USED,26249,Various,Required,Keep,High,Core project file
+.\tests\test_api.py,.py,A. REQUIRED AND USED,18112,Various,Required,Keep,High,Core project file
+.\tests\test_authorization.py,.py,A. REQUIRED AND USED,14409,Various,Required,Keep,High,Core project file
+.\tests\test_dashboard_polish.py,.py,A. REQUIRED AND USED,9252,Various,Required,Keep,High,Core project file
+.\tests\test_database.py,.py,A. REQUIRED AND USED,7248,Various,Required,Keep,High,Core project file
+.\tests\test_end_to_end.py,.py,A. REQUIRED AND USED,13706,Various,Required,Keep,High,Core project file
+.\tests\test_gis_dashboard.py,.py,A. REQUIRED AND USED,13104,Various,Required,Keep,High,Core project file
+.\tests\test_notifications.py,.py,A. REQUIRED AND USED,3479,Various,Required,Keep,High,Core project file
+.\tests\test_ui_interactions.js,.js,A. REQUIRED AND USED,4668,Various,Required,Keep,High,Core project file
+.\tests\__init__.py,.py,A. REQUIRED AND USED,107,Various,Required,Keep,High,Core project file
+.\tests\__pycache__\test_alert_api.cpython-311-pytest-9.1.1.pyc,.pyc,E. GENERATED CACHE,28816,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\tests\__pycache__\test_alert_engine.cpython-311-pytest-9.1.1.pyc,.pyc,E. GENERATED CACHE,31609,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\tests\__pycache__\test_analyst_api.cpython-311-pytest-9.1.1.pyc,.pyc,E. GENERATED CACHE,100158,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\tests\__pycache__\test_api.cpython-311-pytest-9.1.1.pyc,.pyc,E. GENERATED CACHE,74184,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\tests\__pycache__\test_authorization.cpython-311-pytest-9.1.1.pyc,.pyc,E. GENERATED CACHE,62907,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\tests\__pycache__\test_dashboard_polish.cpython-311-pytest-9.1.1.pyc,.pyc,E. GENERATED CACHE,70222,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\tests\__pycache__\test_database.cpython-311-pytest-9.1.1.pyc,.pyc,E. GENERATED CACHE,44916,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\tests\__pycache__\test_end_to_end.cpython-311-pytest-9.1.1.pyc,.pyc,E. GENERATED CACHE,52606,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\tests\__pycache__\test_gis_dashboard.cpython-311-pytest-9.1.1.pyc,.pyc,E. GENERATED CACHE,64419,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\tests\__pycache__\test_notifications.cpython-311-pytest-9.1.1.pyc,.pyc,E. GENERATED CACHE,14407,None,Independent,Delete safely,Low,Standard python/pytest cache
+.\tests\__pycache__\__init__.cpython-311.pyc,.pyc,E. GENERATED CACHE,289,None,Independent,Delete safely,Low,Standard python/pytest cache

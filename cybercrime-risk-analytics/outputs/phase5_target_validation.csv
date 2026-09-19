@@ -1,0 +1,6 @@
+check,expected,actual,status
+Target Column Exists,True,True,PASSED
+Binary Class Constraint,"[0, 1]","[0, 1]",PASSED
+Null Value Count,0,0,PASSED
+Total Positive Labels (1),>0,1027,PASSED
+Total Negative Labels (0),>0,8973,PASSED

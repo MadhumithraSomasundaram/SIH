@@ -1,0 +1,42 @@
+# Requirements for Cybercrime Predictive Analytics Framework (Phases 1-12)
+# -----------------------------------------------------------------------
+
+# Core data science
+pandas>=2.0.0
+numpy>=1.24.0
+scikit-learn>=1.9.0
+xgboost>=2.0.0
+joblib>=1.3.0
+scipy>=1.10.0
+
+# Explainability
+shap>=0.42.0
+
+# Visualization (used in offline notebooks)
+matplotlib>=3.7.0
+seaborn>=0.12.0
+openpyxl>=3.1.0
+
+# Dates
+python-dateutil>=2.8.2
+
+# Phase 12 — FastAPI REST API
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+pydantic>=2.0.0
+
+# Phase 12 — Testing
+httpx>=0.27.0
+pytest>=8.0.0
+pytest-asyncio>=0.23.0
+
+# Phase 13 — PostgreSQL + PostGIS Spatial Database
+sqlalchemy>=2.0.0
+psycopg[binary]>=3.1.0
+geoalchemy2>=0.14.0
+python-dotenv>=1.0.0
+shapely>=2.0.0
+
+# Jupyter (offline analysis)
+jupyter>=1.0.0
+notebook>=7.0.0
