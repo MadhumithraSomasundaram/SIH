@@ -1,0 +1,72 @@
+feature,included_in_X,reason,leakage_risk,feature_type
+case_id,False,Unique case identifier (quarantined as non-feature key),LOW (ID Token),str
+complaint_timestamp,False,Raw string timestamp (structured features used instead),LOW (Raw Timestamp),str
+crime_type,True,Certified safe intake or strictly prior historical feature,NONE,str
+fraud_amount,True,Certified safe intake or strictly prior historical feature,NONE,float64
+reported_by_authority,True,Certified safe intake or strictly prior historical feature,NONE,int64
+victim_state,True,Certified safe intake or strictly prior historical feature,NONE,str
+victim_district,True,Certified safe intake or strictly prior historical feature,NONE,str
+victim_area,True,Certified safe intake or strictly prior historical feature,NONE,str
+victim_area_id,True,Certified safe intake or strictly prior historical feature,NONE,str
+latitude,True,Certified safe intake or strictly prior historical feature,NONE,float64
+longitude,True,Certified safe intake or strictly prior historical feature,NONE,float64
+victim_account_id_masked,False,Cryptographic PII token (quarantined),PII,str
+is_linked_to_withdrawal,False,Outcome/Control metadata flag,HIGH,int64
+event_year,True,Certified safe intake or strictly prior historical feature,NONE,int64
+event_month,True,Certified safe intake or strictly prior historical feature,NONE,int64
+event_day,True,Certified safe intake or strictly prior historical feature,NONE,int64
+event_day_of_month,True,Certified safe intake or strictly prior historical feature,NONE,int64
+event_day_of_week,True,Certified safe intake or strictly prior historical feature,NONE,int64
+event_hour,True,Certified safe intake or strictly prior historical feature,NONE,int64
+event_minute,True,Certified safe intake or strictly prior historical feature,NONE,int64
+is_weekend,True,Certified safe intake or strictly prior historical feature,NONE,int64
+is_month_start,True,Certified safe intake or strictly prior historical feature,NONE,int64
+is_month_end,True,Certified safe intake or strictly prior historical feature,NONE,int64
+is_quarter_start,True,Certified safe intake or strictly prior historical feature,NONE,int64
+is_quarter_end,True,Certified safe intake or strictly prior historical feature,NONE,int64
+hour_group,True,Certified safe intake or strictly prior historical feature,NONE,str
+time_period,True,Certified safe intake or strictly prior historical feature,NONE,str
+latitude_rounded,True,Certified safe intake or strictly prior historical feature,NONE,float64
+longitude_rounded,True,Certified safe intake or strictly prior historical feature,NONE,float64
+location_grid,True,Certified safe intake or strictly prior historical feature,NONE,str
+coordinate_precision,True,Certified safe intake or strictly prior historical feature,NONE,str
+geographic_region,True,Certified safe intake or strictly prior historical feature,NONE,str
+crime_category_group,True,Certified safe intake or strictly prior historical feature,NONE,str
+is_financial_fraud,True,Certified safe intake or strictly prior historical feature,NONE,int64
+is_online_fraud,True,Certified safe intake or strictly prior historical feature,NONE,int64
+is_identity_related,True,Certified safe intake or strictly prior historical feature,NONE,int64
+is_transaction_related,True,Certified safe intake or strictly prior historical feature,NONE,int64
+amount_log1p,True,Certified safe intake or strictly prior historical feature,NONE,float64
+amount_is_zero,True,Certified safe intake or strictly prior historical feature,NONE,int64
+amount_is_high,True,Certified safe intake or strictly prior historical feature,NONE,int64
+amount_category,True,Certified safe intake or strictly prior historical feature,NONE,str
+previous_event_count,True,Certified safe intake or strictly prior historical feature,NONE,int64
+time_since_previous_event_hours,True,Certified safe intake or strictly prior historical feature,NONE,float64
+events_in_previous_1_day,True,Certified safe intake or strictly prior historical feature,NONE,int64
+events_in_previous_3_days,True,Certified safe intake or strictly prior historical feature,NONE,int64
+events_in_previous_7_days,True,Certified safe intake or strictly prior historical feature,NONE,int64
+events_in_previous_30_days,True,Certified safe intake or strictly prior historical feature,NONE,int64
+previous_activity_by_location,True,Certified safe intake or strictly prior historical feature,NONE,int64
+previous_activity_by_district,True,Certified safe intake or strictly prior historical feature,NONE,int64
+previous_activity_by_crime_category,True,Certified safe intake or strictly prior historical feature,NONE,int64
+rolling_event_count_1h,True,Certified safe intake or strictly prior historical feature,NONE,int64
+rolling_event_count_6h,True,Certified safe intake or strictly prior historical feature,NONE,int64
+rolling_event_count_24h,True,Certified safe intake or strictly prior historical feature,NONE,int64
+rolling_event_count_7d,True,Certified safe intake or strictly prior historical feature,NONE,int64
+rolling_location_event_count_24h,True,Certified safe intake or strictly prior historical feature,NONE,int64
+rolling_crime_event_count_7d,True,Certified safe intake or strictly prior historical feature,NONE,int64
+location_total_previous_events,True,Certified safe intake or strictly prior historical feature,NONE,int64
+location_previous_24h_events,True,Certified safe intake or strictly prior historical feature,NONE,int64
+location_previous_7d_events,True,Certified safe intake or strictly prior historical feature,NONE,int64
+district_previous_24h_events,True,Certified safe intake or strictly prior historical feature,NONE,int64
+district_previous_7d_events,True,Certified safe intake or strictly prior historical feature,NONE,int64
+location_unique_crime_categories,True,Certified safe intake or strictly prior historical feature,NONE,int64
+has_location,True,Certified safe intake or strictly prior historical feature,NONE,int64
+has_timestamp,True,Certified safe intake or strictly prior historical feature,NONE,int64
+has_amount,True,Certified safe intake or strictly prior historical feature,NONE,int64
+has_crime_category,True,Certified safe intake or strictly prior historical feature,NONE,int64
+has_district,True,Certified safe intake or strictly prior historical feature,NONE,int64
+missing_coordinate_flag,True,Certified safe intake or strictly prior historical feature,NONE,int64
+future_withdrawal,False,Target Variable y (Strictly segregated),TARGET,int64
+target_observation_complete,False,Outcome/Control metadata flag,HIGH,int64
+target_valid,False,Outcome/Control metadata flag,HIGH,int64

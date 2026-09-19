@@ -1,0 +1,32 @@
+test,expected,actual,status,error,severity
+tests/test_api.py::test_api_root,HTTP 200 with service metadata,HTTP 200 with metadata returned,PASS,None,NONE
+tests/test_api.py::test_health_endpoint,HTTP 200 healthy status,HTTP 200 status healthy,PASS,None,NONE
+tests/test_api.py::test_model_info_endpoint,HTTP 200 with 64 feature schema,HTTP 200 with 64 features returned,PASS,None,NONE
+tests/test_api.py::test_predict_valid_record,HTTP 200 with probability and score,HTTP 200 prob=0.106 score=11 tier=LOW,PASS,None,NONE
+tests/test_api.py::test_predict_missing_feature,HTTP 422 Unprocessable Entity,HTTP 422 validation error returned,PASS,None,NONE
+tests/test_api.py::test_predict_batch_endpoint,HTTP 200 with list of predictions,HTTP 200 batch of 2 predictions returned,PASS,None,NONE
+tests/test_api.py::test_explain_endpoint,HTTP 200 with additive SHAP contributions,HTTP 200 with top features returned,PASS,None,NONE
+tests/test_alert_engine.py::test_severity_tiers,Tiers LOW/MODERATE/HIGH/CRITICAL,Exact boundary mappings returned,PASS,None,NONE
+tests/test_alert_engine.py::test_input_validation,Validates risk score in [0 100],Rejects out-of-bounds score 150,PASS,None,NONE
+tests/test_alert_engine.py::test_deduplication,Merges alerts within 30 min window,Redundant alerts successfully deduplicated,PASS,None,NONE
+tests/test_authorization.py::test_analyst_token,Creates valid JWT token for ANALYST,Token generated successfully,PASS,None,NONE
+tests/test_authorization.py::test_rbac_supervisor,Allows SUPERVISOR close permissions,Supervisory transition authorized,PASS,None,NONE
+tests/test_authorization.py::test_unauthenticated,HTTP 401 Unauthorized,HTTP 401 returned on unauthenticated request,PASS,None,NONE
+tests/test_analyst_api.py::test_create_investigation,HTTP 201 with case reference,Case created with status UNDER_INVESTIGATION,PASS,None,NONE
+tests/test_analyst_api.py::test_add_investigative_note,HTTP 200 with timestamped note,Note successfully appended to case,PASS,None,NONE
+tests/test_analyst_api.py::test_attach_evidence_hash,HTTP 200 with SHA-256 reference,Cryptographic hash stored safely,PASS,None,NONE
+tests/test_analyst_api.py::test_audit_log_created,Audit log entry committed,Append-only record verified in database,PASS,None,NONE
+tests/test_gis_dashboard.py::test_gis_summary,HTTP 200 with total events and hotspots,HTTP 200 summary returned,PASS,None,NONE
+tests/test_gis_dashboard.py::test_gis_events_geojson,Valid RFC 7946 GeoJSON FeatureCollection,Valid FeatureCollection returned,PASS,None,NONE
+tests/test_gis_dashboard.py::test_gis_hotspots_40,Returns exactly 40 cluster polygons,40 polygon features returned,PASS,None,NONE
+tests/test_gis_dashboard.py::test_gis_no_sensitive_fields,Zero PII/card/CVV in responses,Assert passed across all GIS endpoints,PASS,None,NONE
+tests/test_end_to_end.py::test_07_xgboost_model_loads,Pipeline loaded successfully,Pipeline(ColumnTransformer+XGB) loaded,PASS,None,NONE
+tests/test_end_to_end.py::test_08_model_prediction_works,Probability generated in [0 1],Probability generated successfully,PASS,None,NONE
+tests/test_end_to_end.py::test_12_shap_pipeline_loads,TreeExplainer loads successfully,TreeExplainer initialized and computed,PASS,None,NONE
+tests/test_end_to_end.py::test_13_postgis_connection,PostGIS connection contract,Database daemon inactive locally,SKIPPED,External service not hosted locally,LOW
+tests/test_end_to_end.py::test_15_geojson_is_valid,Valid GeoJSON polygon structure,Valid GeoJSON verified,PASS,None,NONE
+tests/test_end_to_end.py::test_22_no_sensitive_fields,Zero PII in full pipeline,Zero sensitive fields exposed,PASS,None,NONE
+tests/test_notifications.py::test_sensitive_fields_scrubbed,Scrub card and account numbers,Payload sanitized cleanly,PASS,None,NONE
+tests/test_notifications.py::test_dispatcher,Dispatch without exceptions,Mock dispatch executed cleanly,PASS,None,NONE
+src/system_smoke_test.py,10 / 10 pipeline steps pass in <2s,10 / 10 steps passed in 1.946s,PASS,None,NONE
+src/predict.py --input,Batch prediction & SHAP on 5 records,5 predictions + SHAP generated in <2s,PASS,None,NONE

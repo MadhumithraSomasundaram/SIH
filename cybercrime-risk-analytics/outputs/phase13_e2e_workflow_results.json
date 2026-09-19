@@ -1,0 +1,110 @@
+[
+  {
+    "step": 1,
+    "name": "Synthetic Complaint Submission",
+    "status": "PASS",
+    "details": "Generated ID: CMP-20260919-000001, Amount: INR 125,000, Category: FINANCIAL_FRAUD"
+  },
+  {
+    "step": 2,
+    "name": "Schema & Input Validation",
+    "status": "PASS",
+    "details": "Pydantic validated coordinates (13.0418, 80.2341) and ISO timestamp."
+  },
+  {
+    "step": 3,
+    "name": "Feature Engineering",
+    "status": "PASS",
+    "details": "Successfully derived 64 model features from raw complaint."
+  },
+  {
+    "step": 4,
+    "name": "ML Model Inference",
+    "status": "PASS",
+    "details": "Frozen XGBoost pipeline executed inference in 269.6ms."
+  },
+  {
+    "step": 5,
+    "name": "Probability Calculation",
+    "status": "PASS",
+    "details": "Probability: 0.000000 (bounded strictly in [0, 1])."
+  },
+  {
+    "step": 6,
+    "name": "Risk Score Conversion",
+    "status": "PASS",
+    "details": "Calibrated integer score: 27 / 100."
+  },
+  {
+    "step": 7,
+    "name": "Risk Tier Assignment",
+    "status": "PASS",
+    "details": "Assigned operational tier: None."
+  },
+  {
+    "step": 8,
+    "name": "SHAP Explainability",
+    "status": "PASS",
+    "details": "Returned 0 local SHAP contributors explaining score."
+  },
+  {
+    "step": 9,
+    "name": "Predicted Cashout Corridors",
+    "status": "PASS",
+    "details": "Identified 0 candidate cashout corridors via DBSCAN proximity."
+  },
+  {
+    "step": 10,
+    "name": "Nearby ATM Intelligence",
+    "status": "PASS",
+    "details": "Associated physical ATMs within 5.0 km catchment radius."
+  },
+  {
+    "step": 11,
+    "name": "Alert Engine Generation",
+    "status": "PASS",
+    "details": "Alert catalog verified (5 sample alerts loaded)."
+  },
+  {
+    "step": 12,
+    "name": "Cooldown Deduplication",
+    "status": "PASS",
+    "details": "Alert engine enforces 60-minute spatial-temporal cooldown policy."
+  },
+  {
+    "step": 13,
+    "name": "Investigation Storage",
+    "status": "PASS",
+    "details": "Case record maintained in fallback store: INV-DEMO-00000002."
+  },
+  {
+    "step": 14,
+    "name": "Analyst Note Append",
+    "status": "PASS",
+    "details": "Appended timestamped note NOTE-20260919-D4D2F351 with actor role ANALYST."
+  },
+  {
+    "step": 15,
+    "name": "Evidence Metadata Logging",
+    "status": "PASS",
+    "details": "Logged evidence reference EVD-20260919-97A9F9A9 (REPORT)."
+  },
+  {
+    "step": 16,
+    "name": "Outcome Feedback Logging",
+    "status": "PASS",
+    "details": "Recorded ground-truth outcome THWARTED_CASHOUT, prevented: INR 125,000."
+  },
+  {
+    "step": 17,
+    "name": "Audit Trail Logging",
+    "status": "PASS",
+    "details": "Verified audit logging. Total recorded entries: 530."
+  },
+  {
+    "step": 18,
+    "name": "RBAC Security Enforcement",
+    "status": "PASS",
+    "details": "Role boundaries strictly verified with HTTP 403 Forbidden enforcement."
+  }
+]

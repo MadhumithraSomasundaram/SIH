@@ -1,0 +1,2 @@
+data_source,total_rows,usable_points,missing_coordinates,invalid_coordinates,risk_score_coverage,latitude_min,latitude_max,longitude_min,longitude_max,timestamp_min,timestamp_max
+CSV: targeted_cybercrime_data.csv (10000 rows),10000,10000,0,0,1500,8.5241,17.6868,74.4977,83.2185,2026-01-01 00:59:16,2026-08-31 23:55:41

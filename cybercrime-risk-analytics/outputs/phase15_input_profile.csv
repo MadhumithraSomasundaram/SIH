@@ -1,0 +1,7 @@
+source_file,rows,columns,timestamp_field,latitude_field,longitude_field,crime_category_field,risk_score_field,risk_category_field,cluster_id,hotspot_fields,withdrawal_related_fields
+outputs/phase9_risk_scores.csv,1500,27,incident_datetime,latitude (via join),longitude (via join),crime_type,risk_score,risk_category,None (unclustered),None,"withdrawal_reported, withdrawal_location"
+outputs/phase9_location_risk_summary.csv,40,8,None (aggregated),latitude_centroid,longitude_centroid,dominant_crime_type,"average_risk_score, maximum_risk_score",dominant_risk_category,None,location_group,withdrawal_count
+outputs/phase14_clustered_events.csv,10000,19,incident_datetime,latitude,longitude,crime_type,risk_score,risk_category,cluster_id,"cluster_id, hotspot_status",is_withdrawal_point
+outputs/phase14_hotspot_summary.csv,40,15,"first_event, last_event",lat_centroid,lon_centroid,dominant_crime_type,"avg_risk_score, max_risk_score",dominant_risk_category,cluster_id,"hotspot_rank, cluster_id, hotspot_status, event_count",withdrawal_event_count
+outputs/phase14_cluster_statistics.csv,40,16,"earliest_time, latest_time",centroid_lat,centroid_lon,dominant_crime_category,"mean_risk_score, max_risk_score",risk_distribution,cluster_id,"density_sqkm, radius_km",withdrawal_ratio
+outputs/phase14_hotspots_geojson.geojson,40,GeoJSON FeatureCollection,"start_time, end_time",geometry.coordinates[1],geometry.coordinates[0],dominant_crime_type,"average_risk_score, max_risk_score",dominant_risk_category,cluster_id,"hotspot_id, hotspot_rank, event_count, status",withdrawal_count

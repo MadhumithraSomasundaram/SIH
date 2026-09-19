@@ -1,0 +1,4 @@
+dataset,column,reason,phase_removed
+Fraud_Cases,scenario,Synthetic simulation archetype label containing omniscient cashout outcome dynamics unavailable at complaint intake.,Phase 2
+Withdrawals,is_suspicious,Post-investigation ground-truth label assigned by fraud analysts after complete pattern review. Not present in real-time ATM switch feeds.,Phase 2 (Documented for downstream modeling)
+Withdrawals,scenario,Simulation archetype tag containing forward-looking scenario rules.,Phase 2 (Documented for downstream modeling)

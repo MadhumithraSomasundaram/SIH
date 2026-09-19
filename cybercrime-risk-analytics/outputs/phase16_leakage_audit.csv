@@ -1,0 +1,5 @@
+audit_check,verified_source,leakage_risk,verification_result,detail
+Target Outcome Exclusion,src/alert_engine.py,Using ground truth future_withdrawal in real-time alert trigger,PASS,Target outcome future_withdrawal is strictly excluded; alerts derive exclusively from predicted risk score and historical clustered volume.
+Model Frozen Verification,models/xgboost_cybercrime_model.pkl,Model retraining on test or production alerts,PASS,Zero retraining performed. SHA-pinned frozen Phase 7 XGBoost model and TRAIN-fitted preprocessor reused unchanged.
+Temporal Order Integrity,src/alert_engine.py,Using future events to compute historical cluster metrics,PASS,Cluster metrics and withdrawal counts use only validated historical observations; no lookahead features introduced.
+Test Set Separation,config/alert_config.json,Fitting alert thresholds to test set performance,PASS,"Thresholds (40, 60, 80) reflect predefined operational tiers from Phase 9 without empirical optimization on test set."

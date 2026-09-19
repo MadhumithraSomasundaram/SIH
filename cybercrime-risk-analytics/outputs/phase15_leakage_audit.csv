@@ -1,0 +1,6 @@
+field_or_feature,source,leakage_risk,mitigation,status
+future_withdrawal_timestamp,curated_dataset,Temporal data leakage into predictive model,Not ingested into feature store; only historical events evaluated,PASS — NO LEAKAGE
+future_transaction_status,transaction_stream,Lookahead bias during risk score assignment,Risk scores strictly derived from Phase 8/9 frozen frozen XGBoost inference,PASS — NO LEAKAGE
+test_set_tuning_hyperparameters,model_pipeline,Data snooping on evaluation partition,Phase 15 contains ZERO model training or hyperparameter tuning,PASS — NO LEAKAGE
+dbscan_cluster_as_model_feature,phase14_dbscan,Unsupervised cluster labels leaking into supervised training,DBSCAN executed as downstream visualization layer; XGBoost unmodified,PASS — NO LEAKAGE
+dynamic_filter_leakage,dashboard_ui,Client-side filters modifying ground truth labels,Dashboard filters are read-only query parameters for display slicing,PASS — NO LEAKAGE

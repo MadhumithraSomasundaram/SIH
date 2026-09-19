@@ -1,0 +1,14 @@
+column_name,data_type,missing_values,sample_value,semantic_category,planned_role_phase3
+case_id,str,0,CASE000001,Identifier / Key,Preserved ID (Non-ML)
+complaint_timestamp,str,0,2026-06-30 02:50:49,Date and Time,Feature Basis
+crime_type,str,0,UPI_FRAUD,Crime-related,Feature Basis
+fraud_amount,float64,0,21663.42,Financial / Transaction,Feature Basis
+reported_by_authority,int64,0,0,Metadata / Authority,Feature Basis
+victim_state,str,0,Kerala,Geographic,Feature Basis
+victim_district,str,0,Kollam,Geographic,Feature Basis
+victim_area,str,0,Chinnakada,Geographic,Feature Basis
+victim_area_id,str,0,AREA0123,Geographic,Feature Basis
+latitude,float64,0,8.8932,Geographic,Feature Basis
+longitude,float64,0,76.6141,Geographic,Feature Basis
+victim_account_id_masked,str,0,ACC_ANON_FEE74D6D,Identifier / Key,Preserved ID (Non-ML)
+is_linked_to_withdrawal,int64,0,1,Metadata / Authority,Feature Basis

@@ -1,0 +1,6 @@
+split_partition,row_count,percentage,start_timestamp,end_timestamp,positive_labels,negative_labels,positive_rate_pct,temporal_integrity_status,audit_verdict
+TRAIN,7000,70.0%,2026-01-01 00:59:16,2026-06-21 23:24:13,728,6272,10.40%,Strictly precedes Validation,PASS
+VALIDATION,1500,15.0%,2026-06-21 23:25:40,2026-07-27 11:19:04,144,1356,9.60%,Precedes Test / Follows Train,PASS
+TEST,1500,15.0%,2026-07-27 11:26:18,2026-08-31 23:55:41,155,1345,10.33%,Strictly future out-of-sample,PASS
+ORDERING_CHECK,10000,100.0%,TRAIN < VALIDATION < TEST,Strictly Monotonic,Zero Overlap,Zero Shuffling,100% Chronological,PASSED,PASS
+LEAKAGE_CHECK,10000,100.0%,Future data absent from past,Verified,No temporal leakage,Preprocessors isolated,Zero lookahead bias,PASSED,PASS

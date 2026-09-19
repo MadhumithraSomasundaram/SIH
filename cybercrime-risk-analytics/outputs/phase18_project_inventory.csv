@@ -1,0 +1,82 @@
+component,expected_file,exists,status,notes
+Phase1 Raw Data,data/raw/Fraud_Cases.csv,YES,AVAILABLE,Synthetic cybercrime complaint records
+Phase1 Raw Data,data/raw/Accounts.csv,YES,AVAILABLE,Synthetic account data
+Phase1 Raw Data,data/raw/Transactions.csv,YES,AVAILABLE,Synthetic transaction data
+Phase1 Raw Data,data/raw/Withdrawals.csv,YES,AVAILABLE,Synthetic withdrawal data
+Phase1 Raw Data,data/raw/ATMs_Locations.csv,YES,AVAILABLE,Synthetic ATM location data
+Phase1 Raw Data,data/raw/Areas_Master.csv,YES,AVAILABLE,Area master reference
+Phase1 Report,outputs/phase1_dataset_report.md,YES,AVAILABLE,
+Phase1 Profile,outputs/dataset_profile.csv,YES,AVAILABLE,
+Phase1 Quality,outputs/data_quality_score.csv,YES,AVAILABLE,
+Phase2 Cleaned,data/processed/cleaned_cybercrime_data.csv,YES,AVAILABLE,
+Phase2 Report,outputs/phase2_cleaning_report.md,YES,AVAILABLE,
+Phase2 Before/After,outputs/before_after_cleaning.csv,YES,AVAILABLE,
+Phase3 Features,data/processed/feature_engineered_cybercrime_data.csv,YES,AVAILABLE,
+Phase3 Dictionary,outputs/phase3_feature_dictionary.csv,YES,AVAILABLE,
+Phase3 Report,outputs/phase3_feature_engineering_report.md,YES,AVAILABLE,
+Phase4 Target,data/processed/targeted_cybercrime_data.csv,YES,AVAILABLE,future_withdrawal target column
+Phase4 Leakage,outputs/phase4_feature_leakage_audit.csv,YES,AVAILABLE,
+Phase4 Report,outputs/phase4_target_creation_report.md,YES,AVAILABLE,
+Phase5 Train,data/processed/train.csv,YES,AVAILABLE,7001 rows (7000 records + header)
+Phase5 Validation,data/processed/validation.csv,YES,AVAILABLE,1501 rows
+Phase5 Test,data/processed/test.csv,YES,AVAILABLE,1501 rows - HELD OUT - protected
+Phase5 X_train,data/processed/X_train.csv,YES,AVAILABLE,
+Phase5 X_test,data/processed/X_test.csv,YES,AVAILABLE,
+Phase5 y_test,data/processed/y_test.csv,YES,AVAILABLE,
+Phase5 Report,outputs/phase5_temporal_split_report.md,YES,AVAILABLE,Chronological split
+Phase6 Baselines,models/baseline_logistic_regression.pkl,YES,AVAILABLE,
+Phase6 RF,models/baseline_random_forest.pkl,YES,AVAILABLE,
+Phase6 Report,outputs/phase6_baseline_report.md,YES,AVAILABLE,
+Phase6 Comparison,outputs/phase6_model_comparison.csv,YES,AVAILABLE,
+Phase7 XGBoost,models/xgboost_best_model.pkl,YES,AVAILABLE,
+Phase7 Metadata,models/phase7_xgboost_metadata.json,YES,AVAILABLE,
+Phase7 Report,outputs/phase7_xgboost_report.md,YES,AVAILABLE,
+Phase7 Val Metrics,outputs/phase7_xgboost_validation_metrics.csv,YES,AVAILABLE,
+Phase8 Test Metrics,outputs/phase8_final_test_metrics.csv,YES,AVAILABLE,LOCKED - ROC-AUC=0.476 PR-AUC=0.1029
+Phase8 Report,outputs/phase8_final_evaluation_report.md,YES,AVAILABLE,
+Phase8 Model Comparison,outputs/phase8_overall_model_comparison.csv,YES,AVAILABLE,
+Phase9 Risk Scores,outputs/phase9_risk_scores.csv,YES,AVAILABLE,risk_score 0-100
+Phase9 Categories,outputs/phase9_risk_category_distribution.csv,YES,AVAILABLE,LOW/MODERATE/HIGH present; CRITICAL=0
+Phase9 Report,outputs/phase9_risk_score_report.md,YES,AVAILABLE,
+Phase9 Script,src/generate_risk_score.py,YES,AVAILABLE,
+Phase10 SHAP Global,outputs/phase10_global_shap_importance.csv,YES,AVAILABLE,
+Phase10 Local Expl,outputs/phase10_local_explanations.csv,YES,AVAILABLE,
+Phase10 Report,outputs/phase10_shap_explainability_report.md,YES,AVAILABLE,
+Phase10 Script,src/explain_with_shap.py,YES,AVAILABLE,
+Phase11 Predict Script,src/predict.py,YES,AVAILABLE,
+Phase11 Report,outputs/phase11_prediction_pipeline_report.md,YES,AVAILABLE,
+Phase11 Validation,outputs/phase11_prediction_validation.csv,YES,AVAILABLE,
+Phase12 API,api/main.py,YES,AVAILABLE,FastAPI application
+Phase12 Report,outputs/phase12_fastapi_report.md,YES,AVAILABLE,
+Phase12 API Tests,outputs/phase12_endpoint_test_results.csv,YES,AVAILABLE,
+Phase13 DB Models,database/models.py,YES,AVAILABLE,SQLAlchemy ORM models
+Phase13 SQL,sql/,YES,AVAILABLE,PostGIS schema SQL
+Phase13 Report,outputs/phase13_postgis_report.md,YES,AVAILABLE,
+Phase14 Hotspot CSV,outputs/phase14_hotspot_summary.csv,YES,AVAILABLE,41 rows - 40 hotspots
+Phase14 GeoJSON,outputs/phase14_hotspots_geojson.geojson,YES,AVAILABLE,40 features EPSG:4326
+Phase14 Clustered,outputs/phase14_clustered_events.csv,YES,AVAILABLE,
+Phase14 Report,outputs/phase14_dbscan_report.md,YES,AVAILABLE,
+Phase14 Script,src/hotspot_detection.py,YES,AVAILABLE,
+Phase15 Dashboard,dashboard/index.html,YES,AVAILABLE,GIS risk map
+Phase15 Report,outputs/phase15_gis_dashboard_report.md,YES,AVAILABLE,
+Phase15 GeoJSON Valid,outputs/phase15_geojson_validation.csv,YES,AVAILABLE,
+Phase16 Alert Engine,src/alert_engine.py,YES,AVAILABLE,
+Phase16 Demo Alerts,outputs/phase16_demo_alerts.csv,YES,AVAILABLE,52 demo alerts
+Phase16 Report,outputs/phase16_alert_system_report.md,YES,AVAILABLE,
+Phase17 Analyst Index,analyst/index.html,YES,AVAILABLE,Overview/login page
+Phase17 Alerts Page,analyst/alerts.html,YES,AVAILABLE,Alert management
+Phase17 Investigation,analyst/investigation.html,YES,AVAILABLE,Workspace
+Phase17 Audit Page,analyst/audit.html,YES,AVAILABLE,Audit log
+Phase17 analyst.js,analyst/js/analyst.js,YES,AVAILABLE,Shared JS utilities
+Phase17 analyst.css,analyst/css/analyst.css,YES,AVAILABLE,Design system
+Phase17 DB Models,database/investigation_models.py,YES,AVAILABLE,6 investigation tables
+Phase17 Routes,api/analyst_routes.py,YES,AVAILABLE,15 analyst endpoints
+Phase17 Report,outputs/phase17_analyst_interface_report.md,YES,AVAILABLE,
+Tests test_api,tests/test_api.py,YES,AVAILABLE,FastAPI tests
+Tests test_database,tests/test_database.py,YES,AVAILABLE,DB tests
+Tests test_alert_engine,tests/test_alert_engine.py,YES,AVAILABLE,Alert engine tests
+Tests test_authorization,tests/test_authorization.py,YES,AVAILABLE,37 tests all PASS
+Tests test_analyst_api,tests/test_analyst_api.py,YES,AVAILABLE,35 integration tests
+Tests test_gis_dashboard,tests/test_gis_dashboard.py,YES,AVAILABLE,
+Phase18 demo input,data/demo/demo_prediction_input.csv,NO,MISSING,To be created in Phase 18
+Phase18 smoke test,src/system_smoke_test.py,NO,MISSING,To be created in Phase 18

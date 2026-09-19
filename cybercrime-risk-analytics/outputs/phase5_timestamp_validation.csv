@@ -1,0 +1,2 @@
+timestamp_column,earliest_timestamp,latest_timestamp,missing_timestamp_count,invalid_timestamp_count,timezone_information,status
+complaint_timestamp,2026-01-01 00:59:16,2026-08-31 23:55:41,0,0,"Local IST (Indian Standard Time, UTC+05:30 implied)",VALID

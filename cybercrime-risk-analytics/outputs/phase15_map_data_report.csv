@@ -1,0 +1,5 @@
+layer_name,data_source,geometry_type,feature_count,coordinate_system,properties_included,sensitive_fields_excluded
+Base Map,OpenStreetMap CartoDB Dark Matter / OSM Tile Layer,Raster Tiles,Global,EPSG:3857 (Web Mercator),Map tiles,N/A
+Predictive Risk Heatmap,outputs/phase9_location_risk_summary.csv,Point FeatureCollection (Aggregated Districts),40,EPSG:4326 (WGS 84),"district, risk_score, risk_category, event_count, weight (0.0-1.0)","account_number, victim_id, personal_info, phone, ip_address"
+DBSCAN Hotspots,outputs/phase14_hotspot_summary.csv & phase14_hotspots_geojson.geojson,Point FeatureCollection (Centroids),40,EPSG:4326 (WGS 84),"hotspot_id, rank, status, event_count, avg_risk_score, max_risk_score, dominant_category, withdrawal_count","card_number, cvv, pin, otp, password, personal_names"
+High-Risk Event Clusters,"outputs/phase14_clustered_events.csv (filtered risk_category in HIGH, CRITICAL)",Point FeatureCollection (Clustered Markers),2000,EPSG:4326 (WGS 84),"case_id, crime_type, risk_score, risk_category, timestamp, cluster_id","victim_name, account_no, card_no, cvv, pin, otp, contact_info"

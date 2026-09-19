@@ -1,0 +1,2 @@
+column_name,pii_type,status,included_in_X,reason
+victim_account_id_masked,Bank Account Number Pseudonym,QUARANTINED,False,Zero raw financial credentials permitted in ML feature sets

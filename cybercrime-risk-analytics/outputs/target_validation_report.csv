@@ -1,0 +1,9 @@
+check,status,result
+Binary target constraint,PASSED,"Target values strictly in {np.int64(0), np.int64(1)}"
+Missing target values,PASSED,0 null target values
+Same-timestamp events excluded,PASSED,Strict requirement delay_hours > 0.0 enforced
+Events > 24 hours excluded,PASSED,Strict requirement delay_hours <= 24.0 enforced
+Events before current event excluded,PASSED,Zero negative delays allowed
+Spatial matching validity,PASSED,District match or Haversine distance <= 10.0 km enforced
+Observation completeness check,PASSED,"10,000 records with full 24h observable window"
+Reproducibility check,PASSED,Deterministic hash/join mapping yields 100% stable labels

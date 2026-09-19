@@ -1,0 +1,1020 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "EPSG:4326"
+    }
+  },
+  "metadata": {
+    "generated_at": "2026-09-15T11:24:02.880241+00:00",
+    "project": "Cybercrime Predictive Analytics Framework",
+    "problem_statement_id": "26184",
+    "phase": 14,
+    "total_hotspots": 40,
+    "coordinate_system": "WGS 84 (EPSG:4326)",
+    "geometry": "Point (centroid of DBSCAN cluster)"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.4192,
+          13.6288
+        ]
+      },
+      "properties": {
+        "cluster_id": 23,
+        "hotspot_rank": 1,
+        "event_count": 310,
+        "hotspot_status": "HIGH_ACTIVITY",
+        "density_metric": 310000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 27,
+        "average_risk_score": 32.33,
+        "time_range_start": "2026-01-01 17:04:49",
+        "time_range_end": "2026-08-31 20:13:20",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.2475,
+          16.9891
+        ]
+      },
+      "properties": {
+        "cluster_id": 24,
+        "hotspot_rank": 2,
+        "event_count": 290,
+        "hotspot_status": "HIGH_ACTIVITY",
+        "density_metric": 290000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 1,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 38,
+        "average_risk_score": 37.16,
+        "time_range_start": "2026-01-01 17:11:34",
+        "time_range_end": "2026-08-31 23:55:41",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9214,
+          15.1394
+        ]
+      },
+      "properties": {
+        "cluster_id": 30,
+        "hotspot_rank": 3,
+        "event_count": 281,
+        "hotspot_status": "HIGH_ACTIVITY",
+        "density_metric": 281000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 18,
+        "average_risk_score": 27.79,
+        "time_range_start": "2026-01-02 02:39:45",
+        "time_range_end": "2026-08-31 23:33:34",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.1198,
+          9.9252
+        ]
+      },
+      "properties": {
+        "cluster_id": 14,
+        "hotspot_rank": 4,
+        "event_count": 279,
+        "hotspot_status": "HIGH_ACTIVITY",
+        "density_metric": 279000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 27,
+        "average_risk_score": 31.63,
+        "time_range_start": "2026-01-01 11:14:31",
+        "time_range_end": "2026-08-31 16:03:02",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.0373,
+          15.8281
+        ]
+      },
+      "properties": {
+        "cluster_id": 25,
+        "hotspot_rank": 5,
+        "event_count": 270,
+        "hotspot_status": "HIGH_ACTIVITY",
+        "density_metric": 270000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 30,
+        "average_risk_score": 34.92,
+        "time_range_start": "2026-01-01 18:08:51",
+        "time_range_end": "2026-08-31 17:53:56",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.784,
+          16.9891
+        ]
+      },
+      "properties": {
+        "cluster_id": 8,
+        "hotspot_rank": 5,
+        "event_count": 270,
+        "hotspot_status": "HIGH_ACTIVITY",
+        "density_metric": 270000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 31,
+        "average_risk_score": 34.91,
+        "time_range_start": "2026-01-01 07:21:42",
+        "time_range_end": "2026-08-28 15:27:45",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.1378,
+          10.787
+        ]
+      },
+      "properties": {
+        "cluster_id": 9,
+        "hotspot_rank": 7,
+        "event_count": 265,
+        "hotspot_status": "HIGH_ACTIVITY",
+        "density_metric": 265000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 33,
+        "average_risk_score": 33.79,
+        "time_range_start": "2026-01-01 08:02:39",
+        "time_range_end": "2026-08-31 21:27:19",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.4365,
+          16.3067
+        ]
+      },
+      "properties": {
+        "cluster_id": 0,
+        "hotspot_rank": 8,
+        "event_count": 264,
+        "hotspot_status": "HIGH_ACTIVITY",
+        "density_metric": 264000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 36,
+        "average_risk_score": 39.53,
+        "time_range_start": "2026-01-01 00:59:16",
+        "time_range_end": "2026-08-30 13:34:24",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.5222,
+          9.5916
+        ]
+      },
+      "properties": {
+        "cluster_id": 4,
+        "hotspot_rank": 9,
+        "event_count": 263,
+        "hotspot_status": "HIGH_ACTIVITY",
+        "density_metric": 263000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 30,
+        "average_risk_score": 32.22,
+        "time_range_start": "2026-01-01 03:51:33",
+        "time_range_end": "2026-08-31 13:37:57",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9558,
+          11.0168
+        ]
+      },
+      "properties": {
+        "cluster_id": 39,
+        "hotspot_rank": 9,
+        "event_count": 263,
+        "hotspot_status": "HIGH_ACTIVITY",
+        "density_metric": 263000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 25,
+        "average_risk_score": 34.51,
+        "time_range_start": "2026-01-05 00:08:05",
+        "time_range_end": "2026-08-30 15:04:24",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.7421,
+          13.3409
+        ]
+      },
+      "properties": {
+        "cluster_id": 34,
+        "hotspot_rank": 11,
+        "event_count": 262,
+        "hotspot_status": "MODERATE_ACTIVITY",
+        "density_metric": 262000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 28,
+        "average_risk_score": 30.11,
+        "time_range_start": "2026-01-02 16:21:57",
+        "time_range_end": "2026-08-31 19:56:44",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.5681,
+          13.9299
+        ]
+      },
+      "properties": {
+        "cluster_id": 15,
+        "hotspot_rank": 12,
+        "event_count": 260,
+        "hotspot_status": "MODERATE_ACTIVITY",
+        "density_metric": 260000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 30,
+        "average_risk_score": 33.98,
+        "time_range_start": "2026-01-01 11:22:39",
+        "time_range_end": "2026-08-31 18:35:07",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9366,
+          8.5241
+        ]
+      },
+      "properties": {
+        "cluster_id": 21,
+        "hotspot_rank": 13,
+        "event_count": 256,
+        "hotspot_status": "MODERATE_ACTIVITY",
+        "density_metric": 256000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 27,
+        "average_risk_score": 31.69,
+        "time_range_start": "2026-01-01 15:29:32",
+        "time_range_end": "2026-08-31 22:04:50",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2707,
+          13.0827
+        ]
+      },
+      "properties": {
+        "cluster_id": 33,
+        "hotspot_rank": 14,
+        "event_count": 255,
+        "hotspot_status": "MODERATE_ACTIVITY",
+        "density_metric": 255000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 23,
+        "average_risk_score": 28.88,
+        "time_range_start": "2026-01-02 12:52:34",
+        "time_range_end": "2026-08-30 06:27:55",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.2144,
+          10.5276
+        ]
+      },
+      "properties": {
+        "cluster_id": 10,
+        "hotspot_rank": 14,
+        "event_count": 255,
+        "hotspot_status": "MODERATE_ACTIVITY",
+        "density_metric": 255000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 30,
+        "average_risk_score": 36.38,
+        "time_range_start": "2026-01-01 08:14:02",
+        "time_range_end": "2026-08-30 03:00:04",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5946,
+          12.9716
+        ]
+      },
+      "properties": {
+        "cluster_id": 3,
+        "hotspot_rank": 14,
+        "event_count": 255,
+        "hotspot_status": "MODERATE_ACTIVITY",
+        "density_metric": 255000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 26,
+        "average_risk_score": 35.09,
+        "time_range_start": "2026-01-01 03:51:07",
+        "time_range_end": "2026-08-30 10:14:53",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.648,
+          16.5062
+        ]
+      },
+      "properties": {
+        "cluster_id": 7,
+        "hotspot_rank": 17,
+        "event_count": 254,
+        "hotspot_status": "MODERATE_ACTIVITY",
+        "density_metric": 254000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 21,
+        "average_risk_score": 36.79,
+        "time_range_start": "2026-01-01 06:33:30",
+        "time_range_end": "2026-08-27 21:49:53",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7172,
+          11.341
+        ]
+      },
+      "properties": {
+        "cluster_id": 28,
+        "hotspot_rank": 18,
+        "event_count": 253,
+        "hotspot_status": "MODERATE_ACTIVITY",
+        "density_metric": 253000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 32,
+        "average_risk_score": 29.85,
+        "time_range_start": "2026-01-02 00:38:05",
+        "time_range_end": "2026-08-31 11:59:04",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.8241,
+          14.4674
+        ]
+      },
+      "properties": {
+        "cluster_id": 12,
+        "hotspot_rank": 18,
+        "event_count": 253,
+        "hotspot_status": "MODERATE_ACTIVITY",
+        "density_metric": 253000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 30,
+        "average_risk_score": 28.11,
+        "time_range_start": "2026-01-01 09:56:30",
+        "time_range_end": "2026-08-31 22:51:33",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.6394,
+          12.2958
+        ]
+      },
+      "properties": {
+        "cluster_id": 2,
+        "hotspot_rank": 20,
+        "event_count": 252,
+        "hotspot_status": "MODERATE_ACTIVITY",
+        "density_metric": 252000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 21,
+        "average_risk_score": 30.24,
+        "time_range_start": "2026-01-01 02:33:29",
+        "time_range_end": "2026-08-31 03:39:21",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.9865,
+          14.4426
+        ]
+      },
+      "properties": {
+        "cluster_id": 38,
+        "hotspot_rank": 21,
+        "event_count": 251,
+        "hotspot_status": "LOW_ACTIVITY",
+        "density_metric": 251000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 1,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 30,
+        "average_risk_score": 38.09,
+        "time_range_start": "2026-01-03 07:20:42",
+        "time_range_end": "2026-08-30 19:54:04",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.0711,
+          11.051
+        ]
+      },
+      "properties": {
+        "cluster_id": 19,
+        "hotspot_rank": 21,
+        "event_count": 251,
+        "hotspot_status": "LOW_ACTIVITY",
+        "density_metric": 251000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 20,
+        "average_risk_score": 28.27,
+        "time_range_start": "2026-01-01 13:37:18",
+        "time_range_end": "2026-08-31 20:43:06",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.8343,
+          17.3297
+        ]
+      },
+      "properties": {
+        "cluster_id": 31,
+        "hotspot_rank": 23,
+        "event_count": 247,
+        "hotspot_status": "LOW_ACTIVITY",
+        "density_metric": 247000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 37,
+        "average_risk_score": 38.23,
+        "time_range_start": "2026-01-02 10:06:08",
+        "time_range_end": "2026-08-31 17:27:50",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.146,
+          11.6643
+        ]
+      },
+      "properties": {
+        "cluster_id": 11,
+        "hotspot_rank": 24,
+        "event_count": 245,
+        "hotspot_status": "LOW_ACTIVITY",
+        "density_metric": 245000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 22,
+        "average_risk_score": 33.86,
+        "time_range_start": "2026-01-01 08:29:45",
+        "time_range_end": "2026-08-31 03:20:30",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.101,
+          13.3392
+        ]
+      },
+      "properties": {
+        "cluster_id": 32,
+        "hotspot_rank": 25,
+        "event_count": 244,
+        "hotspot_status": "LOW_ACTIVITY",
+        "density_metric": 244000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 28,
+        "average_risk_score": 36.12,
+        "time_range_start": "2026-01-02 10:22:57",
+        "time_range_end": "2026-08-31 08:38:35",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.6548,
+          10.7867
+        ]
+      },
+      "properties": {
+        "cluster_id": 17,
+        "hotspot_rank": 26,
+        "event_count": 242,
+        "hotspot_status": "LOW_ACTIVITY",
+        "density_metric": 242000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 22,
+        "average_risk_score": 35.62,
+        "time_range_start": "2026-01-01 11:43:19",
+        "time_range_end": "2026-08-30 15:31:18",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7804,
+          11.2588
+        ]
+      },
+      "properties": {
+        "cluster_id": 13,
+        "hotspot_rank": 27,
+        "event_count": 241,
+        "hotspot_status": "LOW_ACTIVITY",
+        "density_metric": 241000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 22,
+        "average_risk_score": 32.81,
+        "time_range_start": "2026-01-01 10:41:51",
+        "time_range_end": "2026-08-27 00:07:38",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.2999,
+          9.9816
+        ]
+      },
+      "properties": {
+        "cluster_id": 26,
+        "hotspot_rank": 28,
+        "event_count": 239,
+        "hotspot_status": "LOW_ACTIVITY",
+        "density_metric": 239000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 24,
+        "average_risk_score": 35.4,
+        "time_range_start": "2026-01-01 19:10:46",
+        "time_range_end": "2026-08-30 03:08:36",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6006,
+          14.6819
+        ]
+      },
+      "properties": {
+        "cluster_id": 5,
+        "hotspot_rank": 29,
+        "event_count": 236,
+        "hotspot_status": "LOW_ACTIVITY",
+        "density_metric": 236000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 22,
+        "average_risk_score": 36.2,
+        "time_range_start": "2026-01-01 05:28:27",
+        "time_range_end": "2026-08-31 12:54:13",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.124,
+          15.3647
+        ]
+      },
+      "properties": {
+        "cluster_id": 6,
+        "hotspot_rank": 30,
+        "event_count": 235,
+        "hotspot_status": "LOW_ACTIVITY",
+        "density_metric": 235000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 23,
+        "average_risk_score": 31.76,
+        "time_range_start": "2026-01-01 06:27:09",
+        "time_range_end": "2026-08-30 10:25:22",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.1325,
+          12.9165
+        ]
+      },
+      "properties": {
+        "cluster_id": 37,
+        "hotspot_rank": 30,
+        "event_count": 235,
+        "hotspot_status": "LOW_ACTIVITY",
+        "density_metric": 235000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 18,
+        "average_risk_score": 29.45,
+        "time_range_start": "2026-01-02 22:48:28",
+        "time_range_end": "2026-08-27 23:55:44",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.856,
+          12.9141
+        ]
+      },
+      "properties": {
+        "cluster_id": 29,
+        "hotspot_rank": 32,
+        "event_count": 234,
+        "hotspot_status": "LOW_ACTIVITY",
+        "density_metric": 234000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 16,
+        "average_risk_score": 17.19,
+        "time_range_start": "2026-01-02 00:52:15",
+        "time_range_end": "2026-08-31 05:27:14",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.9803,
+          10.3673
+        ]
+      },
+      "properties": {
+        "cluster_id": 35,
+        "hotspot_rank": 33,
+        "event_count": 230,
+        "hotspot_status": "LOW_ACTIVITY",
+        "density_metric": 230000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 24,
+        "average_risk_score": 35.83,
+        "time_range_start": "2026-01-02 16:23:41",
+        "time_range_end": "2026-08-31 23:34:13",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.2185,
+          17.6868
+        ]
+      },
+      "properties": {
+        "cluster_id": 22,
+        "hotspot_rank": 34,
+        "event_count": 226,
+        "hotspot_status": "LOW_ACTIVITY",
+        "density_metric": 226000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 1,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 20,
+        "average_risk_score": 35.6,
+        "time_range_start": "2026-01-01 16:15:38",
+        "time_range_end": "2026-08-31 11:37:39",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.7047,
+          10.7905
+        ]
+      },
+      "properties": {
+        "cluster_id": 18,
+        "hotspot_rank": 35,
+        "event_count": 224,
+        "hotspot_status": "LOW_ACTIVITY",
+        "density_metric": 224000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 2,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 29,
+        "average_risk_score": 41.11,
+        "time_range_start": "2026-01-01 12:03:45",
+        "time_range_end": "2026-08-31 19:14:26",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7567,
+          8.7139
+        ]
+      },
+      "properties": {
+        "cluster_id": 27,
+        "hotspot_rank": 35,
+        "event_count": 224,
+        "hotspot_status": "LOW_ACTIVITY",
+        "density_metric": 224000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 19,
+        "average_risk_score": 32.11,
+        "time_range_start": "2026-01-01 20:30:15",
+        "time_range_end": "2026-08-31 11:50:45",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.3704,
+          11.8745
+        ]
+      },
+      "properties": {
+        "cluster_id": 16,
+        "hotspot_rank": 37,
+        "event_count": 223,
+        "hotspot_status": "LOW_ACTIVITY",
+        "density_metric": 223000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 28,
+        "average_risk_score": 37.92,
+        "time_range_start": "2026-01-01 11:25:29",
+        "time_range_end": "2026-08-31 01:49:07",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.6141,
+          8.8932
+        ]
+      },
+      "properties": {
+        "cluster_id": 36,
+        "hotspot_rank": 37,
+        "event_count": 223,
+        "hotspot_status": "LOW_ACTIVITY",
+        "density_metric": 223000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 15,
+        "average_risk_score": 31.62,
+        "time_range_start": "2026-01-02 19:27:16",
+        "time_range_end": "2026-08-30 17:53:21",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.3388,
+          9.4981
+        ]
+      },
+      "properties": {
+        "cluster_id": 20,
+        "hotspot_rank": 39,
+        "event_count": 222,
+        "hotspot_status": "LOW_ACTIVITY",
+        "density_metric": 222000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 21,
+        "average_risk_score": 33.65,
+        "time_range_start": "2026-01-01 14:05:53",
+        "time_range_end": "2026-08-29 18:26:50",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.4977,
+          15.8497
+        ]
+      },
+      "properties": {
+        "cluster_id": 1,
+        "hotspot_rank": 40,
+        "event_count": 218,
+        "hotspot_status": "LOW_ACTIVITY",
+        "density_metric": 218000.0,
+        "cluster_radius_km": 0.0,
+        "high_risk_count": 0,
+        "critical_risk_count": 0,
+        "withdrawal_event_count": 24,
+        "average_risk_score": 34.23,
+        "time_range_start": "2026-01-01 01:33:59",
+        "time_range_end": "2026-08-30 19:17:07",
+        "disclaimer": "Analytical spatial cluster only. Does not constitute proof of criminal activity, individual guilt, or ATM compromise."
+      }
+    }
+  ]
+}

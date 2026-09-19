@@ -1,0 +1,16 @@
+check,status,details
+future_withdrawal not in X,PASS,Confirmed: 'future_withdrawal' excluded from features.
+Future-derived features excluded,PASS,No future-derived features found.
+Target construction fields excluded,PASS,No target-construction fields in features.
+ID fields excluded,PASS,No raw ID fields found in selected features.
+Sensitive fields excluded,PASS,No sensitive PII fields found in selected features.
+Preprocessor fitted only on TRAIN,PASS,ColumnTransformer.fit() called exclusively on X_train.
+Validation not used for preprocessor fitting,PASS,Validation uses transform() only — confirmed by code structure.
+Test not used for preprocessor fitting,PASS,Test uses transform() only — confirmed by code structure.
+Test not used for hyperparameter selection,PASS,Hyperparameter grid evaluated on validation set only.
+Test not used for threshold selection,PASS,Threshold analysis performed on validation set only.
+Test not used for early stopping,PASS,"eval_set uses (X_train, y_train) and (X_val, y_val) only."
+No raw row index used as feature,PASS,row_index is not in selected_features.
+No future withdrawal timestamp used,PASS,future_withdrawal_timestamp is excluded.
+No future withdrawal amount used,PASS,future_withdrawal_amount is excluded.
+No future withdrawal location used,PASS,future_withdrawal_location is excluded.

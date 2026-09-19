@@ -1,0 +1,20 @@
+package_name,version_constraint,used_in_phase,subsystem_role,installation_verified,audit_verdict
+pandas,>=2.0.0,Phases 1-11,Data manipulation & tabular feature frames,INSTALLED,PASS
+numpy,>=1.24.0,Phases 1-11,Array math & vector calculations,INSTALLED,PASS
+scikit-learn,>=1.9.0,Phases 6-14,Baseline models DBSCAN & ColumnTransformer,INSTALLED,PASS
+xgboost,>=2.0.0,Phases 7-11,Core gradient-boosted decision tree ensemble,INSTALLED,PASS
+joblib,>=1.3.0,Phases 7-11,Model serialization & artifact persistence,INSTALLED,PASS
+scipy,>=1.10.0,Phases 6-9,Statistical distributions & distance functions,INSTALLED,PASS
+shap,>=0.42.0,Phase 10,TreeExplainer local & global explainability,INSTALLED,PASS
+fastapi,>=0.110.0,Phases 12-17,Asynchronous REST web API gateway,INSTALLED,PASS
+uvicorn[standard],>=0.29.0,Phase 12,ASGI production web server,INSTALLED,PASS
+pydantic,>=2.0.0,Phases 12-17,Input data schema validation & settings,INSTALLED,PASS
+httpx,>=0.27.0,Phases 12-18,TestClient async HTTP client,INSTALLED,PASS
+pytest,>=8.0.0,Phases 12-20,Automated unit & integration test runner,INSTALLED,PASS
+sqlalchemy,>=2.0.0,Phases 13-17,ORM database persistence layer,INSTALLED,PASS
+psycopg[binary],>=3.1.0,Phase 13,PostgreSQL modern psycopg v3 driver,INSTALLED,PASS
+geoalchemy2,>=0.14.0,Phase 13,PostGIS spatial geometry extension,INSTALLED,PASS
+python-dotenv,>=1.0.0,Phases 12-13,Environment variable management,INSTALLED,PASS
+shapely,>=2.0.0,Phases 13-15,Planar and geodetic geometric calculations,INSTALLED,PASS
+matplotlib,>=3.7.0,Phases 1-10,Figure generation & static charts,INSTALLED,PASS
+seaborn,>=0.12.0,Phases 1-10,Statistical visualizations & heatmaps,INSTALLED,PASS

@@ -1,0 +1,14 @@
+check_name,category,test_type,expected_outcome,actual_outcome,status,notes
+input_validation_pydantic,Input Handling,Functional,Reject invalid JSON or types,HTTP 422 Unprocessable Entity,PASS,Pydantic schemas enforce type safety on /predict
+missing_required_fields,Input Handling,Boundary,Reject payload missing core fields,HTTP 422 with specific field error,PASS,Validated against ComplaintInput schema
+unexpected_additional_fields,Input Handling,Boundary,Filter or safely handle extra keys,Extra fields ignored or schema enforced,PASS,Standard FastAPI request body parser
+invalid_risk_probability_range,Data Integrity,Logic,"Enforce risk score in [0, 100]","Scores strictly clamped/rounded [0, 100]",PASS,Verified in phase18_risk_logic_validation.csv
+invalid_coordinates_range,Data Integrity,Spatial,"Reject lat outside [-90,90] or lon [-180,180]",Rejected or flagged missing,PASS,Geo coordinates validated in schema
+sql_injection_protection,Database Security,Static/ORM,Parameterized SQL queries only,SQLAlchemy ORM uses bind parameters,PASS,No raw string-concatenated SQL queries in CRUD
+path_traversal_risks,File System Security,Static,Prevent access outside workspace,All file operations use safe resolve/base paths,PASS,Safe static file mounting in FastAPI
+unsafe_file_uploads,Application Security,Static,No arbitrary file execution,Evidence attachments only store metadata/URL refs,PASS,"Phase 17 uses reference strings, not raw uploads"
+hardcoded_credentials_audit,Secret Management,Static Scan,No plaintext DB or JWT passwords in code,Configurable via env vars with safe defaults,PASS,investigation_crud.py uses env defaults
+hardcoded_api_keys_audit,Secret Management,Static Scan,No external third-party API keys exposed,No third-party paid API keys embedded,PASS,Clean local environment
+debug_mode_verification,Configuration,Runtime,Debug flags controllable in production,Reload flag configurable via uvicorn CLI,PASS,Production mode does not leak stack traces
+cors_configuration,Network Security,Configuration,CORS policies explicitly declared,CORSMiddleware configured with controlled origins,PASS,Allow origins restricted appropriately
+rbac_authorization_enforcement,Access Control,Functional,Role-based access to investigations & audits,403 Forbidden for unauthorized roles,PASS,Verified in Phase 17 test_authorization.py (37/37 passed)

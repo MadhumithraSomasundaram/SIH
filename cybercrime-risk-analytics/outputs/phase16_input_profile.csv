@@ -1,0 +1,16 @@
+source_dataset,field_concept,actual_column_name,data_type,nullable,example_value,description
+outputs/phase9_risk_scores.csv,risk_probability_field,predicted_probability,float64,False,0.106474,Continuous XGBoost calibrated future withdrawal probability [0.0 - 1.0]
+outputs/phase9_risk_scores.csv,risk_score_field,risk_score,int64,False,11,Phase 9 integer risk score mapped from round(probability * 100) [0 - 100]
+outputs/phase9_risk_scores.csv,risk_category,risk_category,object,False,LOW,Operational risk tier (LOW: 0-39; MODERATE: 40-59; HIGH: 60-79; CRITICAL: 80-100)
+outputs/phase9_risk_scores.csv,timestamp,complaint_timestamp,object,False,2026-07-27 11:26:18,Complaint reporting/incident timestamp
+outputs/phase9_risk_scores.csv,location,location_grid,object,False,12.91_74.86,Geographic location grid reference (lat_lon centroid)
+outputs/phase9_risk_scores.csv,location_district,victim_district,object,False,Mangaluru,Administrative district of victim complaint
+outputs/phase14_hotspot_summary.csv,hotspot_id,cluster_id,int64,False,23,DBSCAN spatial cluster identifier (cluster_id >= 0)
+outputs/phase14_hotspot_summary.csv,hotspot_rank,hotspot_rank,int64,False,1,Density-ordered analytical hotspot rank
+outputs/phase14_hotspot_summary.csv,event_count,event_count,int64,False,310,Count of complaints clustered within spatial hotspot
+outputs/phase14_hotspot_summary.csv,withdrawal_indicator,withdrawal_event_count,int64,False,27,Count of historical cashout events linked to hotspot
+outputs/phase14_hotspot_summary.csv,centroid_latitude,latitude_centroid,float64,False,13.6288,WGS 84 latitude centroid of DBSCAN hotspot cluster
+outputs/phase14_hotspot_summary.csv,centroid_longitude,longitude_centroid,float64,False,79.4192,WGS 84 longitude centroid of DBSCAN hotspot cluster
+outputs/predictions/prediction_log.csv,prediction_reference,prediction_reference,object,False,SYNTH_CASE_001,Unique non-sensitive prediction identifier
+outputs/predictions/prediction_log.csv,model_version,model_version,object,False,v1.0.0-xgb-668c1916,Deterministic SHA-pinned model artifact version
+outputs/phase14_clustered_events.csv,dominant_category,crime_category_group,object,False,INVESTMENT_SCAM,Crime category taxonomy group within analytical cluster

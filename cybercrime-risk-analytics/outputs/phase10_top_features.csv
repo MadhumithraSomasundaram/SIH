@@ -1,0 +1,21 @@
+feature,mean_abs_shap_value,mean_shap_value,rank,interpretation
+previous_activity_by_crime_category,0.174333,-0.168826,1,Historical baseline frequency of cyber incidents in matching category or jurisdiction
+previous_activity_by_location,0.09627,-0.033563,2,Historical baseline frequency of cyber incidents in matching category or jurisdiction
+previous_activity_by_district,0.085677,-0.082663,3,Historical baseline frequency of cyber incidents in matching category or jurisdiction
+events_in_previous_7_days,0.083015,-0.067284,4,Recent activity velocity (events logged in short rolling temporal windows)
+rolling_crime_event_count_7d,0.055709,0.000312,5,Recent activity velocity (events logged in short rolling temporal windows)
+events_in_previous_1_day,0.053941,-0.016753,6,Recent activity velocity (events logged in short rolling temporal windows)
+events_in_previous_30_days,0.04696,-0.036901,7,Recent activity velocity (events logged in short rolling temporal windows)
+event_day,0.045971,-0.018584,8,Temporal dispatch context and diurnal cybercrime activity timing
+fraud_amount,0.04036,-0.015014,9,Financial scale and magnitude of complaint fraud loss
+rolling_event_count_1h,0.03853,-0.004555,10,Recent activity velocity (events logged in short rolling temporal windows)
+event_minute,0.038139,-0.010261,11,Temporal dispatch context and diurnal cybercrime activity timing
+amount_log1p,0.034207,-0.007336,12,Financial scale and magnitude of complaint fraud loss
+time_since_previous_event_hours,0.033748,-0.009461,13,Recent activity velocity (events logged in short rolling temporal windows)
+previous_event_count,0.028753,-0.026032,14,Recent activity velocity (events logged in short rolling temporal windows)
+event_hour,0.028476,-0.01355,15,Temporal dispatch context and diurnal cybercrime activity timing
+location_previous_7d_events,0.027573,-0.000946,16,Recent activity velocity (events logged in short rolling temporal windows)
+rolling_event_count_6h,0.027525,-0.007619,17,Recent activity velocity (events logged in short rolling temporal windows)
+longitude,0.024821,-0.010712,18,Spatial and geographic cluster orientation
+latitude,0.02247,-0.009011,19,Spatial and geographic cluster orientation
+district_previous_7d_events,0.021677,-0.015837,20,Recent activity velocity (events logged in short rolling temporal windows)

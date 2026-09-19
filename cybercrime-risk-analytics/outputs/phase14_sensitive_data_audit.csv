@@ -1,0 +1,15 @@
+field,status,reason
+victim_account_id_masked,EXCLUDED,Bank account reference; excluded from all Phase 14 outputs
+card_number,EXCLUDED,PCI-DSS prohibited credential
+pin,EXCLUDED,Authentication credential
+otp,EXCLUDED,One-time passcode
+cvv,EXCLUDED,Card security code
+password,EXCLUDED,Authentication secret
+fraud_amount,EXCLUDED_FROM_DBSCAN,Financial amount not used as DBSCAN input
+case_id,APPROVED,Sanitized case reference for audit trail
+latitude,APPROVED,"Required for spatial clustering; validated in bounds [-90,90]"
+longitude,APPROVED,"Required for spatial clustering; validated in bounds [-180,180]"
+cluster_id,APPROVED,DBSCAN assignment; analytical only
+victim_district,APPROVED,Administrative aggregation; no individual identification
+crime_type,APPROVED,Crime category; aggregated across clusters
+cluster centroids,APPROVED,Geographic centroid of analytical spatial cluster

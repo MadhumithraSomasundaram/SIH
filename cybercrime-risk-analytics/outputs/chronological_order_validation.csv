@@ -1,0 +1,2 @@
+sorted_successfully,earliest_timestamp,latest_timestamp,records_with_duplicate_timestamps,records_with_invalid_ordering_before,records_with_invalid_ordering_after
+True,2026-01-01 00:59:16,2026-08-31 23:55:41,3,False,0

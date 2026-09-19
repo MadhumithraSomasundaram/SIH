@@ -1,0 +1,6 @@
+check,status,details
+Input record count equals output record count,PASS,5 records
+"Probability bounded in [0, 1]",PASS,"Min=0.0949, Max=0.3357"
+"Risk score integer in [0, 100]",PASS,"Min=9, Max=34"
+Risk score exactly equals round(probability * 100),PASS,Mathematical identity verified
+Operational category matches score tier,PASS,All categories strictly mapped

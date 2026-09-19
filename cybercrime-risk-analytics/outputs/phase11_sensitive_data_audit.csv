@@ -1,0 +1,4 @@
+check,status,details
+Zero bank account numbers in input/output,PASS,Account numbers excluded
+Zero card numbers / CVV / PIN / OTP,PASS,Financial credentials excluded
+Zero personal contact vectors (unmasked phone/email),PASS,Private PII excluded

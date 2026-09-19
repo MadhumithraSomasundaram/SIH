@@ -1,0 +1,8 @@
+alert_type,severity_mapping,trigger_condition,deduplication_cooldown,human_review_mandate,automated_coercive_action_check,audit_status
+HIGH_RISK_LOCATION,HIGH,Score in [60 79],30 minutes window,Enforced (human_review_required=True),PROHIBITED (No auto-freeze/blocking),PASS
+CRITICAL_RISK_LOCATION,CRITICAL,Score in [80 100],30 minutes window,Enforced (human_review_required=True),PROHIBITED (No auto-freeze/blocking),PASS
+HOTSPOT_ELEVATED_RISK,HIGH,Score >= 50 + Hotspot Member,30 minutes window,Enforced (human_review_required=True),PROHIBITED (No auto-freeze/blocking),PASS
+HOTSPOT_CRITICAL_RISK,CRITICAL,Score >= 80 + Hotspot Member,30 minutes window,Enforced (human_review_required=True),PROHIBITED (No auto-freeze/blocking),PASS
+Alert Status Lifecycle,NEW -> UNDER_INVESTIGATION -> RESOLVED,Workflow state transitions,Atomic transitions,Supervisory oversight required,Audit trail logged,PASS
+Notification Abstraction,In-app UI + Log + Mock Email,Decoupled notification layers,Configurable per agency,Zero sensitive PII in alerts,Sanitized payloads,PASS
+Deduplication Logic,Spatial & Temporal window,Same case/mule within 30 min,Redundant alerts merged,Analyst triage preserved,Notification fatigue prevented,PASS

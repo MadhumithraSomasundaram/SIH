@@ -1,0 +1,2 @@
+total_records,valid_coordinates,invalid_coordinates,missing_coordinates,geometry_created,geometry_null
+10000,10000,0,0,10000,0

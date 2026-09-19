@@ -1,0 +1,7 @@
+column_name,leakage_type,reason,allowed_as_model_feature,action
+future_withdrawal,Primary Target Variable,Ground truth outcome to be predicted,False,Designated Target
+target_observation_complete,Quality Control Field,Evaluates future observation horizon completeness,False,Sample Filter / Weight Only
+target_valid,Quality Control Field,Integrity flag for target evaluation,False,Sample Filter Only
+is_linked_to_withdrawal,Outcome Indicator,Binary indicator indicating presence of withdrawal anywhere across time,False,Quarantine / Exclude from Features
+scenario,Synthetic Generator Metadata,Simulation archetype containing omniscient cashout rules,False,Excluded in Phase 2
+is_suspicious,Post-Event Label,Assigned by fraud analysts post-investigation in withdrawal logs,False,Excluded from Features

@@ -1,0 +1,148 @@
+<USER_REQUEST>
+You are a senior hackathon mentor, technical documentation specialist,
+software auditor, and SIH evaluation preparation expert.
+
+PROJECT:
+Cybercrime Predictive Analytics Framework
+
+PROBLEM STATEMENT ID:
+26184
+
+OBJECTIVE:
+Complete Phase 14 — Final SIH Presentation, Technical Documentation,
+Project Demonstration, Evaluation Preparation, and Evidence Collection.
+
+IMPORTANT:
+This is an existing project. Inspect the current implementation and
+previous audit reports before making changes.
+
+Do not fabricate:
+- Accuracy
+- Performance metrics
+- Test results
+- Screenshots
+- Successful API responses
+- Deployment status
+- Implemented features
+- Real-world crime prevention results
+
+Use only actual implementation evidence and synthetic/anonymized data.
+
+==================================================
+PHASE 1 — REVIEW ALL PREVIOUS AUDIT REPORTS
+==================================================
+
+Inspect all available project reports, including:
+
+- Phase 12 Security, RBAC & Audit Report
+- Phase 13 System Integration & Deployment Audit
+- Previous implementation reports
+- Model evaluation reports
+- Test results
+- README documentation
+
+Identify:
+
+1. Completed features
+2. Partially completed features
+3. Failed features
+4. Unverified features
+5. Remaining deployment blockers
+6. Known ML limitations
+7. Known GIS limitations
+8. Database limitations
+9. Security limitations
+10. Frontend integration gaps
+
+Do not mark any previously partial feature as complete without
+actual verification.
+
+Create:
+
+PHASE_14_PREVIOUS_AUDIT_REVIEW.md
+
+Include a requirement-by-requirement status table:
+
+Requirement | Current Status | Evidence | Remaining Work
+
+==================================================
+PHASE 2 — FINAL PROJECT ARCHITECTURE DOCUMENTATION
+==================================================
+
+Inspect the actual source code and create an accurate architecture
+document.
+
+Document the implemented flow:
+
+Cybercrime Complaint
+        |
+        v
+<truncated 12204 bytes>
+ons
+16. Security and RBAC
+17. Testing and Validation
+18. Results
+19. Limitations
+20. Future Scope
+21. Conclusion
+22. References to Internal Documentation
+
+The report must distinguish between:
+
+- Implemented features
+- Partially implemented features
+- Planned features
+- Unverified features
+
+Do not use exaggerated claims.
+
+==================================================
+PHASE 15 — FINAL QUALITY CHECK
+==================================================
+
+Before completing the task, verify:
+
+[ ] All claims match the source code.
+[ ] All metrics match actual evaluation reports.
+[ ] No fake results were added.
+[ ] No credentials are exposed.
+[ ] No real personal data is used.
+[ ] Historical locations are not labelled as confirmed predictions.
+[ ] Model limitations are documented.
+[ ] Database limitations are documented.
+[ ] Frontend integration gaps are documented.
+[ ] All test results are traceable.
+[ ] All screenshots are real.
+[ ] README instructions are accurate.
+[ ] SIH presentation claims are supported.
+[ ] The final report is internally consistent.
+
+==================================================
+FINAL RESPONSE REQUIRED
+==================================================
+
+After completing the work, report:
+
+1. Files created
+2. Files modified
+3. Actual tests executed
+4. Actual test results
+5. Remaining gaps
+6. Presentation readiness
+7. Demonstration readiness
+8. Evidence still required
+9. Recommended final improvements
+
+Do not claim that the project is fully complete unless the evidence
+supports that conclusion.
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-09-19T19:16:23+05:30.
+
+The user's current state is as follows:
+Active Document: d:\SIH\SIH_2026\cybercrime_prediction\README.md (LANGUAGE_MARKDOWN)
+Cursor is on line: 4
+Other open documents:
+- d:\SIH\SIH_2026\cybercrime_prediction\README.md (LANGUAGE_MARKDOWN)
+- d:\SIH\SIH_2026\cybercrime_prediction\PHASE_10_MODEL_EVALUATION_REPORT.md (LANGUAGE_MARKDOWN)
+</ADDITIONAL_METADATA>

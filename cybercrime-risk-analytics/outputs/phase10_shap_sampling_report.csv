@@ -1,0 +1,3 @@
+dataset,total_available_records,records_used_for_shap,sampling_method,random_state,execution_time_seconds
+Validation Dataset (Global SHAP),1500,1500,Full validation cohort (100% of validation.csv),N/A (Full cohort),0.08
+Test Dataset (Local Demonstration),1500,10,"Stratified representative selection across LOW, MODERATE, HIGH risk tiers",42,0.01

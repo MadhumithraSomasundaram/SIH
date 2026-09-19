@@ -1,0 +1,9 @@
+Dataset,Column,Risk Level,Reason
+Withdrawals.csv,is_suspicious,HIGH,Manually or rule-assigned flag based on post-event analysis. Using it as a feature when predicting future withdrawal risk would implicitly bake in knowledge of the outcome.
+Withdrawals.csv,scenario,HIGH,"Labels like 'FRAUDULENT_WITHDRAWAL', 'SPLIT_FUNDS' are simulation labels assigned with full knowledge of the fraud outcome. Not available at prediction time in real deployment."
+Fraud_Cases.csv,scenario,HIGH,Same as above — fraud scenario label derived from simulation logic that knows the full event chain.
+Transactions.csv,scenario,HIGH,Transaction scenario label contains post-event classification.
+Withdrawals.csv,hour_timestamp,LOW,"Derived from timestamp — safe if used carefully, but confirms withdrawal has already occurred. Only use PAST hour_timestamps as features."
+Withdrawals.csv,case_id,MEDIUM,"Links withdrawal to a specific fraud case. At prediction time, case_id may not yet be assigned. Use only for constructing the target variable, not as a direct ML feature."
+ML_Area_Hourly.csv (previous pipeline),future_suspicious_3h / future_withdrawal_amount_3h,CRITICAL,Explicitly forward-looking features — direct data leakage. Must NEVER be used as ML features.
+ML_Area_Hourly.csv (previous pipeline),risk_target / risk_category / synthetic_risk_score,CRITICAL,Target labels from a different ML pipeline. Using them would be circular — they encode the answer we are trying to predict.

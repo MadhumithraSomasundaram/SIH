@@ -1,0 +1,10 @@
+check_name,component,expected,actual,status,notes
+postgresql_connection,Database Engine,Active PostgreSQL connection,Disconnected (Service not running),NOT CONFIGURED,PostgreSQL local service not configured or inactive
+postgis_extension,Spatial Extension,PostGIS 3.x available,Inactive,NOT CONFIGURED,Requires running PostgreSQL instance
+cybercrime_events_table_schema,SQLAlchemy ORM,Registered in metadata,Registered in metadata,PASS,Schema defined in database/models.py
+prediction_results_table_schema,SQLAlchemy ORM,Registered in metadata,Registered in metadata,PASS,Schema defined in database/models.py
+investigation_models_schemas,SQLAlchemy ORM,6 tables registered,6 tables registered,PASS,"investigations, notes, evidence, timeline, audit, users"
+coordinate_range_validation,Validation Logic,"Strict [-90,90], [-180,180]",Validated by is_valid_coordinate(),PASS,Unit tested in test_database.py
+geometry_srid_declaration,Spatial Metadata,SRID 4326 declared,SRID 4326 specified in Point(),PASS,WGS84 coordinate reference system declared
+spatial_index_definition,Table Optimization,GIST index on geometry,Declared in model definitions,PASS,GIST spatial indexing specified for Point geometry
+safe_columns_pii_check,Data Privacy,Zero plaintext PAN/CVV,Zero sensitive columns in models,PASS,Complies with data privacy standards

@@ -1,0 +1,13 @@
+endpoint,validation,status,details
+GET /,Service banner,PASS,"Returns service, status, version, docs, disclaimer"
+GET /health,Model loaded status,PASS,"Returns model_loaded, prediction_pipeline_loaded, model_version"
+GET /model/info,Safe metadata only,PASS,"No training data, paths, credentials, or PII exposed"
+POST /predict,Single-record schema,PASS,"Returns reference, probability, risk_score, category, interpretation"
+POST /predict,Risk score formula,PASS,round(probability * 100) verified in tests
+POST /predict,Phase 9 categories,PASS,"LOW 0-39, MODERATE 40-59, HIGH 60-79, CRITICAL 80-100"
+POST /predict,Prohibited field rejection,PASS,future_withdrawal and withdrawal_* -> 400/422
+POST /predict/batch,Batch count matches input,PASS,Order preserved; max 100 enforced
+POST /explain,SHAP graceful fallback,PASS,Prediction returned even if SHAP fails; shap_available: false
+ALL,No stack traces in errors,PASS,generic_exception_handler catches all unhandled errors
+ALL,No model retraining,PASS,Pipeline loaded once at startup; predict_proba() only
+ALL,Preprocessor not refitted,PASS,ColumnTransformer.transform() only - no .fit() calls

@@ -1,0 +1,12 @@
+audit_step,test_command_or_function,input_data,expected_output,actual_output,execution_status,audit_verdict
+Model Loading,src/predict.py:load_model(),models/xgboost_cybercrime_model.pkl,Serialized Pipeline object,Pipeline(ColumnTransformer + XGBClassifier),SUCCESS,PASS
+Metadata Loading,src/predict.py:load_metadata(),models/phase7_xgboost_metadata.json,64 features dict,64 features verified,SUCCESS,PASS
+Preprocessor Freeze Check,src/predict.py:transform_features(),Incoming DataFrame,Transform only (zero refitting),Transform applied without fit(),SUCCESS,PASS
+Schema Validation,src/predict.py:validate_input(),data/new_prediction_input.csv (5 rows),64 features + case_id,5 rows validated cleanly,SUCCESS,PASS
+Probability Generation,src/predict.py:predict_batch(),5 synthetic cases,Probabilities in [0 1],0.1064 0.2464 0.0948 0.3356 0.2338,SUCCESS,PASS
+Risk Score Mapping,probability_to_risk_score(),Probabilities,Integers [0 100],Scores: 11 25 9 34 23,SUCCESS,PASS
+Risk Tier Categorization,assign_risk_category(),Risk Scores,LOW/MODERATE/HIGH/CRITICAL,Assigned LOW to all 5 samples,SUCCESS,PASS
+Human Review Interpretation,generate_interpretation(),Risk Category,Standardized HITL guidance,Standardized text returned,SUCCESS,PASS
+SHAP Local Explanation,explain_prediction(),SYNTH_CASE_001,Additive contributions vector,Top 5 negative contributors returned,SUCCESS,PASS
+Drift Analysis,check_input_drift(),Incoming vs Baseline,PSI diagnostic report,outputs/phase11_input_drift_report.csv,SUCCESS,PASS
+CLI Entrypoint,python src/predict.py --input,data/new_prediction_input.csv,Batch prediction & SHAP demo,Executed in <2.0 seconds with zero errors,SUCCESS,PASS

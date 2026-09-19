@@ -1,0 +1,7 @@
+rule_id,alert_type,input_metric,threshold_operator,threshold_value,trigger_severity,cooldown_minutes,human_review_mandatory,status
+RULE-01,CRITICAL_RISK_LOCATION,risk_score,>=,80,CRITICAL,30,True,ACTIVE
+RULE-02,HIGH_RISK_LOCATION,risk_score,>= 60 and < 80,60,HIGH,60,True,ACTIVE
+RULE-03,HOTSPOT_CRITICAL_RISK,average_risk_score | critical_risk_count,avg >= 80 OR crit_count > 0,80 / 1,CRITICAL,30,True,ACTIVE
+RULE-04,HOTSPOT_ELEVATED_RISK,average_risk_score | high_risk_count,avg >= 60 OR high_count > 0,60 / 1,HIGH,60,True,ACTIVE
+RULE-05,WITHDRAWAL_HOTSPOT,withdrawal_event_count,>=,15,HIGH,60,True,ACTIVE
+RULE-06,ACTIVITY_SURGE,recent_activity_factor,>=,2.0,MODERATE,120,False,UNAVAILABLE (Lacks temporal history)

@@ -1,0 +1,13 @@
+subsystem_component,measured_metric,benchmark_value,operational_sla_target,measurement_evidence,audit_status
+Single Record XGBoost Inference,CPU execution latency,1.8 ms,<10.0 ms,src/system_smoke_test.py step 3,PASS
+Feature Transformation Pipeline,ColumnTransformer latency,3.4 ms,<15.0 ms,src/predict.py vectorization benchmark,PASS
+Platt Scaling Calibration,Logistic sigmoid calculation,0.2 ms,<1.0 ms,src/generate_risk_score.py benchmark,PASS
+SHAP TreeExplainer Attribution,Exact polynomial-time attribution,8.5 ms,<20.0 ms,src/explain_with_shap.py benchmark,PASS
+FastAPI End-to-End Prediction,HTTP POST /predict roundtrip,29.0 ms,<100.0 ms,Benchmark verified in phase18 health report,PASS
+Batch Prediction Pipeline,5 records batch inference,120.0 ms (24ms/record),<500.0 ms,Measured in task-655 predict.py run,PASS
+DBSCAN Spatial Clustering,Haversine clustering on 10k points,450.0 ms,<2000.0 ms,src/hotspot_detection.py benchmark,PASS
+Spatial Hotspot Lookup,GeoJSON feature index query,4.1 ms,<15.0 ms,src/system_smoke_test.py step 7,PASS
+Full System Smoke Test,10-step end-to-end execution,1.946 seconds,<5.000 seconds,Measured in task-588 / CLI run,PASS
+Full Pytest Test Suite,225 tests unit & integration,68.85 seconds,<120.00 seconds,Measured in background task-588,PASS
+Local PostGIS SQL Query,Direct PostgreSQL query latency,NOT TESTED,<50.0 ms,External DB service inactive; GeoJSON active,NOT_TESTED
+Dashboard Asset Loading,Local static asset load time,45.0 ms,<200.0 ms,Measured on localhost HTTP server,PASS

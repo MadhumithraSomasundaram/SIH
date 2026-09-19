@@ -1,0 +1,9 @@
+audit_item,expected_status,actual_status,hash_or_value,verification_result,notes
+test_dataset_integrity,UNCHANGED,UNCHANGED,ec3d373ec45df312...,PASS,data/processed/test.csv 1501 rows strictly preserved
+model_artifact_integrity,UNCHANGED,UNCHANGED,d4c9fe2a116eefae...,PASS,models/xgboost_cybercrime_model.pkl preserved
+model_metadata_integrity,UNCHANGED,UNCHANGED,6710e488eeb388e3...,PASS,models/phase7_xgboost_metadata.json preserved
+threshold_source_documented,DOCUMENTED,DOCUMENTED,threshold=0.5 (Phase 7 validation),PASS,"Threshold derived from validation set, not test set"
+no_test_leakage_in_training,VERIFIED,VERIFIED,Temporal split 70/15/15,PASS,Chronological split strictly observed; test set strictly held out
+no_retraining_during_integration,VERIFIED,VERIFIED,No training invocation,PASS,Phase 18 only performs inference and validation
+phase8_metrics_unaltered,VERIFIED,VERIFIED,"PR-AUC=0.1029, ROC-AUC=0.4760",PASS,Phase 8 test results locked and unchanged
+no_smote_or_resampling_on_test,VERIFIED,VERIFIED,Raw test distribution,PASS,Test set evaluated with true natural class distribution

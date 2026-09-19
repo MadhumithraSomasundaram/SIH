@@ -1,0 +1,6 @@
+attribute,train_stat,validation_stat,test_stat,drift_assessment
+Target Rate (future_withdrawal = 1),10.40%,9.60%,10.33%,STABLE - Consistent across all 3 temporal splits (~9.6% to 10.4%)
+Fraud Amount (Median),"₹8,008.69","₹7,937.72","₹7,566.84",STABLE - Zero significant financial drift
+UPI Fraud Share,16.90%,15.93%,17.60%,STABLE - Uniform distribution across cohorts
+Tamil Nadu Intake Share,24.81%,24.93%,24.13%,STABLE - Consistent administrative volume
+Weekend Incident Rate,28.93%,28.40%,25.53%,STABLE - Natural ~28.5% weekly cadence

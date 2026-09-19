@@ -1,0 +1,10 @@
+dataset_name,file_path,row_count,column_count,data_type_classification,missing_values_count,duplicates_count,pii_exposure_check,data_nature,audit_verdict
+Fraud_Cases_Raw,data/raw/Fraud_Cases.csv,10000,11,Mixed (Integer/Float/String/DateTime),0,0,PASS (Zero card/CVV/PII),Synthetic / Anonymized,VERIFIED_CLEAN
+ATMs_Locations_Raw,data/raw/ATMs_Locations.csv,1000,6,Mixed (Integer/Float/String),0,0,PASS (Commercial location data only),Synthetic / Anonymized,VERIFIED_CLEAN
+Accounts_Raw,data/raw/Accounts.csv,10000,10,Mixed (Integer/Float/String),0,0,PASS (Masked synthetic accounts),Synthetic / Anonymized,VERIFIED_CLEAN
+Transactions_Raw,data/raw/Transactions.csv,100000,10,Mixed (Integer/Float/String),0,0,PASS (Zero banking credentials),Synthetic / Anonymized,VERIFIED_CLEAN
+Withdrawals_Raw,data/raw/Withdrawals.csv,50000,9,Mixed (Integer/Float/String),0,0,PASS (Zero card numbers/PINs),Synthetic / Anonymized,VERIFIED_CLEAN
+Train_Processed,data/processed/train.csv,7000,66,Mixed (Float64/Int64/Object),0,0,PASS (Zero PII/credentials),Synthetic / Processed,VERIFIED_CLEAN
+Validation_Processed,data/processed/validation.csv,1500,66,Mixed (Float64/Int64/Object),0,0,PASS (Zero PII/credentials),Synthetic / Processed,VERIFIED_CLEAN
+Test_Processed,data/processed/test.csv,1500,66,Mixed (Float64/Int64/Object),0,0,PASS (Zero PII/credentials),Synthetic / Held-Out,VERIFIED_CLEAN
+Demo_Input,data/demo/demo_prediction_input.csv,4,65,Mixed (Float64/Int64/Object),0,0,PASS (Zero PII/credentials),Synthetic / Demo,VERIFIED_CLEAN

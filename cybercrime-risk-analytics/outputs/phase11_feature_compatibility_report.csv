@@ -1,0 +1,2 @@
+check,expected_features,transformed_features,status,details
+Feature order & transformation dimensionality,556,556,COMPATIBLE,"Transformed shape (5, 556) matches expected 556 dimensions"

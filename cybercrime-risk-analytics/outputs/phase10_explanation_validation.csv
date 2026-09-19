@@ -1,0 +1,7 @@
+check,status,details
+All explained features exist in model pipeline,PASS,556 features verified
+No NaN or Infinite SHAP values,PASS,"NaNs: 0, Infs: 0"
+Mathematical consistency (base + sum == margin),PASS,Max margin diff: 1.19e-06
+Probability transformation verified via sigmoid,PASS,Max proba diff: 8.94e-08
+Transformed feature names mapped cleanly,PASS,Zero raw 'onehotencoded_' generic placeholders
+No target-derived features present in explainer matrix,PASS,Zero future outcome fields present

@@ -1,0 +1,6 @@
+check,status,details
+"Risk score within [0, 100]",PASS,"Min=9, Max=63"
+No negative risk scores,PASS,Zero negative values detected
+No scores exceeding 100,PASS,Zero scores > 100 detected
+Every score has valid operational category,PASS,All 1500 records mapped to valid categories
+"Boundary unit tests (0, 39, 40, 59, 60, 79, 80, 100)",PASS,All boundary test cases passed strictly

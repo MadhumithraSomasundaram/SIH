@@ -1,0 +1,14 @@
+column,source,reason,safe_or_unsafe,where_used,action,status
+future_withdrawal,Target Formulation,Primary target variable to be predicted,UNSAFE_IF_IN_X,Target label y only,Strictly excluded from X feature matrix,PASS
+target_observation_complete,Target Formulation,Flags whether 24h horizon has completed,UNSAFE_IF_IN_X,Sample filtering only,Excluded from predictor features,PASS
+target_valid,Target Formulation,Target integrity and quality flag,UNSAFE_IF_IN_X,Sample filtering only,Excluded from predictor features,PASS
+is_linked_to_withdrawal,Historical Withdrawals,Omniscient indicator of withdrawal presence anywhere,UNSAFE_IF_IN_X,Quarantined,Excluded from predictor features,PASS
+scenario,Synthetic Metadata,Simulation archetype containing cash-out rules,UNSAFE_IF_IN_X,Quarantined,Excluded in Phase 2 preprocessing,PASS
+is_suspicious,Post-Event Label,Assigned by fraud analysts post-investigation,UNSAFE_IF_IN_X,Quarantined,Excluded from feature set,PASS
+case_id,Identifier,Unique incident primary key,UNSAFE_IF_IN_X,Case lookup & audit,Excluded from mathematical training matrix,PASS
+withdrawal_timestamp,Future Event,Timestamp of actual physical withdrawal,UNSAFE_IF_IN_X,Target formulation only,Strictly excluded from feature predictors,PASS
+atm_id,Future Event,Physical ATM machine identifier of actual cashout,UNSAFE_IF_IN_X,Target formulation only,Strictly excluded from feature predictors,PASS
+withdrawal_amount,Future Event,Monetary value dispensed at cashout,UNSAFE_IF_IN_X,Target formulation only,Strictly excluded from feature predictors,PASS
+imputer_statistics,Preprocessor,Median values fitted on training set,SAFE,X_train fitting only,Fitted on train and transform-only on val/test,PASS
+scaler_statistics,Preprocessor,Scaling parameters fitted on training set,SAFE,X_train fitting only,Zero test set contamination verified,PASS
+test_set_partition,Temporal Split,Held-out future crimes partition,SAFE,Final evaluation only,Cryptographically isolated from model selection,PASS

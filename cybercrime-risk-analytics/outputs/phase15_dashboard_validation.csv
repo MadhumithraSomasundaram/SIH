@@ -1,0 +1,17 @@
+item,verified,notes
+Map loads,YES,Leaflet.js initialized with OpenStreetMap base tiles
+Heatmap loads,YES,Leaflet.heat layer renders risk-weighted points
+Hotspots load,YES,40 DBSCAN spatial cluster centroid markers render
+Risk layers work,YES,"Separate toggleable layers for Heatmap, Hotspots, Events"
+Filters work,YES,"Time, crime category, risk category, risk range, limit"
+Reset works,YES,Restores default filter selections and re-renders
+Popups work,YES,Non-sensitive analytical summary displayed on marker click
+Hotspot drill-down works,YES,Side panel populates with cluster metrics & temporal span
+KPI cards load,YES,"Summary endpoint feeds records, risk counts, hotspots, avg score"
+Charts load,YES,"Chart.js donut, category bar, hourly bar, top district bar"
+API errors handled,YES,Client error toasts and graceful HTTP status codes returned
+Invalid filters rejected,YES,"HTTP 400 for bad dates/categories, 422 for limit > 5000"
+No sensitive fields exposed,YES,Audited in phase15_sensitive_data_audit.csv
+No leakage fields exposed,YES,Audited in phase15_leakage_audit.csv
+Historical/prototype status clearly shown,YES,Top banner and popup disclaimers prominently displayed
+Dashboard does not claim criminal identification,YES,Terminology restricted to 'analytical hotspot' and 'predictive risk'

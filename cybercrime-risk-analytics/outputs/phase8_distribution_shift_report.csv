@@ -1,0 +1,9 @@
+feature,train_statistic,validation_statistic,test_statistic,observation
+future_withdrawal,Pos: 10.40%,Pos: 9.60%,Pos: 10.33%,Stable target prevalence (~9.6% - 10.4%) across all chronological periods
+fraud_amount,Median: 8008.69,Median: 7937.72,Median: 7566.84,Stable financial magnitude; slight variance in upper-tail amounts
+time_since_previous_event_hours,Mean: 0.589,Mean: 0.568,Mean: 0.568,Highly stable short-term dynamic activity rates across time
+rolling_event_count_24h,Mean: 40.559,Mean: 42.449,Mean: 42.012,Highly stable short-term dynamic activity rates across time
+previous_event_count,Mean: 3499.5,Mean: 7749.5,Mean: 9249.5,Expected chronological accumulation (monotonic upward drift across time)
+latitude,Mean: 12.8685,Mean: 12.8908,Mean: 12.8210,Consistent geographic coverage across Southern India study region
+longitude,Mean: 77.7684,Mean: 77.7847,Mean: 77.7837,Consistent geographic coverage across Southern India study region
+is_weekend,Mean: 0.2893,Mean: 0.2840,Mean: 0.2553,Minor periodic variation

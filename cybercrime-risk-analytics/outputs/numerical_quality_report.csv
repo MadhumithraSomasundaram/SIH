@@ -1,0 +1,4 @@
+dataset,column,data_type,min,max,mean,median,std,negative_count,zero_count,null_count,status
+Fraud_Cases,fraud_amount,float64,500.0,500000.0,15470.98,7921.1,24725.33,0,0,0,Valid - No negative/zero/corrupted amounts
+Fraud_Cases,reported_by_authority,int64,0.0,1.0,0.2044,0.0,0.4033,0,7956,0,Valid - Binary indicator (0/1)
+Withdrawals,amount,float64,200.0,84518.62,1895.62,1227.28,2757.65,0,0,0,Valid - Realistic ATM withdrawal values

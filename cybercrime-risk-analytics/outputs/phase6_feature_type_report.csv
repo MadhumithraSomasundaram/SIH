@@ -1,0 +1,65 @@
+feature,dtype,unique_count,feature_type,action,reason
+crime_type,str,6,Categorical,Retain & Standard Process,Valid feature
+fraud_amount,float64,6936,Numerical,Retain & Standard Process,Valid feature
+reported_by_authority,int64,2,Numerical,Retain & Standard Process,Valid feature
+victim_state,str,4,Categorical,Retain & Standard Process,Valid feature
+victim_district,str,40,Categorical,Retain & Standard Process,Valid feature
+victim_area,str,193,Categorical,Retain & One-Hot Encode (High-cardinality location code handled with unknown-ignore),High cardinality category (193 unique values in train)
+victim_area_id,str,200,Categorical,Retain & One-Hot Encode (High-cardinality location code handled with unknown-ignore),High cardinality category (200 unique values in train)
+latitude,float64,39,Numerical,Retain & Standard Process,Valid feature
+longitude,float64,40,Numerical,Retain & Standard Process,Valid feature
+event_year,int64,1,Numerical,Retain (Zero-variance constant feature handled safely by imputer/encoder),Constant feature across full dataset
+event_month,int64,6,Numerical,Retain & Standard Process,Valid feature
+event_day,int64,31,Numerical,Retain & Standard Process,Valid feature
+event_day_of_month,int64,31,Numerical,Retain & Standard Process,Valid feature
+event_day_of_week,int64,7,Numerical,Retain & Standard Process,Valid feature
+event_hour,int64,24,Numerical,Retain & Standard Process,Valid feature
+event_minute,int64,60,Numerical,Retain & Standard Process,Valid feature
+is_weekend,int64,2,Numerical,Retain & Standard Process,Valid feature
+is_month_start,int64,2,Numerical,Retain & Standard Process,Valid feature
+is_month_end,int64,2,Numerical,Retain & Standard Process,Valid feature
+is_quarter_start,int64,2,Numerical,Retain & Standard Process,Valid feature
+is_quarter_end,int64,2,Numerical,Retain & Standard Process,Valid feature
+hour_group,str,6,Categorical,Retain & Standard Process,Valid feature
+time_period,str,5,Categorical,Retain & Standard Process,Valid feature
+latitude_rounded,float64,36,Numerical,Retain & Standard Process,Valid feature
+longitude_rounded,float64,40,Numerical,Retain & Standard Process,Valid feature
+location_grid,str,40,Categorical,Retain & Standard Process,Valid feature
+coordinate_precision,str,1,Categorical,Retain (Zero-variance constant feature handled safely by imputer/encoder),Constant feature across full dataset
+geographic_region,str,1,Categorical,Retain (Zero-variance constant feature handled safely by imputer/encoder),Constant feature across full dataset
+crime_category_group,str,4,Categorical,Retain & Standard Process,Valid feature
+is_financial_fraud,int64,2,Numerical,Retain & Standard Process,Valid feature
+is_online_fraud,int64,2,Numerical,Retain & Standard Process,Valid feature
+is_identity_related,int64,2,Numerical,Retain & Standard Process,Valid feature
+is_transaction_related,int64,2,Numerical,Retain & Standard Process,Valid feature
+amount_log1p,float64,6355,Numerical,Retain & Standard Process,Valid feature
+amount_is_zero,int64,1,Numerical,Retain (Zero-variance constant feature handled safely by imputer/encoder),Constant feature across full dataset
+amount_is_high,int64,2,Numerical,Retain & Standard Process,Valid feature
+amount_category,str,4,Categorical,Retain & Standard Process,Valid feature
+previous_event_count,int64,7000,Numerical,Retain & Standard Process,Valid feature
+time_since_previous_event_hours,float64,3773,Numerical,Retain & Standard Process,Valid feature
+events_in_previous_1_day,int64,67,Numerical,Retain & Standard Process,Valid feature
+events_in_previous_3_days,int64,159,Numerical,Retain & Standard Process,Valid feature
+events_in_previous_7_days,int64,323,Numerical,Retain & Standard Process,Valid feature
+events_in_previous_30_days,int64,1291,Numerical,Retain & Standard Process,Valid feature
+previous_activity_by_location,int64,55,Numerical,Retain & Standard Process,Valid feature
+previous_activity_by_district,int64,223,Numerical,Retain & Standard Process,Valid feature
+previous_activity_by_crime_category,int64,1189,Numerical,Retain & Standard Process,Valid feature
+rolling_event_count_1h,int64,10,Numerical,Retain & Standard Process,Valid feature
+rolling_event_count_6h,int64,26,Numerical,Retain & Standard Process,Valid feature
+rolling_event_count_24h,int64,67,Numerical,Retain & Standard Process,Valid feature
+rolling_event_count_7d,int64,323,Numerical,Retain & Standard Process,Valid feature
+rolling_location_event_count_24h,int64,4,Numerical,Retain & Standard Process,Valid feature
+rolling_crime_event_count_7d,int64,81,Numerical,Retain & Standard Process,Valid feature
+location_total_previous_events,int64,55,Numerical,Retain & Standard Process,Valid feature
+location_previous_24h_events,int64,4,Numerical,Retain & Standard Process,Valid feature
+location_previous_7d_events,int64,8,Numerical,Retain & Standard Process,Valid feature
+district_previous_24h_events,int64,7,Numerical,Retain & Standard Process,Valid feature
+district_previous_7d_events,int64,19,Numerical,Retain & Standard Process,Valid feature
+location_unique_crime_categories,int64,7,Numerical,Retain & Standard Process,Valid feature
+has_location,int64,1,Numerical,Retain (Zero-variance constant feature handled safely by imputer/encoder),Constant feature across full dataset
+has_timestamp,int64,1,Numerical,Retain (Zero-variance constant feature handled safely by imputer/encoder),Constant feature across full dataset
+has_amount,int64,1,Numerical,Retain (Zero-variance constant feature handled safely by imputer/encoder),Constant feature across full dataset
+has_crime_category,int64,1,Numerical,Retain (Zero-variance constant feature handled safely by imputer/encoder),Constant feature across full dataset
+has_district,int64,1,Numerical,Retain (Zero-variance constant feature handled safely by imputer/encoder),Constant feature across full dataset
+missing_coordinate_flag,int64,1,Numerical,Retain (Zero-variance constant feature handled safely by imputer/encoder),Constant feature across full dataset

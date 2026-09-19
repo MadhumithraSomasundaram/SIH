@@ -1,0 +1,10 @@
+check,status,details
+Test File Exists,PASS,data/processed/test.csv verified present
+Target Exists in Test,PASS,"future_withdrawal present with binary {0, 1}"
+Feature Columns Compatible,PASS,All 64 features match X_train schema
+Target Excluded from X Features,PASS,future_withdrawal strictly segregated
+Zero Identifier Leakage,PASS,case_id quarantined from predictive inputs
+Zero PII Leakage,PASS,victim_account_id_masked excluded from predictive inputs
+Zero Preprocessing Contamination,PASS,Transformers fit strictly on train fold
+Chronological Precedence,PASS,Test incidents strictly later than train and validation cohorts
+Unseen Holdout Integrity,PASS,TEST SET NOT USED FOR MODEL SELECTION OR THRESHOLD TUNING

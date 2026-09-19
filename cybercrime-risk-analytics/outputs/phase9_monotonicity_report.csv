@@ -1,0 +1,5 @@
+risk_category,record_count,mean_probability,monotonicity_verified
+LOW,1120,0.2975,True
+MODERATE,375,0.446,True
+HIGH,5,0.6104,True
+CRITICAL,0,N/A,True

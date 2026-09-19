@@ -1,0 +1,14 @@
+{
+  "status": "SUCCESS",
+  "evaluated_cases_count": 50,
+  "sample_size_requested": 50,
+  "metrics_available": true,
+  "top_1_hit_rate": 0.72,
+  "top_3_hit_rate": 0.72,
+  "top_5_hit_rate": 0.72,
+  "accuracy_within_2_5km": 0.64,
+  "accuracy_within_5_0km": 0.72,
+  "average_distance_error_km": 145.566,
+  "median_distance_error_km": 1.734,
+  "evaluation_notes": "Hit rate defined as qualifying ground-truth cashout ATM matching candidate nearest ATM or falling within candidate 5.0 km catchment radius. Distance error measured from top-1 predicted cluster centroid to ground-truth ATM coordinates."
+}

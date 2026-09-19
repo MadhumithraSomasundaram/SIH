@@ -1,0 +1,18 @@
+dimension,ground_truth_standard,audited_artifacts,consistency_check_result,conflicts_found,audit_verdict
+Model Architecture,XGBoost Classifier (Extreme Gradient Boosting),README; Phase 8; Phase 18; Phase 19; Phase 20,Identical across all documents,0,PASS
+Model Hyperparameters,n_estimators=200 max_depth=3 lr=0.05 subsample=0.8 colsample=0.8,phase7_xgboost_metadata.json; Phase 8; Phase 18; Phase 20,Exact match in metadata and reports,0,PASS
+Held-Out Test Accuracy,86.93% (0.8693),Phase 8; Phase 18; Phase 19; Phase 20; Runbook,Matches with 100% precision,0,PASS
+Held-Out Specificity,96.73% (0.9673),Phase 8; Phase 18; Phase 19; Phase 20; Runbook,Matches with 100% precision,0,PASS
+Held-Out PR-AUC,0.1029,Phase 8; Phase 18; Phase 19; Phase 20; Runbook,Matches with 100% precision,0,PASS
+Held-Out ROC-AUC,0.4760,Phase 8; Phase 18; Phase 19; Phase 20; Runbook,Matches with 100% precision,0,PASS
+Held-Out Precision,6.38% (0.0638),Phase 8; Phase 18; Phase 19; Phase 20; Runbook,Matches with 100% precision,0,PASS
+Held-Out Recall,1.94% (0.0194),Phase 8; Phase 18; Phase 19; Phase 20; Runbook,Matches with 100% precision,0,PASS
+Dataset Split Sizes,Train: 7000 (70%) Val: 1500 (15%) Test: 1500 (15%),Phase 5; Phase 8; Phase 18; Phase 19; Phase 20,Matches with 100% precision,0,PASS
+Total Records,10000 cybercrime complaints,Phase 1; Phase 5; Phase 8; Phase 18; Phase 20,Matches with 100% precision,0,PASS
+Risk Scoring Tiers,LOW: 0-39 MODERATE: 40-59 HIGH: 60-79 CRITICAL: 80-100,Phase 9; Phase 16; Phase 18; Phase 20; schemas.py,Uniform tier ranges across codebase,0,PASS
+DBSCAN Radius,Epsilon = 500 meters (0.5 km / 0.0045 degrees),Phase 14; Phase 15; Phase 18; Phase 20; clustering.py,Matches across Python & PostGIS SQL,0,PASS
+DBSCAN MinPts,min_samples = 3 points,Phase 14; Phase 15; Phase 18; Phase 20; clustering.py,Matches across all artifacts,0,PASS
+DBSCAN Hotspots,40 spatial analytical clusters,Phase 14; Phase 15; Phase 18; GeoJSON; tests,Exactly 40 clusters confirmed,0,PASS
+SHAP Explainer,shap.TreeExplainer (Exact additive feature attributions),Phase 10; Phase 11; Phase 18; Phase 19; Phase 20,Matches across all artifacts,0,PASS
+Decision Support Role,Authorized analytical decision-support tool with mandatory human review,All documentation & presentations,100% non-punitive framing,0,PASS
+Zero Coercive Action,No automated arrest account freezing or transaction blocking,All documentation & API schemas,Prohibition verified across all modules,0,PASS

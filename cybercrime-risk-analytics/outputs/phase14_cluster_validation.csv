@@ -1,0 +1,2 @@
+cluster_count,noise_count,noise_percentage,largest_cluster_size,largest_cluster_percentage,median_cluster_size,silhouette_score,silhouette_note
+40,0,0.0,310,3.1,251.5,1.0,Computed on non-noise points using haversine metric.

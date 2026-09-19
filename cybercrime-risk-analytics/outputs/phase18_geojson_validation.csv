@@ -1,0 +1,8 @@
+check_name,target_property,expected,actual,status,notes
+valid_json_structure,file_format,Valid RFC 7946 JSON,Valid JSON parsed,PASS,File parsed without error
+feature_collection_type,type,FeatureCollection,FeatureCollection,PASS,Top level type is FeatureCollection
+feature_count,features,>= 1 cluster feature,40 features,PASS,Hotspot cluster features present
+geometry_types_valid,geometry.type,Point/Polygon/MultiPolygon,All geometries valid,PASS,Geometry types compliant
+coordinates_geographic_range,coordinates,"Lat [-90,90], Lon [-180,180]",All coordinates within range,PASS,EPSG:4326 geographic CRS
+cluster_identifier_presence,properties.cluster_id,Present on all features,Present,PASS,Hotspot IDs properly attributed
+crs_specification,crs,EPSG:4326 WGS84,WGS84 standard,PASS,Standard web GIS compliant

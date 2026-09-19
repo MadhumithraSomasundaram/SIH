@@ -1,0 +1,14 @@
+feature,type,min,max,description
+event_year,int,2026,2026,Calendar year of complaint
+event_month,int,1,8,Calendar month (1-12)
+event_day,int,1,31,Day of the month (1-31)
+event_day_of_week,int,0,6,"Day of week (0=Mon, 6=Sun)"
+event_hour,int,0,23,Hour of occurrence (0-23)
+event_minute,int,0,59,Minute of occurrence (0-59)
+is_weekend,binary (0/1),0,1,Saturday or Sunday flag
+is_month_start,binary (0/1),0,1,First day of month flag
+is_month_end,binary (0/1),0,1,Last day of month flag
+is_quarter_start,binary (0/1),0,1,First day of quarter flag
+is_quarter_end,binary (0/1),0,1,Last day of quarter flag
+hour_group,categorical,N/A,N/A,4-hour chronological bin
+time_period,categorical,N/A,N/A,Five standard diurnal blocks (early_morning to night)

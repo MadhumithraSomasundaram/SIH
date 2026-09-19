@@ -1,0 +1,2 @@
+is_numeric,total_records,missing_count,infinite_count,values_below_zero,values_above_one,minimum_probability,maximum_probability,status
+True,1500,0,0,0,0,0.094887,0.631938,VALID

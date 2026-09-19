@@ -1,0 +1,2 @@
+model_type,model_path,feature_count,feature_names_available,preprocessor_available,metadata_available,model_load_status
+<class 'xgboost.sklearn.XGBClassifier'>,models/xgboost_cybercrime_model.pkl,64,True,True,True,SUCCESS

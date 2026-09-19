@@ -1,0 +1,4 @@
+check,status,details
+No raw bank account numbers or card credentials,PASS,Zero raw banking credentials in explanation features
+"No authorization secrets (PIN, OTP, CVV, passwords)",PASS,All authorization credentials strictly excluded
+"No private contact info (unmasked phone, personal email)",PASS,Personal communication vectors excluded from model predictors

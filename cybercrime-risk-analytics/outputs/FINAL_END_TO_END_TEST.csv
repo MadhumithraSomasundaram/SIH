@@ -1,0 +1,15 @@
+stage,input,output,expected,actual,status,error,severity
+1. New Record Ingestion,DEMO_CASE_003_HIGH (65 columns),Sanitized JSON payload,Valid 64-feature vector,Valid 64-feature vector,PASS,None,NONE
+2. Prediction Inference,Sanitized feature vector,Predicted probability P=0.6319,Probability in [0 1],P=0.631938,PASS,None,NONE
+3. Risk Score Calibration,Probability 0.6319,Integer score 63 / 100,round(P * 100) == 63,Score = 63,PASS,None,NONE
+4. Risk Category Tiering,Risk Score 63,Operational category HIGH,Score in [60 79] -> HIGH,Assigned HIGH,PASS,None,NONE
+5. SHAP Explainability,Model + Feature Vector,Local attribution values,Additive Shapley vector,Woraiyur +0.53 Velocity +0.079,PASS,None,NONE
+6. Database Geocoding,Coordinates (10.7905 78.7047),PostGIS geometry entity,Valid POINT(78.7047 10.7905),Valid WGS 84 Point,PASS,None,NONE
+7. Spatial Hotspot Lookup,Location (10.7905 78.7047),DBSCAN Cluster Match,Correlate with 500m cluster,Correlated with Urban Cluster #14,PASS,None,NONE
+8. GIS Map Layering,Cluster #14 + Risk Score,GeoJSON polygon + ATM pins,Layer separation preserved,Visualized on Leaflet map,PASS,None,NONE
+9. Alert Generation,Score 63 + Cluster #14,Alert ALT-SMOKE-1789535250,HIGH_RISK_LOCATION severity,HIGH_RISK_LOCATION generated,PASS,None,NONE
+10. Human Review Mandate,Alert object,human_review_required=True,Automated actions blocked,Human review enforced,PASS,None,NONE
+11. Analyst Case Creation,Alert claim action,Case INV-SMOKE-1789535250,Status: UNDER_INVESTIGATION,State transition validated,PASS,None,NONE
+12. Investigative Notes,Field observation text,Appended note record,Timestamped note appended,Note saved with author ID,PASS,None,NONE
+13. Evidence Hashing,Complaint telemetry payload,SHA-256 hash reference,Valid SHA-256 string,Hash attached to case,PASS,None,NONE
+14. Audit Log Trail,User + Timestamp + Action,Audit row AUD-SMOKE-1789535250,Insert-only immutable row,Committed to audit ledger,PASS,None,NONE

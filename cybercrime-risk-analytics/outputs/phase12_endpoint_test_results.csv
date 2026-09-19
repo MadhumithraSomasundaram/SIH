@@ -1,0 +1,26 @@
+endpoint,test_case,expected_status,actual_status,passed,notes
+GET /,200 status code,200,200,True,Service banner returned correctly
+GET /,Required fields present,200,200,True,All fields present
+GET /health,200 status code,200,200,True,Health endpoint operational
+GET /health,model_loaded and pipeline_loaded present,200,200,True,Both flags present
+GET /model/info,200 status code,200,200,True,Model info returned
+GET /model/info,No sensitive data in response,200,200,True,No paths/credentials exposed
+GET /model/info,risk_categories correct,200,200,True,LOW MODERATE HIGH CRITICAL
+POST /predict,Valid synthetic record -> 200,200,200,True,Prediction successful
+POST /predict,Risk score formula: round(prob * 100),200,200,True,Formula verified
+POST /predict,"Probability bounded [0.0, 1.0]",200,200,True,Range verified
+POST /predict,future_withdrawal -> 422,422,422,True,Prohibited field rejected
+POST /predict,withdrawal_amount -> 422,422,422,True,Leakage field rejected
+POST /predict,card_number -> 422,422,422,True,Sensitive field rejected
+POST /predict,Invalid dtype (string in float) -> 422,422,422,True,Type validation works
+POST /predict,Latitude > 90 -> 422,422,422,True,Coordinate bounds enforced
+POST /predict/batch,3 records -> count=3,200,200,True,Batch count correct
+POST /predict/batch,0 records -> 422,422,422,True,Empty batch rejected
+POST /predict/batch,101 records -> 422,422,422,True,Batch limit enforced
+POST /predict/batch,Order preserved,200,200,True,Order verified
+POST /explain,200 status code,200,200,True,Explain endpoint operational
+POST /explain,shap_available field present,200,200,True,SHAP availability reported
+POST /explain,Probability consistent with score,200,200,True,Formula verified
+POST /explain,Graceful SHAP fallback,200,200,True,Returns prediction if SHAP fails
+ALL,No Traceback in error responses,200,200,True,Stack traces not exposed
+ALL,No file paths in responses,200,200,True,Filesystem not exposed

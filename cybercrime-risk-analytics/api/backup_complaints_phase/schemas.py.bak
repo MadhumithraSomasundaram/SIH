@@ -1,0 +1,541 @@
+"""
+Phase 12 — Pydantic Request / Response Schemas
+Cybercrime Predictive Analytics Framework (Problem Statement ID 26184)
+
+Input schema is built from the EXACT 64 features in phase7_xgboost_metadata.json.
+- Prohibited leakage / target fields are rejected at schema level or via validator.
+- No raw PII / banking credentials are accepted.
+- Field descriptions are included for professional Swagger documentation.
+"""
+
+from __future__ import annotations
+
+from typing import Any, Dict, List, Optional
+
+from pydantic import BaseModel, Field, field_validator, model_validator
+
+
+# ---------------------------------------------------------------------------
+# PROHIBITED FIELDS — never allowed in prediction input
+# ---------------------------------------------------------------------------
+PROHIBITED_FIELDS = {
+    "future_withdrawal",
+    "is_linked_to_withdrawal",
+    "withdrawal_timestamp",
+    "withdrawal_amount",
+    "withdrawal_status",
+    "target_valid",
+    "target_observation_complete",
+}
+
+# Substrings that indicate target / post-event leakage
+PROHIBITED_TOKENS = [
+    "future_withdrawal",
+    "is_linked_to_withdrawal",
+    "withdrawal_timestamp",
+    "withdrawal_amount",
+    "withdrawal_status",
+    "target_",
+]
+
+# Sensitive credential substrings
+SENSITIVE_TOKENS = ["card_number", "pin", "otp", "cvv", "password"]
+
+
+# ---------------------------------------------------------------------------
+# 1. PREDICTION REQUEST — 64 features from phase7_xgboost_metadata.json
+# ---------------------------------------------------------------------------
+class PredictionRequest(BaseModel):
+    """
+    Input record for a single cybercrime complaint prediction.
+
+    All fields correspond to incident-time predictors captured at the moment of
+    complaint filing. Fields known AFTER a withdrawal event must NEVER be included.
+
+    This API provides predictive risk signals for authorized analytical use.
+    Predictions are not proof of criminal activity.
+    """
+
+    # ---- Core crime attributes ----
+    crime_type: Optional[str] = Field(
+        None, description="Type of cybercrime reported (e.g., 'Online Financial Fraud')."
+    )
+    fraud_amount: Optional[float] = Field(
+        None, ge=0.0, description="Reported fraud amount in INR (≥ 0)."
+    )
+    reported_by_authority: Optional[float] = Field(
+        None, ge=0.0, le=1.0, description="1.0 if reported via official authority channel, else 0.0."
+    )
+
+    # ---- Victim location ----
+    victim_state: Optional[str] = Field(
+        None, description="State where the victim is located."
+    )
+    victim_district: Optional[str] = Field(
+        None, description="District where the victim is located."
+    )
+    victim_area: Optional[str] = Field(
+        None, description="Area/locality of the victim."
+    )
+    victim_area_id: Optional[str] = Field(
+        None, description="Internal area identifier."
+    )
+
+    # ---- Geospatial coordinates ----
+    latitude: Optional[float] = Field(
+        None, ge=-90.0, le=90.0, description="Latitude of complaint location (−90 to 90)."
+    )
+    longitude: Optional[float] = Field(
+        None, ge=-180.0, le=180.0, description="Longitude of complaint location (−180 to 180)."
+    )
+
+    # ---- Temporal features ----
+    event_year: Optional[int] = Field(
+        None, ge=2000, le=2100, description="Year of the complaint event."
+    )
+    event_month: Optional[int] = Field(
+        None, ge=1, le=12, description="Month of the complaint event (1–12)."
+    )
+    event_day: Optional[int] = Field(
+        None, ge=1, le=366, description="Day of year (1–366)."
+    )
+    event_day_of_month: Optional[int] = Field(
+        None, ge=1, le=31, description="Day of month (1–31)."
+    )
+    event_day_of_week: Optional[int] = Field(
+        None, ge=0, le=6, description="Day of week: 0=Monday, 6=Sunday."
+    )
+    event_hour: Optional[int] = Field(
+        None, ge=0, le=23, description="Hour of event (0–23)."
+    )
+    event_minute: Optional[int] = Field(
+        None, ge=0, le=59, description="Minute of event (0–59)."
+    )
+    is_weekend: Optional[float] = Field(
+        None, ge=0.0, le=1.0, description="1.0 if event falls on Saturday or Sunday."
+    )
+    is_month_start: Optional[float] = Field(
+        None, ge=0.0, le=1.0, description="1.0 if event is on the 1st of the month."
+    )
+    is_month_end: Optional[float] = Field(
+        None, ge=0.0, le=1.0, description="1.0 if event is on the last day of the month."
+    )
+    is_quarter_start: Optional[float] = Field(
+        None, ge=0.0, le=1.0, description="1.0 if event falls at the start of a calendar quarter."
+    )
+    is_quarter_end: Optional[float] = Field(
+        None, ge=0.0, le=1.0, description="1.0 if event falls at the end of a calendar quarter."
+    )
+    hour_group: Optional[str] = Field(
+        None, description="Hour grouping (e.g., 'morning', 'afternoon', 'night')."
+    )
+    time_period: Optional[str] = Field(
+        None, description="Named time-of-day period (e.g., 'business_hours', 'late_night')."
+    )
+
+    # ---- Location-derived features ----
+    latitude_rounded: Optional[float] = Field(
+        None, description="Latitude rounded to 2 decimal places for grid aggregation."
+    )
+    longitude_rounded: Optional[float] = Field(
+        None, description="Longitude rounded to 2 decimal places for grid aggregation."
+    )
+    location_grid: Optional[str] = Field(
+        None, description="String grid cell identifier derived from rounded lat/lon."
+    )
+    coordinate_precision: Optional[str] = Field(
+        None, description="Level of coordinate precision available (e.g., 'high', 'low', 'missing')."
+    )
+    geographic_region: Optional[str] = Field(
+        None, description="Macro geographic region assignment."
+    )
+
+    # ---- Crime category flags ----
+    crime_category_group: Optional[str] = Field(
+        None, description="Aggregated crime category grouping."
+    )
+    is_financial_fraud: Optional[float] = Field(
+        None, ge=0.0, le=1.0, description="1.0 if crime is classified as financial fraud."
+    )
+    is_online_fraud: Optional[float] = Field(
+        None, ge=0.0, le=1.0, description="1.0 if crime is online-origin fraud."
+    )
+    is_identity_related: Optional[float] = Field(
+        None, ge=0.0, le=1.0, description="1.0 if crime involves identity theft or impersonation."
+    )
+    is_transaction_related: Optional[float] = Field(
+        None, ge=0.0, le=1.0, description="1.0 if crime is linked to a financial transaction."
+    )
+
+    # ---- Amount features ----
+    amount_log1p: Optional[float] = Field(
+        None, description="log1p-transformed fraud amount (log(1 + fraud_amount))."
+    )
+    amount_is_zero: Optional[float] = Field(
+        None, ge=0.0, le=1.0, description="1.0 if reported fraud amount is zero."
+    )
+    amount_is_high: Optional[float] = Field(
+        None, ge=0.0, le=1.0, description="1.0 if fraud amount exceeds high-value threshold."
+    )
+    amount_category: Optional[str] = Field(
+        None, description="Categorical bin of fraud amount (e.g., 'low', 'medium', 'high', 'very_high')."
+    )
+
+    # ---- Historical activity features ----
+    previous_event_count: Optional[float] = Field(
+        None, ge=0.0, description="Count of previous incidents from the same complaint source."
+    )
+    time_since_previous_event_hours: Optional[float] = Field(
+        None, ge=0.0, description="Hours since the most recent prior incident."
+    )
+    events_in_previous_1_day: Optional[float] = Field(
+        None, ge=0.0, description="Number of incidents in the previous 1 day from same area."
+    )
+    events_in_previous_3_days: Optional[float] = Field(
+        None, ge=0.0, description="Number of incidents in the previous 3 days from same area."
+    )
+    events_in_previous_7_days: Optional[float] = Field(
+        None, ge=0.0, description="Number of incidents in the previous 7 days from same area."
+    )
+    events_in_previous_30_days: Optional[float] = Field(
+        None, ge=0.0, description="Number of incidents in the previous 30 days from same area."
+    )
+    previous_activity_by_location: Optional[float] = Field(
+        None, ge=0.0, description="Historical event count at this exact location grid."
+    )
+    previous_activity_by_district: Optional[float] = Field(
+        None, ge=0.0, description="Historical event count in this district."
+    )
+    previous_activity_by_crime_category: Optional[float] = Field(
+        None, ge=0.0, description="Historical event count for this crime category."
+    )
+
+    # ---- Rolling window counts ----
+    rolling_event_count_1h: Optional[float] = Field(
+        None, ge=0.0, description="Rolling event count in the past 1 hour."
+    )
+    rolling_event_count_6h: Optional[float] = Field(
+        None, ge=0.0, description="Rolling event count in the past 6 hours."
+    )
+    rolling_event_count_24h: Optional[float] = Field(
+        None, ge=0.0, description="Rolling event count in the past 24 hours."
+    )
+    rolling_event_count_7d: Optional[float] = Field(
+        None, ge=0.0, description="Rolling event count in the past 7 days."
+    )
+    rolling_location_event_count_24h: Optional[float] = Field(
+        None, ge=0.0, description="Rolling event count at this location grid in the past 24 hours."
+    )
+    rolling_crime_event_count_7d: Optional[float] = Field(
+        None, ge=0.0, description="Rolling count of the same crime type in the past 7 days."
+    )
+
+    # ---- Location-level aggregates ----
+    location_total_previous_events: Optional[float] = Field(
+        None, ge=0.0, description="Total historical events at this location grid."
+    )
+    location_previous_24h_events: Optional[float] = Field(
+        None, ge=0.0, description="Events at this location in the previous 24 hours."
+    )
+    location_previous_7d_events: Optional[float] = Field(
+        None, ge=0.0, description="Events at this location in the previous 7 days."
+    )
+    district_previous_24h_events: Optional[float] = Field(
+        None, ge=0.0, description="Events in this district in the previous 24 hours."
+    )
+    district_previous_7d_events: Optional[float] = Field(
+        None, ge=0.0, description="Events in this district in the previous 7 days."
+    )
+    location_unique_crime_categories: Optional[float] = Field(
+        None, ge=0.0, description="Count of unique crime categories seen at this location."
+    )
+
+    # ---- Data quality / missingness flags ----
+    has_location: Optional[float] = Field(
+        None, ge=0.0, le=1.0, description="1.0 if latitude/longitude are available."
+    )
+    has_timestamp: Optional[float] = Field(
+        None, ge=0.0, le=1.0, description="1.0 if a valid complaint timestamp is present."
+    )
+    has_amount: Optional[float] = Field(
+        None, ge=0.0, le=1.0, description="1.0 if fraud amount is reported and non-null."
+    )
+    has_crime_category: Optional[float] = Field(
+        None, ge=0.0, le=1.0, description="1.0 if a valid crime category is present."
+    )
+    has_district: Optional[float] = Field(
+        None, ge=0.0, le=1.0, description="1.0 if district information is available."
+    )
+    missing_coordinate_flag: Optional[float] = Field(
+        None, ge=0.0, le=1.0, description="1.0 if geographic coordinates are missing for this record."
+    )
+
+    # ---- Safe context fields (not model features — stored in response only) ----
+    complaint_timestamp: Optional[str] = Field(
+        None, description="Complaint timestamp (ISO 8601). Used for context; not a model feature."
+    )
+
+    @model_validator(mode="before")
+    @classmethod
+    def reject_prohibited_and_sensitive_fields(cls, values: Any) -> Any:
+        """
+        Block any submission that contains target-leakage fields or raw credential fields.
+        This prevents accidental or adversarial injection of future-outcome data.
+        """
+        if not isinstance(values, dict):
+            return values
+
+        for key in list(values.keys()):
+            key_lower = key.lower()
+            # Check exact prohibited set
+            if key_lower in PROHIBITED_FIELDS:
+                raise ValueError(
+                    f"Field '{key}' is a target or future outcome variable and is strictly "
+                    "prohibited in prediction requests. Remove it and resubmit."
+                )
+            # Check prohibited substrings
+            for token in PROHIBITED_TOKENS:
+                if token in key_lower:
+                    raise ValueError(
+                        f"Field '{key}' appears to contain future-outcome information "
+                        f"(matched pattern '{token}'). Remove it and resubmit."
+                    )
+            # Check sensitive credential substrings
+            for sens in SENSITIVE_TOKENS:
+                if sens in key_lower:
+                    raise ValueError(
+                        f"Field '{key}' contains a sensitive credential identifier "
+                        f"(matched '{sens}'). Raw credential fields are not accepted."
+                    )
+        return values
+
+    model_config = {"extra": "ignore"}  # silently drop any extra fields beyond schema
+
+
+# ---------------------------------------------------------------------------
+# 2. BATCH PREDICTION REQUEST
+# ---------------------------------------------------------------------------
+class BatchPredictionRequest(BaseModel):
+    """
+    Batch of prediction records. Maximum 100 records per request.
+
+    This API provides predictive risk signals for authorized analytical use.
+    Predictions are not proof of criminal activity.
+    """
+
+    records: List[PredictionRequest] = Field(
+        ...,
+        min_length=1,
+        max_length=100,
+        description="List of prediction records (1–100). Order is preserved in the response.",
+    )
+
+    @field_validator("records")
+    @classmethod
+    def validate_batch_size(cls, v: List[PredictionRequest]) -> List[PredictionRequest]:
+        if len(v) > 100:
+            raise ValueError("Batch size exceeds maximum limit of 100 records per request.")
+        return v
+
+
+# ---------------------------------------------------------------------------
+# 3. PREDICTION RESPONSE
+# ---------------------------------------------------------------------------
+class PredictionResponse(BaseModel):
+    """
+    Single-record prediction response.
+
+    risk_score is derived as round(predicted_probability × 100).
+    risk_category follows Phase 9 thresholds:
+      LOW (0–39) | MODERATE (40–59) | HIGH (60–79) | CRITICAL (80–100)
+
+    This is a model-derived risk signal for authorized analyst review.
+    It is NOT proof of criminal activity.
+    """
+
+    prediction_reference: str = Field(
+        ..., description="Unique, non-sensitive prediction reference (e.g., PRED-20260915-000001)."
+    )
+    predicted_probability: float = Field(
+        ..., ge=0.0, le=1.0, description="Model-estimated probability of a qualifying future withdrawal (0.0–1.0)."
+    )
+    risk_score: int = Field(
+        ..., ge=0, le=100, description="Integer risk score: round(predicted_probability × 100)."
+    )
+    risk_category: str = Field(
+        ..., description="Operational category: LOW | MODERATE | HIGH | CRITICAL."
+    )
+    operational_interpretation: str = Field(
+        ..., description="Standardized guidance for authorized analyst review."
+    )
+    model_version: Optional[str] = Field(
+        None, description="Model version identifier."
+    )
+    disclaimer: str = Field(
+        default=(
+            "This prediction is a model-derived risk signal intended for authorized analytical "
+            "use only. It is not proof of criminal activity and requires human review before "
+            "any operational action."
+        ),
+        description="Mandatory risk disclaimer."
+    )
+
+
+# ---------------------------------------------------------------------------
+# 4. BATCH PREDICTION RESPONSE
+# ---------------------------------------------------------------------------
+class BatchPredictionResponse(BaseModel):
+    """Response container for batch predictions."""
+
+    count: int = Field(..., description="Number of records returned.")
+    predictions: List[PredictionResponse] = Field(..., description="Ordered list of predictions.")
+    model_version: Optional[str] = Field(None, description="Model version used for all predictions.")
+
+
+# ---------------------------------------------------------------------------
+# 5. EXPLANATION RESPONSE
+# ---------------------------------------------------------------------------
+class ShapContribution(BaseModel):
+    """Single SHAP feature contribution entry."""
+
+    rank: int = Field(..., description="Importance rank (1 = most influential).")
+    feature: str = Field(..., description="Feature name.")
+    shap_value: float = Field(..., description="Raw SHAP value for this feature.")
+    direction: str = Field(
+        ..., description="'INCREASED_RISK' or 'DECREASED_RISK' relative to base rate."
+    )
+
+
+class ExplainResponse(BaseModel):
+    """
+    Prediction with SHAP-based feature attribution.
+
+    SHAP values represent the contribution of each feature to the model's
+    log-odds output for this specific record. They indicate association with
+    the prediction — NOT causal proof of criminal activity.
+    """
+
+    prediction_reference: str = Field(..., description="Unique prediction reference.")
+    predicted_probability: float = Field(..., ge=0.0, le=1.0)
+    risk_score: int = Field(..., ge=0, le=100)
+    risk_category: str
+    operational_interpretation: str
+    shap_available: bool = Field(..., description="True if SHAP explanation was computed successfully.")
+    shap_status: str = Field(..., description="'SUCCESS' or reason SHAP is unavailable.")
+    top_positive_contributors: List[ShapContribution] = Field(
+        default_factory=list,
+        description="Features that increased the predicted withdrawal risk for this record.",
+    )
+    top_negative_contributors: List[ShapContribution] = Field(
+        default_factory=list,
+        description="Features that decreased the predicted withdrawal risk for this record.",
+    )
+    disclaimer: str = Field(
+        default=(
+            "SHAP values represent feature associations with the model prediction — "
+            "not causal proof of criminal activity. Authorized human review is required "
+            "before any operational action."
+        )
+    )
+
+
+# ---------------------------------------------------------------------------
+# 6. HEALTH RESPONSE
+# ---------------------------------------------------------------------------
+class HealthResponse(BaseModel):
+    """API health status."""
+
+    status: str = Field(..., description="'healthy' or 'unhealthy'.")
+    model_loaded: bool = Field(..., description="True if the XGBoost pipeline was loaded successfully.")
+    prediction_pipeline_loaded: bool = Field(..., description="True if the preprocessor is available.")
+    model_version: Optional[str] = Field(None, description="Model version identifier.")
+
+
+# ---------------------------------------------------------------------------
+# 7. MODEL INFO RESPONSE
+# ---------------------------------------------------------------------------
+class ModelInfoResponse(BaseModel):
+    """
+    Safe model metadata.
+
+    Never exposes training data, raw feature values, file paths, credentials,
+    account numbers, card numbers, or any PII.
+    """
+
+    model_type: str = Field(..., description="ML model type.")
+    model_version: str = Field(..., description="Model version identifier.")
+    prediction_target: str = Field(..., description="Target variable the model predicts.")
+    prediction_horizon: str = Field(..., description="Temporal prediction window.")
+    feature_count: int = Field(..., description="Number of predictor features used.")
+    risk_score_range: str = Field(..., description="Risk score range (0–100).")
+    risk_categories: List[str] = Field(..., description="Ordered list of risk categories.")
+    training_date: Optional[str] = Field(None, description="Date the model was trained.")
+    limitations: List[str] = Field(..., description="Important model limitations.")
+    disclaimer: str = Field(
+        default=(
+            "This API provides predictive risk signals for authorized analytical use. "
+            "Predictions are not proof of criminal activity."
+        )
+    )
+
+
+# ---------------------------------------------------------------------------
+# 8. ROOT RESPONSE
+# ---------------------------------------------------------------------------
+class RootResponse(BaseModel):
+    """Service banner response."""
+
+    service: str
+    status: str
+    version: str
+    docs: str
+    disclaimer: str
+
+
+# ---------------------------------------------------------------------------
+# 9. AREA-HOURLY SPATIO-TEMPORAL RISK SCHEMAS (Audited Pipeline)
+# ---------------------------------------------------------------------------
+class AreaHourlyRiskRequest(BaseModel):
+    """
+    Request schema for area-hourly multi-class spatio-temporal risk forecasting.
+    Accepts 42 leakage-free behavioral features.
+    """
+
+    area_id: Optional[Union[int, str]] = Field(None, description="Unique area identifier.")
+    area_name: Optional[str] = Field(None, description="Human-readable area/neighborhood name.")
+    hour_timestamp: Optional[str] = Field(None, description="ISO timestamp of observation hour.")
+    features: Dict[str, Union[float, int]] = Field(
+        ...,
+        description="Key-value mapping of area-hourly behavioral features (e.g. withdrawal_count, velocity_ratio).",
+    )
+
+
+class AreaHourlyRiskResponse(BaseModel):
+    """Response schema for area-hourly multi-class risk prediction."""
+
+    area_id: Optional[Union[int, str]] = None
+    area_name: Optional[str] = None
+    hour_timestamp: Optional[str] = None
+    predicted_category: str = Field(..., description="Risk tier: LOW, MEDIUM, HIGH, or CRITICAL.")
+    predicted_class_index: int = Field(..., description="Integer class index (0=LOW, 1=MED, 2=HIGH, 3=CRIT).")
+    risk_score: float = Field(..., description="Calibrated risk score on 0–100 scale.")
+    class_probabilities: Dict[str, float] = Field(
+        ...,
+        description="Calibrated posterior probabilities for each category.",
+    )
+    top_risk_drivers: List[str] = Field(
+        default_factory=list,
+        description="Dominant input features contributing to elevated risk score.",
+    )
+    inference_latency_ms: float = Field(..., description="Model scoring latency in milliseconds.")
+    model_version: str = Field(
+        default="v1.0.0-area-hourly-xgb-corrected",
+        description="Audited area-hourly model artifact version.",
+    )
+    disclaimer: str = Field(
+        default=(
+            "Area-hourly spatio-temporal risk signals are predictive forecasts based on ATM cluster telemetry. "
+            "Authorized supervisory review is required before tactical deployment."
+        )
+    )
+

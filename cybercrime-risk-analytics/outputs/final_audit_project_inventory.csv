@@ -1,0 +1,48 @@
+path,type,exists,used_by,phase,status,issue,severity,recommendation
+data/raw/ATMs_Locations.csv,dataset,true,Phase 1 inspection & spatial indexing,Phase 1,WORKING,None,NONE,Keep as raw ATM location source
+data/raw/Accounts.csv,dataset,true,Phase 1 inspection,Phase 1,WORKING,None,NONE,Keep as raw synthetic account source
+data/raw/Areas_Master.csv,dataset,true,Phase 1 & spatial mapping,Phase 1,WORKING,None,NONE,Keep as administrative area master
+data/raw/Fraud_Cases.csv,dataset,true,Phase 1 & feature engineering,Phase 1,WORKING,None,NONE,Keep as raw cybercrime complaints
+data/raw/Transactions.csv,dataset,true,Phase 1 & velocity aggregation,Phase 1,WORKING,None,NONE,Keep as raw banking transaction feed
+data/raw/Withdrawals.csv,dataset,true,Phase 1 & target generation,Phase 1,WORKING,None,NONE,Keep as historical withdrawal record
+data/processed/train.csv,dataset,true,Phase 6-7 model training,Phase 5,WORKING,None,NONE,Preserve frozen training partition
+data/processed/validation.csv,dataset,true,Phase 6-7 tuning & calibration,Phase 5,WORKING,None,NONE,Preserve frozen validation partition
+data/processed/test.csv,dataset,true,Phase 8 final evaluation,Phase 5,WORKING,None,NONE,Preserve frozen test partition
+data/demo/demo_prediction_input.csv,dataset,true,Live demo & smoke test,Phase 18,WORKING,None,NONE,Use for hackathon live demonstration
+models/xgboost_cybercrime_model.pkl,model,true,Phase 11 inference pipeline & API,Phase 7,WORKING,None,NONE,Keep frozen production model artifact
+models/phase7_xgboost_metadata.json,metadata,true,Phase 11 pipeline feature validation,Phase 7,WORKING,None,NONE,Ensure feature schemas remain synced
+src/data_cleaning.py,code,true,Phase 2 pipeline,Phase 2,WORKING,None,NONE,Cleaned data generator
+src/feature_engineering.py,code,true,Phase 3 pipeline,Phase 3,WORKING,None,NONE,64-feature vectorization pipeline
+src/create_target.py,code,true,Phase 4 target generation,Phase 4,WORKING,None,NONE,Defines 24h future withdrawal target
+src/temporal_split.py,code,true,Phase 5 chronological split,Phase 5,WORKING,None,NONE,Enforces 70/15/15 temporal boundaries
+src/train_baselines.py,code,true,Phase 6 baseline evaluation,Phase 6,WORKING,None,NONE,Dummy/Logistic/RF baseline scripts
+src/train_xgboost.py,code,true,Phase 7 model training,Phase 7,WORKING,None,NONE,Original model training pipeline
+src/evaluate_final_model.py,code,true,Phase 8 test evaluation,Phase 8,WORKING,None,NONE,Computes locked test metrics
+src/generate_risk_score.py,code,true,Phase 9 risk calibration,Phase 9,WORKING,None,NONE,Implements Platt scaling logic
+src/explain_with_shap.py,code,true,Phase 10 local explainability,Phase 10,WORKING,None,NONE,Computes TreeExplainer attributions
+src/predict.py,code,true,Phase 11 production inference,Phase 11,WORKING,None,NONE,Unified prediction pipeline
+src/hotspot_detection.py,code,true,Phase 14 spatial clustering,Phase 14,WORKING,None,NONE,Computes DBSCAN 500m clusters
+src/alert_engine.py,code,true,Phase 16 alert evaluation,Phase 16,WORKING,None,NONE,Tiered dispatch & deduplication
+src/system_smoke_test.py,code,true,Phase 18-20 test runner,Phase 18,WORKING,None,NONE,10-step sub-2s test runner
+api/main.py,code,true,Phase 12 API server,Phase 12,WORKING,None,NONE,FastAPI main application entry
+api/alert_routes.py,code,true,Phase 16 alert API,Phase 16,WORKING,None,NONE,Alert queries and filtering
+api/analyst_routes.py,code,true,Phase 17 analyst API,Phase 17,WORKING,None,NONE,Case management & investigation
+api/gis_routes.py,code,true,Phase 15 GIS endpoints,Phase 15,WORKING,None,NONE,GeoJSON and hotspot endpoints
+api/schemas.py,code,true,Phase 12 API validation,Phase 12,WORKING,None,NONE,Pydantic v2 schemas
+database/connection.py,code,true,Phase 13 DB connection,Phase 13,PARTIALLY_WORKING,Requires external PostgreSQL service; handles fallback gracefully,LOW,Dual-Mode fallback active
+database/models.py,code,true,Phase 13 ORM models,Phase 13,WORKING,None,NONE,SQLAlchemy database models
+database/investigation_models.py,code,true,Phase 17 investigation ORM,Phase 17,WORKING,None,NONE,Investigation & audit log models
+database/spatial_queries.py,code,true,Phase 13 PostGIS queries,Phase 13,WORKING,None,NONE,Pre-compiled spatial SQL queries
+dashboard/index.html,frontend,true,Phase 15 GIS dashboard,Phase 15,WORKING,None,NONE,Leaflet map & tactical UI
+dashboard/js/dashboard.js,frontend,true,Phase 15 dashboard logic,Phase 15,WORKING,None,NONE,Tactical map event handlers
+analyst/index.html,frontend,true,Phase 17 analyst workspace,Phase 17,WORKING,None,NONE,Role-based analyst portal
+analyst/investigation.html,frontend,true,Phase 17 case management,Phase 17,WORKING,None,NONE,Investigation case dossier view
+analyst/audit.html,frontend,true,Phase 17 audit viewer,Phase 17,WORKING,None,NONE,Immutable audit log interface
+notifications/dispatcher.py,code,true,Phase 16 notifications,Phase 16,WORKING,None,NONE,Alert multi-channel dispatcher
+config/alert_config.json,config,true,Phase 16 alert engine,Phase 16,WORKING,None,NONE,Alert threshold configuration
+scripts/run_demo.bat,script,true,Phase 20 1-click launcher,Phase 20,WORKING,None,NONE,Windows demo launcher
+scripts/run_tests.bat,script,true,Phase 20 test runner,Phase 20,WORKING,None,NONE,Windows automated test runner
+requirements.txt,config,true,Environment setup,Phase 1,WORKING,None,NONE,Pinned Python dependencies
+README.md,documentation,true,Project documentation,All,WORKING,None,NONE,Master repository README
+.env.example,config,true,Environment template,Phase 12,WORKING,None,NONE,Default environment variable template
+.gitignore,config,true,Source control,All,WORKING,None,NONE,Git exclusion rules

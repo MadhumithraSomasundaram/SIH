@@ -1,0 +1,86 @@
+{
+  "backup_count": 9,
+  "files": [
+    {
+      "source_path": "data\\raw\\Fraud_Cases.csv",
+      "backup_path": "data\\backup_csv\\raw_fraud_cases.csv",
+      "file_size_bytes": 1175189,
+      "row_count": 10000,
+      "col_count": 11,
+      "sha256": "b4ce413c67170566969138d018e68b5538b3e69f20519c5f3bcb523ef6fcb0c1",
+      "status": "VERIFIED_MATCH"
+    },
+    {
+      "source_path": "data\\raw\\Transactions.csv",
+      "backup_path": "data\\backup_csv\\raw_transactions.csv",
+      "file_size_bytes": 26044695,
+      "row_count": 300000,
+      "col_count": 8,
+      "sha256": "b8505a0d44b2c478899725b397f08d5a5d70a6348c3d0c42c1141266d7b7b419",
+      "status": "VERIFIED_MATCH"
+    },
+    {
+      "source_path": "data\\raw\\Accounts.csv",
+      "backup_path": "data\\backup_csv\\raw_accounts.csv",
+      "file_size_bytes": 2562392,
+      "row_count": 30000,
+      "col_count": 11,
+      "sha256": "f3fb269b23ba03fbc1742039691e07e87b2c7fe8fb920debe9c23152edd50f16",
+      "status": "VERIFIED_MATCH"
+    },
+    {
+      "source_path": "data\\raw\\Withdrawals.csv",
+      "backup_path": "data\\backup_csv\\raw_withdrawals.csv",
+      "file_size_bytes": 13600716,
+      "row_count": 80000,
+      "col_count": 19,
+      "sha256": "965ff7fd65d78e9acee5d4798620442ca1251d136b9fc6dd4174dee53d2c5571",
+      "status": "VERIFIED_MATCH"
+    },
+    {
+      "source_path": "data\\raw\\ATMs_Locations.csv",
+      "backup_path": "data\\backup_csv\\raw_atms_locations.csv",
+      "file_size_bytes": 290127,
+      "row_count": 3000,
+      "col_count": 10,
+      "sha256": "e5b97cc417282f6ce322e4a9e3e0e6b892000e27a19feb0d612c8ae285205805",
+      "status": "VERIFIED_MATCH"
+    },
+    {
+      "source_path": "data\\processed\\targeted_cybercrime_data.csv",
+      "backup_path": "data\\backup_csv\\proc_targeted_cybercrime_data.csv",
+      "file_size_bytes": 3647201,
+      "row_count": 10000,
+      "col_count": 71,
+      "sha256": "1d16b3a33b1fcf2cf501df34ce2e16991f331619f566e6ca49bb0978db876fc4",
+      "status": "VERIFIED_MATCH"
+    },
+    {
+      "source_path": "data\\processed\\train.csv",
+      "backup_path": "data\\backup_csv\\proc_train.csv",
+      "file_size_bytes": 2239469,
+      "row_count": 7000,
+      "col_count": 66,
+      "sha256": "51c2ce7b73e3f80ea02af12f89f1c629c7cc22734220e375dee10f4a864a4eb1",
+      "status": "VERIFIED_MATCH"
+    },
+    {
+      "source_path": "data\\processed\\validation.csv",
+      "backup_path": "data\\backup_csv\\proc_validation.csv",
+      "file_size_bytes": 485043,
+      "row_count": 1500,
+      "col_count": 66,
+      "sha256": "63384f76ace4ae9fb9422c52ff6e9269856546d76e3f2e57c82236dd8d1d4f6a",
+      "status": "VERIFIED_MATCH"
+    },
+    {
+      "source_path": "data\\processed\\test.csv",
+      "backup_path": "data\\backup_csv\\proc_test.csv",
+      "file_size_bytes": 485103,
+      "row_count": 1500,
+      "col_count": 66,
+      "sha256": "ec3d373ec45df3123f57608f9374c08e89200bd3d99e5e999e9274d1dbb22b12",
+      "status": "VERIFIED_MATCH"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+test_id,category,feature_tested,expected_result,actual_result,status,notes
+VAL-01,Layout,Header Branding,Brand 'Cybercrime Risk Analytics' with PS ID 26184 subtitle,Verified in DOM and visual render,PASSED,Spacious clean top navigation with active tab states
+VAL-02,Navigation,Header Tabs,7 navigation tabs including Investigations and Audit Log,All 7 tabs functional and routing properly,PASSED,Smooth scrolling and modal hooks active
+VAL-03,User Identity,Analyst Profile Dropdown,Display authenticated analyst indicator with interactive dropdown menu,Rendered 'Authorized Analyst ▾' badge with session role & logout options,PASSED,Complies with human-in-the-loop decision support
+VAL-04,Telemetry,System Status Indicator,Live verified pulse dot with checked services,Shows 'SYSTEM ACTIVE' / 'ONLINE' based on live health,PASSED,Subsystem health modal verifies all microservices
+VAL-05,KPIs,Analytical Records,Display exact count from /gis/summary with icon and label,Displays '10,000' with icon and description,PASSED,Verified against Phase 9 evaluation dataset
+VAL-06,KPIs,High-Risk Records,Display count of records with risk score 60-79,Displays '5' with high-risk badge color #FB923C,PASSED,Exact model prediction tally
+VAL-07,KPIs,Critical-Risk Records,Display count of records with risk score 80-100,Displays '0' with critical badge color #EF4444,PASSED,Strict monotonic calibration verified
+VAL-08,KPIs,Analytical Hotspots,Display total DBSCAN clusters identified,Displays '40' clusters (eps=500m),PASSED,Verified from Phase 14 DBSCAN output
+VAL-09,KPIs,Average Model Risk,Display average predicted risk (0-100),Displays '33.6 / 100',PASSED,Matches backend /gis/summary average
+VAL-10,KPIs,Highest-Risk Area,Display peak average risk jurisdiction,Displays 'Tiruchirappalli',PASSED,Matches district risk aggregation
+VAL-11,Filters,Time Presets,Support 7d/30d/90d/All presets with active states,All presets clickable and apply dynamic filtering,PASSED,Instant state change without page reload
+VAL-12,Filters,Toolbar Controls,Start/End date + Category + Risk + Hotspot filters,Two-row balanced toolbar with rounded focus rings,PASSED,Preserves layout without horizontal compression
+VAL-13,GIS Map,Leaflet Container,Large map dominant layout (70-80% viewport focus),High-contrast CARTO dark basemap rendered,PASSED,Map-first hierarchy fully achieved
+VAL-14,GIS Map,Fullscreen Support,Allow user to toggle map to 100vw/100vh,HTML5 Fullscreen API toggle with button and exit state,PASSED,Responsive map resize on transition
+VAL-15,Heatmap,Color Grading,7-step smooth gradient: dark blue->blue->cyan->green->yellow->orange->red,PROFESSIONAL_HEAT_GRADIENT applied in Leaflet.heat,PASSED,No artificial color clouds or uniform orange wash
+VAL-16,Heatmap,Spatial Tuning,Zoom-aware radius and blur scaling,Radius 16-34px and blur 11-20px based on zoom level,PASSED,Localized spatial concentrations accurately shown
+VAL-17,Map Layers,Layer Separation,Independent toggles for Heatmap/Hotspots/Markers/Alerts,Separate layer groups with discrete event listeners,PASSED,XGBoost predictive risk and DBSCAN clusters separated
+VAL-18,Map Legend,Collapsible Legend,Compact corner legend with intensity bar and risk scale,Toggleable legend with collapse/expand button,PASSED,Does not permanently cover critical map features
+VAL-19,Hotspots,Detail Drawer,Slide-over drawer on cluster click with stats and actions,Renders HS details, coordinates, risk breakdown, and actions,PASSED,Includes 'View Analysis' and 'Create Investigation'
+VAL-20,Charts,Analytical Grid,2x2 grid with Risk Donut, Crime Bar, Hourly Activity, Top Districts,All 4 Chart.js charts rendered with dark theme palette,PASSED,Readable labels and interactive tooltips
+VAL-21,Alerts,Alert Summary Chips,Display Total/Critical/High/Moderate/New/In Review counts,Rendered 51 Total (2 Crit, 49 High, 51 New),PASSED,Operational alert distinction maintained
+VAL-22,Alerts,Recent Alerts Table,Table with Alert ID, Type, Severity, Risk, Hotspot ID, Created, Status, Actions,Clean tabular format with Hotspot ID column and View Alert action,PASSED,Click opens alert detail inspection drawer
+VAL-23,Model Intel,Architecture Specs,Display 24h horizon, 64 features, scale_pos_weight, Platt scaling,Verified in Model Intelligence modal,PASSED,Frozen pipeline parameters transparently shown
+VAL-24,Model Intel,SHAP Explainability,Display Phase 10 global SHAP table and live explanation probe,Table of top features + working TreeExplainer probe,PASSED,Operational interpretations included
+VAL-25,Disclaimer,Compliance & Ethics,Required legal disclaimers and prototype badges,Visible disclaimer banner with prototype notices,PASSED,Zero PII exposed across entire interface
+VAL-26,Responsive,Multi-Device Layout,Functional across desktop, laptop (1366x768), tablet, mobile,Flexbox/grid breakpoints stack KPIs and charts gracefully,PASSED,Mobile hamburger menu prevents nav overlap

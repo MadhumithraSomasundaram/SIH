@@ -1,0 +1,13 @@
+test_case,target_condition,input_data,expected_outcome,actual_outcome,status
+Critical Threshold Trigger,risk_score >= 80,{'risk_score': 91},"Severity CRITICAL, type CRITICAL_RISK_LOCATION","Severity CRITICAL, type CRITICAL_RISK_LOCATION",PASS
+High Threshold Trigger,60 <= risk_score < 80,{'risk_score': 65},"Severity HIGH, type HIGH_RISK_LOCATION","Severity HIGH, type HIGH_RISK_LOCATION",PASS
+Moderate Threshold Filter,40 <= risk_score < 60,{'risk_score': 50},"Severity MODERATE, filtered out of operational alert feed","Severity MODERATE, filtered out of operational alert feed",PASS
+Low Risk Filter,risk_score < 40,{'risk_score': 15},No operational alert created,No operational alert created,PASS
+Hotspot Elevated Risk,hotspot avg_score >= 60 or high_risk_count > 0,"{'cluster_id': 24, 'high_risk_count': 1, 'event_count': 40}","Severity HIGH, type HOTSPOT_ELEVATED_RISK","Severity HIGH, type HOTSPOT_ELEVATED_RISK",PASS
+Hotspot Critical Risk,hotspot avg_score >= 80 or critical_risk_count > 0,"{'cluster_id': 99, 'average_risk_score': 88, 'event_count': 48}","Severity CRITICAL, type HOTSPOT_CRITICAL_RISK","Severity CRITICAL, type HOTSPOT_CRITICAL_RISK",PASS
+Withdrawal Hotspot Trigger,withdrawal_event_count >= 15,"{'cluster_id': 0, 'withdrawal_event_count': 30}","Severity HIGH, type WITHDRAWAL_HOTSPOT","Severity HIGH, type WITHDRAWAL_HOTSPOT",PASS
+Deduplication Check,Duplicate key within same time bucket,Two identical alerts in batch,Second alert skipped (duplicates_skipped +1),Second alert skipped (duplicates_skipped +1),PASS
+Cooldown Window Check,Repeated alert inside 60-min window,Alert repeated within 60 minutes,Skipped under cooldown (cooldown_skipped +1),Skipped under cooldown (cooldown_skipped +1),PASS
+Invalid Status Transition,Transition NEW -> RESOLVED directly,PATCH status=RESOLVED on NEW alert,ValueError / HTTP 400 Bad Request,ValueError / HTTP 400 Bad Request,PASS
+Critical Auto-Resolve Protection,SYSTEM attempts to resolve CRITICAL alert,actor_type='SYSTEM' resolving CRITICAL alert,Forbidden: authorized human review required,Forbidden: authorized human review required,PASS
+Missing Risk Score Validation,Input missing risk_score,{'case_id': 'TEST'},validate_alert_inputs returns False,validate_alert_inputs returns False,PASS

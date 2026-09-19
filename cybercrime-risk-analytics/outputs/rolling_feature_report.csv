@@ -1,0 +1,7 @@
+feature,window,scope,current_row_excluded,mean,max
+rolling_event_count_1h,1 hour,Global,True,1.7046,9
+rolling_event_count_6h,6 hours,Global,True,10.2828,25
+rolling_event_count_24h,24 hours,Global,True,41.0607,66
+rolling_event_count_7d,7 days,Global,True,283.42,322
+rolling_location_event_count_24h,24 hours,Area-level,True,0.2112,3
+rolling_crime_event_count_7d,7 days,Crime-type,True,47.2135,80

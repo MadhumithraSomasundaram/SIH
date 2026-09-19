@@ -1,0 +1,16 @@
+endpoint,method,role_required,typical_latency_ms_estimate,data_source,fallback_strategy,pagination_supported,max_results,notes
+/analyst/auth/login,POST,NONE (public),10-50,analyst_users table OR demo credentials dict,In-memory demo credentials if DB unavailable,NO,1,bcrypt verification is the dominant latency factor (~100ms typical)
+/analyst/auth/me,GET,ANALYST|SUPERVISOR|ADMIN,<5,JWT token payload,JWT payload only — no DB lookup,NO,1,Pure JWT decode — no DB query
+/analyst/overview,GET,ANALYST|SUPERVISOR|ADMIN,50-500,cybercrime_alerts + phase14_hotspot_summary.csv + investigations,CSV file fallback for alerts and hotspots,NO,Aggregate only,Loads up to 2000 alerts for aggregate stats. Recommend caching in production.
+/analyst/alerts,GET,ANALYST|SUPERVISOR|ADMIN,20-200,cybercrime_alerts table OR phase16_demo_alerts.csv,CSV file with 52 demo alerts,YES,200 per request,CSV fallback loads full file then slices. DB path uses indexed query.
+/analyst/alerts/{id},GET,ANALYST|SUPERVISOR|ADMIN,10-100,cybercrime_alerts table OR phase16_demo_alerts.csv,CSV linear scan fallback,NO,1,DB path uses alert_id index for O(log n) lookup.
+/analyst/investigations,GET,ANALYST|SUPERVISOR|ADMIN,10-100,investigations table OR in-memory list,In-memory Python list fallback,YES,200 per request,In-memory fallback is O(n) scan — acceptable for demo scale.
+/analyst/investigations/{id},GET,ANALYST|SUPERVISOR|ADMIN,20-200,investigations + notes + evidence + timeline tables + SHAP CSV,In-memory fallback + SHAP CSV,NO,1 (composite),Loads investigation + all child records + SHAP in one request. Consider caching SHAP in production.
+/analyst/investigations (POST),POST,ANALYST|SUPERVISOR|ADMIN,20-200,investigations table + alert validation,In-memory + CSV fallback,NO,N/A,Validates alert exists before creating. Duplicate active investigation rejected.
+/analyst/investigations/{id} (PATCH),PATCH,ANALYST|SUPERVISOR|ADMIN,10-100,investigations table,In-memory fallback,NO,N/A,Status transition validation is pure Python — no additional DB calls.
+/analyst/investigations/{id}/notes (POST),POST,ANALYST|SUPERVISOR|ADMIN,10-100,investigation_notes table,In-memory fallback,NO,N/A,Creates note + timeline entry in single transaction.
+/analyst/investigations/{id}/timeline,GET,ANALYST|SUPERVISOR|ADMIN,10-100,investigation_timeline table,In-memory fallback,NO,All events for investigation,Timeline returned in chronological order.
+/analyst/investigations/{id}/evidence (POST),POST,ANALYST|SUPERVISOR|ADMIN,10-100,investigation_evidence table,In-memory fallback,NO,N/A,Creates evidence + timeline entry + audit log in sequence.
+/analyst/investigations/{id}/explanation,GET,ANALYST|SUPERVISOR|ADMIN,5-50,phase10_global_shap_importance.csv (read from disk),Returns empty feature list if file missing,NO,Top 10 features,CSV parsed on each request. Consider caching in production.
+/analyst/audit,GET,SUPERVISOR|ADMIN,20-200,analyst_audit_log table,In-memory fallback,YES,500 per request,Role enforcement adds <1ms overhead.
+/analyst/hotspots,GET,ANALYST|SUPERVISOR|ADMIN,10-100,phase14_hotspot_summary.csv,CSV file,NO,All hotspots (~41),File loaded fresh on each request. Consider caching in production.

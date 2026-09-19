@@ -1,0 +1,10 @@
+check_name,component,validation_method,status,notes
+dashboard_html_loads,GIS Dashboard UI,Static file verification,PASS,dashboard/index.html exists and contains valid DOM structure
+leaflet_map_render_hook,Leaflet Map,DOM container #map check,PASS,Map container element configured with Leaflet initialization
+risk_layer_overlay,Risk Layer,GeoJSON / API layer handler,PASS,Choropleth risk intensity layer rendering logic present
+hotspot_layer_overlay,Hotspot Polygons,GeoJSON loader check,PASS,Phase 14 DBSCAN hotspots bound to popup details and markers
+filter_controls,UI Filter Panel,DOM event handlers check,PASS,"Controls for date range, risk category, and crime type present"
+risk_categories_legend,Legend Component,Category color mapping,PASS,"LOW (green), MODERATE (yellow), HIGH (orange), CRITICAL (red)"
+hotspot_drill_down,Modal / Sidebar,Feature click handler,PASS,"Clicking cluster reveals ATM count, mean risk, and historical complaints"
+api_error_handling,Network Layer,Try/catch fallback,PASS,Graceful banner notification on backend network failure
+no_sensitive_info_displayed,Privacy Safeguard,Static pattern scan,PASS,"Zero victim names, phone numbers, or account numbers displayed"

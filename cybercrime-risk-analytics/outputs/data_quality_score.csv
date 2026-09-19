@@ -1,0 +1,8 @@
+dimension,score_pct,methodology
+Completeness,100.0,1 - (Null required cells / Total required cells)
+Validity,100.0,Valid cells conforming to datatype and numerical range constraints
+Consistency,100.0,Foreign key referential integrity (victim_area_id in Areas_Master)
+Uniqueness,100.0,1 - (Exact duplicate rows / Total rows)
+Geographic Validity,100.0,Coordinates strictly within legal Indian geographic bounds
+Temporal Validity,100.0,Valid timestamps with zero unparseable or future dates
+COMPOSITE DATA QUALITY SCORE,100.0,Weighted harmonic combination across all 6 data quality dimensions

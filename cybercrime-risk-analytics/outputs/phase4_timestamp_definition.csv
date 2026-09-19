@@ -1,0 +1,3 @@
+event_type,source_column,format,earliest_timestamp,latest_timestamp,total_records,unparseable_count,role
+Cybercrime Complaint Intake,complaint_timestamp,YYYY-MM-DD HH:MM:SS,2026-01-01 00:59:16,2026-08-31 23:55:41,10000,0,Temporal Anchor T0 (Prediction Horizon Baseline)
+Physical ATM Cash Withdrawal,timestamp,YYYY-MM-DD HH:MM:SS,2026-01-01 00:00:50,2026-09-02 22:18:33,80000,0,Outcome Event Timestamp Tw (Target Evaluation Window)

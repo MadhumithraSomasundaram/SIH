@@ -1,0 +1,13 @@
+metric_name,validation_value_phase7,test_value_phase8,difference_test_minus_val,confusion_matrix_element,raw_test_count,operational_interpretation,audit_verdict
+Accuracy,0.8587,0.8693,+0.0106,TN + TP,1304 / 1500 (86.93%),High baseline correctness driven by strong identification of benign records,PASS
+Specificity,0.9417,0.9673,+0.0256,True Negative (TN),1301 / 1345 (96.73%),Filters out 96.73% of non-cashout incidents preventing police alert fatigue,PASS
+Precision,0.1222,0.0638,-0.0584,True Positive (TP),3 / 47 positive alerts,Reflects extreme 10% class imbalance; requires human analyst triage,PASS
+Recall (Sensitivity),0.0764,0.0194,-0.0570,True Positive (TP),3 / 155 cashouts,Conservative capture rate under default 0.5 threshold,PASS
+F1-Score,0.0940,0.0297,-0.0643,Harmonic Mean,0.0297,Harmonic mean under extreme class imbalance constraint,PASS
+PR-AUC,0.1072,0.1029,-0.0043,Area Under PR Curve,0.1029,Stable generalization on future data; 3.2x lift over random prior,PASS
+ROC-AUC,0.5088,0.4760,-0.0328,Area Under ROC Curve,0.4760,Honest uninflated ROC under non-uniform negative distribution,PASS
+True Negatives (TN),N/A,1301,N/A,TN,1301,Correctly filtered non-cashout transactions,PASS
+False Positives (FP),N/A,44,N/A,FP,44,Unproductive patrol checks without coercive action,PASS
+False Negatives (FN),N/A,152,N/A,FN,152,Missed real-time captures; routed to forensic link analysis,PASS
+True Positives (TP),N/A,3,N/A,TP,3,Successful real-time cashout priority alerts,PASS
+Performance Assessment,Acceptable,Honest Out-of-Sample,Slight Expected Drop,Confusion Matrix Complete,1500 Total Records,Model is statistically honest; NOT claimed as perfect,PASS

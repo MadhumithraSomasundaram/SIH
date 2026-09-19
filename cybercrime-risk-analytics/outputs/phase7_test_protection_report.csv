@@ -1,0 +1,5 @@
+check,status,details
+All selected features present in test schema,PASS,All features present.
+Target column present for shape validation only,PASS,"Test rows: 1500, target present for shape check only."
+Test metrics NOT calculated,PASS,Final test performance was NOT evaluated in Phase 7.
+Test NOT used for model selection,PASS,Model selected exclusively based on validation PR-AUC.

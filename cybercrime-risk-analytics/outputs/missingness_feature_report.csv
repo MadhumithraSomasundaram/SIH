@@ -1,0 +1,7 @@
+feature,purpose,missing_count
+has_location,Confirms presence of valid geographic coordinates,0
+has_timestamp,Confirms temporal anchor availability,0
+has_amount,Confirms presence of reported loss figure,0
+has_crime_category,Confirms crime typology classification,0
+has_district,Confirms administrative jurisdiction,0
+missing_coordinate_flag,Explicit flag for spatial model filtering,0

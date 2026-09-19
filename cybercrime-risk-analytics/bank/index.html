@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secure Banking Interface — Cybercrime Analytics (ID 26184)</title>
+  <meta name="description" content="Authorized Secure Banking Interface for Predictive Cybercrime Analytics Framework. Read-only ATM proximity alerts portal." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/bank/css/bank.css" />
+</head>
+<body>
+
+<!-- ── Login Screen ─────────────────────────────────────────────────────── -->
+<div class="login-screen" id="login-screen">
+  <div class="login-card">
+    <div class="login-logo">
+      <span class="logo-hex" style="color:#00e5ff;">🏦</span>
+      <h1>Secure Banking Interface</h1>
+      <p>Problem Statement ID 26184 · ATM Proximity Analytical Portal</p>
+    </div>
+    <div class="login-prototype-badge">
+      ⚠ PROTOTYPE AUTHENTICATION — SECURE BANKING ROLE
+    </div>
+    <div class="login-error" id="login-error"></div>
+    <form id="login-form">
+      <div class="form-group">
+        <label class="form-label" for="username">Banking Username</label>
+        <input class="form-control" type="text" id="username" name="username"
+               placeholder="demo_bank" autocomplete="username" required />
+        <span style="font-size:0.7rem;color:var(--text-dim);margin-top:4px;display:block;">
+          Enter authorized bank demo username (e.g. demo_bank)
+        </span>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="password">Password</label>
+        <input class="form-control" type="password" id="password" name="password"
+               placeholder="••••••••••••••••" autocomplete="current-password" required />
+      </div>
+      <button class="btn btn-primary" type="submit" id="btn-login-submit" style="width:100%;margin-top:8px;">
+        Sign In to Banking Portal
+      </button>
+    </form>
+    <div class="demo-access-panel" style="margin-top:20px;border-top:1px solid var(--border-dim);padding-top:16px;">
+      <div style="font-size:0.74rem;font-weight:600;letter-spacing:0.08em;color:var(--text-muted);text-transform:uppercase;margin-bottom:10px;text-align:center;">
+        DEMO ACCESS CREDENTIALS
+      </div>
+      <div style="display:flex;gap:8px;justify-content:center;">
+        <button type="button" class="btn btn-sm btn-secondary" id="btn-demo-bank" style="flex:1;">
+          🏦 Bank Analyst Demo
+        </button>
+      </div>
+      <div style="margin-top:10px;font-size:0.68rem;color:var(--text-dim);text-align:center;">
+        Synthetic demonstration credentials only · Click button to auto-fill demo_bank / BankDemo2026!
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── App Shell ────────────────────────────────────────────────────────── -->
+<div class="app-shell" id="app-shell" style="display:none;flex-direction:column;min-height:100vh;">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-logo">
+      <span class="logo-icon" style="color:#00e5ff;">🏦</span>
+      <div>
+        <div class="header-title">Cybercrime Analytics · Secure Banking Interface</div>
+        <div class="header-subtitle">Problem Statement ID 26184 — ATM Network Proximity Intelligence</div>
+      </div>
+    </div>
+    <div class="header-center">
+      <span class="bank-header-tag" id="hdr-bank-tag">BANK001</span>
+      <span class="badge badge-prototype">Prototype · Synthetic Data</span>
+      <span class="readonly-watermark">Read-Only Scope</span>
+    </div>
+    <div class="header-right">
+      <span id="hdr-time" style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-muted)"></span>
+      <div class="header-user">
+        <span style="font-size:0.78rem;color:var(--text-muted)">Logged in:</span>
+        <span id="hdr-user" style="font-size:0.82rem;color:var(--text-secondary);font-weight:600;">—</span>
+        <span class="user-badge BANK_ANALYST" id="hdr-role">BANK_ANALYST</span>
+      </div>
+      <button class="btn btn-sm btn-secondary" id="btn-logout">Sign Out</button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main style="flex:1;padding:24px;max-width:1440px;margin:0 auto;width:100%;">
+
+    <!-- Mandatory Disclaimer Banner -->
+    <div class="disclaimer-banner" style="margin-bottom:20px;">
+      <strong>Analytical alert — authorized human review required. Does not establish criminal activity.</strong>
+      <span style="display:block;font-size:0.75rem;color:var(--text-dim);margin-top:2px;">
+        This interface displays model-derived spatial predictions scoped strictly to ATM locations. No enforcement or live account operations are permitted.
+      </span>
+    </div>
+
+    <!-- KPI Summary Row -->
+    <div class="kpi-row">
+      <div class="kpi-box">
+        <span class="kpi-box-lbl">Bank Physical ATMs</span>
+        <span class="kpi-box-val" id="kpi-bank-atms" style="color:#00e5ff;">—</span>
+      </div>
+      <div class="kpi-box">
+        <span class="kpi-box-lbl">Proximity Hotspots</span>
+        <span class="kpi-box-val" id="kpi-matched-hotspots" style="color:#7c6ff7;">—</span>
+      </div>
+      <div class="kpi-box">
+        <span class="kpi-box-lbl">Scoped Alerts</span>
+        <span class="kpi-box-val" id="kpi-total-alerts" style="color:#4a90ff;">—</span>
+      </div>
+      <div class="kpi-box">
+        <span class="kpi-box-lbl">High & Critical Risk</span>
+        <span class="kpi-box-val" id="kpi-high-crit" style="color:#ff9800;">—</span>
+      </div>
+    </div>
+
+    <!-- Filters Bar -->
+    <div class="filters-bar" style="margin-bottom:16px;">
+      <span class="filter-label">Institution & Radius:</span>
+      <select class="form-control" id="filter-bank-id" style="max-width:160px">
+        <option value="BANK001">BANK001</option>
+        <option value="BANK002">BANK002</option>
+        <option value="BANK003">BANK003</option>
+        <option value="BANK004">BANK004</option>
+        <option value="BANK005">BANK005</option>
+        <option value="BANK006">BANK006</option>
+        <option value="BANK007">BANK007</option>
+        <option value="BANK008">BANK008</option>
+      </select>
+
+      <span class="filter-label" style="margin-left:8px;">Radius:</span>
+      <select class="form-control" id="filter-radius" style="max-width:140px">
+        <option value="1.0">1.0 km</option>
+        <option value="2.0">2.0 km</option>
+        <option value="5.0" selected>5.0 km</option>
+        <option value="10.0">10.0 km</option>
+        <option value="20.0">20.0 km</option>
+      </select>
+
+      <span class="filter-label" style="margin-left:8px;">Severity:</span>
+      <select class="form-control" id="filter-severity" style="max-width:140px">
+        <option value="">All Tiers</option>
+        <option value="CRITICAL">Critical</option>
+        <option value="HIGH">High</option>
+        <option value="MODERATE">Moderate</option>
+        <option value="LOW">Low</option>
+      </select>
+
+      <button class="btn btn-primary btn-sm" id="btn-apply-filters">Filter Alerts</button>
+      <span id="alerts-count-tag" style="margin-left:auto;font-size:0.78rem;color:var(--text-muted);font-family:var(--font-mono);">
+        Loading alerts…
+      </span>
+    </div>
+
+    <!-- Alert Table Card -->
+    <div class="card" style="padding:0;overflow:hidden;">
+      <div class="table-container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Alert ID</th>
+              <th>Severity</th>
+              <th>Risk Score</th>
+              <th>Hotspot</th>
+              <th>Nearest Bank ATM</th>
+              <th>Category</th>
+              <th>Operational Summary</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="alerts-table-body">
+            <!-- Populated via JavaScript -->
+          </tbody>
+        </table>
+      </div>
+
+      <div id="alerts-loading" style="text-align:center;padding:40px;color:var(--text-muted);font-size:0.85rem;">
+        Scanning physical ATM coordinates & geospatial hotspots…
+      </div>
+
+      <div id="alerts-empty" style="display:none;text-align:center;padding:40px;color:var(--text-muted);font-size:0.85rem;">
+        No predictive alerts found within the specified radius of this institution's ATMs.
+      </div>
+    </div>
+
+    <!-- Footer Disclaimer -->
+    <div style="margin-top:24px;text-align:center;font-size:0.72rem;color:var(--text-dim);border-top:1px solid var(--border-dim);padding-top:12px;">
+      Analytical alert — authorized human review required. Does not establish criminal activity.
+      <br />
+      Cybercrime Predictive Analytics Framework · Secure Banking Read-Only Interface
+    </div>
+
+  </main>
+</div>
+
+<!-- ── Read-Only Alert Detail Modal ─────────────────────────────────────── -->
+<div class="modal-backdrop" id="detail-modal" style="display:none;" onclick="if(event.target===this)closeModal();">
+  <div class="modal-window">
+    <div class="modal-top">
+      <span style="font-weight:600;font-size:0.9rem;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.06em;">
+        Predictive Alert Details (Bank View)
+      </span>
+      <button onclick="closeModal()" style="background:none;border:none;color:var(--text-muted);font-size:1.2rem;cursor:pointer;">✕</button>
+    </div>
+    <div class="modal-content" id="detail-modal-content">
+      <!-- Injected by bank.js -->
+    </div>
+  </div>
+</div>
+
+<script src="/bank/js/bank.js"></script>
+</body>
+</html>

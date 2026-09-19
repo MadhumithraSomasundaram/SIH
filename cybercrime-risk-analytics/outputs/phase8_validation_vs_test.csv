@@ -1,0 +1,8 @@
+metric,validation,test,difference
+accuracy,0.8587,0.8693,0.0106
+precision,0.1222,0.0638,-0.0584
+recall,0.0764,0.0194,-0.057
+f1,0.094,0.0297,-0.0643
+roc_auc,0.5088,0.476,-0.0328
+pr_auc,0.1072,0.1029,-0.0043
+specificity,0.9417,0.9673,0.0256

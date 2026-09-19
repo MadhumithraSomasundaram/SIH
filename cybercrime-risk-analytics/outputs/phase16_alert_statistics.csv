@@ -1,0 +1,15 @@
+metric,value,category,description
+total_alerts,51,Volume,Total persisted analytical alerts
+new_alerts,51,Status,Alerts in NEW unacknowledged state
+acknowledged_alerts,0,Status,Alerts acknowledged by analyst
+in_review_alerts,0,Status,Alerts actively under investigation
+resolved_alerts,0,Status,Alerts reviewed and closed
+dismissed_alerts,0,Status,Alerts dismissed with analyst justification
+critical_alerts,2,Severity,Critical alerts (Score >= 80)
+high_alerts,49,Severity,High alerts (Score 60-79 or high volume)
+moderate_alerts,0,Severity,Moderate alerts
+WITHDRAWAL_HOTSPOT,40,Type,Alerts for high cashout density clusters
+HIGH_RISK_LOCATION,5,Type,Individual elevated risk complaint locations
+HOTSPOT_ELEVATED_RISK,4,Type,Spatial clusters with high risk complaints
+CRITICAL_RISK_LOCATION,1,Type,Critical risk location complaint
+HOTSPOT_CRITICAL_RISK,1,Type,Critical aggregate risk spatial cluster

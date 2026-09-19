@@ -1,0 +1,10 @@
+failure_scenario,primary_failure_symptom,offline_backup_asset,saved_output_location,contingency_operational_readiness,audit_verdict
+API Web Server Failure,FastAPI / Uvicorn fails to start,CLI Standalone Runner,src/system_smoke_test.py (runs headless in 1.9s),Instant CLI demo execution,PASS
+Database Unavailable,PostgreSQL daemon inactive,Dual-Mode Resilient Fallback,outputs/phase15_hotspots.geojson (in-memory GeoJSON),Seamless zero-downtime GIS demo,PASS
+Map Tile Failure (No Internet),Leaflet base map fails to load,Pre-rendered Vector Polygons,Local SVG/Canvas vector layers from local GeoJSON,Visual polygon boundaries preserved,PASS
+SHAP Calculation Timeout,TreeExplainer hangs on memory,Static SHAP Beeswarm & Waterfall,outputs/figures/phase10_shap_beeswarm.png; outputs/phase10_shap_summary.png,High-res PNG displayed instantly,PASS
+Model Loading Error,Pickle serialization error,Pre-computed Test Predictions,outputs/predictions/xgboost_test_predictions.csv (1500 rows),Complete prediction matrix available,PASS
+Python Dependency Corrupted,Virtualenv packages damaged,Headless Smoke Test Script,src/system_smoke_test.py (uses standard Python),Direct execution without third-party web,PASS
+Internet Complete Outage,Hackathon venue Wi-Fi down,100% Offline Air-Gapped Stack,Entire repository self-contained on local NVMe,Zero cloud or CDN dependencies,PASS
+Physical Laptop Hardware Death,Laptop fails to boot,Laminated Physical Handouts,Physical 2-page executive summary & architecture brief,Zero single-point-of-failure guarantee,PASS
+Saved Demo Outputs Verification,Demonstration record inspection,Pre-computed Demo Predictions,outputs/FINAL_OFFLINE_DEMO_PLAN.md (all 8 subsystems),Complete static JSON verified,PASS
